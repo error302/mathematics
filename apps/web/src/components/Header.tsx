@@ -31,8 +31,12 @@ export const Header: React.FC<HeaderProps> = ({
   return (
     <header className="axiom-header" role="banner">
       <div className="axiom-header-top">
-        <div className="axiom-brand" onClick={() => onTabChange('atlas')} role="button" tabIndex={0}>
-          <div className="axiom-brand-symbol">ΑΞ</div>
+        <div className="axiom-brand" onClick={() => onTabChange('atlas')} role="button" tabIndex={0} aria-label="AXIOM Mathematics Academy Home">
+          <img
+            src="/logo.png"
+            alt="AXIOM Mathematics Academy"
+            className="axiom-brand-logo-img"
+          />
           <div>
             <h1 className="axiom-title">AXIOM</h1>
             <span className="axiom-subtitle">Mathematics Academy</span>

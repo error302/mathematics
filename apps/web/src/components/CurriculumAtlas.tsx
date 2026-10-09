@@ -129,15 +129,22 @@ export const CurriculumAtlas: React.FC<AtlasProps> = ({ onSelectCourse }) => {
   return (
     <div className="axiom-atlas">
       <div className="axiom-hero">
-        <div className="axiom-hero-tag">
-          <Sparkles size={14} />
-          <span>Curriculum Atlas & Dependency Map</span>
+        <div className="axiom-hero-header">
+          <div className="axiom-hero-text">
+            <div className="axiom-hero-tag">
+              <Sparkles size={14} />
+              <span>Curriculum Atlas & Dependency Map</span>
+            </div>
+            <h2>A Structured Pathway from Numeracy to Proof-Based Mathematics</h2>
+            <p>
+              Every assessable skill in AXIOM has defined mathematical objects, domain conditions, explicit prerequisites,
+              and justified assessment evidence. Fast tapping and streaks do not replace genuine understanding.
+            </p>
+          </div>
+          <div className="axiom-hero-emblem" aria-hidden="true">
+            <img src="/logo.png" alt="" className="axiom-hero-logo" />
+          </div>
         </div>
-        <h2>A Structured Pathway from Numeracy to Proof-Based Mathematics</h2>
-        <p>
-          Every assessable skill in AXIOM has defined mathematical objects, domain conditions, explicit prerequisites,
-          and justified assessment evidence. Fast tapping and streaks do not replace genuine understanding.
-        </p>
 
         <div className="axiom-filter-chips" role="tablist">
           {['all', 'foundation', 'proof', 'undergraduate', 'abacus'].map((f) => (
