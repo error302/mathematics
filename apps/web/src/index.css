@@ -1,0 +1,1119 @@
+:root {
+  --bg-primary: #0b0f19;
+  --bg-surface: #131b2e;
+  --bg-elevated: #1a243d;
+  --bg-highlight: #223052;
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  --accent-gold: #fbbf24;
+  --accent-primary: #6366f1;
+  --accent-primary-hover: #4f46e5;
+  --accent-success: #10b981;
+  --accent-error: #ef4444;
+  --accent-warning: #f59e0b;
+  --border-color: #273553;
+  --font-serif: 'Cinzel', serif;
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+/* Accessibility Focus Ring (Section 25.1) */
+*:focus-visible {
+  outline: 2px solid var(--accent-gold);
+  outline-offset: 2px;
+}
+
+.axiom-app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* --- Header --- */
+.axiom-header {
+  background-color: var(--bg-surface);
+  border-bottom: 1px solid var(--border-color);
+  padding: 1rem 1.5rem 0.5rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.axiom-header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.axiom-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.axiom-brand-symbol {
+  width: 44px;
+  height: 44px;
+  background: linear-gradient(135deg, #4f46e5, #9333ea);
+  color: #fff;
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-md);
+  box-shadow: 0 2px 8px rgba(99, 102, 241, 0.4);
+}
+
+.axiom-title {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: var(--text-primary);
+  line-height: 1.1;
+}
+
+.axiom-subtitle {
+  font-size: 0.75rem;
+  color: var(--accent-gold);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.axiom-status-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.axiom-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.axiom-badge-guest {
+  background-color: var(--bg-elevated);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-color);
+}
+
+.axiom-badge-xp {
+  background: linear-gradient(135deg, #3730a3, #4338ca);
+  color: #fbbf24;
+  border: 1px solid #6366f1;
+}
+
+.axiom-xp-cap {
+  color: #c7d2fe;
+  font-size: 0.75rem;
+}
+
+.axiom-nav {
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+  padding-bottom: 0.25rem;
+}
+
+.axiom-nav-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1rem;
+  border: none;
+  background: transparent;
+  color: var(--text-secondary);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  transition: all 0.15s ease;
+  min-height: 44px; /* WCAG touch target */
+}
+
+.axiom-nav-btn:hover {
+  background-color: var(--bg-elevated);
+  color: var(--text-primary);
+}
+
+.axiom-nav-btn.active {
+  background-color: var(--bg-highlight);
+  color: var(--accent-gold);
+  border-bottom: 2px solid var(--accent-gold);
+}
+
+/* --- Main Layout --- */
+.axiom-main-content {
+  flex: 1;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+/* --- Cards & General UI --- */
+.axiom-card {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+  margin-bottom: 1.5rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.axiom-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.axiom-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.25rem;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  border: 1px solid transparent;
+  min-height: 44px;
+}
+
+.axiom-btn-primary {
+  background-color: var(--accent-primary);
+  color: #fff;
+}
+.axiom-btn-primary:hover:not(:disabled) {
+  background-color: var(--accent-primary-hover);
+}
+.axiom-btn-primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.axiom-btn-secondary {
+  background-color: var(--bg-elevated);
+  color: var(--accent-gold);
+  border-color: var(--border-color);
+}
+.axiom-btn-secondary:hover {
+  background-color: var(--bg-highlight);
+}
+
+.axiom-btn-outline {
+  background-color: transparent;
+  color: var(--text-primary);
+  border-color: var(--border-color);
+}
+.axiom-btn-outline:hover {
+  background-color: var(--bg-elevated);
+}
+
+.axiom-btn-lg {
+  padding: 0.85rem 1.75rem;
+  font-size: 1.05rem;
+}
+
+.axiom-tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--accent-gold);
+  background-color: rgba(251, 191, 36, 0.1);
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--radius-sm);
+  margin-bottom: 0.5rem;
+}
+
+.axiom-subtext {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+.axiom-mono {
+  font-family: var(--font-mono);
+}
+
+/* --- Hero & Atlas --- */
+.axiom-hero {
+  margin-bottom: 2rem;
+}
+.axiom-hero-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--accent-gold);
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+.axiom-hero h2 {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+}
+.axiom-hero p {
+  color: var(--text-secondary);
+  max-width: 800px;
+  margin-bottom: 1.5rem;
+}
+
+.axiom-filter-chips {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+.axiom-chip {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  padding: 0.4rem 0.9rem;
+  border-radius: 9999px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  min-height: 44px;
+}
+.axiom-chip.active {
+  background-color: var(--accent-primary);
+  color: #fff;
+  border-color: var(--accent-primary);
+}
+
+.axiom-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.5rem;
+}
+
+.axiom-course-card {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.15s ease, border-color 0.15s ease;
+}
+.axiom-course-card:hover {
+  border-color: #4338ca;
+  transform: translateY(-2px);
+}
+.axiom-course-card.planned {
+  opacity: 0.75;
+}
+
+.axiom-course-id {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  color: var(--accent-gold);
+  font-size: 1.1rem;
+}
+.axiom-badge-published {
+  background-color: rgba(16, 185, 129, 0.15);
+  color: #34d399;
+}
+.axiom-badge-planned {
+  background-color: rgba(100, 116, 139, 0.2);
+  color: #94a3b8;
+}
+
+.axiom-course-title {
+  font-size: 1.25rem;
+  margin: 0.5rem 0 0.25rem;
+}
+.axiom-stage-label {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.axiom-outcomes-block {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+  flex: 1;
+}
+.axiom-outcomes-block ul {
+  padding-left: 1.2rem;
+  margin-top: 0.25rem;
+}
+
+.axiom-prereqs {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+}
+.axiom-prereq-tag {
+  background-color: var(--bg-elevated);
+  padding: 0.1rem 0.4rem;
+  border-radius: 4px;
+  font-family: var(--font-mono);
+  margin-left: 0.25rem;
+}
+
+.axiom-card-footer {
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-color);
+}
+.axiom-planned-note {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+/* --- Lesson View --- */
+.axiom-lesson-container {
+  max-width: 840px;
+  margin: 0 auto;
+}
+.axiom-lesson-header {
+  margin-bottom: 2rem;
+}
+.axiom-lead {
+  font-size: 1.15rem;
+  color: var(--text-secondary);
+  margin-top: 0.5rem;
+}
+
+.axiom-section {
+  margin-bottom: 1.75rem;
+}
+.axiom-section-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+.axiom-section-title h3 {
+  font-size: 1.25rem;
+}
+.axiom-accent {
+  color: var(--accent-gold);
+}
+.axiom-warning {
+  color: var(--accent-warning);
+}
+
+.axiom-interactive-box {
+  background-color: var(--bg-elevated);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+  margin-top: 1rem;
+}
+.axiom-btn-group {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+.axiom-btn-selected {
+  background-color: var(--accent-primary);
+  color: #fff;
+  border-color: var(--accent-primary);
+}
+
+.axiom-prediction-feedback {
+  margin-top: 1rem;
+  padding: 1rem;
+  border-radius: var(--radius-sm);
+  background-color: var(--bg-surface);
+}
+.axiom-feedback-positive {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: #34d399;
+}
+.axiom-feedback-instructive {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: #fbbf24;
+}
+
+.axiom-callout {
+  background-color: var(--bg-elevated);
+  border-left: 4px solid var(--accent-gold);
+  padding: 1rem 1.25rem;
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  margin: 1rem 0;
+}
+.axiom-callout ul {
+  padding-left: 1.2rem;
+}
+
+/* Number line visual */
+.axiom-numberline-container {
+  background-color: var(--bg-elevated);
+  padding: 1.25rem;
+  border-radius: var(--radius-md);
+  margin: 1rem 0;
+}
+.axiom-nl-track {
+  margin-bottom: 1rem;
+}
+.axiom-nl-label {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.25rem;
+}
+.axiom-nl-bar {
+  height: 28px;
+  background-color: var(--bg-highlight);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  position: relative;
+}
+.axiom-nl-segment {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding-left: 0.75rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #fff;
+}
+.axiom-nl-segment.quarter {
+  background: linear-gradient(90deg, #4f46e5, #6366f1);
+}
+.axiom-nl-segment.eighth {
+  background: linear-gradient(90deg, #059669, #10b981);
+}
+.axiom-subdivision-visual {
+  margin-top: 1rem;
+  padding: 0.75rem;
+  background-color: var(--bg-highlight);
+  border-radius: var(--radius-sm);
+}
+
+.axiom-steps-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.axiom-step {
+  display: flex;
+  gap: 1rem;
+  background-color: var(--bg-elevated);
+  padding: 1rem;
+  border-radius: var(--radius-md);
+}
+.axiom-step-num {
+  font-weight: 700;
+  color: var(--accent-gold);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+}
+.axiom-math-display {
+  margin-top: 0.5rem;
+}
+
+.axiom-card-warning {
+  border-color: rgba(245, 158, 11, 0.4);
+  background-color: rgba(245, 158, 11, 0.04);
+}
+
+.axiom-lesson-footer {
+  text-align: center;
+  margin: 2.5rem 0 1rem;
+}
+
+/* --- Practice Workspace --- */
+.axiom-practice-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.axiom-practice-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.axiom-select {
+  background-color: var(--bg-surface);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  padding: 0.5rem 0.75rem;
+  border-radius: var(--radius-sm);
+  min-height: 44px;
+}
+
+.axiom-exercise-meta {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+.axiom-tag-seed {
+  color: var(--text-muted);
+  background-color: var(--bg-elevated);
+}
+.axiom-exercise-prompt {
+  margin: 1.5rem 0;
+  text-align: center;
+}
+.axiom-math-large {
+  font-size: 1.6rem;
+  margin-top: 1rem;
+}
+
+.axiom-answer-form {
+  margin-top: 2rem;
+}
+.axiom-options-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+.axiom-option-btn {
+  background-color: var(--bg-elevated);
+  border: 2px solid var(--border-color);
+  color: var(--text-primary);
+  padding: 1rem;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  cursor: pointer;
+  min-height: 48px;
+  transition: all 0.15s ease;
+}
+.axiom-option-btn:hover {
+  background-color: var(--bg-highlight);
+}
+.axiom-option-btn.selected {
+  border-color: var(--accent-gold);
+  background-color: rgba(251, 191, 36, 0.1);
+  color: var(--accent-gold);
+}
+
+.axiom-input-row {
+  margin-bottom: 1.5rem;
+}
+.axiom-text-input {
+  width: 100%;
+  background-color: var(--bg-elevated);
+  border: 2px solid var(--border-color);
+  color: var(--text-primary);
+  padding: 0.85rem 1rem;
+  border-radius: var(--radius-md);
+  font-size: 1.25rem;
+  font-family: var(--font-mono);
+  text-align: center;
+  min-height: 48px;
+}
+.axiom-text-input:focus {
+  border-color: var(--accent-primary);
+}
+
+.axiom-action-row {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.axiom-feedback-banner {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  border-radius: var(--radius-md);
+}
+.axiom-feedback-banner.correct {
+  background-color: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+.axiom-feedback-banner.incorrect {
+  background-color: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+.axiom-feedback-banner.malformed {
+  background-color: rgba(245, 158, 11, 0.1);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.axiom-feedback-header {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.5rem;
+}
+.axiom-success-icon { color: var(--accent-success); }
+.axiom-error-icon { color: var(--accent-error); }
+.axiom-warn-icon { color: var(--accent-warning); }
+
+.axiom-award-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: #fff;
+  padding: 0.4rem 0.85rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  margin-top: 1rem;
+}
+
+.axiom-repair-suggestion {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.axiom-repair-text {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--accent-warning);
+}
+
+/* --- Abacus Studio (Section 10) --- */
+.axiom-abacus-studio {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.axiom-studio-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.axiom-studio-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.axiom-challenge-card {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.5rem;
+}
+.axiom-challenge-card.complete {
+  border-color: var(--accent-success);
+  background-color: rgba(16, 185, 129, 0.08);
+}
+.axiom-challenge-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--accent-gold);
+  font-size: 0.95rem;
+}
+.axiom-challenge-success {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--accent-success);
+  margin-top: 0.5rem;
+  font-weight: 500;
+}
+.axiom-challenge-hint {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-top: 0.35rem;
+}
+
+.axiom-abacus-value-banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 1rem 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.axiom-value-box {
+  display: flex;
+  flex-direction: column;
+}
+.axiom-value-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+.axiom-value-display {
+  font-family: var(--font-mono);
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--accent-gold);
+}
+.axiom-speech-box {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+/* Physical Abacus Construction */
+.axiom-soroban-frame {
+  background-color: #2b1d0c; /* Rich hardwood finish */
+  border: 10px solid #1a1106;
+  border-radius: var(--radius-md);
+  box-shadow: inset 0 2px 6px rgba(0,0,0,0.8), 0 8px 24px rgba(0,0,0,0.5);
+  padding: 0.5rem 1.5rem;
+  user-select: none;
+}
+
+.axiom-deck {
+  display: flex;
+  justify-content: space-around;
+}
+.axiom-upper-deck {
+  height: 90px;
+}
+.axiom-lower-deck {
+  height: 220px;
+}
+
+.axiom-rod {
+  flex: 1;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  min-width: 44px;
+}
+.axiom-rod.selected .axiom-rod-wire {
+  background-color: #f59e0b;
+  box-shadow: 0 0 6px rgba(245, 158, 11, 0.6);
+}
+
+.axiom-rod-wire {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background-color: #94a3b8;
+  z-index: 1;
+}
+
+.axiom-reckoning-bar {
+  height: 20px;
+  background-color: #1a1106;
+  border-top: 2px solid #3d2912;
+  border-bottom: 2px solid #3d2912;
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 2;
+}
+.axiom-beam-marker {
+  width: 6px;
+  height: 6px;
+  background-color: #475569;
+  border-radius: 50%;
+}
+.axiom-beam-marker.unit-dot {
+  background-color: #f8fafc;
+  box-shadow: 0 0 4px #fff;
+}
+
+/* Soroban bi-conical beads */
+.axiom-bead {
+  width: 44px;
+  height: 28px;
+  background: linear-gradient(180deg, #d97706 0%, #b45309 50%, #92400e 100%);
+  border: 1px solid #78350f;
+  border-radius: 14px / 8px; /* Soroban tapered bi-conical profile */
+  position: absolute;
+  z-index: 3;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.4);
+  transition: transform 0.12s cubic-bezier(0.4, 0, 0.2, 1);
+  min-height: 28px;
+  min-width: 44px;
+}
+
+/* Upper bead positioning */
+.axiom-upper-bead.idle {
+  top: 6px;
+}
+.axiom-upper-bead.engaged {
+  top: 54px; /* Touches reckoning bar */
+  box-shadow: 0 0 8px rgba(251, 191, 36, 0.5);
+}
+
+/* Lower bead positioning (4 beads) */
+.axiom-lower-deck .axiom-rod {
+  justify-content: flex-end;
+}
+.axiom-lower-bead:nth-child(2) { bottom: 6px; }
+.axiom-lower-bead:nth-child(3) { bottom: 36px; }
+.axiom-lower-bead:nth-child(4) { bottom: 66px; }
+.axiom-lower-bead:nth-child(5) { bottom: 96px; }
+
+.axiom-lower-bead.engaged:nth-child(2) { bottom: 84px; }
+.axiom-lower-bead.engaged:nth-child(3) { bottom: 114px; }
+.axiom-lower-bead.engaged:nth-child(4) { bottom: 144px; }
+.axiom-lower-bead.engaged:nth-child(5) { bottom: 174px; }
+
+.axiom-rod-labels {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 0.75rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid #3d2912;
+}
+.axiom-rod-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 0.75rem;
+  color: #a8a29e;
+  cursor: pointer;
+  flex: 1;
+}
+.axiom-rod-label.selected {
+  color: var(--accent-gold);
+}
+.axiom-rod-digit {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #f8fafc;
+}
+
+.axiom-keyboard-guide {
+  margin-top: 1.25rem;
+  padding: 1rem;
+  background-color: var(--bg-surface);
+  border-radius: var(--radius-md);
+  font-size: 0.85rem;
+}
+.axiom-shortcuts-list {
+  display: flex;
+  gap: 1.25rem;
+  margin-top: 0.5rem;
+  flex-wrap: wrap;
+  color: var(--text-secondary);
+}
+kbd {
+  background-color: var(--bg-elevated);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  padding: 0.15rem 0.4rem;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--text-primary);
+}
+
+/* --- Mastery & Ledger --- */
+.axiom-mastery-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+.axiom-mastery-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.axiom-backup-actions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.axiom-stats-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.75rem;
+}
+.axiom-stat-card {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+}
+.axiom-stat-label {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+.axiom-stat-value {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--accent-gold);
+  margin: 0.25rem 0;
+}
+.axiom-stat-sub {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+}
+
+.axiom-dimension-section h3 {
+  font-size: 1.2rem;
+}
+.axiom-dimensions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-top: 1.25rem;
+}
+.axiom-dimension-box {
+  background-color: var(--bg-elevated);
+  padding: 1rem;
+  border-radius: var(--radius-sm);
+}
+.axiom-dim-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+.axiom-dim-status {
+  font-size: 0.75rem;
+  color: var(--accent-gold);
+  font-weight: 600;
+}
+.axiom-dimension-box p {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  min-height: 48px;
+}
+.axiom-progress-bar {
+  height: 6px;
+  background-color: var(--bg-highlight);
+  border-radius: 3px;
+  overflow: hidden;
+  margin-top: 0.75rem;
+}
+.axiom-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #4f46e5, #6366f1);
+}
+
+.axiom-table-wrapper {
+  overflow-x: auto;
+}
+.axiom-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+.axiom-table th {
+  text-align: left;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--border-color);
+  color: var(--text-muted);
+  font-weight: 600;
+}
+.axiom-table td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--border-color);
+}
+.axiom-key-cell {
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+}
+.axiom-delta-cell {
+  font-weight: 700;
+  text-align: right;
+}
+.axiom-xp-plus {
+  color: var(--accent-success);
+}
+.axiom-xp-zero {
+  color: var(--text-muted);
+}
+.axiom-empty-ledger {
+  text-align: center;
+  padding: 2.5rem;
+  color: var(--text-muted);
+}
+.axiom-empty-ledger p {
+  margin-top: 0.5rem;
+}
+
+/* --- Footer --- */
+.axiom-footer {
+  border-top: 1px solid var(--border-color);
+  padding: 1.5rem;
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  background-color: var(--bg-surface);
+}
+.axiom-footer a {
+  color: var(--accent-gold);
+  text-decoration: none;
+}
+.axiom-footer a:hover {
+  text-decoration: underline;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 640px) {
+  .axiom-options-grid {
+    grid-template-columns: 1fr;
+  }
+  .axiom-header {
+    padding: 0.75rem 1rem 0.5rem;
+  }
+  .axiom-main-content {
+    padding: 1rem;
+  }
+  .axiom-soroban-frame {
+    padding: 0.5rem;
+  }
+  .axiom-bead {
+    width: 36px;
+    min-width: 36px;
+  }
+}

@@ -1,0 +1,138 @@
+[
+  {
+    "id": "F00",
+    "title": "Learning to Learn Mathematics",
+    "stage": "foundation",
+    "prerequisites": [],
+    "outcomes": ["Explain an answer and identify whether a check actually supports it"],
+    "status": "published"
+  },
+  {
+    "id": "F01",
+    "title": "Number and Place Value",
+    "stage": "foundation",
+    "prerequisites": [],
+    "outcomes": ["Represent and compare numbers in multiple forms"],
+    "status": "published"
+  },
+  {
+    "id": "F02",
+    "title": "Whole-Number Arithmetic",
+    "stage": "foundation",
+    "prerequisites": ["F01"],
+    "outcomes": ["Solve unfamiliar multi-step arithmetic and explain regrouping"],
+    "status": "published"
+  },
+  {
+    "id": "F03",
+    "title": "Integers and Divisibility",
+    "stage": "foundation",
+    "prerequisites": ["F02"],
+    "outcomes": ["Use gcd/lcm appropriately and justify elementary divisibility"],
+    "status": "published"
+  },
+  {
+    "id": "F04",
+    "title": "Fractions and Rational Numbers",
+    "stage": "foundation",
+    "prerequisites": ["F02", "F03"],
+    "outcomes": ["Explain why common denominators work and transfer across representations"],
+    "status": "published"
+  },
+  {
+    "id": "F05",
+    "title": "Decimals, Ratios, and Proportions",
+    "stage": "foundation",
+    "prerequisites": ["F04"],
+    "outcomes": ["Distinguish additive from multiplicative comparison and solve ratio contexts"],
+    "status": "published"
+  },
+  {
+    "id": "F06",
+    "title": "Powers and Roots",
+    "stage": "foundation",
+    "prerequisites": ["F03", "F04", "F05"],
+    "outcomes": ["Apply exponent laws with correct restrictions and reject invalid cancellations"],
+    "status": "published"
+  },
+  {
+    "id": "F07",
+    "title": "Elementary Geometry and Measurement",
+    "stage": "foundation",
+    "prerequisites": ["F02", "F05"],
+    "outcomes": ["Construct a geometric argument, state assumptions, and explain scale factors"],
+    "status": "published"
+  },
+  {
+    "id": "F08",
+    "title": "Data, Counting, and Chance",
+    "stage": "foundation",
+    "prerequisites": ["F04", "F05"],
+    "outcomes": ["Explain a misleading graph and enumerate a small sample space"],
+    "status": "published"
+  },
+  {
+    "id": "S01",
+    "title": "Algebra I",
+    "stage": "secondary",
+    "prerequisites": ["F03", "F04", "F05", "F06"],
+    "outcomes": ["Solve and check equations, including exceptional and extraneous cases"],
+    "status": "planned"
+  },
+  {
+    "id": "P01",
+    "title": "Sets, Logic, and Mathematical Language",
+    "stage": "proof_bridge",
+    "prerequisites": ["S01"],
+    "outcomes": ["Negate quantified statements and explain necessary/sufficient conditions"],
+    "status": "planned"
+  },
+  {
+    "id": "P02",
+    "title": "Proof Methods",
+    "stage": "proof_bridge",
+    "prerequisites": ["P01", "F03"],
+    "outcomes": ["Produce complete proofs and diagnose invalid proof steps"],
+    "status": "planned"
+  },
+  {
+    "id": "U01",
+    "title": "Computational Linear Algebra",
+    "stage": "undergraduate",
+    "prerequisites": ["S01"],
+    "outcomes": ["Solve a system and explain rank, nullity, and geometry"],
+    "status": "planned"
+  },
+  {
+    "id": "U02",
+    "title": "Proof-Based Linear Algebra",
+    "stage": "undergraduate",
+    "prerequisites": ["U01", "P02"],
+    "outcomes": ["Prove rank-nullity and distinguish real symmetric from arbitrary matrices"],
+    "status": "planned"
+  },
+  {
+    "id": "U03",
+    "title": "Real Analysis I",
+    "stage": "undergraduate",
+    "prerequisites": ["P02"],
+    "outcomes": ["Construct epsilon arguments and prove a theorem using completeness"],
+    "status": "planned"
+  },
+  {
+    "id": "A01",
+    "title": "Soroban Abacus: Orientation & Place Value",
+    "stage": "abacus",
+    "prerequisites": [],
+    "outcomes": ["Set and read digits and multi-digit values on the soroban abacus"],
+    "status": "published"
+  },
+  {
+    "id": "A02",
+    "title": "Direct Addition & Subtraction",
+    "stage": "abacus",
+    "prerequisites": ["A01"],
+    "outcomes": ["Perform direct bead additions and subtractions without complement regrouping"],
+    "status": "published"
+  }
+]

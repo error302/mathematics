@@ -1,0 +1,35 @@
+schema_version: 1
+id: foundation.fractions.compare.lesson
+version: 1.0.0
+locale: en
+status: published
+course_id: F04
+unit_id: foundation.fractions.compare
+outcomes:
+  - Compare positive rational numbers using equivalent fractions and common denominators.
+  - Explain why fractions with different denominators cannot be compared by numerator alone.
+skill_ids:
+  - foundation.fractions.compare
+prerequisites:
+  required:
+    - foundation.fractions.equivalence
+  recommended:
+    - foundation.numberline.order
+exercise_refs:
+  - template_id: fractions.compare.positive
+    template_version: 1.0.0
+    difficulty_band: 1
+  - template_id: fractions.equivalent.find
+    template_version: 1.0.0
+    difficulty_band: 1
+assessment_dimensions:
+  - conceptual
+  - procedural
+  - transfer
+content_file: lesson.en.md
+license_id: axiom-original-content
+source_refs: []
+review_record_ids:
+  - review-math-001
+  - review-pedagogy-001
+  - review-a11y-001

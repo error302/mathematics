@@ -1,0 +1,16 @@
+[package]
+name = "axiom-cli"
+description = "AXIOM developer tooling: content validation, replay, golden verification and test runner (Section 20)."
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+publish.workspace = true
+
+[dependencies]
+axiom-math = { path = "../axiom-math" }
+axiom-learning = { path = "../axiom-learning" }
+axiom-content = { path = "../axiom-content" }
+serde = { workspace = true }
+serde_json = { workspace = true }
+serde_yaml = "0.9"
+thiserror = { workspace = true }

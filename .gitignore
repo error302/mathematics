@@ -1,0 +1,11 @@
+/target
+/packages/axiom-wasm-web
+node_modules
+.pnpm-store
+dist
+build
+.env
+.env.local
+*.log
+.DS_Store
+Thumbs.db

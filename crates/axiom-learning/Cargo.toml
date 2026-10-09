@@ -1,0 +1,16 @@
+[package]
+name = "axiom-learning"
+description = "Pure AXIOM learning policies: adaptive mastery, review scheduling, rewards ledger, next activity recommendation (Sections 16 & 17)."
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+publish.workspace = true
+
+[dependencies]
+num-bigint.workspace = true
+num-rational.workspace = true
+num-traits.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+thiserror.workspace = true
+axiom-math = { path = "../axiom-math" }

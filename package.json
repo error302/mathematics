@@ -1,0 +1,10 @@
+{
+  "name": "axiom-monorepo",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "pnpm --filter web dev",
+    "build": "pnpm --filter web build",
+    "test": "cargo test --workspace"
+  }
+}
