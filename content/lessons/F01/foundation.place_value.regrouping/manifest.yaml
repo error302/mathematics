@@ -1,0 +1,30 @@
+schema_version: 1
+id: foundation.place_value.regrouping.lesson
+version: 1.0.0
+locale: en
+status: published
+course_id: F01
+unit_id: foundation.place_value.regrouping
+outcomes:
+  - "Understand the canonical base-10 invariant: 10 units in any position equal 1 unit in the adjacent higher position."
+  - "Perform regrouping and trading mentally and on physical/virtual counters."
+skill_ids:
+  - foundation.place_value.regrouping
+prerequisites:
+  required:
+    - foundation.place_value.decimal_expansion
+  recommended: []
+exercise_refs:
+  - template_id: place_value.decompose
+    template_version: 1.0.0
+    difficulty_band: 1
+assessment_dimensions:
+  - conceptual
+  - procedural
+content_file: lesson.en.md
+license_id: axiom-original-content
+source_refs: []
+review_record_ids:
+  - review-math-001
+  - review-pedagogy-001
+  - review-a11y-001

@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="axiomGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="50%" stop-color="#818cf8"/>
+      <stop offset="100%" stop-color="#c084fc"/>
+    </linearGradient>
+    <linearGradient id="beadGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#d97706"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="112" fill="#090d16"/>
+  <!-- Outer Ring -->
+  <circle cx="256" cy="256" r="190" stroke="url(#axiomGrad)" stroke-width="8" fill="none" opacity="0.4"/>
+  <!-- Soroban Reckoning Beam -->
+  <line x1="120" y1="210" x2="392" y2="210" stroke="#475569" stroke-width="12" stroke-linecap="round"/>
+  <!-- Rods -->
+  <line x1="200" y1="120" x2="200" y2="392" stroke="#334155" stroke-width="8" stroke-linecap="round"/>
+  <line x1="256" y1="120" x2="256" y2="392" stroke="#334155" stroke-width="8" stroke-linecap="round"/>
+  <line x1="312" y1="120" x2="312" y2="392" stroke="#334155" stroke-width="8" stroke-linecap="round"/>
+  <!-- Upper Beads -->
+  <polygon points="200,165 220,175 200,185 180,175" fill="url(#beadGrad)" stroke="#fcd34d" stroke-width="2"/>
+  <polygon points="256,190 276,200 256,210 236,200" fill="url(#beadGrad)" stroke="#fcd34d" stroke-width="2"/>
+  <!-- Lower Active Beads touching beam -->
+  <polygon points="256,220 276,230 256,240 236,230" fill="url(#axiomGrad)" stroke="#67e8f9" stroke-width="2"/>
+  <polygon points="256,245 276,255 256,265 236,255" fill="url(#axiomGrad)" stroke="#67e8f9" stroke-width="2"/>
+  <!-- Stylized Greek / Axiom A Glyph -->
+  <path d="M 210,360 L 256,280 L 302,360 M 228,335 L 284,335" stroke="#f8fafc" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+</svg>

@@ -6,20 +6,29 @@ use std::path::Path;
 fn main() {
     println!("=== AXIOM Mathematics Academy — Content Manifest Verification ===");
 
-    let paths = [
-        "content/lessons/F04/foundation.fractions.compare/manifest.yaml",
-        "content/lessons/A01/abacus.orientation.place_value/manifest.yaml",
-    ];
-
-    let mut all_ok = true;
-    for p in &paths {
-        let path = Path::new(p);
-        if !path.exists() {
-            eprintln!("FAIL: Missing file {p}");
-            all_ok = false;
-            continue;
+    fn find_manifests(dir: &Path, list: &mut Vec<std::path::PathBuf>) {
+        if let Ok(entries) = fs::read_dir(dir) {
+            for entry in entries.flatten() {
+                let p = entry.path();
+                if p.is_dir() {
+                    find_manifests(&p, list);
+                } else if p.file_name().and_then(|n| n.to_str()) == Some("manifest.yaml") {
+                    list.push(p);
+                }
+            }
         }
+    }
 
+    let mut paths = Vec::new();
+    find_manifests(Path::new("content/lessons"), &mut paths);
+    if paths.is_empty() {
+        find_manifests(Path::new("../../content/lessons"), &mut paths);
+    }
+
+    println!("Discovered {} lesson manifests.", paths.len());
+    let mut all_ok = true;
+    for path in &paths {
+        let p = path.display().to_string();
         let raw = match fs::read_to_string(path) {
             Ok(r) => r,
             Err(e) => {

@@ -1,0 +1,31 @@
+schema_version: 1
+id: foundation.arithmetic.column_subtraction_borrow.lesson
+version: 1.0.0
+locale: en
+status: published
+course_id: F02
+unit_id: foundation.arithmetic.column_subtraction_borrow
+outcomes:
+  - "Decompose 1 unit of a higher positional column into 10 units of an adjacent lower column to enable subtraction."
+  - "Execute the columnar borrowing algorithm reliably across multi-digit numbers."
+skill_ids:
+  - foundation.arithmetic.column_subtraction
+prerequisites:
+  required:
+    - foundation.arithmetic.subtraction_inverse
+    - foundation.place_value.regrouping
+  recommended: []
+exercise_refs:
+  - template_id: arithmetic.column.subtraction
+    template_version: 1.0.0
+    difficulty_band: 1
+assessment_dimensions:
+  - procedural
+  - conceptual
+content_file: lesson.en.md
+license_id: axiom-original-content
+source_refs: []
+review_record_ids:
+  - review-math-001
+  - review-pedagogy-001
+  - review-a11y-001

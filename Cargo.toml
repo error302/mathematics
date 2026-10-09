@@ -1,9 +1,12 @@
 [workspace]
 resolver = "2"
 members = [
+  "crates/axiom-types",
   "crates/axiom-math",
   "crates/axiom-learning",
   "crates/axiom-content",
+  "crates/axiom-storage",
+  "crates/axiom-api",
   "crates/axiom-wasm",
   "crates/axiom-cli",
 ]
@@ -24,10 +27,15 @@ serde_json = { version = "1" }
 sha2 = { version = "0.10", default-features = false, features = ["std"] }
 hex = { version = "0.4" }
 thiserror = { version = "2" }
+uuid = { version = "1.10", features = ["v4", "serde"] }
+chrono = { version = "0.4", features = ["serde"] }
+tokio = { version = "1", features = ["full"] }
 wasm-bindgen = { version = "0.2" }
+axiom-types = { path = "crates/axiom-types" }
 axiom-math = { path = "crates/axiom-math" }
 axiom-learning = { path = "crates/axiom-learning" }
 axiom-content = { path = "crates/axiom-content" }
+axiom-storage = { path = "crates/axiom-storage" }
 
 [profile.release]
 opt-level = "s"

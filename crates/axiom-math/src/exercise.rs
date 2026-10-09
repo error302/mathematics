@@ -62,11 +62,26 @@ pub fn generate(
             "fractions.equivalent.find" => {
                 generate_equivalent_fraction(&mut rng, difficulty_band)?
             }
+            "fractions.unit.identify" => {
+                generate_unit_fraction(&mut rng, difficulty_band)?
+            }
             "arithmetic.whole.addition" => {
                 generate_whole_addition(&mut rng, difficulty_band)?
             }
+            "arithmetic.column.addition" => {
+                generate_column_addition(&mut rng, difficulty_band)?
+            }
+            "arithmetic.column.subtraction" => {
+                generate_column_subtraction(&mut rng, difficulty_band)?
+            }
+            "place_value.decompose" => {
+                generate_place_value_decompose(&mut rng, difficulty_band)?
+            }
             "abacus.read.state" => {
                 generate_abacus_read(&mut rng, difficulty_band)?
+            }
+            "abacus.target.setting" => {
+                generate_abacus_target_setting(&mut rng, difficulty_band)?
             }
             _ => return Err(GenerationFailure::TemplateNotFound(template_id.into())),
         };
@@ -273,6 +288,208 @@ fn generate_abacus_read<R: DrawSource + ?Sized>(
         Some(val.to_string()),
         metadata,
         "integer-exact-v1".into(),
+    ))
+}
+
+/// Template: `fractions.unit.identify`
+fn generate_unit_fraction<R: DrawSource + ?Sized>(
+    rng: &mut R,
+    difficulty: u32,
+) -> Result<(String, String, String, String, Option<Vec<String>>, Option<String>, Value, String), GenerationFailure> {
+    let (d_min, d_max) = match difficulty {
+        1 => (2, 8),
+        2 => (3, 12),
+        _ => (4, 20),
+    };
+    let d = uniform_inclusive(rng, d_min, d_max) as i64;
+    let target = frac(1, d);
+
+    let prompt_text = format!("A unit strip is divided into {} equal parts. What unit fraction represents 1 of these parts?", d);
+    let prompt_latex = format!("\\text{{Partition of 1 whole into }} {} \\text{{ equal parts}} \\implies \\frac{{1}}{{{}}}", d, d);
+    let prompt_speech = format!("A unit strip is divided into {} equal parts. What unit fraction represents 1 of these parts?", d);
+
+    let metadata = serde_json::json!({
+        "denominator": d,
+        "numerator": 1,
+        "canonical": to_canonical(&target),
+    });
+
+    Ok((
+        prompt_text,
+        prompt_latex,
+        prompt_speech,
+        "rational".into(),
+        None,
+        Some(to_canonical(&target)),
+        metadata,
+        "rational-equality-v1".into(),
+    ))
+}
+
+/// Template: `arithmetic.column.addition`
+fn generate_column_addition<R: DrawSource + ?Sized>(
+    rng: &mut R,
+    difficulty: u32,
+) -> Result<(String, String, String, String, Option<Vec<String>>, Option<String>, Value, String), GenerationFailure> {
+    // Generate numbers that specifically trigger base-10 regrouping (carrying)
+    let (min, max) = match difficulty {
+        1 => (15, 89),
+        2 => (125, 889),
+        _ => (1250, 8899),
+    };
+
+    for _ in 0..128 {
+        let a = uniform_inclusive(rng, min, max);
+        let b = uniform_inclusive(rng, min, max);
+        // Ensure units digit triggers a carry
+        if (a % 10) + (b % 10) >= 10 {
+            let sum = a + b;
+            let prompt_text = format!("Calculate the sum: {} + {}.", a, b);
+            let prompt_latex = format!("\\begin{{array}}{{r@{{\\quad}}l}} & {} \\\\[-2pt] + & {} \\\\ \\hline & ? \\end{{array}}", a, b);
+            let prompt_speech = format!("Calculate {} plus {} with regrouping.", a, b);
+
+            let metadata = serde_json::json!({
+                "operand1": a.to_string(),
+                "operand2": b.to_string(),
+                "carry_units": true,
+            });
+
+            return Ok((
+                prompt_text,
+                prompt_latex,
+                prompt_speech,
+                "integer".into(),
+                None,
+                Some(sum.to_string()),
+                metadata,
+                "integer-exact-v1".into(),
+            ));
+        }
+    }
+
+    Err(GenerationFailure::ConstraintExhaustion { draws: 128 })
+}
+
+/// Template: `arithmetic.column.subtraction`
+fn generate_column_subtraction<R: DrawSource + ?Sized>(
+    rng: &mut R,
+    difficulty: u32,
+) -> Result<(String, String, String, String, Option<Vec<String>>, Option<String>, Value, String), GenerationFailure> {
+    // Generate numbers that specifically trigger base-10 decomposition (borrowing)
+    let (min, max) = match difficulty {
+        1 => (25, 95),
+        2 => (225, 985),
+        _ => (2250, 9850),
+    };
+
+    for _ in 0..128 {
+        let mut a = uniform_inclusive(rng, min, max);
+        let mut b = uniform_inclusive(rng, min / 2, max - 10);
+        if a < b {
+            std::mem::swap(&mut a, &mut b);
+        }
+        // Ensure units digit triggers a borrow
+        if (a % 10) < (b % 10) {
+            let diff = a - b;
+            let prompt_text = format!("Calculate the difference: {} - {}.", a, b);
+            let prompt_latex = format!("\\begin{{array}}{{r@{{\\quad}}l}} & {} \\\\[-2pt] - & {} \\\\ \\hline & ? \\end{{array}}", a, b);
+            let prompt_speech = format!("Calculate {} minus {} with borrowing.", a, b);
+
+            let metadata = serde_json::json!({
+                "minuend": a.to_string(),
+                "subtrahend": b.to_string(),
+                "borrow_units": true,
+            });
+
+            return Ok((
+                prompt_text,
+                prompt_latex,
+                prompt_speech,
+                "integer".into(),
+                None,
+                Some(diff.to_string()),
+                metadata,
+                "integer-exact-v1".into(),
+            ));
+        }
+    }
+
+    Err(GenerationFailure::ConstraintExhaustion { draws: 128 })
+}
+
+/// Template: `place_value.decompose`
+fn generate_place_value_decompose<R: DrawSource + ?Sized>(
+    rng: &mut R,
+    difficulty: u32,
+) -> Result<(String, String, String, String, Option<Vec<String>>, Option<String>, Value, String), GenerationFailure> {
+    let num: i64 = match difficulty {
+        1 => uniform_inclusive(rng, 100, 999) as i64,
+        2 => uniform_inclusive(rng, 1000, 9999) as i64,
+        _ => uniform_inclusive(rng, 10000, 99999) as i64,
+    };
+
+    let places: Vec<(&str, i64)> = match difficulty {
+        1 => vec![("units", 1), ("tens", 10), ("hundreds", 100)],
+        _ => vec![("units", 1), ("tens", 10), ("hundreds", 100), ("thousands", 1000)],
+    };
+
+    let idx = uniform_inclusive(rng, 0, (places.len() - 1) as i128) as usize;
+    let (place_name, weight) = places[idx];
+    let digit = ((num / weight) % 10) as i64;
+    let place_value = digit * weight;
+
+    let prompt_text = format!("In the number {}, what is the value of the digit in the {} place?", num, place_name);
+    let prompt_latex = format!("\\text{{In the number }} {} \\text{{, what is the value of the {} place?}}", num, place_name);
+    let prompt_speech = format!("In the number {}, what is the value of the {} place?", num, place_name);
+
+    let metadata = serde_json::json!({
+        "number": num.to_string(),
+        "place_name": place_name,
+        "digit": digit,
+        "place_value": place_value,
+    });
+
+    Ok((
+        prompt_text,
+        prompt_latex,
+        prompt_speech,
+        "integer".into(),
+        None,
+        Some(place_value.to_string()),
+        metadata,
+        "integer-exact-v1".into(),
+    ))
+}
+
+/// Template: `abacus.target.setting`
+fn generate_abacus_target_setting<R: DrawSource + ?Sized>(
+    rng: &mut R,
+    difficulty: u32,
+) -> Result<(String, String, String, String, Option<Vec<String>>, Option<String>, Value, String), GenerationFailure> {
+    let (min, max) = match difficulty {
+        1 => (1, 9),
+        2 => (10, 99),
+        _ => (100, 999),
+    };
+    let val = uniform_inclusive(rng, min, max) as i64;
+
+    let prompt_text = format!("Set the soroban abacus to represent {}.", val);
+    let prompt_latex = format!("\\text{{Set Soroban to }}\\; {}", val);
+    let prompt_speech = format!("Set the soroban abacus to represent {}.", val);
+
+    let metadata = serde_json::json!({
+        "target": val,
+    });
+
+    Ok((
+        prompt_text,
+        prompt_latex,
+        prompt_speech,
+        "soroban_state".into(),
+        None,
+        Some(val.to_string()),
+        metadata,
+        "abacus-state-v1".into(),
     ))
 }
 

@@ -1,0 +1,33 @@
+schema_version: 1
+id: abacus.direct.addition.lesson
+version: 1.0.0
+locale: en
+status: published
+course_id: A02
+unit_id: abacus.direct.addition
+outcomes:
+  - "Perform direct addition on single and multi-rod Soroban configurations when sufficient lower beads are available."
+  - "Understand the direct addition boundary (summing within 1-4 or 5-9 without regrouping)."
+skill_ids:
+  - abacus.direct_addition
+prerequisites:
+  required:
+    - abacus.orientation.bead_setting
+  recommended: []
+exercise_refs:
+  - template_id: abacus.target.setting
+    template_version: 1.0.0
+    difficulty_band: 1
+  - template_id: arithmetic.whole.addition
+    template_version: 1.0.0
+    difficulty_band: 1
+assessment_dimensions:
+  - procedural
+  - conceptual
+content_file: lesson.en.md
+license_id: axiom-original-content
+source_refs: []
+review_record_ids:
+  - review-math-001
+  - review-pedagogy-001
+  - review-a11y-001

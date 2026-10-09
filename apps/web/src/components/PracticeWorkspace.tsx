@@ -6,13 +6,15 @@ import { CheckCircle2, XCircle, AlertCircle, RefreshCw, ArrowRight, Award, Light
 interface PracticeWorkspaceProps {
   onAwardXp: (instanceId: string) => { delta: number; reason: string } | null;
   onRecordMasteryEvidence: (family: string, success: boolean) => void;
+  initialTemplateId?: string;
 }
 
 export const PracticeWorkspace: React.FC<PracticeWorkspaceProps> = ({
   onAwardXp,
   onRecordMasteryEvidence,
+  initialTemplateId = 'fractions.compare.positive',
 }) => {
-  const [templateId, setTemplateId] = useState<string>('fractions.compare.positive');
+  const [templateId, setTemplateId] = useState<string>(initialTemplateId);
   const [problem, setProblem] = useState<ProblemArtifact | null>(null);
   const [selectedOption, setSelectedOption] = useState<string>('');
   const [textInput, setTextInput] = useState<string>('');
@@ -20,6 +22,12 @@ export const PracticeWorkspace: React.FC<PracticeWorkspaceProps> = ({
   const [seedCounter, setSeedCounter] = useState<number>(1);
   const [repairNeeded, setRepairNeeded] = useState<boolean>(false);
   const [lastAward, setLastAward] = useState<number | null>(null);
+
+  useEffect(() => {
+    if (initialTemplateId) {
+      setTemplateId(initialTemplateId);
+    }
+  }, [initialTemplateId]);
 
   // Generate new problem on template or seed change
   useEffect(() => {
@@ -89,8 +97,14 @@ export const PracticeWorkspace: React.FC<PracticeWorkspaceProps> = ({
             className="axiom-select"
           >
             <option value="fractions.compare.positive">Fraction Comparison (F04)</option>
-            <option value="fractions.equivalent.find">Equivalent Fraction Generator (F04 Repair)</option>
-            <option value="arithmetic.whole.addition">Whole Number Arithmetic (F02)</option>
+            <option value="fractions.equivalent.find">Equivalent Fraction Construction (F04 Repair)</option>
+            <option value="fractions.unit.identify">Unit Fraction Partitions (F04)</option>
+            <option value="place_value.decompose">Base-10 Place Value Decomposition (F01)</option>
+            <option value="arithmetic.whole.addition">Whole Number Addition (F02)</option>
+            <option value="arithmetic.column.addition">Column Addition with Regrouping (F02)</option>
+            <option value="arithmetic.column.subtraction">Column Subtraction with Borrowing (F02)</option>
+            <option value="abacus.read.state">Soroban Abacus Rod Reading (A01)</option>
+            <option value="abacus.target.setting">Soroban Abacus Target Setting (A01/A02)</option>
           </select>
         </div>
       </div>

@@ -1,11 +1,14 @@
 import React from 'react';
-import { Award, Compass, BookOpen, Layers, Calculator, ShieldCheck } from 'lucide-react';
+import { Award, Compass, BookOpen, Layers, Calculator, ShieldCheck, Cloud, CloudOff } from 'lucide-react';
 
 interface HeaderProps {
   currentTab: string;
   onTabChange: (tab: string) => void;
   totalXp: number;
   todayPracticeXp: number;
+  syncMode?: 'local' | 'cloud';
+  onToggleSyncMode?: () => void;
+  isOnline?: boolean;
 }
 
 export const Header: React.FC<HeaderProps> = ({
@@ -13,12 +16,15 @@ export const Header: React.FC<HeaderProps> = ({
   onTabChange,
   totalXp,
   todayPracticeXp,
+  syncMode = 'local',
+  onToggleSyncMode,
+  isOnline = true,
 }) => {
   const tabs = [
     { id: 'atlas', label: 'Curriculum Atlas', icon: Compass },
-    { id: 'lesson', label: 'Lesson: Fractions (F04)', icon: BookOpen },
-    { id: 'practice', label: 'Practice Workspace', icon: Calculator },
-    { id: 'abacus', label: 'Soroban Studio (A01)', icon: Layers },
+    { id: 'lesson', label: 'Lessons (12 Pilot Units)', icon: BookOpen },
+    { id: 'practice', label: 'Practice Workspace (9 Families)', icon: Calculator },
+    { id: 'abacus', label: 'Soroban Studio (A01/A02)', icon: Layers },
     { id: 'mastery', label: 'Mastery & Ledger', icon: Award },
   ];
 
@@ -34,10 +40,37 @@ export const Header: React.FC<HeaderProps> = ({
         </div>
 
         <div className="axiom-status-bar">
-          <div className="axiom-badge axiom-badge-guest" title="Local guest study mode with client-side persistence">
-            <ShieldCheck size={14} />
-            <span>Guest Mode (Local)</span>
+          {/* Dual Mode Switcher */}
+          <button
+            className={`axiom-badge axiom-badge-guest ${syncMode === 'cloud' ? 'axiom-badge-cloud' : ''}`}
+            onClick={onToggleSyncMode}
+            title={syncMode === 'cloud' ? "Cloud API Mode: Attempts and ledger synchronize with backend" : "Local Mode: Pure offline Rust WASM evaluation with client persistence"}
+            style={{ cursor: 'pointer', border: '1px solid rgba(255,255,255,0.1)' }}
+          >
+            {syncMode === 'cloud' ? (
+              <>
+                <Cloud size={14} className="axiom-accent" />
+                <span>Cloud API Sync</span>
+              </>
+            ) : (
+              <>
+                <ShieldCheck size={14} />
+                <span>Local Engine (Guest)</span>
+              </>
+            )}
+          </button>
+
+          {/* Network Indicator */}
+          <div
+            className="axiom-badge"
+            title={isOnline ? "Network Connected" : "Operating in Offline Mode"}
+            style={{ opacity: 0.85 }}
+          >
+            {isOnline ? <span style={{ width: 8, height: 8, borderRadius: '50%', background: '#10b981' }} /> : <CloudOff size={14} className="axiom-warning" />}
+            <span>{isOnline ? "PWA Ready" : "Offline Cache"}</span>
           </div>
+
+          {/* XP & Ledger status */}
           <div className="axiom-badge axiom-badge-xp" title="Total experience points earned from verified attempts">
             <Award size={14} />
             <span><strong>{totalXp}</strong> XP</span>

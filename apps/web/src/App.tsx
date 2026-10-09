@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Header } from './components/Header';
 import { CurriculumAtlas } from './components/CurriculumAtlas';
-import { FractionLesson } from './components/FractionLesson';
+import { LessonViewer } from './components/LessonViewer';
 import { PracticeWorkspace } from './components/PracticeWorkspace';
 import { AbacusStudio } from './components/AbacusStudio';
 import { MasteryDashboard } from './components/MasteryDashboard';
@@ -10,6 +10,12 @@ import './index.css';
 
 export const App: React.FC = () => {
   const [currentTab, setCurrentTab] = useState<string>('atlas');
+  const [activeLessonId, setActiveLessonId] = useState<string>('foundation.fractions.compare');
+  const [activeTemplateId, setActiveTemplateId] = useState<string>('fractions.compare.positive');
+  const [syncMode, setSyncMode] = useState<'local' | 'cloud'>(() => {
+    return (localStorage.getItem('axiom_sync_mode') as 'local' | 'cloud') || 'local';
+  });
+
   const [ledgerEntries, setLedgerEntries] = useState<RewardEntry[]>(() => {
     const saved = localStorage.getItem('axiom_reward_ledger');
     if (saved) {
@@ -42,6 +48,10 @@ export const App: React.FC = () => {
   useEffect(() => {
     localStorage.setItem('axiom_provisional_unlocked', provisionalUnlocked.toString());
   }, [provisionalUnlocked]);
+
+  useEffect(() => {
+    localStorage.setItem('axiom_sync_mode', syncMode);
+  }, [syncMode]);
 
   const ledger = new ClientRewardLedger(ledgerEntries);
   const totalXp = ledger.getTotalXp();
@@ -78,13 +88,31 @@ export const App: React.FC = () => {
   };
 
   const handleSelectCourse = (courseId: string) => {
-    if (courseId === 'F04') {
+    const courseLessonMap: Record<string, string> = {
+      'F01': 'foundation.place_value.decimal_expansion',
+      'F02': 'foundation.arithmetic.addition_disjoint',
+      'F04': 'foundation.fractions.compare',
+      'A01': 'abacus.orientation.place_value',
+      'A02': 'abacus.direct.addition',
+    };
+
+    if (courseLessonMap[courseId]) {
+      setActiveLessonId(courseLessonMap[courseId]);
       setCurrentTab('lesson');
-    } else if (courseId === 'A01' || courseId === 'A02') {
-      setCurrentTab('abacus');
     } else {
       setCurrentTab('practice');
     }
+  };
+
+  const handleStartPracticeFromLesson = (tmpl?: string) => {
+    if (tmpl) {
+      setActiveTemplateId(tmpl);
+    }
+    setCurrentTab('practice');
+  };
+
+  const handleToggleSyncMode = () => {
+    setSyncMode((prev) => (prev === 'local' ? 'cloud' : 'local'));
   };
 
   return (
@@ -94,6 +122,9 @@ export const App: React.FC = () => {
         onTabChange={setCurrentTab}
         totalXp={totalXp}
         todayPracticeXp={todayPracticeXp}
+        syncMode={syncMode}
+        onToggleSyncMode={handleToggleSyncMode}
+        isOnline={navigator.onLine}
       />
 
       <main className="axiom-main-content">
@@ -102,13 +133,17 @@ export const App: React.FC = () => {
         )}
 
         {currentTab === 'lesson' && (
-          <FractionLesson onStartPractice={() => setCurrentTab('practice')} />
+          <LessonViewer
+            initialLessonId={activeLessonId}
+            onStartPractice={handleStartPracticeFromLesson}
+          />
         )}
 
         {currentTab === 'practice' && (
           <PracticeWorkspace
             onAwardXp={handleAwardXp}
             onRecordMasteryEvidence={handleRecordMasteryEvidence}
+            initialTemplateId={activeTemplateId}
           />
         )}
 

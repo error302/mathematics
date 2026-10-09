@@ -268,6 +268,107 @@ export function generateExercise(template_id: string, seed_hex: string, difficul
     };
   }
 
+  if (template_id === "fractions.unit.identify") {
+    const d = rng.uniformInclusive(2, 12);
+    return {
+      template_id,
+      seed_hex,
+      prompt_text: `A unit strip is divided into ${d} equal parts. What unit fraction represents 1 of these parts?`,
+      prompt_latex: `\\text{Partition of 1 into } ${d} \\text{ equal parts} \\implies \\frac{1}{${d}}`,
+      prompt_speech: `A unit strip is divided into ${d} equal parts. What unit fraction represents 1 of these parts?`,
+      answer_kind: "rational",
+      target_value: `1/${d}`,
+      metadata: {
+        target_denominator: d,
+        target_numerator: 1,
+      },
+    };
+  }
+
+  if (template_id === "arithmetic.column.addition") {
+    const a = rng.uniformInclusive(25, 78);
+    const b = rng.uniformInclusive(17, 89);
+    const sum = a + b;
+    return {
+      template_id,
+      seed_hex,
+      prompt_text: `Calculate the sum: ${a} + ${b} with regrouping.`,
+      prompt_latex: `\\begin{array}{r@{\\quad}l} & ${a} \\\\[-2pt] + & ${b} \\\\ \\hline & ? \\end{array}`,
+      prompt_speech: `Calculate ${a} plus ${b} with carry.`,
+      answer_kind: "integer",
+      target_value: sum.toString(),
+      metadata: { operand1: a, operand2: b },
+    };
+  }
+
+  if (template_id === "arithmetic.column.subtraction") {
+    let a = rng.uniformInclusive(42, 95);
+    let b = rng.uniformInclusive(18, 76);
+    if (a < b) { const t = a; a = b; b = t; }
+    const diff = a - b;
+    return {
+      template_id,
+      seed_hex,
+      prompt_text: `Calculate the difference: ${a} - ${b} with borrowing.`,
+      prompt_latex: `\\begin{array}{r@{\\quad}l} & ${a} \\\\[-2pt] - & ${b} \\\\ \\hline & ? \\end{array}`,
+      prompt_speech: `Calculate ${a} minus ${b} with borrow.`,
+      answer_kind: "integer",
+      target_value: diff.toString(),
+      metadata: { minuend: a, subtrahend: b },
+    };
+  }
+
+  if (template_id === "place_value.decompose") {
+    const num = rng.uniformInclusive(125, 984);
+    const places = [
+      { name: "units", weight: 1 },
+      { name: "tens", weight: 10 },
+      { name: "hundreds", weight: 100 },
+    ];
+    const pick = places[rng.uniformInclusive(0, 2)];
+    const digit = Math.floor(num / pick.weight) % 10;
+    const placeValue = digit * pick.weight;
+
+    return {
+      template_id,
+      seed_hex,
+      prompt_text: `In the number ${num}, what is the place value of the digit in the ${pick.name} place?`,
+      prompt_latex: `\\text{In the number } ${num} \\text{, value of the } ${pick.name} \\text{ place?}`,
+      prompt_speech: `In the number ${num}, what is the value of the digit in the ${pick.name} place?`,
+      answer_kind: "integer",
+      target_value: placeValue.toString(),
+      metadata: { num, place_name: pick.name, digit, place_value: placeValue },
+    };
+  }
+
+  if (template_id === "abacus.read.state") {
+    const val = rng.uniformInclusive(1, 99);
+    return {
+      template_id,
+      seed_hex,
+      prompt_text: `Read the value on the soroban abacus rods: set to ${val}.`,
+      prompt_latex: `\\text{Soroban integer value: } ?`,
+      prompt_speech: `Read the soroban abacus representing ${val}.`,
+      answer_kind: "integer",
+      target_value: val.toString(),
+      metadata: { target: val },
+    };
+  }
+
+  if (template_id === "abacus.target.setting") {
+    const val = rng.uniformInclusive(1, 99);
+    return {
+      template_id,
+      seed_hex,
+      prompt_text: `Set the soroban abacus to represent ${val}.`,
+      prompt_latex: `\\text{Set soroban to } ${val}`,
+      prompt_speech: `Set the soroban abacus to represent ${val}.`,
+      answer_kind: "soroban_state",
+      target_value: val.toString(),
+      metadata: { target: val },
+    };
+  }
+
   // Default: whole addition
   const a = rng.uniformInclusive(12, 79);
   const b = rng.uniformInclusive(15, 88);

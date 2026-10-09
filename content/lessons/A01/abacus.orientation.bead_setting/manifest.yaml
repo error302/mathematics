@@ -1,0 +1,33 @@
+schema_version: 1
+id: abacus.orientation.bead_setting.lesson
+version: 1.0.0
+locale: en
+status: published
+course_id: A01
+unit_id: abacus.orientation.bead_setting
+outcomes:
+  - "Demonstrate tactile bead setting for digits 0 through 9 on a single Soroban rod."
+  - "Master the clear gesture (neutral position where all beads are away from the beam)."
+skill_ids:
+  - abacus.bead_setting
+prerequisites:
+  required:
+    - abacus.orientation.place_value
+  recommended: []
+exercise_refs:
+  - template_id: abacus.read.state
+    template_version: 1.0.0
+    difficulty_band: 1
+  - template_id: abacus.target.setting
+    template_version: 1.0.0
+    difficulty_band: 1
+assessment_dimensions:
+  - procedural
+  - conceptual
+content_file: lesson.en.md
+license_id: axiom-original-content
+source_refs: []
+review_record_ids:
+  - review-math-001
+  - review-pedagogy-001
+  - review-a11y-001

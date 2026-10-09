@@ -1,0 +1,31 @@
+schema_version: 1
+id: foundation.fractions.unit_fractions.lesson
+version: 1.0.0
+locale: en
+status: published
+course_id: F04
+unit_id: foundation.fractions.unit_fractions
+outcomes:
+  - "Define a unit fraction 1/n as one of n equal parts of a whole."
+  - "Understand the reciprocal relationship between partition size n and part magnitude."
+skill_ids:
+  - foundation.fractions.unit_partition
+prerequisites:
+  required:
+    - foundation.arithmetic.division_partition
+  recommended:
+    - foundation.numberline.partition
+exercise_refs:
+  - template_id: fractions.unit.identify
+    template_version: 1.0.0
+    difficulty_band: 1
+assessment_dimensions:
+  - conceptual
+  - procedural
+content_file: lesson.en.md
+license_id: axiom-original-content
+source_refs: []
+review_record_ids:
+  - review-math-001
+  - review-pedagogy-001
+  - review-a11y-001

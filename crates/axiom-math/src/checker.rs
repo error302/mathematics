@@ -100,6 +100,7 @@ pub fn check(
         "fraction-form-v1" => check_fraction_form(problem, trimmed, budget),
         "integer-exact-v1" => check_integer_exact(problem, trimmed, budget),
         "rational-equality-v1" => check_rational_equality(problem, trimmed, budget),
+        "abacus-state-v1" => check_abacus_state(problem, trimmed, budget),
         _ => GradeOutcome::unsupported(
             checker_version,
             "unsupported_checker",
@@ -311,6 +312,28 @@ fn check_rational_equality(problem: &ProblemArtifact, raw_answer: &str, budget: 
     }
 }
 
+/// Checks Soroban abacus state submissions.
+fn check_abacus_state(problem: &ProblemArtifact, raw_answer: &str, budget: &MathBudget) -> GradeOutcome {
+    if raw_answer.trim_start().starts_with('{') {
+        if let Ok(state) = serde_json::from_str::<crate::abacus::AbacusState>(raw_answer) {
+            let val = state.compute_value();
+            let target_str = match &problem.target_value {
+                Some(t) => t,
+                None => return GradeOutcome::unsupported("abacus-state-v1", "missing_target", "Missing target."),
+            };
+            if let Ok(target_int) = target_str.parse::<i64>() {
+                if val == crate::number::int(target_int) {
+                    return GradeOutcome::correct("abacus-state-v1", format!("Correct! The Soroban rods correctly represent {target_int}."));
+                } else {
+                    return GradeOutcome::incorrect("abacus-state-v1", "state_value_mismatch", format!("The abacus rods currently display {}, but the target is {target_int}.", crate::number::to_canonical(&val)));
+                }
+            }
+        }
+    }
+    // Fall back to scalar evaluation (if learner typed an integer expression or number directly)
+    check_integer_exact(problem, raw_answer, budget)
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -340,5 +363,39 @@ mod tests {
         let budget = MathBudget::default();
         let outcome = check(&p, "1 2 3", &budget);
         assert_eq!(outcome.disposition, Disposition::Malformed);
+    }
+
+    #[test]
+    fn check_abacus_target_setting() {
+        let p = generate("abacus.target.setting", "1.0.0", SEED, 1, MANIFEST_HASH).unwrap();
+        let target = p.target_value.as_ref().unwrap();
+        let budget = MathBudget::default();
+        let outcome = check(&p, target, &budget);
+        assert_eq!(outcome.disposition, Disposition::Correct);
+    }
+
+    #[test]
+    fn check_new_exercise_families() {
+        let budget = MathBudget::default();
+
+        // 1. fractions.unit.identify
+        let p = generate("fractions.unit.identify", "1.0.0", SEED, 1, MANIFEST_HASH).unwrap();
+        let target = p.target_value.as_ref().unwrap();
+        assert_eq!(check(&p, target, &budget).disposition, Disposition::Correct);
+
+        // 2. arithmetic.column.addition
+        let p = generate("arithmetic.column.addition", "1.0.0", SEED, 1, MANIFEST_HASH).unwrap();
+        let target = p.target_value.as_ref().unwrap();
+        assert_eq!(check(&p, target, &budget).disposition, Disposition::Correct);
+
+        // 3. arithmetic.column.subtraction
+        let p = generate("arithmetic.column.subtraction", "1.0.0", SEED, 1, MANIFEST_HASH).unwrap();
+        let target = p.target_value.as_ref().unwrap();
+        assert_eq!(check(&p, target, &budget).disposition, Disposition::Correct);
+
+        // 4. place_value.decompose
+        let p = generate("place_value.decompose", "1.0.0", SEED, 1, MANIFEST_HASH).unwrap();
+        let target = p.target_value.as_ref().unwrap();
+        assert_eq!(check(&p, target, &budget).disposition, Disposition::Correct);
     }
 }

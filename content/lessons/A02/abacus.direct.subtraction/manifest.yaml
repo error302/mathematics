@@ -1,0 +1,33 @@
+schema_version: 1
+id: abacus.direct.subtraction.lesson
+version: 1.0.0
+locale: en
+status: published
+course_id: A02
+unit_id: abacus.direct.subtraction
+outcomes:
+  - "Perform direct subtraction on single and multi-rod Soroban configurations when sufficient active beads are touching the beam."
+  - "Understand the direct subtraction boundary without borrowing or 5-complement decomposition."
+skill_ids:
+  - abacus.direct_subtraction
+prerequisites:
+  required:
+    - abacus.direct.addition
+  recommended: []
+exercise_refs:
+  - template_id: abacus.target.setting
+    template_version: 1.0.0
+    difficulty_band: 1
+  - template_id: arithmetic.column.subtraction
+    template_version: 1.0.0
+    difficulty_band: 1
+assessment_dimensions:
+  - procedural
+  - conceptual
+content_file: lesson.en.md
+license_id: axiom-original-content
+source_refs: []
+review_record_ids:
+  - review-math-001
+  - review-pedagogy-001
+  - review-a11y-001

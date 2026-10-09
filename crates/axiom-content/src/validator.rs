@@ -21,8 +21,13 @@ pub enum ValidationError {
 const SUPPORTED_TEMPLATES: &[&str] = &[
     "fractions.compare.positive",
     "fractions.equivalent.find",
+    "fractions.unit.identify",
     "arithmetic.whole.addition",
+    "arithmetic.column.addition",
+    "arithmetic.column.subtraction",
+    "place_value.decompose",
     "abacus.read.state",
+    "abacus.target.setting",
 ];
 
 /// Validates a single lesson manifest.

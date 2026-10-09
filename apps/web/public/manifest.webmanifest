@@ -1,0 +1,17 @@
+{
+  "name": "AXIOM Mathematics Academy",
+  "short_name": "AXIOM",
+  "description": "Rigorous mathematics and soroban academy with exact arithmetic and reproducible evidence.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#090d16",
+  "theme_color": "#090d16",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

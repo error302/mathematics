@@ -1,0 +1,23 @@
+[package]
+name = "axiom-api"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+axiom-types = { path = "../axiom-types" }
+axiom-math.workspace = true
+axiom-learning.workspace = true
+axiom-content.workspace = true
+axiom-storage = { path = "../axiom-storage" }
+serde.workspace = true
+serde_json.workspace = true
+uuid.workspace = true
+chrono.workspace = true
+tokio.workspace = true
+thiserror.workspace = true
+axum = "0.8"
+tower = "0.5"
+tower-http = { version = "0.6", features = ["cors", "trace"] }
+tracing = "0.1"
+tracing-subscriber = "0.3"
