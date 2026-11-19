@@ -1,0 +1,36 @@
+schema_version: 1
+id: "proof.logic.implication_and_quantifiers.lesson"
+version: "1.1.0"
+locale: "en"
+status: "draft"
+course_id: "P01"
+unit_id: "proof.logic.implication_and_quantifiers"
+outcomes:
+  - "Evaluate logical implications P(x) => Q(x) over finite domains, accounting for vacuous truth when P(x) is false."
+  - "Negate universal and existential quantified statements accurately (~(forall x, P(x)) <=> exists x, ~P(x)) including boundary inequalities."
+  - "Count satisfying truth-table assignments for multi-variable logical implications."
+skill_ids:
+  - "proof.logic.implication_and_quantifiers"
+prerequisites:
+  required:
+    - "proof.sets.operations_and_inclusion_exclusion"
+  recommended:
+    - "secondary.algebra.linear_equations"
+exercise_refs:
+  - template_id: "proof.logic_truth_quantifiers"
+    template_version: "1.1.0"
+    difficulty_band: 1
+  - template_id: "proof.logic_truth_quantifiers"
+    template_version: "1.1.0"
+    difficulty_band: 2
+  - template_id: "proof.logic_truth_quantifiers"
+    template_version: "1.1.0"
+    difficulty_band: 3
+assessment_dimensions:
+  - "conceptual"
+  - "procedural"
+  - "transfer"
+content_file: "lesson.en.md"
+license_id: "axiom-original-content"
+source_refs: []
+review_record_ids: []

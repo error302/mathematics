@@ -1,0 +1,23 @@
+{
+  "branding_unchanged": {
+    "apps\\web\\public\\apple-touch-icon.png": true,
+    "apps\\web\\public\\icon.png": true,
+    "apps\\web\\public\\icon.svg": true,
+    "apps\\web\\public\\logo.png": true
+  },
+  "source_of_truth_unchanged_normalized": {
+    "AXIOM-SOURCE-OF-TRUTH.md": true,
+    "docs\\AXIOM-SOURCE-OF-TRUTH.md": true
+  },
+  "rust_workspace_tests": {
+    "passed": 52,
+    "failed": 0,
+    "command": "cargo test --workspace --locked --offline"
+  },
+  "content_metadata": {
+    "draft_manifests_validated": 12,
+    "human_review": false
+  },
+  "wasm_build": "passed development build",
+  "web_build": "passed TypeScript and Vite, raw chunk-size warning remains"
+}

@@ -1,0 +1,24 @@
+{
+  "passed": true,
+  "evidence": [
+    "Application boots with the actual Rust WASM module.",
+    "All nine exercise families reproduce identical native-Rust and browser-worker artifacts for the zero seed.",
+    "Malformed integer suffix is rejected in the actual browser flow.",
+    "A repeated successful submission does not duplicate its reward.",
+    "Equivalent unit-fraction expressions are accepted by the shared exact checker.",
+    "Unfinished practice input survives page reload and returning to its exercise family.",
+    "Expanded content is rendered from lesson files and reasoning drafts survive lesson changes.",
+    "No fabricated mastery percentages or audit-verification claims are displayed.",
+    "The tested progress journey has no page-wide overflow at 320 CSS pixels.",
+    "Atlas, lessons, practice, abacus, and progress fit at 320 CSS pixels without page-wide overflow.",
+    "Soroban value uses Rust; Enter activates the focused upper-bead control.",
+    "The equivalent accessible lower-bead selector changes the Rust-checked value."
+  ],
+  "browser": "Installed Chrome, fresh Playwright context",
+  "errors": [],
+  "limits": [
+    "No human content review or full screen-reader audit",
+    "No deployed account/storage validation",
+    "Service-worker offline behavior requires separate production-preview checks"
+  ]
+}

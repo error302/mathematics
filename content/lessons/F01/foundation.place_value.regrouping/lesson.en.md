@@ -35,3 +35,48 @@ It merely changes the partition into canonical positional representatives.
 
 ## 7. Reflection
 Regrouping is the bridge between concrete physical counting and abstract columnar computation.
+
+
+## Additional learning activities (draft)
+
+**Review status:** Independent human review is pending. These activities do not award certified mastery.
+
+### Prerequisite check
+
+One ten is exactly ten units. Regrouping changes the description but preserves the number.
+
+### Representation
+
+Build 14 from fourteen units, then exchange ten units for one ten rod. Both collections have the same total: 1 ten + 4 units.
+
+### Complete a partly worked problem
+
+27 units = __ tens + __ units. 3 tens + 16 units = __ tens + __ units.
+
+Self-check: 27 units = 2 tens + 7 units; 3 tens + 16 units = 4 tens + 6 units.
+
+### Independent practice
+
+1. Give 53 as tens/units, then exchange a ten into units.
+
+   Self-check: 5 tens + 3 units = 4 tens + 13 units.
+
+2. Is 2 hundreds + 13 tens + 4 units equal to 234? Explain.
+
+   Self-check: No; it is 200 + 130 + 4 = 334.
+
+### Explain your reasoning
+
+Why does carrying one ten not add an extra ten to the original quantity? Explain the exchange rather than reciting the algorithm.
+
+### Transfer to a new situation
+
+You must remove 8 single beads from 32 stored as 3 bundles of ten and 2 singles. Show the exchange first.
+
+Self-check: 32 = 2 tens + 12 singles. Remove 8 singles to leave 2 tens + 4 singles = 24.
+
+### Retrieve after a delay
+
+Tomorrow express 41 as 3 tens and some units. A week later explain both bundling and unbundling using 106.
+
+The learner-facing presentation and these activities are stored in `lesson.json` beside this file.

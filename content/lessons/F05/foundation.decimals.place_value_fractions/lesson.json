@@ -1,0 +1,66 @@
+{
+  "id": "foundation.decimals.place_value_fractions",
+  "courseId": "F05",
+  "title": "Decimals as fractions with powers-of-ten denominators",
+  "subtitle": "Connect tenths, hundredths, and thousandths to base-ten place value.",
+  "templateId": "decimals.fraction_convert",
+  "challenge": "A runner's split time is recorded as 14.35 seconds. What exact rational fraction of a second does the 0.35 portion represent?",
+  "predictionPrompt": "Which rational fraction is exactly equivalent to the decimal 0.35?",
+  "predictionOptions": [
+    {
+      "label": "35/10",
+      "value": "35_10"
+    },
+    {
+      "label": "7/20 (which is 35/100)",
+      "value": "7_20",
+      "isCorrect": true
+    },
+    {
+      "label": "35/1000",
+      "value": "35_1000"
+    },
+    {
+      "label": "3/5",
+      "value": "3_5"
+    }
+  ],
+  "formalDefinition": "A finite decimal 0.d_1 d_2 ... d_k represents the exact rational number d_1/10 + d_2/100 + ... + d_k/10^k = (d_1 d_2 ... d_k) / 10^k. Each position to the right of the decimal point divides the unit value by ten.",
+  "workedExample": {
+    "steps": [
+      "Identify the place value of the final digit: in 0.35, '3' is in the tenths place (3/10) and '5' is in the hundredths place (5/100).",
+      "Combine into a single fraction over the common denominator 100: 30/100 + 5/100 = 35/100.",
+      "Simplify to lowest terms by dividing numerator and denominator by gcd(35, 100) = 5: (35 ÷ 5) / (100 ÷ 5) = 7/20."
+    ],
+    "result": "Thus 0.35 = 35/100 = 7/20 in canonical simplest form."
+  },
+  "misconception": {
+    "mistake": "Believing 0.35 is greater than 0.7 because 35 is a larger whole number than 7.",
+    "correction": "Compare by place value from left to right: 0.7 = 7 tenths = 70 hundredths (70/100), whereas 0.35 = 3 tenths and 5 hundredths (35/100). 70/100 is twice as large as 35/100."
+  },
+  "reflection": "A decimal is just place value continued to the right of the units place using negative powers of ten (1/10, 1/100, 1/1000). To convert any fraction to a terminating decimal, find an equivalent fraction whose denominator is a power of 10.",
+  "prerequisiteCheck": "Explain why 1/10 is ten times smaller than 1, and 1/100 is ten times smaller than 1/10.",
+  "representation": "Imagine a 10×10 grid of 100 small squares representing 1 whole. 1 column of 10 squares is 1 tenth (0.1 = 10/100). 3 full columns plus 5 small squares equal 35 hundredths (0.35 = 35/100).",
+  "faded": {
+    "prompt": "Convert 3/4 to a decimal: Multiply numerator and denominator by 25 to make the denominator 100: (3 × 25) / (4 × 25) = __ / 100 = __.",
+    "solution": "75/100 = 0.75."
+  },
+  "independent": [
+    {
+      "prompt": "Convert 0.6 to a canonical fraction in lowest terms.",
+      "solution": "0.6 = 6/10 = 3/5."
+    },
+    {
+      "prompt": "Convert 13/20 to a finite decimal.",
+      "solution": "Multiply numerator and denominator by 5: (13 × 5) / (20 × 5) = 65/100 = 0.65."
+    }
+  ],
+  "explanation": "Why do only fractions whose simplified denominator contains no prime factors other than 2 and 5 yield terminating decimals in base ten?",
+  "transfer": {
+    "prompt": "A digital scale shows 0.125 kg. Express this reading as an exact simplified fraction of a kilogram.",
+    "solution": "0.125 = 125/1000. Dividing both by gcd(125, 1000) = 125 gives 1/8 kg."
+  },
+  "retrieval": "Tomorrow, without consulting notes, convert 0.45 into a simplified fraction and 7/25 into a decimal.",
+  "contentStatus": "draft",
+  "reviewStatus": "independent_review_pending"
+}

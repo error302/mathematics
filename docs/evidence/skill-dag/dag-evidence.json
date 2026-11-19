@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "checks": [
+    "Knowledge Graph renders all 83 courses across all 7 stages in an interactive SVG canvas.",
+    "Selecting F04 (Fractions) dynamically highlights upstream prerequisites (3) and downstream unlocked courses (67).",
+    "Clicking prerequisite chip in drawer smoothly transitions focus to prerequisite course F02.",
+    "Stage filter chips correctly isolate specific degree bands (e.g., Undergraduate 24 courses).",
+    "Topological flow layout toggle successfully reorganizes graph along dependency depth.",
+    "Search input dynamically filters graph nodes in real-time."
+  ],
+  "errors": []
+}

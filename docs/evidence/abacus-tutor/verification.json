@@ -1,0 +1,14 @@
+{
+  "rust_workspace_tests": 55,
+  "failed": 0,
+  "trainer_browser_checks": 10,
+  "offline_guided_and_mental_check": true,
+  "source_of_truth_1_1_unchanged": true,
+  "branding_unchanged": {
+    "apps\\web\\public\\apple-touch-icon.png": true,
+    "apps\\web\\public\\icon.png": true,
+    "apps\\web\\public\\icon.svg": true,
+    "apps\\web\\public\\logo.png": true
+  },
+  "limits": "Draft beginner workshop; final-answer checking, no observed mental technique or trusted retention."
+}

@@ -4,6 +4,7 @@
 //! append-only reward ledger, and deterministic next-activity selection.
 
 pub mod mastery;
+pub mod journey;
 pub mod rewards;
 pub mod schedule;
 

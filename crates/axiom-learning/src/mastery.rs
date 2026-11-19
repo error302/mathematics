@@ -55,6 +55,9 @@ impl DimensionScore {
     }
 
     pub fn record_evidence(&mut self, score: BigRational, weight: BigRational, family: &str) {
+        if weight <= BigRational::zero() || score < BigRational::zero() || score > BigRational::one() {
+            return;
+        }
         let one = BigRational::one();
         self.alpha += &weight * &score;
         self.beta += &weight * (one - score);
@@ -122,19 +125,19 @@ impl ConceptMastery {
             }
         }
 
-        let procedural_idx = self.get_score_mut(Dimension::Procedural).evidence_index();
-        let passes_provisional = procedural_idx >= 0.80
+        let threshold = BigRational::new(4.into(), 5.into());
+        let required_dimensions_pass = self.scores.iter().all(|score|
+            score.eligible_units >= 3 && &score.alpha / (&score.alpha + &score.beta) >= threshold
+        );
+        let passes_provisional = required_dimensions_pass
             && total_units >= 6
             && all_families.len() >= 3;
 
         if passes_provisional {
             self.provisional_reached = true;
-            if self.successful_retrievals >= 2 && self.transfer_passed {
-                self.secure_reached = true;
-                self.state = MasteryState::Secure;
-            } else {
-                self.state = MasteryState::Provisional;
-            }
+            // Counters alone cannot establish 24-hour/7-day intervals or trusted transfer evidence.
+            // Secure retention remains gated until timestamped evidence is implemented.
+            self.state = MasteryState::Provisional;
         } else if total_units > 0 {
             self.state = MasteryState::Learning;
         } else {
@@ -176,6 +179,24 @@ mod tests {
             );
         }
 
+        assert_eq!(mastery.evaluate_state(), MasteryState::Learning);
+        for dimension in [Dimension::Conceptual, Dimension::Reasoning, Dimension::Transfer] {
+            for index in 0..3 {
+                mastery.get_score_mut(dimension).record_evidence(BigRational::one(), BigRational::one(), &format!("fam_{index}"));
+            }
+        }
         assert_eq!(mastery.evaluate_state(), MasteryState::Provisional);
+        mastery.successful_retrievals = 2;
+        mastery.transfer_passed = true;
+        assert_eq!(mastery.evaluate_state(), MasteryState::Provisional);
+    }
+
+    #[test]
+    fn assisted_zero_weight_is_not_independent_evidence() {
+        let mut score = DimensionScore::new(Dimension::Procedural);
+        score.record_evidence(BigRational::one(), BigRational::zero(), "assisted");
+        assert_eq!(score.eligible_units, 0);
+        assert!(score.distinct_families.is_empty());
+        assert_eq!(score.evidence_index(), 0.5);
     }
 }

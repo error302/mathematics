@@ -5,7 +5,7 @@
   --bg-highlight: #223052;
   --text-primary: #f8fafc;
   --text-secondary: #94a3b8;
-  --text-muted: #64748b;
+  --text-muted: #94a3b8;
   --accent-gold: #fbbf24;
   --accent-primary: #6366f1;
   --accent-primary-hover: #4f46e5;
@@ -1161,7 +1161,23 @@ kbd {
   }
   .axiom-header {
     padding: 0.75rem 1rem 0.5rem;
+    position: static;
   }
+  .axiom-header-top { flex-wrap: wrap; gap: 0.75rem; min-width: 0; }
+  .axiom-status-bar { flex-wrap: wrap; width: 100%; gap: 0.4rem; }
+  .axiom-brand { min-width: 0; }
+  .axiom-card-grid { grid-template-columns: minmax(0, 1fr); }
+  .axiom-table-wrapper { max-width: 100%; }
+  .axiom-backup-actions { flex-wrap: wrap; }
+  .axiom-select, .axiom-select-wide { max-width: 100%; min-width: 0; }
+  .axiom-template-selector { min-width: 0; width: 100%; }
+  .axiom-template-selector .axiom-select { width: 100%; }
+  .axiom-math-large { max-width: 100%; overflow-x: auto; }
+  .axiom-lesson-nav-bar .axiom-select { width: 100%; }
+  .axiom-btn { max-width: 100%; white-space: normal; }
+  .axiom-btn span { min-width: 0; overflow-wrap: anywhere; }
+  .axiom-abacus-value-banner { flex-wrap: wrap; }
+  .axiom-speech-box { min-width: 0; max-width: 100%; }
   .axiom-main-content {
     padding: 1rem;
   }
@@ -1172,4 +1188,14 @@ kbd {
     width: 36px;
     min-width: 36px;
   }
+}
+
+.axiom-section details { margin: 0.75rem 0 1.25rem; }
+.axiom-section summary { min-height: 44px; cursor: pointer; padding: 0.5rem 0; color: var(--accent-gold); }
+.axiom-section textarea { display: block; width: 100%; margin-top: 0.5rem; }
+.axiom-bead-accessible-controls { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 0.75rem; margin-top: 1rem; }
+.axiom-bead-accessible-controls label { display: flex; flex-direction: column; }
+.axiom-bead-accessible-controls select { min-height: 44px; }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
 }

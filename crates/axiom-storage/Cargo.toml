@@ -3,9 +3,10 @@ name = "axiom-storage"
 version.workspace = true
 edition.workspace = true
 license.workspace = true
+publish.workspace = true
 
 [dependencies]
-axiom-types = { path = "../axiom-types" }
+axiom-types.workspace = true
 axiom-math.workspace = true
 axiom-learning.workspace = true
 serde.workspace = true

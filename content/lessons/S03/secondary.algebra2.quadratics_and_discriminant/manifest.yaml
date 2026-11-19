@@ -1,0 +1,31 @@
+schema_version: 1
+id: secondary.algebra2.quadratics_and_discriminant.lesson
+version: 1.1.0
+locale: en
+status: draft
+course_id: S03
+unit_id: secondary.algebra2.quadratics_and_discriminant
+outcomes:
+  - Derive the quadratic formula by completing the square on ax^2 + bx + c = 0 and compute the exact discriminant Delta = b^2 - 4ac.
+  - Classify root multiplicity and solve for parameters yielding repeated roots (Delta = 0) or exact rational roots over Q.
+skill_ids:
+  - secondary.algebra2.completing_the_square
+  - secondary.algebra2.discriminant_and_roots
+prerequisites:
+  required:
+    - secondary.algebra2.factoring_and_vieta
+    - secondary.functions.vertex_and_transformations
+  recommended:
+    - secondary.algebra2.remainder_theorem
+exercise_refs:
+  - template_id: algebra2.quadratic_discriminant
+    template_version: 1.1.0
+    difficulty_band: 1
+assessment_dimensions:
+  - conceptual
+  - procedural
+  - transfer
+content_file: lesson.en.md
+license_id: axiom-original-content
+source_refs: []
+review_record_ids: []

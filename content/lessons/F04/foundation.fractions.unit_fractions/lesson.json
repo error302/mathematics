@@ -1,0 +1,63 @@
+{
+  "id": "foundation.fractions.unit_fractions",
+  "courseId": "F04",
+  "title": "Unit fractions: equal pieces of a whole",
+  "subtitle": "Divide a whole into equal parts and describe the size of one part.",
+  "templateId": "fractions.unit.identify",
+  "challenge": "A ribbon of length 1 meter is cut into 5 identical pieces. What fraction of the ribbon is each piece?",
+  "predictionPrompt": "If the ribbon was cut into 10 pieces instead of 5, would each piece be larger or smaller?",
+  "predictionOptions": [
+    {
+      "label": "1/10 is larger than 1/5",
+      "value": "larger"
+    },
+    {
+      "label": "1/10 is equal to 1/5",
+      "value": "equal"
+    },
+    {
+      "label": "1/10 is smaller than 1/5",
+      "value": "smaller",
+      "isCorrect": true
+    }
+  ],
+  "formalDefinition": "A unit fraction 1/n is one part when the whole is split into n equal parts; n must be a positive whole number. More equal parts of the same whole means smaller individual parts.",
+  "workedExample": {
+    "steps": [
+      "Partition the unit interval [0, 1] into 5 equal sub-intervals.",
+      "Each segment has length 1/5.",
+      "Summing all 5 parts restores the whole: 1/5 + 1/5 + 1/5 + 1/5 + 1/5 = 5/5 = 1."
+    ],
+    "result": "Every proper fraction m/n is simply m copies of the unit fraction 1/n."
+  },
+  "misconception": {
+    "mistake": "1/8 is larger than 1/4 because 8 is larger than 4.",
+    "correction": "The denominator indicates division: cutting a pie into 8 slices yields smaller slices than cutting into 4."
+  },
+  "reflection": "Unit fractions are the elemental basis of all rational numbers. Understanding 1/n grounds all fraction arithmetic.",
+  "prerequisiteCheck": "A whole must be identified and the parts must be equal. Can four unequal ribbon pieces each be called one fourth?",
+  "representation": "Mark 0 and 1 on a strip. Put equally spaced marks at 1/5, 2/5, 3/5, and 4/5. One step has length 1/5; the endpoint is 5/5 = 1.",
+  "faded": {
+    "prompt": "A metre is divided into 6 equal pieces. One piece is __ of a metre. Four pieces are __ of a metre.",
+    "solution": "One piece is 1/6 metre; four pieces are 4/6 = 2/3 metre."
+  },
+  "independent": [
+    {
+      "prompt": "Which is larger: 1/7 or 1/4, using the same whole?",
+      "solution": "1/4 is larger because the whole is divided into fewer equal pieces."
+    },
+    {
+      "prompt": "How many copies of 1/8 make one whole?",
+      "solution": "8 copies; 8 × 1/8 = 1."
+    }
+  ],
+  "explanation": "Explain why denominators must be positive here, why 1/0 is undefined, and why equal-sized parts matter. You do not need a calculus argument about limits.",
+  "transfer": {
+    "prompt": "A 2-metre ribbon is divided into 8 equal pieces. What fraction of the ribbon is one piece, and what length is it?",
+    "solution": "One piece is 1/8 of the ribbon but 2/8 = 1/4 metre long. Fraction of the whole and measured length are different quantities."
+  },
+  "retrieval": "Tomorrow sketch a number line and locate 1/3. After a week, explain why 1/9 < 1/6 without a calculator.",
+  "contentStatus": "draft",
+  "reviewNote": "Expanded prototype lesson. Independent mathematical, pedagogical, and accessibility review is pending.",
+  "version": "1.1.0"
+}

@@ -1,0 +1,66 @@
+{
+  "id": "secondary.algebra.linear_equations",
+  "courseId": "S01",
+  "title": "Linear Equations and Equivalence Transformations",
+  "subtitle": "Solving ax + b = cx + d and k(ax + b) = cx + d over Q via reversible balance operations.",
+  "templateId": "algebra.linear_equation_solve",
+  "challenge": "To evaluate 3x + 5 when x is known, we multiply by 3 first and add 5 second. Why do we reverse that order—subtracting 5 first and dividing by 3 second—when solving 3x + 5 = 26 for an unknown x?",
+  "predictionPrompt": "What is the exact solution to 7x + 4 = 3x + 20?",
+  "predictionOptions": [
+    {
+      "label": "x = 2.4",
+      "value": "12/5"
+    },
+    {
+      "label": "x = 4",
+      "value": "4",
+      "isCorrect": true
+    },
+    {
+      "label": "x = 6",
+      "value": "6"
+    },
+    {
+      "label": "x = 16",
+      "value": "16"
+    }
+  ],
+  "formalDefinition": "A linear equation in one variable x over Q has the canonical form Ax = B with A != 0, which possesses the unique solution x = B / A in Q. Two equations are equivalent if they have the exact same solution set. Adding or subtracting the same polynomial on both sides, or multiplying/dividing both sides by the same non-zero rational constant c != 0, is an invertible equivalence transformation.",
+  "workedExample": {
+    "steps": [
+      "Task: Solve 3(2x + 4) = 2x + 19 for x over Q.",
+      "Expand the left-hand side using the distributive law: 6x + 12 = 2x + 19.",
+      "Subtract 2x and 12 from both sides to isolate the variable term on the left: (6 - 2)x = 19 - 12 => 4x = 7.",
+      "Divide both sides by the non-zero coefficient 4: x = 7/4. Check: 3(2(7/4) + 4) = 3(15/2) = 45/2, and 2(7/4) + 19 = 7/2 + 38/2 = 45/2."
+    ],
+    "result": "x = 7/4."
+  },
+  "misconception": {
+    "mistake": "Multiplying only the first term inside parentheses when expanding k(ax + b), or forgetting to flip the sign of a term when moving it across the equals sign.",
+    "correction": "Moving a term across the equals sign is shorthand for subtracting (or adding) that term on BOTH sides simultaneously. And k(ax + b) always expands to kax + kb."
+  },
+  "reflection": "Every step in solving a linear equation produces a simpler equation with the exact same root x, culminating in x = B/A.",
+  "prerequisiteCheck": "If 4 identical weights plus a 5 kg block balance a 21 kg block, how much does the 4-weight group weigh by itself?",
+  "representation": "Model ax + b = cx + d on a two-pan balance scale: removing c variable boxes from both pans and b unit weights from both pans preserves equilibrium.",
+  "faded": {
+    "prompt": "Solve 8x + 5 = 3x + 30: Subtract 3x from both sides to get __x + 5 = 30. Subtract 5 from both sides to get 5x = 25, so x = __.",
+    "solution": "5, then 5."
+  },
+  "independent": [
+    {
+      "prompt": "Solve for x: 5x + 9 = -11.",
+      "solution": "5x = -20 => x = -4."
+    },
+    {
+      "prompt": "Solve for x as an exact fraction: 2(3x + 2) = x + 15.",
+      "solution": "6x + 4 = x + 15 => 5x = 11 => x = 11/5."
+    }
+  ],
+  "explanation": "Why must we verify that the net coefficient of x is non-zero before dividing both sides?",
+  "transfer": {
+    "prompt": "Two repair plans charge as follows: Plan A costs a $15 base fee plus $8 per hour; Plan B costs a $35 base fee plus $4 per hour. For what number of hours h do both plans cost the exact same amount?",
+    "solution": "8h + 15 = 4h + 35 => 4h = 20 => h = 5 hours."
+  },
+  "retrieval": "List the three steps for solving k(ax + b) = cx + d over Q and state how to check the solution.",
+  "reviewNote": "Draft secondary lesson. Exact calculations verified by Rust engine."
+}

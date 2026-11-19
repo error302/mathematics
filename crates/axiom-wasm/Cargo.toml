@@ -13,5 +13,5 @@ crate-type = ["cdylib", "rlib"]
 wasm-bindgen = { workspace = true }
 serde = { workspace = true }
 serde_json = { workspace = true }
-axiom-math = { path = "../axiom-math" }
-axiom-learning = { path = "../axiom-learning" }
+axiom-math.workspace = true
+axiom-learning.workspace = true

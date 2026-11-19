@@ -1,0 +1,36 @@
+schema_version: 1
+id: "proof.sets.operations_and_inclusion_exclusion.lesson"
+version: "1.1.0"
+locale: "en"
+status: "draft"
+course_id: "P01"
+unit_id: "proof.sets.operations_and_inclusion_exclusion"
+outcomes:
+  - "Apply the two-set Principle of Inclusion-Exclusion |A U B| = |A| + |B| - |A n B| to avoid double-counting overlaps."
+  - "Compute the exact cardinality 2^n of a finite power set P(A) and count proper or non-empty proper subsets 2^n - 2."
+  - "Generalize Inclusion-Exclusion to three finite sets by adding back the triple intersection |A n B n C|."
+skill_ids:
+  - "proof.sets.operations_and_inclusion_exclusion"
+prerequisites:
+  required:
+    - "foundation.counting.permutations_and_combinations"
+  recommended:
+    - "secondary.sequences.recursion_and_binomial"
+exercise_refs:
+  - template_id: "proof.sets_and_cardinality"
+    template_version: "1.1.0"
+    difficulty_band: 1
+  - template_id: "proof.sets_and_cardinality"
+    template_version: "1.1.0"
+    difficulty_band: 2
+  - template_id: "proof.sets_and_cardinality"
+    template_version: "1.1.0"
+    difficulty_band: 3
+assessment_dimensions:
+  - "conceptual"
+  - "procedural"
+  - "transfer"
+content_file: "lesson.en.md"
+license_id: "axiom-original-content"
+source_refs: []
+review_record_ids: []

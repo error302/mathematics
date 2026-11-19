@@ -1,0 +1,29 @@
+{
+  "id": "secondary.calculus.derivatives_and_tangents",
+  "course_id": "S07",
+  "title": "Derivatives, The Power Rule & Tangent Lines",
+  "status": "draft",
+  "review_status": "independent_review_pending",
+  "version": "1.1.0",
+  "outcomes": [
+    "Differentiate polynomials exactly using the power rule and linearity, and evaluate f'(x_0) at a given point.",
+    "Construct the tangent line y = f(x_0) + f'(x_0)(x - x_0) to a curve and determine its exact y-intercept B.",
+    "Find exact rational critical points x where a quadratic curve has a horizontal tangent line f'(x) = 0."
+  ],
+  "prerequisites": [
+    "secondary.calculus.limits_and_continuity",
+    "secondary.geometry.lines_slopes_and_perpendicularity"
+  ],
+  "sections": {
+    "intuition": "A secant line through (x₀, f(x₀)) and (x₀ + h, f(x₀ + h)) measures the average rate of change over an interval of width h. As h → 0, the secant line pivots into the tangent line at x₀, and its limiting slope is the derivative f'(x₀). For any power x^n, expanding (x + h)^n by the Binomial Theorem shows that (x + h)^n - x^n = n x^(n-1) h + (higher powers of h); dividing by h and taking h → 0 proves the power rule d/dx(x^n) = n x^(n-1).",
+    "formal_definition": "1. Difference Quotient Definition: f'(x) = lim_{h→0} [f(x + h) - f(x)] / h.\n2. Power Rule & Linearity: For integers n ≥ 1 and constants c, d/dx(x^n) = n x^(n-1) and d/dx(c) = 0. Thus for f(x) = ax³ + bx² + cx + d, f'(x) = 3ax² + 2bx + c.\n3. Tangent Line at x = x₀: The line tangent to y = f(x) at (x₀, f(x₀)) has slope m = f'(x₀) and equation y = f'(x₀)(x - x₀) + f(x₀), with y-intercept B = f(x₀) - f'(x₀)x₀.\n4. Stationary / Critical Points: A differentiable function has a horizontal tangent at x if and only if f'(x) = 0.",
+    "worked_example": "Find the equation and y-intercept B of the line tangent to f(x) = 2x² + 3x + 5 at x₀ = 2.\n1. Evaluate the point on the curve: y₀ = f(2) = 2(4) + 3(2) + 5 = 19.\n2. Differentiate using the power rule: f'(x) = 4x + 3.\n3. Evaluate the tangent slope at x₀ = 2: m = f'(2) = 4(2) + 3 = 11.\n4. Find the y-intercept B: y = 11(x - 2) + 19 = 11x - 3, so B = -3.",
+    "common_misconceptions": [
+      "Keeping the constant term d when differentiating a polynomial (the derivative of a constant is 0).",
+      "Confusing the tangent slope f'(x₀) with the tangent y-intercept B = f(x₀) - f'(x₀)x₀.",
+      "Forgetting the factor of 2 when differentiating ax² to find a critical point (writing ax - b = 0 instead of 2ax - b = 0)."
+    ]
+  },
+  "template_id": "calculus.derivatives_tangent",
+  "template_version": "1.1.0"
+}

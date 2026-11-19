@@ -1,0 +1,22 @@
+{
+  "passed": true,
+  "checks": [
+    "All nine trainer exercise artifacts match native Rust and the browser worker.",
+    "Beginner starts with one rod; step-by-step moves show 0 → 5 → 6 → 7.",
+    "The beginner upper bead is a working native keyboard control; lower beads have equivalent accessible selectors.",
+    "Making a random digit checks through Rust without live total hints; repeat checking does not duplicate rewards.",
+    "The 5-complement subtraction 6 − 2 example removes five then adds three: 6 → 1 → 4.",
+    "The compound carry 6 + 7 example adds ten, removes five, and adds two: 6 → 16 → 11 → 13.",
+    "The visual 8 + 7 example explicitly adds ten then removes three: 8 → 18 → 15.",
+    "Hidden mental practice removes the bead state and value descriptions from the DOM, not just visual opacity.",
+    "A hidden three-term mental exercise rejects malformed input and accepts the correct final answer.",
+    "Stage, current challenge, answer draft and hidden support preference survive reload.",
+    "Worked hints remain available and are labelled supported practice.",
+    "Fraction comparison and regrouping lessons have working concrete visual demonstrations."
+  ],
+  "errors": [],
+  "limits": [
+    "Draft virtual teaching; not instructor-reviewed physical technique or certified mental strategy.",
+    "No broad cognitive outcome claim."
+  ]
+}

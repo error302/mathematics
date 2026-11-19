@@ -7,7 +7,10 @@
 //! Has no dependencies on HTTP, database, DOM, system clock, or ambient randomness.
 
 pub mod abacus;
+pub mod abacus_tutor;
 pub mod checker;
+pub mod challenges;
+pub mod coaching;
 pub mod exercise;
 pub mod jcs;
 pub mod number;

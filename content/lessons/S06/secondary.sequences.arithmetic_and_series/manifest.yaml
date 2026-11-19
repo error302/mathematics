@@ -1,0 +1,36 @@
+schema_version: 1
+id: "secondary.sequences.arithmetic_and_series.lesson"
+version: "1.1.0"
+locale: "en"
+status: "draft"
+course_id: "S06"
+unit_id: "secondary.sequences.arithmetic_and_series"
+outcomes:
+  - "Compute the exact n-th term of an arithmetic progression using a_n = a_1 + (n - 1)d without fencepost errors."
+  - "Evaluate finite arithmetic series sums exactly using Gauss's pairing identity S_n = n(a_1 + a_n) / 2."
+  - "Determine the exact rational common difference d = (a_q - a_p) / (q - p) from two non-adjacent terms over Q."
+skill_ids:
+  - "secondary.sequences.arithmetic_and_series"
+prerequisites:
+  required:
+    - "secondary.algebra.linear_equations"
+  recommended:
+    - "secondary.functions.domains_and_evaluation"
+exercise_refs:
+  - template_id: "sequences.arithmetic_progression"
+    template_version: "1.1.0"
+    difficulty_band: 1
+  - template_id: "sequences.arithmetic_progression"
+    template_version: "1.1.0"
+    difficulty_band: 2
+  - template_id: "sequences.arithmetic_progression"
+    template_version: "1.1.0"
+    difficulty_band: 3
+assessment_dimensions:
+  - "conceptual"
+  - "procedural"
+  - "transfer"
+content_file: "lesson.en.md"
+license_id: "axiom-original-content"
+source_refs: []
+review_record_ids: []

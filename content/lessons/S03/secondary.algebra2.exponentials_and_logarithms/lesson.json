@@ -1,0 +1,66 @@
+{
+  "id": "secondary.algebra2.exponentials_and_logarithms",
+  "courseId": "S03",
+  "title": "Exponentials, Logarithms, Log Laws, and Common-Base Equations",
+  "subtitle": "Logarithms as inverse exponentiation, turning multiplication into addition, and exact common-base equations over Q.",
+  "templateId": "algebra2.exp_log_eval",
+  "challenge": "John Napier invented logarithms to turn tedious multiplications and divisions into fast additions and subtractions. Why does the exponent law b^u * b^v = b^(u+v) immediately force the logarithm identity log_b(A) + log_b(B) = log_b(AB)?",
+  "predictionPrompt": "Evaluate the exact logarithmic expression log_2(12) + log_2(4) - log_2(3).",
+  "predictionOptions": [
+    {
+      "label": "4",
+      "value": "4",
+      "isCorrect": true
+    },
+    {
+      "label": "13",
+      "value": "13"
+    },
+    {
+      "label": "16",
+      "value": "16"
+    },
+    {
+      "label": "8",
+      "value": "8"
+    }
+  ],
+  "formalDefinition": "For a base b > 0 with b != 1 and argument y > 0, the base-b logarithm is defined by the equivalence log_b(y) = k if and only if b^k = y. Because exponentiation f(x) = b^x is strictly monotonic and therefore injective, b^U = b^V implies U = V. Furthermore, the exponent laws b^u * b^v = b^(u+v), b^u / b^v = b^(u-v), and (b^u)^m = b^(mu) translate directly into the logarithm laws: log_b(A) + log_b(B) = log_b(AB), log_b(A) - log_b(B) = log_b(A/B), and log_b(A^m) = m log_b(A).",
+  "workedExample": {
+    "steps": [
+      "Task: Evaluate log_3(1/81), combine log_2(6) + log_2(8) - log_2(3), and solve 3^(4x - 1) = 9^(x + 2) over Q.",
+      "Since 81 = 3^4, its reciprocal is 1/81 = 3^(-4), so log_3(1/81) = -4.",
+      "Using the product and quotient laws of logarithms: log_2(6) + log_2(8) - log_2(3) = log_2((6 * 8)/3) = log_2(16) = log_2(2^4) = 4.",
+      "For 3^(4x - 1) = 9^(x + 2), rewrite 9 = 3^2 so 9^(x + 2) = (3^2)^(x + 2) = 3^(2x + 4). Equating exponents gives 4x - 1 = 2x + 4 => 2x = 5 => x = 5/2."
+    ],
+    "result": "log_3(1/81) = -4; combined log = 4; solution x = 5/2."
+  },
+  "misconception": {
+    "mistake": "Replacing log_b(A) + log_b(B) with log_b(A + B), or rewriting (b^m)^(dx + e) as b^(m*dx + e) without multiplying the constant term e by m.",
+    "correction": "Adding logarithms multiplies their arguments: log_b(A) + log_b(B) = log_b(AB). And in (b^m)^(dx + e), the power-of-a-power rule distributes m across the entire exponent: b^(m(dx + e)) = b^(mdx + me)."
+  },
+  "reflection": "Notice that log_b(y) is literally a question about exponents: 'What power must I raise b to in order to get y?' Every logarithm rule is simply an exponent rule read in reverse.",
+  "prerequisiteCheck": "Rewrite 1/27 and 81 each as a power of base 3.",
+  "representation": "Compare the exponential curve y = b^x (which maps additive steps in x to multiplicative steps in y) with its reflection across y = x, the logarithmic curve y = log_b(x) (which maps multiplicative scalings of x to additive steps in y).",
+  "faded": {
+    "prompt": "Solve 2^(5x - 3) = 8^(x + 1) over Q: Since 8 = 2^3, rewrite the right side as 2^(3(x + 1)) = 2^(__). Equate exponents: 5x - 3 = 3x + 3 => 2x = 6 => x = __.",
+    "solution": "3x + 3, then 3."
+  },
+  "independent": [
+    {
+      "prompt": "Evaluate log_5(125) and log_5(1/25).",
+      "solution": "Since 125 = 5^3, log_5(125) = 3. Since 1/25 = 5^(-2), log_5(1/25) = -2."
+    },
+    {
+      "prompt": "Solve 5^(3x + 2) = 25^(2x - 1) for the exact value of x in Q.",
+      "solution": "Rewrite 25^(2x - 1) = (5^2)^(2x - 1) = 5^(4x - 2). Equate exponents: 3x + 2 = 4x - 2 => x = 4."
+    }
+  ],
+  "explanation": "Why is log_b(0) undefined and why must the base b satisfy b > 0 and b != 1?",
+  "transfer": {
+    "prompt": "Solve log_3(x + 2) + log_3(x - 4) = 3 for a valid real solution x (remembering the domain requirement that every logarithm argument must be strictly positive).",
+    "solution": "Combine logs: log_3((x + 2)(x - 4)) = 3 => (x + 2)(x - 4) = 3^3 = 27 => x^2 - 2x - 8 = 27 => x^2 - 2x - 35 = 0 => (x - 7)(x + 5) = 0. Since x = -5 makes x + 2 < 0 (outside domain), the unique valid solution is x = 7."
+  },
+  "retrieval": "State the defining equivalence for log_b(y) = k, the product and quotient laws for logarithms, and the power-of-a-power rule for common-base equations.",
+  "reviewNote": "Draft secondary lesson. Exact calculations verified by Rust engine."
+}

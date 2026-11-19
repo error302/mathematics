@@ -1,0 +1,63 @@
+{
+  "id": "foundation.arithmetic.division_partition",
+  "courseId": "F02",
+  "title": "Division: Equal Sharing and the Inverse of Multiplication",
+  "subtitle": "Partition a quantity into equal groups and find the group size or group count.",
+  "templateId": "arithmetic.whole.division",
+  "challenge": "You have 24 counters to share equally among 6 people. How many does each person receive? Why can every division statement be checked by a multiplication statement?",
+  "predictionPrompt": "If 24 ÷ 6 = 4, what multiplication statement must be true?",
+  "predictionOptions": [
+    {
+      "label": "4 + 6 = 24",
+      "value": "add"
+    },
+    {
+      "label": "4 × 6 = 24",
+      "value": "mult",
+      "isCorrect": true
+    },
+    {
+      "label": "24 × 6 = 4",
+      "value": "wrong_mult"
+    }
+  ],
+  "formalDefinition": "For whole numbers a and b > 0, the quotient a ÷ b = q is the unique number such that q × b = a. Division by zero is undefined because no unique number satisfies q × 0 = a for a ≠ 0, and every number satisfies q × 0 = 0.",
+  "workedExample": {
+    "steps": [
+      "To calculate 36 ÷ 4, ask: what number multiplied by 4 gives 36?",
+      "Recall or verify that 9 × 4 = 36.",
+      "Therefore, 36 shared equally into 4 groups gives 9 per group."
+    ],
+    "result": "36 ÷ 4 = 9."
+  },
+  "misconception": {
+    "mistake": "Believing you can divide by zero and get zero (e.g. 5 ÷ 0 = 0).",
+    "correction": "If 5 ÷ 0 were 0, then by the multiplication check 0 × 0 would have to equal 5, which is false (0 × 0 = 0). Division by zero has no consistent solution and is mathematically undefined."
+  },
+  "reflection": "Division reverses multiplication. Whenever you solve a division problem, you are finding the missing side of a rectangle whose area and one side are already known.",
+  "prerequisiteCheck": "Multiply single-digit numbers and recognize that 6 groups of 4 make 24.",
+  "representation": "Place 15 tokens on a table. Form equal piles of 3 until all tokens are used. You form 5 piles: 15 ÷ 3 = 5. Checking: 5 piles × 3 tokens = 15 tokens.",
+  "faded": {
+    "prompt": "Complete using multiplication: 42 ÷ 6 = __ because __ × 6 = 42.",
+    "solution": "42 ÷ 6 = 7 because 7 × 6 = 42."
+  },
+  "independent": [
+    {
+      "prompt": "Calculate 48 ÷ 8 and write the multiplication equation that proves your answer.",
+      "solution": "48 ÷ 8 = 6 because 6 × 8 = 48."
+    },
+    {
+      "prompt": "Explain why 0 ÷ 7 is 0, but 7 ÷ 0 is undefined.",
+      "solution": "0 ÷ 7 = 0 because 0 × 7 = 0. In contrast, 7 ÷ 0 would require a number q such that q × 0 = 7, but any number times 0 is 0, so no such number exists."
+    }
+  ],
+  "explanation": "Explain to a classmate how to divide 56 by 8 if they only know their 8-times multiplication table.",
+  "transfer": {
+    "prompt": "A baker has 72 cookies. She packs them into boxes of 6 cookies each. How many full boxes can she pack?",
+    "solution": "72 ÷ 6 = 12 boxes. Check: 12 × 6 = 72."
+  },
+  "retrieval": "Tomorrow solve 63 ÷ 7 and 54 ÷ 6 without notes. Next week explain why division by zero cannot be given any meaningful numerical value.",
+  "contentStatus": "draft",
+  "reviewNote": "Expanded prototype lesson. Independent mathematical, pedagogical, and accessibility review is pending.",
+  "version": "1.1.0"
+}

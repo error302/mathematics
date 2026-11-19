@@ -81,6 +81,23 @@ pub enum TransitionFailure {
 }
 
 impl AbacusState {
+    /// Validate untrusted serialized state before computing values or indexing rods.
+    pub fn validate(&self) -> Result<(), TransitionFailure> {
+        if self.schema_version != 1
+            || !(1..=23).contains(&self.rod_count)
+            || self.rods.len() != self.rod_count
+            || !(-12..=12).contains(&self.rightmost_exponent)
+            || ![-1, 1].contains(&self.sign)
+            || self.rods.iter().any(|rod| rod.lower > 4)
+            || (self.sign == -1 && self.rods.iter().all(|rod| !rod.upper && rod.lower == 0))
+        {
+            return Err(TransitionFailure::InvalidRodState {
+                message: "Expected schema 1, 1–23 matching rods, radix -12…12, sign ±1, 0–4 lower beads, and no negative zero.".into(),
+            });
+        }
+        Ok(())
+    }
+
     pub fn new(rod_count: usize, rightmost_exponent: i32) -> Self {
         assert!(rod_count > 0, "abacus must have at least 1 rod");
         AbacusState {
@@ -98,6 +115,9 @@ impl AbacusState {
         rod_count: usize,
         rightmost_exponent: i32,
     ) -> Result<Self, TransitionFailure> {
+        if !(1..=23).contains(&rod_count) || !(-12..=12).contains(&rightmost_exponent) {
+            return Err(TransitionFailure::InvalidRodState { message: "Instrument size or radix exceeds supported bounds.".into() });
+        }
         let mut state = Self::new(rod_count, rightmost_exponent);
         if value.is_negative() {
             state.sign = -1;
@@ -192,6 +212,7 @@ pub fn apply_abacus_action(
     state: &AbacusState,
     action: &AbacusAction,
 ) -> Result<AbacusState, TransitionFailure> {
+    state.validate()?;
     let mut next = state.clone();
     match action {
         AbacusAction::Clear => {
@@ -243,7 +264,7 @@ pub fn apply_abacus_action(
                 });
             }
             let cur = next.rods[*rod_index].lower;
-            let sum = cur + *count;
+            let sum = cur.saturating_add(*count);
             if sum > 4 {
                 return Err(TransitionFailure::InvalidRodState {
                     message: format!("cannot push {count} lower beads; already at {cur} (max 4)"),
@@ -267,6 +288,10 @@ pub fn apply_abacus_action(
             next.rods[*rod_index].lower = cur - *count;
         }
     }
+    if next.rods.iter().all(|rod| !rod.upper && rod.lower == 0) {
+        next.sign = 1;
+    }
+    next.validate()?;
     Ok(next)
 }
 

@@ -4,7 +4,7 @@ use std::fs;
 use std::path::Path;
 
 fn main() {
-    println!("=== AXIOM Mathematics Academy — Content Manifest Verification ===");
+    println!("AXIOM draft content metadata validation (not mathematical or human review)");
 
     fn find_manifests(dir: &Path, list: &mut Vec<std::path::PathBuf>) {
         if let Ok(entries) = fs::read_dir(dir) {
@@ -47,6 +47,12 @@ fn main() {
             }
         };
 
+        if manifest.status == "published" {
+            eprintln!("FAIL: {p}: Public release validation and real review records are not implemented. Keep pilot material marked draft.");
+            all_ok = false;
+            continue;
+        }
+
         match validate_manifest(&manifest) {
             Ok(hash) => {
                 println!("OK: [{}] {} (hash: {})", manifest.course_id, manifest.id, hash);
@@ -61,5 +67,5 @@ fn main() {
     if !all_ok {
         std::process::exit(1);
     }
-    println!("=== All manifests verified successfully ===");
+    println!("All draft metadata validated. Content review, released prerequisite resolution, and full release validation remain pending.");
 }

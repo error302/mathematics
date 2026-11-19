@@ -1,0 +1,62 @@
+{
+  "id": "foundation.divisibility.gcd_lcm",
+  "courseId": "F03",
+  "title": "Greatest Common Divisor and Least Common Multiple",
+  "subtitle": "Connect shared prime factors to the largest common divisor and smallest synchronized multiple.",
+  "templateId": "divisibility.gcd_lcm",
+  "challenge": "Two light towers flash periodically: tower A flashes every 12 seconds and tower B every 18 seconds. If they flash together right now, after how many seconds will they next flash simultaneously, and what is their GCD?",
+  "predictionPrompt": "For any two positive integers a and b, what is the value of gcd(a, b) × lcm(a, b)?",
+  "predictionOptions": [
+    {
+      "label": "It depends on which number is larger",
+      "value": "depends"
+    },
+    {
+      "label": "It is always exactly equal to the product a × b",
+      "value": "product",
+      "isCorrect": true
+    }
+  ],
+  "formalDefinition": "For positive integers a, b ∈ ℕ, the Greatest Common Divisor gcd(a, b) is the largest integer d such that d | a and d | b. The Least Common Multiple lcm(a, b) is the smallest positive integer m such that a | m and b | m. In terms of prime factorizations a = ∏ p_i^{a_i} and b = ∏ p_i^{b_i}: gcd(a, b) = ∏ p_i^{min(a_i, b_i)} and lcm(a, b) = ∏ p_i^{max(a_i, b_i)}, which implies gcd(a, b) × lcm(a, b) = a × b.",
+  "workedExample": {
+    "steps": [
+      "To find gcd(24, 36) and lcm(24, 36), prime factorize both numbers.",
+      "24 = 2^3 × 3^1",
+      "36 = 2^2 × 3^2",
+      "For GCD, take the minimum exponents: 2^{min(3, 2)} × 3^{min(1, 2)} = 2^2 × 3^1 = 4 × 3 = 12.",
+      "For LCM, take the maximum exponents: 2^{max(3, 2)} × 3^{max(1, 2)} = 2^3 × 3^2 = 8 × 9 = 72.",
+      "Check identity: gcd × lcm = 12 × 72 = 864; a × b = 24 × 36 = 864."
+    ],
+    "result": "gcd(24, 36) = 12; lcm(24, 36) = 72."
+  },
+  "misconception": {
+    "mistake": "Confusing GCD and LCM, thinking that the 'greatest' common divisor must be a larger number than the 'least' common multiple.",
+    "correction": "A divisor divides into a number, so gcd(a, b) ≤ min(a, b). A multiple is a product of a number, so lcm(a, b) ≥ max(a, b). The GCD is small; the LCM is large."
+  },
+  "reflection": "The GCD extracts the shared intersection of prime factors, while the LCM takes their union. Their product reunites all factors, reproducing the original product a × b.",
+  "prerequisiteCheck": "Determine prime factorizations of small two-digit integers.",
+  "representation": "Draw a Venn diagram of prime factors: place shared factors in the overlap (their product is the GCD), and all factors across both sets form the LCM.",
+  "faded": {
+    "prompt": "Find gcd(18, 30): 18 = 2 × 3^2, 30 = 2 × 3 × 5. Shared primes with minimum powers are 2^__ × 3^__ = __. So gcd(18, 30) = __.",
+    "solution": "Shared primes are 2^1 × 3^1 = 6. So gcd(18, 30) = 6."
+  },
+  "independent": [
+    {
+      "prompt": "Calculate gcd(45, 60) and lcm(45, 60).",
+      "solution": "45 = 3^2 × 5, 60 = 2^2 × 3 × 5. gcd = 3 × 5 = 15. lcm = 2^2 × 3^2 × 5 = 180."
+    },
+    {
+      "prompt": "Explain why if two numbers are relatively prime (coprime, gcd = 1), their LCM must equal their product a × b.",
+      "solution": "Since gcd(a, b) × lcm(a, b) = a × b, when gcd(a, b) = 1, 1 × lcm(a, b) = a × b, so lcm(a, b) = a × b."
+    }
+  ],
+  "explanation": "Explain how Euclid's algorithm computes gcd(a, b) repeatedly using division with remainder without requiring prime factorization.",
+  "transfer": {
+    "prompt": "Two athletes run around a track: Runner 1 completes a lap in 40 seconds, Runner 2 in 50 seconds. If they start together, after how many seconds will they cross the start line at the exact same moment?",
+    "solution": "lcm(40, 50) = 200 seconds (or 3 minutes and 20 seconds)."
+  },
+  "retrieval": "Tomorrow practice finding the GCD of 28 and 42. Next week explain how finding common denominators in fractions is identical to finding the LCM of the denominators.",
+  "contentStatus": "draft",
+  "reviewNote": "Expanded prototype lesson. Independent mathematical, pedagogical, and accessibility review is pending.",
+  "version": "1.1.0"
+}

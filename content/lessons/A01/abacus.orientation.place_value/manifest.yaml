@@ -1,8 +1,8 @@
 schema_version: 1
 id: abacus.orientation.place_value.lesson
-version: 1.0.0
+version: 1.1.0
 locale: en
-status: published
+status: draft
 course_id: A01
 unit_id: abacus.orientation.place_value
 outcomes:
@@ -17,7 +17,7 @@ prerequisites:
   recommended: []
 exercise_refs:
   - template_id: abacus.read.state
-    template_version: 1.0.0
+    template_version: 1.1.0
     difficulty_band: 1
 assessment_dimensions:
   - conceptual
@@ -26,6 +26,4 @@ content_file: lesson.en.md
 license_id: axiom-original-content
 source_refs:
   - "League of Japan Abacus Associations (shuzan.jp)"
-review_record_ids:
-  - review-abacus-001
-  - review-a11y-001
+review_record_ids: []

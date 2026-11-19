@@ -1,0 +1,66 @@
+{
+  "id": "secondary.functions.mappings_and_evaluation",
+  "courseId": "S02",
+  "title": "Functions as Mappings: Domain, Piecewise Rules, and Rate of Change",
+  "subtitle": "Input-output determinism, pre-images, piecewise branch selection, and the secant difference quotient.",
+  "templateId": "functions.evaluate_and_range",
+  "challenge": "Two different inputs x = -3 and x = +3 can legally map to the same output f(x) = x^2 = 9. Why is that allowed for a function, whereas a single input x = 4 mapping to both +2 and -2 violates the definition of a function?",
+  "predictionPrompt": "Let f(x) = 3x - 5. What is the domain input x for which f(x) = 16?",
+  "predictionOptions": [
+    {
+      "label": "x = 43",
+      "value": "43"
+    },
+    {
+      "label": "x = 7",
+      "value": "7",
+      "isCorrect": true
+    },
+    {
+      "label": "x = 11/3",
+      "value": "11/3"
+    },
+    {
+      "label": "x = 21",
+      "value": "21"
+    }
+  ],
+  "formalDefinition": "A function f: D -> C is a triple consisting of a domain D, a codomain C, and a rule that assigns to each element x in D a unique element f(x) in C. The range (image) is f(D) = {f(x) : x in D} subset C. For a piecewise function, the domain D is partitioned into disjoint subsets D_1, D_2, ..., and f(x) is evaluated using the unique branch whose domain condition x satisfies. Over an interval [x_1, x_2], the average rate of change is the difference quotient (f(x_2) - f(x_1)) / (x_2 - x_1).",
+  "workedExample": {
+    "steps": [
+      "Task: Let f(x) = 2x + 3 for x < 4, and f(x) = x^2 - 5 for x >= 4. Evaluate f(4), and find the average rate of change of g(x) = x^2 + 2x on [1, 4].",
+      "To evaluate f(4), test the domain boundary: since 4 >= 4 holds, select the second branch f(x) = x^2 - 5 and compute f(4) = 4^2 - 5 = 11.",
+      "For g(x) = x^2 + 2x on [1, 4], evaluate the endpoints: g(1) = 1 + 2 = 3 and g(4) = 16 + 8 = 24.",
+      "Compute the difference quotient: (g(4) - g(1)) / (4 - 1) = (24 - 3) / 3 = 21 / 3 = 7."
+    ],
+    "result": "f(4) = 11; average rate of change of g on [1, 4] is 7."
+  },
+  "misconception": {
+    "mistake": "Substituting y_0 into x when asked to solve f(x) = y_0, or plugging an input into both branches of a piecewise function.",
+    "correction": "f(x) = y_0 asks for the pre-image input x that produces output y_0, which requires solving an equation. In a piecewise function, each input x belongs to exactly one domain interval and therefore activates only one formula."
+  },
+  "reflection": "A function is more than a formula: changing the domain changes the function, and the difference quotient measures how rapidly outputs change relative to inputs.",
+  "prerequisiteCheck": "Solve the linear equation 4x - 7 = 13 for x.",
+  "representation": "Draw an arrow diagram from Domain set D to Codomain set C: every point in D launches exactly one arrow, and on a coordinate graph every vertical line x = c intersects y = f(x) at most once.",
+  "faded": {
+    "prompt": "For f(x) = x^2 + 1, find the average rate of change from x = 2 to x = 5: Compute f(5) = 26 and f(2) = 5. Then (26 - 5) / (5 - 2) = 21 / __ = __.",
+    "solution": "3, then 7."
+  },
+  "independent": [
+    {
+      "prompt": "If f(x) = 5x - 8, find x such that f(x) = 27.",
+      "solution": "5x - 8 = 27 => 5x = 35 => x = 7."
+    },
+    {
+      "prompt": "Let f(x) = 3x + 1 for x < 2 and f(x) = 2x^2 - 3 for x >= 2. Evaluate f(2) and f(0).",
+      "solution": "At x = 2 (since 2 >= 2): f(2) = 2(4) - 3 = 5. At x = 0 (since 0 < 2): f(0) = 3(0) + 1 = 1."
+    }
+  ],
+  "explanation": "Why does the Vertical Line Test guarantee that each x-value in the domain is assigned at most one y-value?",
+  "transfer": {
+    "prompt": "Prove algebraically that for any quadratic function f(x) = ax^2 + bx + c, the average rate of change over [x_1, x_2] simplifies to a(x_1 + x_2) + b.",
+    "solution": "f(x_2) - f(x_1) = a(x_2^2 - x_1^2) + b(x_2 - x_1) = (x_2 - x_1)[a(x_2 + x_1) + b]. Dividing by (x_2 - x_1) != 0 yields a(x_1 + x_2) + b."
+  },
+  "retrieval": "Define domain, codomain, range, and the difference quotient of a function f over [x_1, x_2].",
+  "reviewNote": "Draft secondary lesson. Exact calculations verified by Rust engine."
+}

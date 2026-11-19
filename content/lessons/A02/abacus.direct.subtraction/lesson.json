@@ -1,0 +1,59 @@
+{
+  "id": "abacus.direct.subtraction",
+  "courseId": "A02",
+  "title": "Direct Subtraction on the Soroban",
+  "subtitle": "Subtract by moving counted beads away from the middle bar.",
+  "templateId": "abacus.target.setting",
+  "challenge": "You have 4 lower beads active. You want to subtract 3. How is this done?",
+  "predictionPrompt": "Which finger pulls the 3 lower beads down away from the beam?",
+  "predictionOptions": [
+    {
+      "label": "Thumb",
+      "value": "thumb"
+    },
+    {
+      "label": "Index finger",
+      "value": "index",
+      "isCorrect": true
+    }
+  ],
+  "formalDefinition": "Direct subtraction removes active beads touching the beam directly away using the index finger, requiring no borrowing from higher rods or 5-complements.",
+  "workedExample": {
+    "steps": [
+      "Set 4 lower beads up.",
+      "Pull 3 lower beads down away from the beam with the index finger.",
+      "1 lower bead remains active."
+    ],
+    "result": "4 - 3 = 1."
+  },
+  "misconception": {
+    "mistake": "Attempting direct subtraction on 5 - 2 when no lower beads are active.",
+    "correction": "Direct subtraction requires active beads of the right type. 5 - 2 requires the 5-complement formula (-2 = -5 + 3)."
+  },
+  "reflection": "Direct operations establish the baseline tactile vocabulary of the Soroban.",
+  "prerequisiteCheck": "Direct subtraction removes engaged beads of the needed type. Knowing the numerical difference is different from knowing whether a direct bead move exists.",
+  "representation": "4 - 2: remove two engaged lower beads, leaving two. 7 - 5: disengage the upper bead, leaving two lower beads.",
+  "faded": {
+    "prompt": "Start with upper engaged and 3 lower engaged (8). Subtract 2 directly: lower becomes __ and the result is __.",
+    "solution": "Lower becomes 1; the upper stays engaged; result 6."
+  },
+  "independent": [
+    {
+      "prompt": "Describe 9 - 4 as direct bead moves.",
+      "solution": "Remove four lower beads; leave the upper engaged. Result 5."
+    },
+    {
+      "prompt": "Can 5 - 2 be performed by removing two lower beads?",
+      "solution": "No lower beads are engaged. A five-complement procedure is needed: -2 = -5 + 3."
+    }
+  ],
+  "explanation": "Explain the exact boundary between a direct subtraction and a complement operation, including a counterexample.",
+  "transfer": {
+    "prompt": "Set 74 and subtract 23 using direct moves on each rod.",
+    "solution": "Tens digit 7 minus 2 leaves upper engaged and no lower (5). Units digit 4 minus 3 leaves one lower (1). Result 51."
+  },
+  "retrieval": "Tomorrow describe 8 - 3 and 7 - 5. A week later classify 6 - 2 and 9 - 3 as direct or requiring a complement.",
+  "contentStatus": "draft",
+  "reviewNote": "Expanded prototype lesson. Independent mathematical, pedagogical, and accessibility review is pending.",
+  "version": "1.1.0"
+}

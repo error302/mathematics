@@ -1,0 +1,90 @@
+/* Study focus tools (ADR-0006): static bar, honest copy, no auto-motion. */
+.axiom-focus-bar {
+  background: var(--bg-surface);
+  border-bottom: 1px solid var(--border-color);
+  padding: .6rem max(1.5rem, calc((100vw - 1120px) / 2));
+  font-family: var(--font-sans);
+}
+.axiom-focus-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .6rem .9rem;
+}
+.axiom-focus-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  min-height: 44px;
+  padding: .35rem .75rem;
+  background: transparent;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  color: var(--text-primary);
+  font-size: .84rem;
+  cursor: pointer;
+}
+.axiom-focus-btn:hover { border-color: var(--accent-teal); }
+.axiom-focus-btn[aria-pressed='true'] {
+  border-color: var(--accent-gold);
+  color: var(--accent-gold);
+}
+.axiom-focus-timer-setup { display: flex; align-items: center; gap: .55rem; flex-wrap: wrap; }
+.axiom-focus-timer-setup label { font-size: .84rem; color: var(--text-secondary); }
+.axiom-focus-timer-setup .axiom-select { min-height: 44px; max-width: 9.5rem; font-size: .84rem; }
+.axiom-focus-timer-running, .axiom-focus-finished {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: .55rem;
+  font-size: .84rem;
+  color: var(--text-secondary);
+}
+.axiom-focus-time {
+  font-variant-numeric: tabular-nums;
+  font-size: 1rem;
+  color: var(--accent-gold);
+  min-width: 3.2rem;
+}
+.axiom-focus-boundary {
+  margin: .35rem 0 0;
+  font-size: .76rem;
+  color: var(--text-muted);
+  max-width: 72ch;
+}
+.axiom-focus-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(4, 9, 15, 0.78);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  z-index: 120;
+}
+.axiom-focus-pause {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1.4rem;
+  max-width: 30rem;
+  width: 100%;
+}
+.axiom-focus-pause-header { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+.axiom-focus-pause-header h3 { font-family: var(--font-serif); font-weight: 400; font-size: 1.3rem; }
+.axiom-focus-pause p { color: var(--text-secondary); font-size: .92rem; line-height: 1.7; }
+.axiom-focus-breath-guide {
+  font-size: 1.25rem !important;
+  color: var(--text-primary) !important;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+  margin: 1.1rem 0;
+}
+.axiom-focus-pause-footer { margin-top: 1.25rem; display: flex; justify-content: flex-end; }
+@media (max-width: 640px) {
+  .axiom-focus-bar { padding: .6rem 1rem; }
+  .axiom-focus-inner { gap: .5rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .axiom-focus-btn { transition: none; }
+}

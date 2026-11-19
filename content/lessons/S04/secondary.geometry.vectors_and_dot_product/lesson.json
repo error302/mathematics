@@ -1,0 +1,66 @@
+{
+  "id": "secondary.geometry.vectors_and_dot_product",
+  "courseId": "S04",
+  "title": "Planar Vectors, the Dot Product, Orthogonality, and Projections",
+  "subtitle": "Displacement vectors in Q^2, algebraic and geometric dot products, perpendicularity u . v = 0, and scalar projections.",
+  "templateId": "sec_geom.planar_vectors_dot",
+  "challenge": "How does a simple sum of two products, u_1 v_1 + u_2 v_2, automatically know the angle between two vectors u and v in the plane—and why does it equal zero if and only if the vectors meet at a 90-degree right angle?",
+  "predictionPrompt": "Find the exact rational value of k such that the planar vectors u = <4, 6> and v = <3, k> are orthogonal (perpendicular).",
+  "predictionOptions": [
+    {
+      "label": "k = -2",
+      "value": "-2",
+      "isCorrect": true
+    },
+    {
+      "label": "k = 2",
+      "value": "2"
+    },
+    {
+      "label": "k = 9/2",
+      "value": "9/2"
+    },
+    {
+      "label": "k = -9/2",
+      "value": "-9/2"
+    }
+  ],
+  "formalDefinition": "For planar vectors u = <u_1, u_2> and v = <v_1, v_2>, the Euclidean norm is ||v|| = sqrt(v_1^2 + v_2^2) and the scalar dot product is u . v = u_1 v_1 + u_2 v_2. Applying the Pythagorean theorem (or Law of Cosines) to the triangle with sides u, v, and u - v proves the geometric identity u . v = ||u|| ||v|| cos(theta). Consequently, non-zero vectors u and v are orthogonal (u perp v) iff u . v = 0, and the signed scalar projection of u onto v != 0 is comp_v(u) = ||u|| cos(theta) = (u . v) / ||v||.",
+  "workedExample": {
+    "steps": [
+      "Task: Find k so that u = <4, 6> and v = <3, k> are orthogonal, and compute the scalar projection comp_w(u) of u = <5, 2> onto w = <3, 4>.",
+      "For orthogonality, set u . v = 0: 4(3) + 6k = 0 => 12 + 6k = 0 => k = -12/6 = -2.",
+      "For u = <5, 2> and w = <3, 4>, compute the dot product u . w = 5(3) + 2(4) = 15 + 8 = 23.",
+      "Compute the magnitude ||w|| = sqrt(3^2 + 4^2) = 5, so comp_w(u) = (u . w) / ||w|| = 23/5."
+    ],
+    "result": "Orthogonal parameter k = -2; scalar projection comp_w(u) = 23/5."
+  },
+  "misconception": {
+    "mistake": "Setting components proportional (u_1/v_1 = u_2/v_2) when asked for perpendicular vectors, or dividing by ||v||^2 instead of ||v|| when computing the scalar projection comp_v(u).",
+    "correction": "Proportional components (v = c*u) make vectors parallel (collinear), not perpendicular! Perpendicularity requires u . v = u_1 v_1 + u_2 v_2 = 0. And the scalar projection projects onto the unit vector v / ||v||, dividing by ||v|| (whereas the vector projection proj_v(u) = ((u . v)/||v||^2) v divides by ||v||^2 because v itself has length ||v||)."
+  },
+  "reflection": "Notice how the orthogonality test u . v = 0 generalizes negative-reciprocal slopes: if u = <q, p> (slope p/q), then v = <-p, q> (slope -q/p) satisfies u . v = q(-p) + p(q) = 0—and the vector form works even for horizontal and vertical vectors where slope is 0 or undefined!",
+  "prerequisiteCheck": "Compute the magnitude ||v|| = sqrt(v_1^2 + v_2^2) of the vector v = <5, 12>.",
+  "representation": "Visualize the right triangle formed by dropping a perpendicular from the tip of u onto the line spanned by v: the shadow length along v is comp_v(u) = (u . v) / ||v||.",
+  "faded": {
+    "prompt": "Compute the scalar projection of u = <4, 3> onto v = <5, 12> (where ||v|| = 13): u . v = 4(5) + 3(12) = 20 + 36 = __, so comp_v(u) = __ / 13.",
+    "solution": "56, then 56."
+  },
+  "independent": [
+    {
+      "prompt": "Compute the exact scalar dot product of u = <6, -5> and v = <4, 3>.",
+      "solution": "u . v = 6(4) + (-5)(3) = 24 - 15 = 9."
+    },
+    {
+      "prompt": "Find the exact rational value of k so that u = <5, 7> and v = <3, k> are perpendicular.",
+      "solution": "5(3) + 7k = 0 => 15 + 7k = 0 => k = -15/7."
+    }
+  ],
+  "explanation": "Why does expanding ||u - v||^2 = ||u||^2 + ||v||^2 (the Pythagorean theorem for a right triangle formed by u and v) prove that u perp v if and only if u_1 v_1 + u_2 v_2 = 0?",
+  "transfer": {
+    "prompt": "Decompose u = <7, 6> into the sum of a vector u_parallel parallel to v = <3, 4> and a vector u_perp orthogonal to v.",
+    "solution": "Since u . v = 21 + 24 = 45 and ||v||^2 = 25, u_parallel = ((u . v)/||v||^2) v = (45/25)<3, 4> = <27/5, 36/5>. Then u_perp = u - u_parallel = <8/5, -6/5> (check: (8/5)(3) + (-6/5)(4) = 0)."
+  },
+  "retrieval": "State the algebraic and geometric formulas for the dot product u . v, the condition for orthogonality, and the formula for the scalar projection comp_v(u).",
+  "reviewNote": "Draft secondary lesson. Exact calculations verified by Rust engine."
+}

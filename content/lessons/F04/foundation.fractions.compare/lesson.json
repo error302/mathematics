@@ -1,0 +1,63 @@
+{
+  "id": "foundation.fractions.compare",
+  "courseId": "F04",
+  "title": "Fractions: comparing equal-sized parts",
+  "subtitle": "Compare fractions by describing them with equal-sized parts.",
+  "templateId": "fractions.compare.positive",
+  "challenge": "Two cylinders of equal capacity are filled to 3/4 and 5/8 of their volumes. Which cylinder contains more liquid?",
+  "predictionPrompt": "Make a prediction: Is 3/4 smaller than, equal to, or greater than 5/8?",
+  "predictionOptions": [
+    {
+      "label": "3/4 < 5/8",
+      "value": "less"
+    },
+    {
+      "label": "3/4 = 5/8",
+      "value": "equal"
+    },
+    {
+      "label": "3/4 > 5/8",
+      "value": "greater",
+      "isCorrect": true
+    }
+  ],
+  "formalDefinition": "For nonnegative whole numbers a and positive whole numbers b, a/b means a copies of the part 1/b. A common denominator rewrites two fractions using equal-sized parts of the same whole.",
+  "workedExample": {
+    "steps": [
+      "Find the least common multiple of 4 and 8: lcm(4, 8) = 8.",
+      "Convert 3/4 by multiplying numerator and denominator by 2: (3×2)/(4×2) = 6/8.",
+      "Compare numerators: 6/8 > 5/8."
+    ],
+    "result": "Therefore, 3/4 is strictly greater than 5/8."
+  },
+  "misconception": {
+    "mistake": "Since 5 > 3 and 8 > 4, 5/8 must be greater than 3/4.",
+    "correction": "Fractions cannot be compared by numerators alone when part sizes differ. Each eighth is half the size of a fourth."
+  },
+  "reflection": "To compare two rational numbers a/b and c/d, scale both to a common denominator D = lcm(b, d) and compare the integer numerators.",
+  "prerequisiteCheck": "A fraction compares equal-sized parts of the same whole. Explain why 1/2 and 2/4 mark the same point before comparing fractions.",
+  "representation": "Draw two equal-length strips. Split the first into 4 equal parts and shade 3; split the second into 8 and shade 5. Splitting each fourth in half produces 6 shaded eighths without changing the first strip.",
+  "faded": {
+    "prompt": "Complete: 2/3 = __/12 and 3/4 = __/12. Which is larger?",
+    "solution": "2/3 = 8/12 and 3/4 = 9/12, so 2/3 < 3/4. Every piece now has the same size."
+  },
+  "independent": [
+    {
+      "prompt": "Compare 5/6 and 7/9; include a reason.",
+      "solution": "5/6 = 15/18 and 7/9 = 14/18, so 5/6 > 7/9."
+    },
+    {
+      "prompt": "Compare 4/6 and 2/3. What case did the first worked example not include?",
+      "solution": "They are equal: 4/6 simplifies to 2/3. Comparison must include equality, not just less/greater."
+    }
+  ],
+  "explanation": "Explain why multiplying both numerator and denominator by the same positive integer preserves the fraction. Your explanation should refer to subdividing parts or multiplying by 1.",
+  "transfer": {
+    "prompt": "Bottle A contains 3/4 of a 1-litre bottle. Bottle B contains 5/8 of a 2-litre bottle. Which holds more liquid? Why does the original comparison no longer decide?",
+    "solution": "A contains 3/4 litre; B contains 10/8 = 5/4 litres. B holds more. Fraction comparisons describe equal wholes only when the whole units match."
+  },
+  "retrieval": "Tomorrow, without reopening the example, compare 7/12 and 3/5. A week later, compare 5/8 and 2/3 and explain why your method is valid.",
+  "contentStatus": "draft",
+  "reviewNote": "Expanded prototype lesson. Independent mathematical, pedagogical, and accessibility review is pending.",
+  "version": "1.1.0"
+}

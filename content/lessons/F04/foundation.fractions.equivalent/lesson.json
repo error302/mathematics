@@ -1,0 +1,64 @@
+{
+  "id": "foundation.fractions.equivalent",
+  "courseId": "F04",
+  "title": "Equivalent Fractions: Scaling the Whole",
+  "subtitle": "Multiply or divide numerator and denominator by the same nonzero number to represent the exact same quantity.",
+  "templateId": "fractions.equivalent.find",
+  "challenge": "If one strip is cut into 2 equal parts and you shade 1 part (1/2), and an identical strip is cut into 6 equal parts and you shade 3 parts (3/6), why do both shaded areas cover the exact same space?",
+  "predictionPrompt": "If you multiply both the numerator and denominator of 2/3 by 4, what happens to the value of the fraction?",
+  "predictionOptions": [
+    {
+      "label": "The value quadruples because both numbers were multiplied by 4",
+      "value": "quadruples"
+    },
+    {
+      "label": "The value stays exactly the same (2/3 = 8/12)",
+      "value": "same",
+      "isCorrect": true
+    },
+    {
+      "label": "The value becomes smaller because the denominator is larger",
+      "value": "smaller"
+    }
+  ],
+  "formalDefinition": "For any rational number a/b with b ≠ 0 and any non-zero integer k ≠ 0, (a × k)/(b × k) = (a/b) × (k/k) = (a/b) × 1 = a/b. Multiplying or dividing numerator and denominator by the same nonzero factor is multiplication by the identity element 1, preserving the exact rational value.",
+  "workedExample": {
+    "steps": [
+      "Find an equivalent fraction for 3/5 with denominator 20.",
+      "Determine the scaling factor for the denominator: 20 ÷ 5 = 4.",
+      "Multiply the numerator by the identical factor: 3 × 4 = 12.",
+      "Write the equivalent fraction: 12/20."
+    ],
+    "result": "3/5 = 12/20."
+  },
+  "misconception": {
+    "mistake": "Adding the same number to both numerator and denominator (e.g., thinking 1/2 = 2/3 because you added 1 to both).",
+    "correction": "Adding to top and bottom changes the ratio: 1/2 is 50%, but 2/3 is approximately 66.7%. Equivalence requires multiplicative scaling (multiplying by k/k = 1), not addition."
+  },
+  "reflection": "Equivalent fractions are different names for the exact same point on the number line. Renaming fractions to share a common denominator is what makes comparison, addition, and subtraction possible.",
+  "prerequisiteCheck": "Identify unit fractions and understand that the denominator names the number of equal parts in the whole while the numerator counts chosen parts.",
+  "representation": "Take a paper strip folded into 3 equal thirds, and shade 2 of them (2/3). Now fold the entire strip in half along its length. Each third is split into 2 smaller pieces: there are now 6 equal pieces in total, and 4 are shaded (4/6). The shaded length did not change: 2/3 = 4/6.",
+  "faded": {
+    "prompt": "Find the equivalent fraction: 3/4 = (3 × 3)/(4 × __) = __/12.",
+    "solution": "3/4 = (3 × 3)/(4 × 3) = 9/12."
+  },
+  "independent": [
+    {
+      "prompt": "Find an equivalent fraction for 2/5 with denominator 15.",
+      "solution": "15 ÷ 5 = 3; 2 × 3 = 6; so 2/5 = 6/15."
+    },
+    {
+      "prompt": "Explain why 4/10 and 2/5 represent the same rational number.",
+      "solution": "Dividing both numerator and denominator of 4/10 by 2 yields (4 ÷ 2)/(10 ÷ 2) = 2/5. Dividing by 2/2 is division by 1, preserving the value."
+    }
+  ],
+  "explanation": "Explain why multiplying a fraction's top and bottom by 5 is mathematically equivalent to multiplying the fraction by the number 1.",
+  "transfer": {
+    "prompt": "Two recipes need sugar. Recipe A asks for 3/4 cup. Recipe B asks for 9/12 cup. A baker claims they need different amounts. Are they correct?",
+    "solution": "The baker is incorrect. 9/12 simplified by dividing top and bottom by 3 gives 3/4. Both recipes require the exact same amount of sugar."
+  },
+  "retrieval": "Tomorrow find three equivalent fractions for 5/6. Next week explain why adding 3 to top and bottom changes the value of 1/2, whereas multiplying by 3 preserves it.",
+  "contentStatus": "draft",
+  "reviewNote": "Expanded prototype lesson. Independent mathematical, pedagogical, and accessibility review is pending.",
+  "version": "1.1.0"
+}

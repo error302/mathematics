@@ -1,0 +1,59 @@
+{
+  "id": "foundation.integers.number_line",
+  "courseId": "F03",
+  "title": "Signed Integers and the Number Line",
+  "subtitle": "Extend whole numbers into negative territory, compare values, and understand distance from zero.",
+  "templateId": "integers.order",
+  "challenge": "If temperature drops from 3°C by 7 degrees, why does the result become negative 4°C, and which temperature is colder: -3°C or -7°C?",
+  "predictionPrompt": "Which number is greater: -8 or -2?",
+  "predictionOptions": [
+    {
+      "label": "-8 is greater because 8 is larger than 2",
+      "value": "minus_eight"
+    },
+    {
+      "label": "-2 is greater because it lies further to the right on the number line",
+      "value": "minus_two",
+      "isCorrect": true
+    }
+  ],
+  "formalDefinition": "The set of integers ℤ = {..., -3, -2, -1, 0, 1, 2, 3, ...} extends the natural numbers by appending additive inverses. For any a, b ∈ ℤ, a < b if and only if b - a is a strictly positive integer. On a standard horizontal number line with zero at the center, values strictly increase from left to right.",
+  "workedExample": {
+    "steps": [
+      "To compare -5 and 2, locate 0 on the number line.",
+      "-5 is 5 units to the left of 0, while 2 is 2 units to the right of 0.",
+      "Since every point to the left is smaller than any point to the right: -5 < 2."
+    ],
+    "result": "-5 < 2 (or -5 is less than 2)."
+  },
+  "misconception": {
+    "mistake": "Believing that -9 is larger than -3 because 9 > 3.",
+    "correction": "For negative numbers, a larger magnitude (distance from zero) means the number is located further to the left on the number line, making it strictly smaller: -9 < -3."
+  },
+  "reflection": "Zero is the reflective pivot of the integer line: positive numbers measure surplus or height above ground, while negative numbers measure debt, deficit, or depth below ground.",
+  "prerequisiteCheck": "Order positive whole numbers and recognize subtraction as moving left on the number line.",
+  "representation": "Draw a horizontal axis with 0 marked in the middle. Walk 4 steps right to +4. Turn around and walk 6 steps left: you cross zero at step 4 and land at -2.",
+  "faded": {
+    "prompt": "Compare -7 and -4: -7 is __ units to the left of 0, while -4 is __ units to the left. Since -7 is further left, -7 __ -4.",
+    "solution": "-7 is 7 units to the left of 0, while -4 is 4 units to the left. Since -7 is further left, -7 < -4."
+  },
+  "independent": [
+    {
+      "prompt": "Order the following integers from least to greatest: 4, -3, 0, -8, 2.",
+      "solution": "-8 < -3 < 0 < 2 < 4."
+    },
+    {
+      "prompt": "Explain in your own words why any negative integer is strictly less than 0.",
+      "solution": "Zero is the origin. Negative numbers are defined as locations to the left of zero, and position to the left means smaller value."
+    }
+  ],
+  "explanation": "Explain why absolute value |x| measures distance without direction, and how two different integers can share the exact same absolute value.",
+  "transfer": {
+    "prompt": "A submarine is at an elevation of -120 meters. A diver is at -45 meters. Who is closer to sea level (0 meters), and by how much?",
+    "solution": "The diver at -45 meters is closer to sea level. The difference in depth is |-120| - |-45| = 120 - 45 = 75 meters."
+  },
+  "retrieval": "Tomorrow practice comparing negative integers with opposite signs. Next week explain how signed numbers model financial balances.",
+  "contentStatus": "draft",
+  "reviewNote": "Expanded prototype lesson. Independent mathematical, pedagogical, and accessibility review is pending.",
+  "version": "1.1.0"
+}

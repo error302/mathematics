@@ -1,0 +1,66 @@
+{
+  "id": "foundation.ratios.proportional_scaling",
+  "courseId": "F05",
+  "title": "Ratios, unit rates, and proportional scaling",
+  "subtitle": "Distinguish additive growth from constant multiplicative scaling.",
+  "templateId": "ratios.scaling_solve",
+  "challenge": "A gear assembly has a tooth ratio of 3:8 between the drive gear and driven gear. If the drive gear has 24 teeth, how many teeth does the driven gear have?",
+  "predictionPrompt": "If the ratio is 3:8 and the first term is 24, what is the second term?",
+  "predictionOptions": [
+    {
+      "label": "29 teeth",
+      "value": "29"
+    },
+    {
+      "label": "48 teeth",
+      "value": "48"
+    },
+    {
+      "label": "64 teeth",
+      "value": "64",
+      "isCorrect": true
+    },
+    {
+      "label": "72 teeth",
+      "value": "72"
+    }
+  ],
+  "formalDefinition": "A ratio a:b expresses a multiplicative comparison between two quantities. Two ratios a:b and c:d are in proportion (a/b = c/d) if and only if there exists a nonzero scale factor k such that c = k·a and d = k·b, which implies the cross-product equality a·d = b·c.",
+  "workedExample": {
+    "steps": [
+      "Set up the proportion: 3/8 = 24/x.",
+      "Identify the horizontal scale factor: to scale 3 up to 24, we multiply by k = 24 ÷ 3 = 8.",
+      "Apply the same scale factor to the denominator: x = 8 × 8 = 64 (or cross-multiply: 3x = 8 × 24 = 192, so x = 192 ÷ 3 = 64)."
+    ],
+    "result": "The driven gear has exactly 64 teeth."
+  },
+  "misconception": {
+    "mistake": "Using additive thinking instead of multiplicative scaling: 'From 3 to 24 is +21, so add 21 to 8 to get 29.'",
+    "correction": "Ratios preserve relative scale, not absolute differences. Adding 21 alters the relationship (24:29 is not equivalent to 3:8)."
+  },
+  "reflection": "Proportions scale both quantities by the same multiplicative factor k. The unit rate (b/a) tells how many units of the second quantity correspond to 1 unit of the first.",
+  "prerequisiteCheck": "Explain why multiplying both terms of a ratio 2:5 by 3 produces an equivalent ratio 6:15.",
+  "representation": "A double number line showing drive teeth [0, 3, 6, 9, ..., 24] aligned with driven teeth [0, 8, 16, 24, ..., 64]. Each jump of 3 units on the top corresponds to a jump of 8 units on the bottom.",
+  "faded": {
+    "prompt": "Solve the proportion 4/7 = 20/y: The scale factor from 4 to 20 is 20 ÷ 4 = __. Multiply 7 by this factor: y = 7 × __ = __.",
+    "solution": "Scale factor is 5; y = 7 × 5 = 35."
+  },
+  "independent": [
+    {
+      "prompt": "If 5 kg of grain costs $15, how much do 8 kg of the same grain cost at the same unit rate?",
+      "solution": "Unit rate is $15 ÷ 5 = $3/kg. Therefore 8 kg costs 8 × $3 = $24."
+    },
+    {
+      "prompt": "In a mixture of sand and cement with ratio 5:2, there are 35 bags of sand. How many bags of cement are needed?",
+      "solution": "Scale factor is 35 ÷ 5 = 7. Bags of cement = 2 × 7 = 14."
+    }
+  ],
+  "explanation": "Why does the cross-product identity a·d = b·c hold whenever a/b = c/d? (Hint: multiply both sides by the common denominator b·d).",
+  "transfer": {
+    "prompt": "An architectural model has a scale of 1:50. If a door is 4 cm wide on the model, how wide is the actual door in meters?",
+    "solution": "Actual width = 4 cm × 50 = 200 cm = 2 meters."
+  },
+  "retrieval": "In one week, solve 6/9 = 10/x by finding the simplified unit rate first, then the unknown x.",
+  "contentStatus": "draft",
+  "reviewStatus": "independent_review_pending"
+}

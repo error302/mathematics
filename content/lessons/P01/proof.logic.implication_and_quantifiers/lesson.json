@@ -1,0 +1,29 @@
+{
+  "id": "proof.logic.implication_and_quantifiers",
+  "course_id": "P01",
+  "title": "Propositional Logic, Implication & Quantifier Negation",
+  "status": "draft",
+  "review_status": "independent_review_pending",
+  "version": "1.1.0",
+  "outcomes": [
+    "Evaluate logical implications P(x) => Q(x) over finite domains, accounting for vacuous truth when P(x) is false.",
+    "Negate universal and existential quantified statements accurately (~(forall x, P(x)) <=> exists x, ~P(x)) including boundary inequalities.",
+    "Count satisfying truth-table assignments for multi-variable logical implications."
+  ],
+  "prerequisites": [
+    "proof.sets.operations_and_inclusion_exclusion",
+    "secondary.algebra.linear_equations"
+  ],
+  "sections": {
+    "intuition": "In mathematical logic, an implication P ⇒ Q is a promise: 'Whenever P holds, Q must also hold.' The promise is broken ONLY when the hypothesis P is true and the conclusion Q is false (P ∧ ¬Q). Whenever P is false, the promise is not broken, so P ⇒ Q is vacuously true! Likewise, to negate a universal claim 'For all x, P(x) holds,' we do not need P(x) to fail everywhere—we only need a single counterexample witness x where P(x) fails: ¬(∀x, P(x)) ⇔ ∃x, ¬P(x).",
+    "formal_definition": "1. Material Implication & Negation: (P ⇒ Q) ≡ (¬P ∨ Q), and ¬(P ⇒ Q) ≡ (P ∧ ¬Q).\n2. Contrapositive Equivalence: (P ⇒ Q) ≡ (¬Q ⇒ ¬P).\n3. De Morgan's Laws for Quantifiers:\n¬(∀x ∈ D, P(x)) ≡ ∃x ∈ D, ¬P(x), and ¬(∃x ∈ D, P(x)) ≡ ∀x ∈ D, ¬P(x).\nIn particular, ¬(ax + b < c) ≡ (ax + b ≥ c).",
+    "worked_example": "On D = {1, 2, ..., 18}, how many integers x make the implication P(x) ⇒ Q(x) ('if 3 | x then 6 | x') true?\n1. Instead of listing all 18 cases, count where the implication is FALSE (3 | x and 6 ∤ x).\n2. Multiples of 3 in D: 18/3 = 6 ({3, 6, 9, 12, 15, 18}). Multiples of 6 in D: 18/6 = 3 ({6, 12, 18}).\n3. Thus 6 - 3 = 3 elements ({3, 9, 15}) falsify the implication.\n4. The remaining 18 - 3 = 15 elements make P(x) ⇒ Q(x) true (3 non-vacuously and 12 vacuously).",
+    "common_misconceptions": [
+      "Counting only non-vacuous truths (where both P(x) and Q(x) are true) and forgetting that P(x) ⇒ Q(x) is true whenever P(x) is false.",
+      "Negating a strict inequality '<' as '>' instead of '≥', thereby missing the boundary witness where equality holds.",
+      "Confusing an implication P ⇒ Q with its converse Q ⇒ P rather than its logically equivalent contrapositive ¬Q ⇒ ¬P."
+    ]
+  },
+  "template_id": "proof.logic_truth_quantifiers",
+  "template_version": "1.1.0"
+}

@@ -1,0 +1,389 @@
+/* Study interface: academy navy, one gold action colour, local system typography. */
+:root {
+  --bg-primary: #070e17; --bg-surface: #0e1927; --bg-elevated: #152436; --bg-highlight: #1c324b;
+  --text-primary: #f0fdfa; --text-secondary: #b2c9dc; --text-muted: #7f99b2;
+  --accent-gold: #f5d082; --accent-primary: #f5d082; --accent-primary-hover: #fce7b2;
+  --accent-success: #34d399; --accent-error: #f87171; --accent-warning: #f5d082;
+  --accent-wellness: #a78bfa; --accent-teal: #2dd4bf;
+  --border-color: rgba(94, 234, 212, 0.18); --font-serif: Georgia, 'Times New Roman', serif;
+  --font-sans: 'Segoe UI', system-ui, -apple-system, sans-serif; --font-mono: Consolas, monospace;
+}
+body, .axiom-app { min-height: 100dvh; }
+body {
+  font-size: 1rem;
+  background: radial-gradient(ellipse 90% 50% at 50% -10%, rgba(45, 212, 191, 0.08), transparent 70%),
+              radial-gradient(ellipse 60% 40% at 100% 100%, rgba(167, 139, 250, 0.06), transparent 70%),
+              #070e17;
+  color: var(--text-primary);
+}
+h2, h3 { text-wrap: balance; }
+p { text-wrap: pretty; }
+button { -webkit-tap-highlight-color: transparent; }
+button:disabled { cursor: not-allowed; }
+.axiom-btn { transition: background-color 160ms ease, border-color 160ms ease, transform 160ms ease; }
+.axiom-btn:active:not(:disabled) { transform: translateY(1px); }
+.axiom-btn-primary, .axiom-btn-selected { color: #070e17; background: linear-gradient(135deg, #f5d082 0%, #e6c580 100%); font-weight: 600; }
+.axiom-btn-primary:hover:not(:disabled) { color: #070e17; background: #fce7b2; }
+.axiom-btn-outline:hover { border-color: #2dd4bf; color: #f0fdfa; box-shadow: 0 0 10px rgba(45, 212, 191, 0.25); }
+.axiom-sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
+.axiom-skip-link { position: fixed; top: 1rem; left: 1rem; padding: .8rem; color: #070e17; background: #f5d082; z-index: 200; opacity: 0; pointer-events: none; }
+.axiom-skip-link:focus { opacity: 1; pointer-events: auto; }
+.axiom-header { padding: 1.15rem max(1.5rem, calc((100vw - 1120px)/2)) 0; background: rgba(11, 22, 35, 0.92); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid rgba(45, 212, 191, 0.15); position: static; }
+.axiom-header-top { margin-bottom: 1rem; gap: 1rem; }
+.axiom-brand { padding: 0; text-align: left; color: inherit; background: transparent; border: 0; }
+.axiom-brand-logo-img { width: 42px; height: 42px; box-shadow: none; border: 0; }
+.axiom-brand:hover .axiom-brand-logo-img { box-shadow: none; transform: none; }
+.axiom-title { display: block; font-size: 1.4rem; font-weight: 400; letter-spacing: .1em; }
+.axiom-subtitle { display: block; font-size: .74rem; text-transform: none; letter-spacing: .025em; color: var(--text-secondary); }
+.axiom-status-bar { gap: 1.5rem; }
+.axiom-local-status { color: var(--text-secondary); font-size: .8rem; }
+.axiom-network-status { display: block; color: var(--text-muted); font-size: .73rem; }
+.axiom-badge-xp { background: transparent; border: 0; padding: 0; color: var(--accent-gold); flex-wrap: wrap; max-width: 135px; font-variant-numeric: tabular-nums; }
+.axiom-xp-cap { width: 100%; color: var(--text-muted); padding-left: 1.25rem; }
+.axiom-nav { overflow: visible; gap: 1.75rem; padding: 0; }
+.axiom-nav-btn { padding: .65rem .1rem .8rem; border-radius: 0; font-size: .9rem; border-bottom: 2px solid transparent; }
+.axiom-nav-btn.active { background: transparent; }
+.axiom-nav-btn:hover { background: transparent; color: var(--accent-gold); }
+.axiom-main-content { max-width: 1168px; padding: 2.75rem 1.5rem 4rem; }
+.axiom-main-content:focus { outline: none; }
+.axiom-study-intro { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, .8fr); gap: 4rem; align-items: center; padding-bottom: 3.25rem; border-bottom: 1px solid var(--border-color); }
+.axiom-intro-context { color: var(--accent-gold); font-size: .85rem; margin-bottom: 1rem; }
+.axiom-intro-copy h2 { font-family: var(--font-serif); font-weight: 400; font-size: clamp(2.1rem, 4vw, 3.5rem); line-height: 1.13; letter-spacing: -.035em; margin-bottom: 1.35rem; }
+.axiom-intro-copy > p:not(.axiom-intro-context) { max-width: 52ch; color: var(--text-secondary); }
+.axiom-intro-copy .axiom-btn { margin-top: 1.6rem; }
+.axiom-draft-note { font-size: .8rem; color: var(--text-muted); margin-top: 1rem; line-height: 1.6; }
+.axiom-fraction-study { padding: 1.6rem 1.5rem; background: var(--bg-surface); border-radius: 8px; }
+.axiom-fraction-study figcaption { font-family: var(--font-serif); font-size: 1.25rem; }
+.axiom-fraction-study > svg { width: 100%; height: auto; margin-top: 1.1rem; display: block; }
+.axiom-fraction-study p { color: var(--text-secondary); font-size: .9rem; margin-bottom: 1rem; }
+.axiom-text-link { display: inline-flex; align-items: center; gap: .6rem; min-height: 44px; color: var(--accent-gold); background: transparent; border: 0; cursor: pointer; font-weight: 500; text-align: left; }
+.axiom-text-link:hover { color: #f3d79f; text-decoration: underline; text-underline-offset: 4px; }
+.axiom-curriculum-section { padding-top: 2.4rem; }
+.axiom-brain-gym { padding: 2.3rem 0; border-bottom: 1px solid var(--border-color); }
+.axiom-gym-intro { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); align-items: start; gap: 2rem; margin-bottom: 1.3rem; }
+.axiom-gym-intro h2 { font-family: var(--font-serif); font-size: 1.85rem; font-weight: 400; line-height: 1.3; }
+.axiom-gym-intro p { color: var(--text-secondary); max-width: 65ch; font-size: .95rem; }
+.axiom-gym-activities > div { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.3fr) minmax(0, 1fr); align-items: center; gap: 1.25rem; padding: 1.05rem 0; border-top: 1px solid var(--border-color); }
+.axiom-gym-activities h3 { font-size: 1rem; font-weight: 600; }
+.axiom-gym-activities p { font-size: .9rem; color: var(--text-secondary); }
+.axiom-gym-activities button { font-size: .88rem; justify-self: end; }
+.axiom-gym-activities button svg { flex-shrink: 0; }
+.axiom-curriculum-heading { display: flex; justify-content: space-between; align-items: center; gap: 2rem; margin-bottom: 1.4rem; }
+.axiom-curriculum-heading h2 { font-family: var(--font-serif); font-size: 1.85rem; font-weight: 400; }
+.axiom-curriculum-heading p { color: var(--text-secondary); font-size: .9rem; margin-top: .45rem; max-width: 58ch; }
+.axiom-curriculum-search { display: flex; align-items: center; gap: .6rem; padding: .1rem .8rem; border: 1px solid var(--border-color); border-radius: 6px; background: var(--bg-surface); min-width: 250px; }
+.axiom-curriculum-search input { width: 100%; min-width: 0; background: transparent; color: var(--text-primary); border: 0; min-height: 44px; font-size: .9rem; }
+.axiom-curriculum-search:focus-within { outline: 2px solid var(--accent-gold); outline-offset: 3px; }
+.axiom-curriculum-search input:focus-visible { outline: 0; }
+input::placeholder, textarea::placeholder { color: var(--text-muted); opacity: 1; }
+.axiom-filter-chips { gap: .3rem; }
+.axiom-chip { border-radius: 5px; padding: .4rem .7rem; background: transparent; border-color: transparent; }
+.axiom-chip.active { background: var(--bg-elevated); border-color: #6c624c; color: var(--accent-gold); }
+.axiom-chip:hover { color: var(--text-primary); background: var(--bg-elevated); }
+.axiom-results-count { font-size: .8rem; color: var(--text-muted); margin: 1.3rem 0 .9rem; }
+.axiom-card-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+.axiom-course-card { border: 1px solid var(--border-color); border-radius: 9px; padding: 1.5rem; background: var(--bg-surface); box-shadow: 0 4px 18px rgba(0, 0, 0, 0.28), inset 0 1px 0 rgba(45, 212, 191, 0.1); transition: border-color 0.2s ease, box-shadow 0.2s ease; }
+.axiom-course-card:hover { transform: none; border-color: rgba(45, 212, 191, 0.5); box-shadow: 0 6px 24px rgba(0, 0, 0, 0.35), 0 0 16px rgba(45, 212, 191, 0.12); }
+.axiom-course-id { font-family: var(--font-sans); font-size: .8rem; font-weight: 600; font-variant-numeric: tabular-nums; }
+.axiom-course-availability { font-size: .78rem; color: var(--text-secondary); }
+.axiom-course-card h3 { font-size: 1.18rem; font-weight: 600; margin-bottom: .3rem; }
+.axiom-card-header { gap: 1rem; }
+.axiom-stage-label { text-transform: none; font-size: .8rem; }
+.axiom-course-summary { color: var(--text-secondary); font-size: .92rem; line-height: 1.65; margin-bottom: 1rem; }
+.axiom-course-details { font-size: .87rem; color: var(--text-secondary); margin-bottom: 1rem; }
+.axiom-course-details summary { cursor: pointer; min-height: 44px; display: list-item; padding-top: .6rem; color: var(--text-primary); }
+.axiom-course-details ul, .axiom-roadmap-course ul { padding-left: 1.2rem; margin: .7rem 0; }
+.axiom-card-footer { border-top-color: var(--border-color); padding-top: .5rem; }
+.axiom-roadmap { margin-top: 2rem; }
+.axiom-roadmap-heading { margin-bottom: 1rem; }
+.axiom-roadmap-heading p { color: var(--text-secondary); font-size: .9rem; }
+.axiom-roadmap-course { border-top: 1px solid var(--border-color); }
+.axiom-roadmap-course:last-child { border-bottom: 1px solid var(--border-color); }
+.axiom-roadmap-course summary { display: grid; grid-template-columns: 3.3rem 1fr auto; gap: .8rem; cursor: pointer; padding: 1rem .4rem; font-size: .95rem; }
+.axiom-roadmap-course summary::after { content: '+'; color: var(--text-muted); grid-column: 3; grid-row: 1; margin-left: 4.4rem; }
+.axiom-roadmap-status { font-size: .78rem; color: var(--text-muted); margin-right: 1.5rem; }
+.axiom-roadmap-course[open] summary::after { content: '−'; }
+.axiom-roadmap-course > div { max-width: 75ch; padding: 0 1rem 1.25rem 4.5rem; color: var(--text-secondary); font-size: .92rem; }
+.axiom-search-empty { padding: 2.5rem 1.5rem; background: var(--bg-surface); border-radius: 8px; }
+.axiom-search-empty p { color: var(--text-secondary); margin: .5rem 0 1rem; }
+.axiom-lesson-container { max-width: 780px; }
+.axiom-lesson-nav-bar { display: grid; gap: .6rem; margin-bottom: 2rem; }
+.axiom-lesson-nav-header { display: flex; gap: .5rem; align-items: center; font-size: .85rem; color: var(--text-secondary); }
+.axiom-select { max-width: 100%; font-size: .92rem; border-radius: 5px; }
+.axiom-lesson-header h2, .axiom-practice-header h2, .axiom-studio-header h2, .axiom-mastery-header h2 { font-family: var(--font-serif); font-size: clamp(1.8rem, 3vw, 2.5rem); line-height: 1.2; font-weight: 400; letter-spacing: -.025em; margin-bottom: .8rem; }
+.axiom-tag { background: transparent; padding: 0; text-transform: none; letter-spacing: 0; font-weight: 500; font-size: .8rem; }
+.axiom-lead { line-height: 1.7; font-size: 1rem; }
+.axiom-section.axiom-card { background: transparent; border: 0; border-top: 1px solid var(--border-color); box-shadow: none; border-radius: 0; padding: 1.8rem 0 .3rem; }
+.axiom-section h3 { font-size: 1.15rem; font-weight: 600; margin-bottom: .9rem; }
+.axiom-section h4 { margin: 1.25rem 0 .4rem; font-size: .95rem; }
+.axiom-section p { color: var(--text-secondary); line-height: 1.85; max-width: 72ch; }
+.axiom-interactive-box { background: var(--bg-surface); border: 0; border-radius: 6px; }
+.axiom-interactive-box h4 { margin-top: 0; }
+.axiom-step-item { display: grid; grid-template-columns: 1.8rem 1fr; gap: .8rem; }
+.axiom-step-num { display: flex; justify-content: center; align-items: center; width: 1.65rem; height: 1.65rem; border: 1px solid #786d56; border-radius: 50%; margin-top: .2rem; }
+.axiom-result-box { border-left: 2px solid var(--accent-gold); padding: .8rem 1.1rem; margin-top: 1.4rem; background: var(--bg-surface); color: var(--text-primary); }
+.axiom-feedback-reveal { display: flex; align-items: flex-start; gap: .6rem; margin-top: 1rem; font-size: .9rem; color: var(--text-secondary); }
+.axiom-feedback-reveal svg { flex-shrink: 0; margin-top: .2rem; }
+.axiom-misconception-content { border-left: 2px solid var(--accent-gold); padding-left: 1.2rem; }
+.axiom-correct-explanation { margin-top: .7rem; }
+.axiom-section details { background: var(--bg-surface); border-radius: 4px; padding: .1rem 1rem; }
+.axiom-section details p { padding: 0 0 1rem; }
+.axiom-section textarea.axiom-text-input { text-align: left; font-family: var(--font-sans); font-size: 1rem; resize: vertical; line-height: 1.75; border-width: 1px; }
+.axiom-lesson-actions { margin-top: 1.5rem; }
+.concept-visual { padding: 1.25rem; background: var(--bg-surface); border-radius: 6px; margin: 1rem 0; }
+.concept-visual figcaption { color: var(--text-primary); font-size: .95rem; font-weight: 500; }
+.concept-visual > svg { width: 100%; height: auto; display: block; margin: .75rem 0; }
+.concept-visual > p { font-size: .87rem; margin-top: .75rem; }
+.axiom-practice-header { display: block; }
+.axiom-template-selector { margin-top: 1.6rem; display: grid; gap: .5rem; }
+.axiom-template-selector label { font-size: .85rem; color: var(--text-secondary); }
+.axiom-practice-card { padding: 2rem; box-shadow: none; border-radius: 8px; }
+.axiom-exercise-prompt { margin: 2rem 0; }
+.axiom-exercise-prompt h3 { font-size: 1.35rem; line-height: 1.6; font-weight: 500; }
+.axiom-input-row label { display: block; font-size: .85rem; margin-bottom: .5rem; color: var(--text-secondary); }
+.axiom-text-input { border-width: 1px; font-size: 1.1rem; border-radius: 6px; }
+.axiom-text-input:focus { border-color: var(--accent-gold); }
+.axiom-feedback-banner { margin-top: 1.5rem; padding: 1.25rem; }
+.axiom-feedback-header { align-items: flex-start; }
+.axiom-feedback-header svg { flex-shrink: 0; margin-top: .2rem; }
+.axiom-feedback-text { font-size: .95rem; color: var(--text-primary); }
+.axiom-encouragement { padding: .9rem 1rem; margin: 1rem 0; border-left: 3px solid var(--accent-gold); background: var(--bg-elevated); line-height: 1.75; }
+.axiom-encouragement.positive { border-left-color: var(--accent-success); }
+.axiom-encouragement strong { font-weight: 600; }
+.axiom-encouragement span { display: block; color: var(--text-secondary); font-size: .9rem; margin-top: .35rem; }
+.axiom-feedback-support { margin-top: 1.1rem; border-top: 1px solid var(--border-color); padding-top: .5rem; }
+.axiom-support-actions { display: flex; gap: .4rem 1.25rem; flex-wrap: wrap; }
+.axiom-support-actions button { font-size: .88rem; }
+.axiom-help-content { padding: 1rem; background: var(--bg-elevated); border-radius: 5px; margin-top: .7rem; }
+.axiom-help-content h4 { margin-bottom: .6rem; font-size: 1rem; }
+.axiom-help-content p,.axiom-help-content li { font-size: .92rem; line-height: 1.8; }
+.axiom-help-content ol { padding-left: 1.25rem; margin: 1rem 0; }
+.axiom-help-content li { margin: .6rem 0; color: var(--text-secondary); }
+.axiom-help-conclusion { color: var(--accent-gold); margin-bottom: 1rem; }
+.axiom-column-visual { font-family: var(--font-mono); font-size: 1.5rem; text-align: right; max-width: 12ch; padding: 1rem; background: var(--bg-primary); line-height: 1.65; margin-bottom: 1rem; }
+.axiom-coaching-strips { margin: 1rem 0; }
+.axiom-coaching-strips figcaption { font-size: .85rem; color: var(--text-secondary); }
+.axiom-coaching-strips svg { display: block; width: 100%; height: auto; margin: .5rem 0; }
+.axiom-coaching-strips .axiom-strip-label { color: var(--text-primary); font-size: .92rem; font-variant-numeric: tabular-nums; margin-top: .8rem; }
+.axiom-supported-note { color: var(--text-secondary); margin-top: 1rem; }
+.axiom-prediction-hint { margin-top: 1rem; font-size: .9rem; }
+.axiom-section .axiom-note-encouragement { color: var(--accent-gold); margin-top: .8rem; font-size: .9rem; }
+#lesson-worked-example { scroll-margin-top: 1.5rem; }
+.axiom-learning-acknowledgement { color: var(--accent-gold); font-size: .9rem; margin: .8rem 0; }
+.axiom-award-pill { background: transparent; color: var(--accent-gold); padding: .2rem 0; border-radius: 0; }
+.axiom-abacus-value-banner { background: var(--bg-surface); }
+.axiom-speech-box { max-width: 55ch; font-size: .85rem; }
+.axiom-speech-box svg { flex-shrink: 0; }
+.axiom-value-label { text-transform: none; }
+.axiom-mastery-container { max-width: 920px; margin: 0 auto; }
+.axiom-mastery-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 1.5rem; margin-bottom: 2rem; }
+.axiom-backup-actions { display: flex; flex-wrap: wrap; gap: .5rem; }
+.axiom-backup-actions .axiom-btn { font-size: .85rem; padding: .6rem .8rem; }
+.axiom-card { box-shadow: none; }
+.axiom-reward-summary { display: flex; gap: 3rem; padding-bottom: 1.5rem; margin-bottom: 1.5rem; border-bottom: 1px solid var(--border-color); }
+.axiom-reward-summary strong { display: block; font-variant-numeric: tabular-nums; font-size: 1.85rem; color: var(--accent-gold); font-weight: 500; }
+.axiom-reward-summary span { color: var(--text-secondary); font-size: .85rem; }
+.axiom-import-notice { margin: 1rem 0; padding: 1rem; background: var(--bg-elevated); border-left: 2px solid var(--accent-gold); }
+.axiom-empty-ledger { text-align: left; padding: 2rem 0 .5rem; }
+.axiom-empty-ledger .axiom-text-link { margin-top: .75rem; }
+.axiom-table { font-variant-numeric: tabular-nums; }
+.axiom-table caption { text-align: left; color: var(--text-secondary); font-size: .85rem; padding-bottom: 1rem; }
+.axiom-table td { vertical-align: top; }
+.axiom-table th:first-child, .axiom-table td:first-child { padding-left: 0; }
+.axiom-reward-key { display: block; margin-top: .4rem; color: var(--text-muted); font-size: .72rem; overflow-wrap: anywhere; }
+.axiom-footer { text-align: left; font-size: .8rem; padding: 1.5rem max(1.5rem, calc((100vw - 1120px)/2)); background: transparent; }
+.axiom-footer strong { display: block; color: var(--text-secondary); font-weight: 500; margin-bottom: .3rem; }
+.axiom-footer span { display: block; max-width: 75ch; }
+@media (max-width: 800px) {
+  .axiom-gym-intro { grid-template-columns: minmax(0, 1fr); gap: .75rem; }
+  .axiom-gym-activities > div { grid-template-columns: minmax(0, 1fr); gap: .4rem; }
+  .axiom-gym-activities button { justify-self: start; }
+  .axiom-study-intro { gap: 2rem; grid-template-columns: minmax(0, 1fr); }
+  .axiom-fraction-study { max-width: 470px; }
+  .axiom-curriculum-heading { flex-direction: column; align-items: stretch; gap: 1rem; }
+  .axiom-curriculum-search { min-width: 0; }
+  .axiom-mastery-header { flex-direction: column; }
+}
+@media (max-width: 640px) {
+  .axiom-header { padding: 1rem 1rem 0; }
+  .axiom-header-top { flex-wrap: nowrap; }
+  .axiom-title { font-size: 1.2rem; }
+  .axiom-brand { gap: .5rem; }
+  .axiom-brand-logo-img { width: 34px; height: 34px; }
+  .axiom-subtitle { font-size: .64rem; }
+  .axiom-status-bar { width: auto; gap: 0; }
+  .axiom-local-status { display: none; }
+  .axiom-badge-xp { max-width: 91px; font-size: .78rem; justify-content: flex-end; }
+  .axiom-xp-cap { padding: 0; text-align: right; font-size: .65rem; }
+  .axiom-nav { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: .1rem; }
+  .axiom-nav-btn { flex-direction: column; font-size: .7rem; gap: .25rem; padding: .55rem 0; min-width: 0; }
+  .axiom-main-content { padding: 2rem 1rem 2.5rem; }
+  .axiom-study-intro { padding-bottom: 2rem; }
+  .axiom-intro-copy h2 { font-size: 2.25rem; }
+  .axiom-intro-copy > p { font-size: .95rem; }
+  .axiom-intro-copy .axiom-draft-note { font-size: .78rem; }
+  .axiom-fraction-study { padding: 1.25rem; }
+  .axiom-card-grid { grid-template-columns: minmax(0, 1fr); }
+  .axiom-course-card { padding: 1.25rem; }
+  .axiom-roadmap-course summary { grid-template-columns: 2.7rem 1fr; gap: .5rem; }
+  .axiom-roadmap-status { grid-column: 2; margin: 0; }
+  .axiom-roadmap-course summary::after { display: none; }
+  .axiom-roadmap-course > div { padding: 0 .5rem 1rem; }
+  .axiom-section.axiom-card { padding-top: 1.3rem; }
+  .axiom-practice-card, .axiom-card { padding: 1.25rem; }
+  .axiom-action-row { flex-wrap: wrap; gap: .6rem; }
+  .axiom-exercise-prompt h3 { font-size: 1.12rem; }
+  .axiom-exercise-meta { gap: .5rem; }
+  .axiom-tag { font-size: .7rem; }
+  .axiom-reward-summary { gap: 2rem; }
+  .axiom-table th, .axiom-table td { padding: .75rem .5rem; }
+  .axiom-footer { padding: 1.25rem 1rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .axiom-btn, .axiom-nav-btn, .axiom-chip { transition: none; }
+  .axiom-btn:active:not(:disabled) { transform: none; }
+}
+
+/* Practice Modes & Confidence */
+.axiom-practice-modes { margin-bottom: 1.5rem; background: var(--bg-surface); }
+.axiom-mode-row { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem; }
+.axiom-band-picker-wrap { display: flex; align-items: center; gap: .75rem; flex-wrap: wrap; }
+.axiom-band-buttons { display: flex; gap: .5rem; flex-wrap: wrap; }
+.axiom-confidence-bar { margin-top: 1rem; padding-top: .85rem; border-top: 1px solid var(--border-color); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .75rem; font-size: .9rem; }
+.axiom-confidence-text strong { color: var(--accent-gold); }
+.axiom-streak-congrats { display: flex; align-items: center; gap: .6rem; color: var(--accent-success); font-weight: 500; flex-wrap: wrap; }
+.axiom-workout-status-bar { margin-top: 1rem; padding: .85rem 1rem; background: var(--bg-elevated); border-radius: 6px; }
+.axiom-workout-info { display: flex; align-items: center; gap: .5rem; margin-bottom: .6rem; flex-wrap: wrap; font-size: .9rem; }
+.axiom-progress-track { width: 100%; height: 8px; background: var(--bg-highlight); border-radius: 4px; overflow: hidden; }
+.axiom-progress-fill { height: 100%; background: var(--accent-gold); transition: width 240ms ease; }
+.axiom-workout-summary { margin-top: 1rem; padding: 1.25rem; background: var(--bg-elevated); border-radius: 8px; border: 1px solid var(--border-color); display: flex; flex-direction: column; gap: 1rem; }
+.axiom-practice-reflection { margin-top: 1.5rem; padding-top: 1.25rem; border-top: 1px solid var(--border-color); }
+.axiom-fluency-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1rem; margin-top: 1.25rem; }
+.axiom-fluency-card { padding: 1rem; background: var(--bg-elevated); border-radius: 6px; border: 1px solid var(--border-color); display: flex; flex-direction: column; justify-content: space-between; gap: .75rem; }
+.axiom-fluency-header { display: flex; justify-content: space-between; align-items: flex-start; gap: .5rem; }
+.axiom-fluency-title { font-size: .95rem; font-weight: 600; margin: 0; }
+.axiom-fluency-badge { font-size: .75rem; padding: .2rem .5rem; border-radius: 4px; font-weight: 500; }
+.axiom-fluency-badge.fluent { background: rgba(122, 208, 177, 0.15); color: var(--accent-success); border: 1px solid rgba(122, 208, 177, 0.3); }
+.axiom-fluency-badge.progress { background: rgba(230, 197, 128, 0.15); color: var(--accent-gold); border: 1px solid rgba(230, 197, 128, 0.3); }
+.axiom-fluency-badge.new { background: var(--bg-highlight); color: var(--text-muted); }
+.axiom-fluency-badge.due { background: rgba(244, 155, 155, 0.15); color: var(--accent-error); border: 1px solid rgba(244, 155, 155, 0.3); }
+.axiom-review-due-alert { display: flex; align-items: center; justify-content: space-between; gap: 1.25rem; padding: 1.15rem 1.35rem; background: var(--bg-elevated); border: 1px solid var(--accent-gold); border-radius: 8px; flex-wrap: wrap; }
+.axiom-review-due-alert > div { flex: 1; min-width: 240px; }
+.axiom-review-due-alert strong { display: block; font-size: 1.05rem; margin-bottom: .25rem; color: var(--accent-gold); }
+.axiom-schedule-banner { margin-top: .9rem; padding: .85rem 1rem; background: var(--bg-elevated); border: 1px solid var(--border-color); border-radius: 6px; }
+.axiom-schedule-status { display: flex; align-items: center; gap: .6rem; font-size: .9rem; }
+.axiom-review-badge { font-size: .75rem; padding: .15rem .45rem; border-radius: 4px; font-weight: 600; margin-left: .5rem; }
+.axiom-review-badge.due { background: rgba(244, 155, 155, 0.15); color: var(--accent-error); border: 1px solid rgba(244, 155, 155, 0.3); }
+.axiom-review-badge.scheduled { background: rgba(122, 208, 177, 0.15); color: var(--accent-success); border: 1px solid rgba(122, 208, 177, 0.3); }
+.axiom-retention-pill { display: inline-block; font-size: .75rem; color: var(--accent-gold); margin-top: .4rem; }
+.axiom-btn-sm { padding: .35rem .75rem; font-size: .8rem; min-height: 32px; }
+
+/* Keyboard Enter Submission Reinforcement */
+.axiom-enter-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 0.12rem 0.45rem;
+  border-radius: 4px;
+  margin-left: 0.5rem;
+  background: rgba(7, 14, 23, 0.16);
+  border: 1px solid rgba(7, 14, 23, 0.3);
+  color: inherit;
+  letter-spacing: 0.02em;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12);
+  vertical-align: middle;
+  transition: all 0.15s ease;
+  line-height: 1.2;
+}
+
+.axiom-btn-primary .axiom-enter-badge {
+  background: rgba(7, 14, 23, 0.16);
+  border-color: rgba(7, 14, 23, 0.32);
+  color: #070e17;
+}
+
+.axiom-btn:hover:not(:disabled) .axiom-enter-badge {
+  background: rgba(7, 14, 23, 0.24);
+  transform: translateY(-0.5px);
+}
+
+.axiom-btn:active:not(:disabled) .axiom-enter-badge {
+  transform: translateY(1px);
+}
+
+.axiom-input-hint {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.82rem;
+  color: #8da4be;
+  margin-top: 0.45rem;
+  margin-bottom: 0.25rem;
+  line-height: 1.4;
+}
+
+.axiom-input-hint kbd {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.12rem 0.4rem;
+  font-size: 0.74rem;
+  font-family: inherit;
+  font-weight: 600;
+  color: #2dd4bf;
+  background: rgba(14, 27, 43, 0.85);
+  border: 1px solid rgba(45, 212, 191, 0.35);
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.axiom-input-hint strong {
+  color: #a7f3d0;
+  font-weight: 600;
+}
+
+.axiom-option-btn .axiom-enter-badge {
+  background: rgba(45, 212, 191, 0.15);
+  border-color: rgba(45, 212, 191, 0.35);
+  color: #2dd4bf;
+  margin-left: auto;
+}
+
+.axiom-option-hint {
+  display: block;
+  font-size: 0.76rem;
+  color: #2dd4bf;
+  margin-top: 0.35rem;
+}
+
+
+/* Focus view (ADR-0006): quieter chrome while studying. Nav and honest draft labels stay visible. */
+.axiom-focus-view { background-image: none; background-color: #070e17; }
+.axiom-focus-view .axiom-xp-cap { display: none; }
+.axiom-focus-view .axiom-footer { display: none; }
+.axiom-focus-view .axiom-course-card,
+.axiom-focus-view .axiom-card { box-shadow: none; }
+
+/* Working notes scratchpad (source of truth section 5 practice workspace contract). */
+.axiom-scratchpad {
+  border-top: 1px solid var(--border-color);
+  margin-top: 1.25rem;
+  padding-top: .6rem;
+}
+.axiom-scratchpad summary {
+  cursor: pointer;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  color: var(--text-secondary);
+  font-size: .9rem;
+}
+.axiom-scratchpad label {
+  display: block;
+  font-size: .82rem;
+  color: var(--text-secondary);
+  margin: .35rem 0 .4rem;
+}
+.axiom-scratchpad textarea { width: 100%; }
+

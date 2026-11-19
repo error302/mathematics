@@ -1,8 +1,8 @@
 schema_version: 1
 id: foundation.place_value.decimal_expansion.lesson
-version: 1.0.0
+version: 1.1.0
 locale: en
-status: published
+status: draft
 course_id: F01
 unit_id: foundation.place_value.decimal_expansion
 outcomes:
@@ -16,7 +16,7 @@ prerequisites:
   recommended: []
 exercise_refs:
   - template_id: place_value.decompose
-    template_version: 1.0.0
+    template_version: 1.1.0
     difficulty_band: 1
 assessment_dimensions:
   - conceptual
@@ -24,7 +24,4 @@ assessment_dimensions:
 content_file: lesson.en.md
 license_id: axiom-original-content
 source_refs: []
-review_record_ids:
-  - review-math-001
-  - review-pedagogy-001
-  - review-a11y-001
+review_record_ids: []

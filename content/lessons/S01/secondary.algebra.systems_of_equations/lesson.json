@@ -1,0 +1,66 @@
+{
+  "id": "secondary.algebra.systems_of_equations",
+  "courseId": "S01",
+  "title": "Systems of Linear Equations: Substitution and Elimination",
+  "subtitle": "Solving simultaneous 2x2 linear constraints via variable elimination and geometric intersection.",
+  "templateId": "algebra.linear_system_solve",
+  "challenge": "A single linear equation x + y = 10 has infinitely many solutions, such as (10, 0), (6, 4), and (2.5, 7.5). Yet as soon as we add a second independent equation x - y = 2, the pair (x, y) is locked to the single point (6, 4). Why does adding a second equation collapse an infinite line of solutions to a single unique point?",
+  "predictionPrompt": "If x + y = 14 and x - y = 4, what is the exact value of x?",
+  "predictionOptions": [
+    {
+      "label": "x = 5",
+      "value": "5"
+    },
+    {
+      "label": "x = 9",
+      "value": "9",
+      "isCorrect": true
+    },
+    {
+      "label": "x = 10",
+      "value": "10"
+    },
+    {
+      "label": "x = 18",
+      "value": "18"
+    }
+  ],
+  "formalDefinition": "A 2x2 linear system over Q consists of two simultaneous equations a_1 x + b_1 y = c_1 and a_2 x + b_2 y = c_2. When the determinant a_1 b_2 - a_2 b_1 != 0, the two lines have distinct slopes and intersect at a unique point (x, y) in Q^2. Both substitution (replacing one variable by an equivalent expression in the other) and elimination (adding scaled equations to cancel one variable) reduce the 2x2 system to a 1-variable linear equation.",
+  "workedExample": {
+    "steps": [
+      "Task: Solve the system 3x + 2y = 22 and 2x - 2y = 8 for x.",
+      "Observe that the y-coefficients (+2y and -2y) are exact additive inverses.",
+      "Add the two equations term by term to eliminate y: (3x + 2x) + (2y - 2y) = 22 + 8 => 5x = 30.",
+      "Divide by 5 to find x = 6. Substitute x = 6 into 3(6) + 2y = 22 => 2y = 4 => y = 2. Check in the second equation: 2(6) - 2(2) = 12 - 4 = 8."
+    ],
+    "result": "x = 6 (with y = 2)."
+  },
+  "misconception": {
+    "mistake": "Reporting the solved value of y when the problem asks for x, or adding two equations whose y-coefficients have the same sign without subtracting.",
+    "correction": "Always check which coordinate (x or y) is requested, and verify that the eliminated variable has opposite signs (+by and -by) before adding the equations."
+  },
+  "reflection": "Elimination and substitution are algebraic views of the same geometric fact: at the intersection point (x, y), both line equations hold simultaneously.",
+  "prerequisiteCheck": "If y = 2x + 1 and x = 3, what is the value of y?",
+  "representation": "Plot both linear equations in the (x, y) coordinate plane: each line represents all points satisfying one constraint, and their single crossing point satisfies both.",
+  "faded": {
+    "prompt": "Solve y = 2x - 1 and 3x + y = 14 for x: Substitute y = 2x - 1 into the second equation to get 3x + (2x - 1) = 14 => __x - 1 = 14 => x = __.",
+    "solution": "5, then 3."
+  },
+  "independent": [
+    {
+      "prompt": "Solve the system x + y = 15 and x - y = 3 for x.",
+      "solution": "Add the equations: 2x = 18 => x = 9 (and y = 6)."
+    },
+    {
+      "prompt": "Solve the system 4x + 3y = 29 and 2x - 3y = 1 for x.",
+      "solution": "Add the equations to eliminate y: 6x = 30 => x = 5 (and y = 3)."
+    }
+  ],
+  "explanation": "Why is adding the left-hand sides and right-hand sides of two true equations A = B and C = D guaranteed to produce a true equation A + C = B + D?",
+  "transfer": {
+    "prompt": "Two numbers have a sum of 32, and the larger number is 4 more than 3 times the smaller number. Find the larger number.",
+    "solution": "Let x be the larger and y be the smaller: x + y = 32 and x = 3y + 4. Substitute into the sum: (3y + 4) + y = 32 => 4y = 28 => y = 7, so x = 3(7) + 4 = 25."
+  },
+  "retrieval": "Compare when substitution is most direct versus when elimination is most direct for solving a 2x2 linear system.",
+  "reviewNote": "Draft secondary lesson. Exact calculations verified by Rust engine."
+}

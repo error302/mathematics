@@ -1,0 +1,66 @@
+{
+  "id": "secondary.trig.triangle_laws_and_inverse",
+  "courseId": "S05",
+  "title": "Inverse Trigonometric Branches, Law of Sines, and Law of Cosines",
+  "subtitle": "Principal domain restrictions for invertibility, altitude-based Law of Sines, and the Law of Cosines as a generalized Pythagorean theorem.",
+  "templateId": "trig.law_of_sines_cosines",
+  "challenge": "Because sin(theta) repeats every 2*pi radians and takes every value in (-1, 1) infinitely many times, it is not injective on R. How do we restrict the domain of sine so that arcsin(y) has a unique output—and why does that mean arcsin(sin(5*pi/6)) equals pi/6 rather than 5*pi/6?",
+  "predictionPrompt": "In triangle ABC with side lengths a = 5, b = 6, and c = 7, use the Law of Cosines (c^2 = a^2 + b^2 - 2ab cos C) to find the exact rational value of cos(C).",
+  "predictionOptions": [
+    {
+      "label": "1/5",
+      "value": "1/5",
+      "isCorrect": true
+    },
+    {
+      "label": "-1/5",
+      "value": "-1/5"
+    },
+    {
+      "label": "2/5",
+      "value": "2/5"
+    },
+    {
+      "label": "19/30",
+      "value": "19/30"
+    }
+  ],
+  "formalDefinition": "To construct single-valued inverse functions, we restrict sin(x) to [-pi/2, pi/2] (so arcsin : [-1, 1] -> [-pi/2, pi/2]), cos(x) to [0, pi] (so arccos : [-1, 1] -> [0, pi]), and tan(x) to (-pi/2, pi/2) (so arctan : R -> (-pi/2, pi/2)). In any triangle ABC with sides a, b, c opposite angles A, B, C and circumradius R, the Law of Sines states a / sin(A) = b / sin(B) = c / sin(C) = 2R, and the Law of Cosines states c^2 = a^2 + b^2 - 2ab cos(C), yielding cos(C) = (a^2 + b^2 - c^2) / (2ab).",
+  "workedExample": {
+    "steps": [
+      "Task: Evaluate arcsin(sin(5*pi/6)), find side b when a = 10, sin(A) = 2/5, and sin(B) = 3/8, and find cos(C) in a triangle with sides a = 5, b = 6, c = 7.",
+      "Since 5*pi/6 lies in Quadrant II outside [-pi/2, pi/2], use sin(pi - theta) = sin(theta): sin(5*pi/6) = sin(pi/6), and since pi/6 in [-pi/2, pi/2], arcsin(sin(5*pi/6)) = (1/6)pi.",
+      "By the Law of Sines, b = a * sin(B) / sin(A) = 10 * (3/8) / (2/5) = (30/8) * (5/2) = 150/16 = 75/8.",
+      "By the Law of Cosines for a = 5, b = 6, c = 7: cos(C) = (5^2 + 6^2 - 7^2) / (2 * 5 * 6) = (25 + 36 - 49) / 60 = 12/60 = 1/5."
+    ],
+    "result": "arcsin(sin(5*pi/6)) = (1/6)pi; b = 75/8; cos(C) = 1/5."
+  },
+  "misconception": {
+    "mistake": "Canceling arcsin(sin(theta)) = theta when theta lies outside [-pi/2, pi/2], or computing (c^2 - a^2 - b^2)/(2ab) instead of (a^2 + b^2 - c^2)/(2ab) in the Law of Cosines.",
+    "correction": "The output of arcsin(y) must always belong to [-pi/2, pi/2]. And in c^2 = a^2 + b^2 - 2ab cos(C), adding 2ab cos(C) to the left and subtracting c^2 from the right yields 2ab cos(C) = a^2 + b^2 - c^2."
+  },
+  "reflection": "When C = 90 degrees, cos(C) = 0 and the Law of Cosines c^2 = a^2 + b^2 - 2ab cos(C) reduces directly to the classical Pythagorean Theorem c^2 = a^2 + b^2. Furthermore, the sign of a^2 + b^2 - c^2 immediately classifies angle C as acute (> 0), right (= 0), or obtuse (< 0).",
+  "prerequisiteCheck": "Why does a function need to be one-to-one (injective) on its domain before an inverse function can be defined?",
+  "representation": "Drop an altitude h from vertex B to side b in triangle ABC: h = c sin(A) = a sin(C) proves the Law of Sines, while applying the Pythagorean theorem to the two resulting right triangles proves the Law of Cosines.",
+  "faded": {
+    "prompt": "Find cos(C) in a triangle with sides a = 3, b = 5, c = 7: cos(C) = (3^2 + 5^2 - 7^2) / (2 * 3 * 5) = (9 + 25 - 49) / 30 = __ / 30 = __.",
+    "solution": "-15, then -1/2 (so C = 120 degrees!)."
+  },
+  "independent": [
+    {
+      "prompt": "Evaluate arcsin(sin(3*pi/4)) in the form k*pi and state the exact rational coefficient k.",
+      "solution": "Since sin(3*pi/4) = sin(pi/4) and pi/4 in [-pi/2, pi/2], k = 1/4."
+    },
+    {
+      "prompt": "In triangle ABC, side a = 12, sin(A) = 3/5, and sin(B) = 5/8. Find the exact length of side b.",
+      "solution": "b = 12 * (5/8) / (3/5) = (15/2) * (5/3) = 25/2."
+    }
+  ],
+  "explanation": "Why is the principal domain of arccos chosen as [0, pi] (Quadrants I and II) instead of [-pi/2, pi/2] (Quadrants IV and I)?",
+  "transfer": {
+    "prompt": "In the faded example with sides a = 3, b = 5, c = 7, we found cos(C) = -1/2. Since C is a triangle angle in (0, pi), what is the exact degree measure of obtuse angle C?",
+    "solution": "In (0, pi), the unique angle with cos(C) = -1/2 is C = 2*pi/3 radians = 120 degrees."
+  },
+  "retrieval": "State the principal ranges of arcsin, arccos, and arctan, the Law of Sines, and the Law of Cosines solved for cos(C).",
+  "reviewNote": "Draft secondary lesson. Exact calculations verified by Rust engine."
+}

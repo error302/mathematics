@@ -1,0 +1,31 @@
+schema_version: 1
+id: secondary.functions.composition_and_inverses.lesson
+version: 1.1.0
+locale: en
+status: draft
+course_id: S02
+unit_id: secondary.functions.composition_and_inverses
+outcomes:
+  - Evaluate composite functions (f o g)(x) = f(g(x)) from inside out and recognize non-commutativity f o g != g o f.
+  - Determine exact inverse values f^-1(y) for bijective linear mappings over Q and distinguish f^-1(x) from the reciprocal 1/f(x).
+skill_ids:
+  - secondary.functions.composition
+  - secondary.functions.inverse_mappings
+prerequisites:
+  required:
+    - secondary.functions.domain_and_preimage
+    - secondary.algebra.linear_equations
+  recommended:
+    - secondary.algebra.substitution
+exercise_refs:
+  - template_id: functions.composition_inverse
+    template_version: 1.1.0
+    difficulty_band: 1
+assessment_dimensions:
+  - conceptual
+  - procedural
+  - transfer
+content_file: lesson.en.md
+license_id: axiom-original-content
+source_refs: []
+review_record_ids: []

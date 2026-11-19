@@ -1,0 +1,26 @@
+{
+  "passed": true,
+  "checks": [
+    "Owner vision is displayed and all three brain-gym entries open their actual number, reasoning and abacus activities.",
+    "Default curriculum shows draft courses, rather than an 83-card wall.",
+    "Full roadmap and graduate filtering retain planned-course availability honestly.",
+    "Search-empty state provides a working reset action.",
+    "The primary entry opens the actual place-value lesson.",
+    "Invalid backup displays inline error and keeps existing history.",
+    "The empty rewards screen opens working practice.",
+    "All five views and every navigation destination fit at 320, 390, 768 and 1440 CSS pixels.",
+    "First keyboard focus reveals the skip link and moves to the main study content.",
+    "Core reading, secondary, muted and action colour pairs exceed 4.5:1 measured contrast."
+  ],
+  "contrasts": {
+    "primary text/surface": 14.152742720732213,
+    "secondary text/surface": 8.777254658325536,
+    "muted text/elevated": 6.4595946074760136,
+    "button text/gold": 11.046285147934876
+  },
+  "errors": [],
+  "limits": [
+    "Core token contrast is not a complete WCAG audit.",
+    "Installed Chrome; not all browsers, physical devices or assistive technology."
+  ]
+}

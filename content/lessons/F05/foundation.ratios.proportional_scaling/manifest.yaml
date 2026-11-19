@@ -1,0 +1,32 @@
+schema_version: 1
+id: foundation.ratios.proportional_scaling.lesson
+version: 1.1.0
+locale: en
+status: draft
+course_id: F05
+unit_id: foundation.ratios.proportional_scaling
+outcomes:
+  - Distinguish additive comparison from multiplicative comparison (ratios).
+  - Solve missing proportion terms using scale factors and unit rates (a/b = c/x).
+skill_ids:
+  - foundation.ratios.definition
+  - foundation.ratios.proportions_solve
+prerequisites:
+  required:
+    - foundation.fractions.compare
+    - foundation.fractions.equivalent
+  recommended:
+    - foundation.arithmetic.whole.multiplication
+    - foundation.arithmetic.whole.division
+exercise_refs:
+  - template_id: ratios.scaling_solve
+    template_version: 1.1.0
+    difficulty_band: 1
+assessment_dimensions:
+  - conceptual
+  - procedural
+  - transfer
+content_file: lesson.en.md
+license_id: axiom-original-content
+source_refs: []
+review_record_ids: []

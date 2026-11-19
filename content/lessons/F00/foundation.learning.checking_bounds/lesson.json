@@ -1,0 +1,65 @@
+{
+  "id": "foundation.learning.checking_bounds",
+  "courseId": "F00",
+  "title": "Checking answers: bounds, invariants, and counterexamples",
+  "subtitle": "Discover how mathematicians catch errors early and prove or disprove conjectures.",
+  "templateId": "learning.checking_bounds",
+  "challenge": "Can observing 1,000 cases where a mathematical pattern holds guarantee that it is universally true?",
+  "predictionPrompt": "Without multiplying 47 * 53, which of these cannot possibly be the product?",
+  "predictionOptions": [
+    {
+      "label": "2,491",
+      "value": "2491"
+    },
+    {
+      "label": "2,492 (Impossible: odd * odd must be odd, but 2,492 is even)",
+      "value": "2492",
+      "isCorrect": true
+    },
+    {
+      "label": "2,489",
+      "value": "2489"
+    }
+  ],
+  "formalDefinition": "Mathematical checking uses structural invariants (such as parity or modular arithmetic) and bounding intervals to eliminate impossible results. A universal mathematical claim requires deductive proof; a single counterexample refutes it.",
+  "workedExample": {
+    "steps": [
+      "Check parity: 47 is odd, 53 is odd.",
+      "The product of two odd numbers is always odd: (2k+1)(2m+1) = 4km + 2k + 2m + 1 = 2(2km + k + m) + 1.",
+      "Any proposed answer that is even (such as 2,492) is mathematically impossible.",
+      "Check bounds: 40 * 50 = 2,000 (lower bound) and 50 * 60 = 3,000 (upper bound).",
+      "Exact algebraic calculation: (50 - 3)(50 + 3) = 50^2 - 3^2 = 2500 - 9 = 2,491."
+    ],
+    "result": "2,491."
+  },
+  "misconception": {
+    "mistake": "Believing that checking only means redoing the exact same algorithm in the exact same order.",
+    "correction": "Redoing the same steps often repeats the same cognitive slip. Checking with invariants (parity, bounds, inverse operations) tests the result through independent mathematical lenses."
+  },
+  "reflection": "A single counterexample destroys a universal conjecture, whereas a million supporting examples never replace a rigorous proof.",
+  "prerequisiteCheck": "Basic multiplication and understanding odd and even numbers.",
+  "representation": "An interval [2000, 3000] on a number line containing the target 2491, with even numbers tagged as impossible by parity.",
+  "faded": {
+    "prompt": "Is the sum of three consecutive integers always divisible by 3? Express them as n-1, n, n+1.",
+    "solution": "(n-1) + n + (n+1) = 3n, which is a multiple of 3. Therefore, yes, universally true for all integers n."
+  },
+  "independent": [
+    {
+      "prompt": "Euler conjectured that n^2 + n + 41 is prime for all positive integers n. What happens when n = 41?",
+      "solution": "41^2 + 41 + 41 = 41 * (41 + 1 + 1) = 41 * 43 = 1763, which is composite. n = 41 is a counterexample."
+    },
+    {
+      "prompt": "If a student claims that 84 / 6 = 15, what inverse operation immediately exposes the error?",
+      "solution": "15 * 6 = 90 != 84. The quotient must be smaller than 15 (specifically 84 / 6 = 14)."
+    }
+  ],
+  "explanation": "Explain why parity rules (odd/even) allow you to spot arithmetic errors instantly without recalculating digits.",
+  "transfer": {
+    "prompt": "A checkerboard has 64 squares. If two opposite diagonal corners are removed, can the remaining 62 squares be covered by 31 dominoes of size 2x1?",
+    "solution": "Each domino covers exactly 1 black and 1 white square. Opposite corners on a board always have the same colour (e.g. both white). Removing them leaves 32 black and 30 white squares. Thus 31 dominoes cannot possibly cover it (parity invariant proof!)."
+  },
+  "retrieval": "Next week, write down the three core checking tools: Parity, Bounds, and Inverse Operations.",
+  "contentStatus": "draft",
+  "reviewNote": "Pilot draft lesson for Course F00. Independent mathematical and accessibility review pending.",
+  "version": "1.1.0"
+}

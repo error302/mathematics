@@ -1,0 +1,66 @@
+{
+  "id": "secondary.functions.transformations_and_graphs",
+  "courseId": "S02",
+  "title": "Function Transformations, Symmetry, and Vertex Form",
+  "subtitle": "Horizontal shifts f(x - h), vertical scaling a*f(x) + k, and the vertex (h, k) of a parabola.",
+  "templateId": "functions.transformations_vertex",
+  "challenge": "Adding +5 outside a function, g(x) = f(x) + 5, shifts its graph UPWARD in the +y direction. Why does subtracting 5 inside the input, g(x) = f(x - 5), shift the graph RIGHTWARD in the +x direction instead of leftward?",
+  "predictionPrompt": "What are the exact coordinates (h, k) of the vertex of the parabola g(x) = 3(x - 4)^2 + 7?",
+  "predictionOptions": [
+    {
+      "label": "(-4, 7)",
+      "value": "-4"
+    },
+    {
+      "label": "(4, 7)",
+      "value": "4",
+      "isCorrect": true
+    },
+    {
+      "label": "(3, 4)",
+      "value": "3"
+    },
+    {
+      "label": "(7, 4)",
+      "value": "7"
+    }
+  ],
+  "formalDefinition": "Given a parent function y = f(x), the transformed function g(x) = a * f(x - h) + k (with a != 0) translates the graph horizontally by h units (right if h > 0, left if h < 0), scales it vertically by factor |a| (reflecting across the x-axis if a < 0), and translates it vertically by k units. Every point (x_0, y_0) on y = f(x) maps to (x_0 + h, a * y_0 + k) on y = g(x). For the parent quadratic f(x) = x^2, the vertex (0, 0) maps to (h, k).",
+  "workedExample": {
+    "steps": [
+      "Task: The graph of y = f(x) passes through (2, 5). If g(x) = 3f(x - 4) - 2, find the point on y = g(x) corresponding to (2, 5) and evaluate g(6).",
+      "To make the inner argument (x - 4) equal to the known input 2, solve x - 4 = 2 => x = 6 (shifted 4 units right).",
+      "Substitute x = 6 into g(x): g(6) = 3 * f(6 - 4) - 2 = 3 * f(2) - 2.",
+      "Replace f(2) with 5: g(6) = 3(5) - 2 = 15 - 2 = 13. Thus (2, 5) maps to (6, 13)."
+    ],
+    "result": "g(6) = 13; the point (2, 5) maps to (6, 13)."
+  },
+  "misconception": {
+    "mistake": "Reading the vertex x-coordinate of a(x - h)^2 + k as -h instead of +h.",
+    "correction": "The vertex occurs where the squared expression (x - h)^2 reaches its minimum value of 0. Setting x - h = 0 yields x = +h. To compensate for subtracting h from x, the input x must be h units larger."
+  },
+  "reflection": "Input changes (inside f) act in the opposite direction of their algebraic sign because they pre-modify x before f acts; output changes (outside f) act in the same direction as their sign.",
+  "prerequisiteCheck": "For what value of x does the expression (x - 6)^2 equal 0?",
+  "representation": "Plot the parent parabola y = x^2 with vertex at (0, 0), then trace how shifting the vertex to (h, k) carries the axis of symmetry from x = 0 to x = h.",
+  "faded": {
+    "prompt": "The parabola y = x^2 is shifted 3 units right, stretched vertically by factor 2, and shifted 5 units up: g(x) = 2(x - __)^2 + 5. At x = 5, g(5) = 2(5 - 3)^2 + 5 = __.",
+    "solution": "3, then 13."
+  },
+  "independent": [
+    {
+      "prompt": "Find the vertex (h, k) and axis of symmetry of g(x) = 4(x - 6)^2 + 9.",
+      "solution": "Vertex = (6, 9); axis of symmetry is the vertical line x = 6."
+    },
+    {
+      "prompt": "If f(3) = 7 and g(x) = 2f(x - 5) + 4, evaluate g(8).",
+      "solution": "g(8) = 2f(8 - 5) + 4 = 2f(3) + 4 = 2(7) + 4 = 18."
+    }
+  ],
+  "explanation": "Why does the vertical stretch factor a in g(x) = a(x - h)^2 + k change the steepness of the parabola without changing the coordinates (h, k) of its vertex?",
+  "transfer": {
+    "prompt": "Complete the square to rewrite f(x) = x^2 - 6x + 13 in vertex form (x - h)^2 + k, and state its minimum value.",
+    "solution": "x^2 - 6x + 9 + 4 = (x - 3)^2 + 4. Since (x - 3)^2 >= 0 for all real x, the minimum value is k = 4 at x = 3."
+  },
+  "retrieval": "State how each parameter a, h, and k in g(x) = a*f(x - h) + k transforms a point (x_0, y_0) on the graph of f.",
+  "reviewNote": "Draft secondary lesson. Exact calculations verified by Rust engine."
+}

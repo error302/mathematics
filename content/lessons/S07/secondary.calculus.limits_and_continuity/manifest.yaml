@@ -1,0 +1,37 @@
+schema_version: 1
+id: "secondary.calculus.limits_and_continuity.lesson"
+version: "1.1.0"
+locale: "en"
+status: "draft"
+course_id: "S07"
+unit_id: "secondary.calculus.limits_and_continuity"
+outcomes:
+  - "Evaluate limits of rational functions with removable discontinuities by factoring and canceling (x - r) for x != r."
+  - "Determine exact horizontal asymptotes and limits at infinity of equal-degree rational functions over Q."
+  - "Solve for the exact rational parameter k that makes a piecewise or rational function continuous at a point x = a."
+skill_ids:
+  - "secondary.calculus.limits_and_continuity"
+prerequisites:
+  required:
+    - "secondary.functions.domains_and_evaluation"
+    - "secondary.algebra2.polynomials_and_factoring"
+  recommended:
+    - "secondary.sequences.geometric_and_infinite_series"
+exercise_refs:
+  - template_id: "calculus.limits_rational"
+    template_version: "1.1.0"
+    difficulty_band: 1
+  - template_id: "calculus.limits_rational"
+    template_version: "1.1.0"
+    difficulty_band: 2
+  - template_id: "calculus.limits_rational"
+    template_version: "1.1.0"
+    difficulty_band: 3
+assessment_dimensions:
+  - "conceptual"
+  - "procedural"
+  - "transfer"
+content_file: "lesson.en.md"
+license_id: "axiom-original-content"
+source_refs: []
+review_record_ids: []

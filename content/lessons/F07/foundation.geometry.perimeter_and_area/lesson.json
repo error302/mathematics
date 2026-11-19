@@ -1,0 +1,66 @@
+{
+  "id": "foundation.geometry.perimeter_and_area",
+  "courseId": "F07",
+  "title": "Perimeter, Area, and Spatial Conservation",
+  "subtitle": "Boundary length versus 2D region covering; why shape deformation alters area while preserving boundary.",
+  "templateId": "geometry.perimeter_and_area",
+  "challenge": "Imagine you have a loop of string of length 24 cm. If you form it into a long narrow rectangle of 1 cm by 11 cm, its area is 11 cm². If you shape the same loop into a 6 cm by 6 cm square, its area is 36 cm². Why does changing the shape change the enclosed area even when the perimeter remains strictly constant?",
+  "predictionPrompt": "A rectangle has width 4 units and height 6 units. If you double both its width and height (to 8 by 12), by what factor does its area increase?",
+  "predictionOptions": [
+    {
+      "label": "2 times (doubles)",
+      "value": "2"
+    },
+    {
+      "label": "4 times (quadruples)",
+      "value": "4",
+      "isCorrect": true
+    },
+    {
+      "label": "8 times",
+      "value": "8"
+    },
+    {
+      "label": "It stays the same",
+      "value": "1"
+    }
+  ],
+  "formalDefinition": "Perimeter P is the 1D path integral of boundary length around a closed planar region. For a rectangle with side lengths w and h, P = 2(w + h). Area A is the 2D measure of planar region covering, measured in square units. For a rectangle, A = w * h. For a triangle with base b and perpendicular height h, A = (1/2) * b * h because every triangle is exactly half of a parallelogram with the same base and altitude.",
+  "workedExample": {
+    "steps": [
+      "Identify the given linear dimensions: base b = 8 units, perpendicular height h = 5 units.",
+      "Recognize that a right triangle forms half of an 8 by 5 bounding rectangle.",
+      "Apply the triangle area formula: Area = (1/2) * b * h = (1/2) * 8 * 5.",
+      "Evaluate the product: (1/2) * 40 = 20 square units."
+    ],
+    "result": "Area = 20 square units."
+  },
+  "misconception": {
+    "mistake": "Confusing linear perimeter units (meters) with surface area units (square meters), or believing shapes with equal perimeters must have equal areas.",
+    "correction": "Perimeter is a one-dimensional path (measured in units like cm). Area is a two-dimensional count of unit tiles (measured in square units like cm²). An isoperimetric loop of fixed boundary can enclose vastly different areas depending on its compactness."
+  },
+  "reflection": "Linear scaling of dimensions by a factor k scales perimeter by k, but scales area by k² because area covers two independent orthogonal dimensions.",
+  "prerequisiteCheck": "Explain why a 3 by 4 array of unit squares contains exactly 3 * 4 = 12 unit tiles.",
+  "representation": "Tile an 8 by 5 rectangle on a grid. A diagonal cut slices it into two congruent right triangles, each receiving exactly half of the 40 unit tiles.",
+  "faded": {
+    "prompt": "A rectangle has length 7 cm and width 3 cm. Calculate its perimeter: P = 2 * (7 + 3) = 2 * __ = 20 cm.",
+    "solution": "10."
+  },
+  "independent": [
+    {
+      "prompt": "Find the area of a rectangle measuring 9 units by 4 units.",
+      "solution": "Area = 9 * 4 = 36 square units."
+    },
+    {
+      "prompt": "A triangle has base 10 units and perpendicular height 6 units. Find its area.",
+      "solution": "Area = (1/2) * 10 * 6 = 30 square units."
+    }
+  ],
+  "explanation": "Why does a triangle's area depend only on its base and perpendicular height, regardless of whether the apex leans to the side (shear invariance / Cavalieri's principle)?",
+  "transfer": {
+    "prompt": "A rectangular garden has an area of 48 m² and a width of 6 m. How many meters of fencing are needed to enclose its entire perimeter?",
+    "solution": "Length = 48 / 6 = 8 m. Perimeter = 2 * (8 + 6) = 28 m of fencing."
+  },
+  "retrieval": "State the formulas for the perimeter and area of a rectangle, and explain why the triangle area formula includes a factor of 1/2.",
+  "reviewNote": "Draft foundation lesson. Exact calculations verified by Rust engine."
+}

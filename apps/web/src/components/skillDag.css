@@ -1,0 +1,376 @@
+/* AXIOM Skill DAG / Knowledge Graph Visual Styles */
+
+.axiom-dag-wrapper {
+  display: flex;
+  flex-direction: column;
+  background: #090e17;
+  border: 1px solid #1c2b3d;
+  border-radius: 12px;
+  overflow: hidden;
+  margin: 1.5rem 0;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+.axiom-dag-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.85rem 1.25rem;
+  background: #0e1724;
+  border-bottom: 1px solid #1c2b3d;
+}
+
+.axiom-dag-toolbar-left {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.axiom-dag-search-box {
+  display: flex;
+  align-items: center;
+  background: #141f2e;
+  border: 1px solid #22354c;
+  border-radius: 6px;
+  padding: 0.35rem 0.65rem;
+  color: #edf1f5;
+  gap: 0.5rem;
+}
+
+.axiom-dag-search-box input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #edf1f5;
+  font-size: 0.88rem;
+  width: 180px;
+}
+
+.axiom-dag-search-box input::placeholder {
+  color: #72849a;
+}
+
+.axiom-dag-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.axiom-dag-btn {
+  background: #141f2e;
+  border: 1px solid #22354c;
+  color: #c4d1e0;
+  padding: 0.35rem 0.65rem;
+  border-radius: 6px;
+  font-size: 0.82rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.axiom-dag-btn:hover {
+  background: #1d2c40;
+  color: #edf1f5;
+  border-color: #3b5373;
+}
+
+.axiom-dag-btn.active {
+  background: #e6c580;
+  color: #0d1521;
+  border-color: #e6c580;
+  font-weight: 600;
+}
+
+.axiom-dag-viewport {
+  position: relative;
+  width: 100%;
+  height: 640px;
+  background: #0a111a;
+  background-image: radial-gradient(#1c2b3d 1px, transparent 1px);
+  background-size: 24px 24px;
+  overflow: hidden;
+  user-select: none;
+}
+
+.axiom-dag-svg {
+  width: 100%;
+  height: 100%;
+  cursor: grab;
+}
+
+.axiom-dag-svg.dragging {
+  cursor: grabbing;
+}
+
+/* Connectors */
+.axiom-dag-edge {
+  fill: none;
+  stroke: #1f334a;
+  stroke-width: 1.5;
+  opacity: 0.45;
+  transition: stroke 0.2s, opacity 0.2s, stroke-width 0.2s;
+}
+
+.axiom-dag-edge.upstream {
+  stroke: #e6c580;
+  stroke-width: 2.5;
+  opacity: 1;
+  filter: drop-shadow(0 0 3px rgba(230, 197, 128, 0.6));
+}
+
+.axiom-dag-edge.downstream {
+  stroke: #34d399;
+  stroke-width: 2.5;
+  opacity: 1;
+  filter: drop-shadow(0 0 3px rgba(52, 211, 153, 0.6));
+}
+
+.axiom-dag-edge.dimmed {
+  opacity: 0.08;
+}
+
+/* Nodes */
+.axiom-dag-node-group {
+  cursor: pointer;
+  outline: none;
+  transition: transform 0.15s ease, opacity 0.2s ease;
+}
+
+.axiom-dag-node-group:focus-visible rect.axiom-node-bg {
+  stroke: #38bdf8 !important;
+  stroke-width: 2.5px !important;
+}
+
+.axiom-node-bg {
+  fill: #111a26;
+  stroke: #22344a;
+  stroke-width: 1.5;
+  rx: 8;
+  ry: 8;
+  transition: all 0.2s ease;
+}
+
+.axiom-dag-node-group:hover rect.axiom-node-bg {
+  stroke: #415f85;
+  fill: #162232;
+}
+
+.axiom-dag-node-group.selected rect.axiom-node-bg {
+  stroke: #e6c580 !important;
+  stroke-width: 2.5 !important;
+  fill: #1b2635 !important;
+  filter: drop-shadow(0 0 8px rgba(230, 197, 128, 0.45));
+}
+
+.axiom-dag-node-group.ancestor rect.axiom-node-bg {
+  stroke: #d4b36c !important;
+  stroke-width: 2 !important;
+  fill: #182330 !important;
+}
+
+.axiom-dag-node-group.descendant rect.axiom-node-bg {
+  stroke: #34d399 !important;
+  stroke-width: 2 !important;
+  fill: #102422 !important;
+}
+
+.axiom-dag-node-group.dimmed {
+  opacity: 0.22;
+}
+
+.axiom-node-stage-bar {
+  rx: 3;
+}
+
+.stage-foundation { fill: #38bdf8; }
+.stage-abacus { fill: #4ade80; }
+.stage-secondary { fill: #fbbf24; }
+.stage-proof_bridge { fill: #818cf8; }
+.stage-undergraduate { fill: #c084fc; }
+.stage-graduate { fill: #2dd4bf; }
+.stage-research { fill: #f43f5e; }
+
+.axiom-node-id {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 13px;
+  font-weight: 700;
+  fill: #edf1f5;
+}
+
+.axiom-node-status-dot {
+  r: 4;
+}
+
+.axiom-node-status-dot.draft {
+  fill: #34d399;
+}
+
+.axiom-node-status-dot.planned {
+  fill: #64748b;
+}
+
+.axiom-node-title {
+  font-size: 11.5px;
+  fill: #c4d1e0;
+  font-weight: 500;
+}
+
+.axiom-node-stage-text {
+  font-size: 9.5px;
+  fill: #7890a8;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-weight: 600;
+}
+
+/* Inspector Drawer */
+.axiom-dag-drawer {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  bottom: 12px;
+  width: 340px;
+  background: rgba(14, 23, 36, 0.94);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid #263a52;
+  border-radius: 10px;
+  box-shadow: -4px 8px 30px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  z-index: 20;
+  animation: dagDrawerSlide 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes dagDrawerSlide {
+  from { transform: translateX(20px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+.axiom-dag-drawer-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 1rem 1.15rem 0.75rem;
+  border-bottom: 1px solid #1f3044;
+}
+
+.axiom-dag-drawer-body {
+  padding: 1rem 1.15rem;
+  overflow-y: auto;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.axiom-dag-drawer-body h4 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #edf1f5;
+  line-height: 1.35;
+}
+
+.axiom-dag-drawer-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.axiom-dag-drawer-section h5 {
+  margin: 0;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #8da2bb;
+  font-weight: 600;
+}
+
+.axiom-dag-pill-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.axiom-dag-pill {
+  background: #192738;
+  border: 1px solid #26394f;
+  color: #cbd7e6;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.78rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.axiom-dag-pill:hover {
+  background: #253952;
+  color: #edf1f5;
+  border-color: #3b5475;
+}
+
+.axiom-dag-pill.upstream {
+  border-color: #e6c580;
+  color: #e6c580;
+}
+
+.axiom-dag-pill.downstream {
+  border-color: #34d399;
+  color: #34d399;
+}
+
+.axiom-dag-drawer-footer {
+  padding: 0.85rem 1.15rem;
+  border-top: 1px solid #1f3044;
+  background: #0d1622;
+}
+
+/* Legend footer */
+.axiom-dag-legend {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.6rem 1.25rem;
+  background: #0c1420;
+  border-top: 1px solid #1c2b3d;
+  font-size: 0.78rem;
+  color: #7b8eaf;
+}
+
+.axiom-dag-legend-items {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.axiom-dag-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.axiom-dag-legend-line {
+  width: 16px;
+  height: 2px;
+  border-radius: 1px;
+}
+
+.axiom-dag-legend-line.gold { background: #e6c580; }
+.axiom-dag-legend-line.emerald { background: #34d399; }
+.axiom-dag-legend-line.navy { background: #2f455f; }
+
+@media (max-width: 768px) {
+  .axiom-dag-drawer {
+    width: auto;
+    left: 12px;
+    top: auto;
+    height: 50%;
+  }
+}

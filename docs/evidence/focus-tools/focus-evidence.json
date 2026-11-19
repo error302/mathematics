@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "checks": [
+    "The auto-rotating affirmation bar and its pseudo-scientific copy are removed.",
+    "A static study focus tools bar replaces moving content, with no automatic live-region updates.",
+    "Focus view hides XP details and the footer, keeps all navigation visible, and persists across reloads.",
+    "The optional focus timer starts, pauses, resumes and ends on request without interrupting study.",
+    "The pause panel opens only on request, states honest non-medical boundaries and closes cleanly.",
+    "Working notes are restored with the saved practice draft and stay ungraded local text.",
+    "The focus tools bar and study views fit a 320 pixel viewport without horizontal scroll.",
+    "A finished session shows one polite break suggestion with a keep-going action and no interrupting modal."
+  ],
+  "errors": [],
+  "limits": [
+    "Installed Chrome against a local dev server; not all browsers, devices or assistive technology.",
+    "This is not an ADHD clinical evaluation; focus tools are ordinary optional UI preferences, not treatment.",
+    "Timer completion uses Playwright clock fast-forwarding, not a real 20 minute wait."
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "id": "foundation.geometry.coordinate_plane",
+  "courseId": "F07",
+  "title": "The Cartesian Coordinate Plane and Distance",
+  "subtitle": "Unifying geometry and algebra: coordinates, lattice displacement, and the Euclidean distance formula.",
+  "templateId": "geometry.coordinate_distance",
+  "challenge": "A delivery robot starts at coordinates (2, 3) on a city grid. It can travel to warehouse A at (2, 9) or warehouse B at (6, 6). Which warehouse is closer in straight-line Euclidean distance, and why does walking only along grid lines (Manhattan distance) differ from straight-line flight?",
+  "predictionPrompt": "What is the straight-line distance between the points (1, 2) and (4, 6) on the coordinate plane?",
+  "predictionOptions": [
+    {
+      "label": "5 units",
+      "value": "5",
+      "isCorrect": true
+    },
+    {
+      "label": "7 units",
+      "value": "7"
+    },
+    {
+      "label": "25 units",
+      "value": "25"
+    },
+    {
+      "label": "√7 units",
+      "value": "sqrt_7"
+    }
+  ],
+  "formalDefinition": "The 2D Cartesian plane ℝ² is defined by two perpendicular directed real number lines (x-axis and y-axis) intersecting at the origin (0, 0). Every point is uniquely identified by an ordered pair (x, y). The horizontal displacement between two points P₁(x₁, y₁) and P₂(x₂, y₂) is Δx = x₂ − x₁, and the vertical displacement is Δy = y₂ − y₁. By the Pythagorean theorem on the right triangle formed by these orthogonal displacements, the Euclidean distance is: d(P₁, P₂) = √((x₂ − x₁)² + (y₂ − y₁)²).",
+  "workedExample": {
+    "steps": [
+      "Identify the coordinates of the two points: P₁ = (2, −1) and P₂ = (6, 2).",
+      "Compute horizontal displacement: Δx = 6 − 2 = 4 units.",
+      "Compute vertical displacement: Δy = 2 − (−1) = 3 units.",
+      "Apply the distance formula: d = √((Δx)² + (Δy)²) = √(4² + 3²).",
+      "Evaluate squares and sum: √(16 + 9) = √25 = 5 units."
+    ],
+    "result": "The exact distance is 5 units."
+  },
+  "misconception": {
+    "mistake": "Adding the coordinates directly or forgetting to square the displacements before adding, such as claiming d = (4 + 3) = 7.",
+    "correction": "The straight line is the hypotenuse of a right triangle, not the sum of its legs. By the triangle inequality, the straight-line path √((Δx)² + (Δy)²) is strictly shorter than the grid path |Δx| + |Δy| whenever neither displacement is zero."
+  },
+  "reflection": "Coordinates translate geometric shapes into algebraic equations and numbers into spatial positions. René Descartes' unification of algebra and geometry founded analytic geometry.",
+  "prerequisiteCheck": "Explain how positive and negative numbers are plotted on a 1D number line.",
+  "representation": "Plot (1, 1) and (4, 5). Draw the horizontal leg along y = 1 of length 3, and the vertical leg along x = 4 of length 4. The hypotenuse connecting the points forms a 3-4-5 right triangle.",
+  "faded": {
+    "prompt": "Find the distance between (0, 0) and (6, 8): Δx = 6, Δy = 8. d² = 6² + 8² = 36 + 64 = 100. Therefore d = √100 = __ units.",
+    "solution": "10."
+  },
+  "independent": [
+    {
+      "prompt": "Find the distance between the points (−3, 4) and (5, 4).",
+      "solution": "Since both points share y = 4, the distance is the horizontal absolute difference: |5 − (−3)| = |8| = 8 units."
+    },
+    {
+      "prompt": "Find the distance between the origin (0, 0) and the point (5, 12).",
+      "solution": "d = √(5² + 12²) = √(25 + 144) = √169 = 13 units."
+    }
+  ],
+  "explanation": "Why does the distance formula always yield a non-negative result regardless of whether coordinates are positive or negative?",
+  "transfer": {
+    "prompt": "A square on the Cartesian grid has vertices at (1, 1), (1, 5), (5, 5), and (5, 1). Find its perimeter and the length of its diagonal.",
+    "solution": "Side length = 5 − 1 = 4. Perimeter = 4 * 4 = 16 units. Diagonal length = √(4² + 4²) = √32 = 4√2 units."
+  },
+  "retrieval": "State the distance formula between two points (x₁, y₁) and (x₂, y₂) on the Cartesian plane.",
+  "reviewNote": "Draft foundation lesson. Exact calculations verified by Rust engine."
+}

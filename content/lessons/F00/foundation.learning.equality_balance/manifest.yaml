@@ -1,0 +1,28 @@
+schema_version: 1
+id: foundation.learning.equality_balance.lesson
+version: 1.1.0
+locale: en
+status: draft
+course_id: F00
+unit_id: foundation.learning.equality_balance
+outcomes:
+  - "Understand that the equals sign (=) represents mathematical equivalence and balance rather than an instruction to compute."
+  - "Solve missing-term equations by applying identical operations to both sides of the balance scale."
+skill_ids:
+  - foundation.learning.equality
+prerequisites:
+  required: []
+  recommended:
+    - foundation.learning.reading
+exercise_refs:
+  - template_id: learning.equality_balance
+    template_version: 1.1.0
+    difficulty_band: 1
+assessment_dimensions:
+  - conceptual
+  - procedural
+  - reasoning
+content_file: lesson.en.md
+license_id: axiom-original-content
+source_refs: []
+review_record_ids: []

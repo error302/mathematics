@@ -1,0 +1,29 @@
+{
+  "id": "secondary.sequences.arithmetic_and_series",
+  "course_id": "S06",
+  "title": "Arithmetic Progressions & Gauss Series Sums",
+  "status": "draft",
+  "review_status": "independent_review_pending",
+  "version": "1.1.0",
+  "outcomes": [
+    "Compute the exact n-th term of an arithmetic progression using a_n = a_1 + (n - 1)d without fencepost errors.",
+    "Evaluate finite arithmetic series sums exactly using Gauss's pairing identity S_n = n(a_1 + a_n) / 2.",
+    "Determine the exact rational common difference d = (a_q - a_p) / (q - p) from two non-adjacent terms over Q."
+  ],
+  "prerequisites": [
+    "secondary.algebra.linear_equations",
+    "secondary.functions.domains_and_evaluation"
+  ],
+  "sections": {
+    "intuition": "An arithmetic progression is a discrete linear function defined on the positive integers n = 1, 2, 3, ... Starting at an initial value a₁, each step adds a constant common difference d. Because moving from the 1st term to the n-th term takes (n - 1) steps—not n steps—the n-th term is a_n = a₁ + (n - 1)d. When summing the first n terms, reversing the list and pairing the first with the last, second with second-to-last, and so on creates n identical pairs each summing to (a₁ + a_n), so twice the sum is n(a₁ + a_n).",
+    "formal_definition": "A sequence (a_n)_{n≥1} is arithmetic with common difference d ∈ ℚ if a_{n+1} - a_n = d for all n ≥ 1. Its explicit formula is a_n = a₁ + (n - 1)d, and for any indices p ≠ q, d = (a_q - a_p) / (q - p). The n-th partial sum (arithmetic series) is S_n = ∑_{k=1}^n a_k = n(a₁ + a_n) / 2 = (n/2)[2a₁ + (n - 1)d].",
+    "worked_example": "Suppose an arithmetic sequence has a₁ = 4 and common difference d = 3, and we want the 10th term a₁₀ and the sum S₁₀ of the first 10 terms.\n1. From n = 1 to n = 10 there are 10 - 1 = 9 steps of size 3, so a₁₀ = 4 + 9(3) = 31.\n2. Pair the first and 10th terms: a₁ + a₁₀ = 4 + 31 = 35.\n3. Multiply by n/2 = 10/2 = 5: S₁₀ = 5 × 35 = 175.",
+    "common_misconceptions": [
+      "The fencepost error: computing a_n = a₁ + n·d instead of a₁ + (n - 1)d (counting n terms as n steps).",
+      "Forgetting to divide by 2 in Gauss's series formula S_n = n(a₁ + a_n) / 2.",
+      "Dividing (a_q - a_p) by q or by (q - p + 1) instead of the exact index gap (q - p)."
+    ]
+  },
+  "template_id": "sequences.arithmetic_progression",
+  "template_version": "1.1.0"
+}

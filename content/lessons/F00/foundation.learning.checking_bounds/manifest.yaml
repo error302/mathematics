@@ -1,0 +1,27 @@
+schema_version: 1
+id: foundation.learning.checking_bounds.lesson
+version: 1.1.0
+locale: en
+status: draft
+course_id: F00
+unit_id: foundation.learning.checking_bounds
+outcomes:
+  - "Verify calculations using parity invariants, order-of-magnitude bounds, and inverse operations."
+  - "Distinguish between empirical conjectures and deductive proof, and understand how a single counterexample refutes a universal claim."
+skill_ids:
+  - foundation.learning.verification
+prerequisites:
+  required: []
+  recommended:
+    - foundation.learning.equality
+exercise_refs:
+  - template_id: learning.checking_bounds
+    template_version: 1.1.0
+    difficulty_band: 1
+assessment_dimensions:
+  - conceptual
+  - reasoning
+content_file: lesson.en.md
+license_id: axiom-original-content
+source_refs: []
+review_record_ids: []

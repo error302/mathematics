@@ -32,3 +32,48 @@ On the rod, the only active bead is the upper bead ($5$). There are **zero** act
 
 ## 7. Reflection
 Direct addition and direct subtraction establish the physical bedrock of Soroban calculation: if the beads are already there, move them directly!
+
+
+## Additional learning activities (draft)
+
+**Review status:** Independent human review is pending. These activities do not award certified mastery.
+
+### Prerequisite check
+
+Direct subtraction removes engaged beads of the needed type. Knowing the numerical difference is different from knowing whether a direct bead move exists.
+
+### Representation
+
+4 - 2: remove two engaged lower beads, leaving two. 7 - 5: disengage the upper bead, leaving two lower beads.
+
+### Complete a partly worked problem
+
+Start with upper engaged and 3 lower engaged (8). Subtract 2 directly: lower becomes __ and the result is __.
+
+Self-check: Lower becomes 1; the upper stays engaged; result 6.
+
+### Independent practice
+
+1. Describe 9 - 4 as direct bead moves.
+
+   Self-check: Remove four lower beads; leave the upper engaged. Result 5.
+
+2. Can 5 - 2 be performed by removing two lower beads?
+
+   Self-check: No lower beads are engaged. A five-complement procedure is needed: -2 = -5 + 3.
+
+### Explain your reasoning
+
+Explain the exact boundary between a direct subtraction and a complement operation, including a counterexample.
+
+### Transfer to a new situation
+
+Set 74 and subtract 23 using direct moves on each rod.
+
+Self-check: Tens digit 7 minus 2 leaves upper engaged and no lower (5). Units digit 4 minus 3 leaves one lower (1). Result 51.
+
+### Retrieve after a delay
+
+Tomorrow describe 8 - 3 and 7 - 5. A week later classify 6 - 2 and 9 - 3 as direct or requiring a complement.
+
+The learner-facing presentation and these activities are stored in `lesson.json` beside this file.

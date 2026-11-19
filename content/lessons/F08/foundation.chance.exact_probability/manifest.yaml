@@ -1,0 +1,31 @@
+schema_version: 1
+id: foundation.chance.exact_probability.lesson
+version: 1.1.0
+locale: en
+status: draft
+course_id: F08
+unit_id: foundation.chance.exact_probability
+outcomes:
+  - Compute exact rational probabilities over Q as the ratio of favorable outcomes to the total sample space.
+  - Apply the complement rule P(not E) = 1 - P(E) and calculate two-step conditional probabilities without replacement.
+skill_ids:
+  - foundation.chance.exact_probability
+  - foundation.chance.complement_and_compound
+prerequisites:
+  required:
+    - foundation.counting.permutations_combinations
+    - foundation.fractions.equivalence
+  recommended:
+    - foundation.fractions.compare
+exercise_refs:
+  - template_id: probability.simple_exact
+    template_version: 1.1.0
+    difficulty_band: 1
+assessment_dimensions:
+  - conceptual
+  - procedural
+  - transfer
+content_file: lesson.en.md
+license_id: axiom-original-content
+source_refs: []
+review_record_ids: []

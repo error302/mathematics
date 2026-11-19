@@ -40,3 +40,48 @@ Before every computation, the abacus must be cleared. Slanting the abacus slight
 
 ## 7. Reflection
 By combining a base-$5$ sub-quinary bead with base-$1$ unit beads, the Soroban reduces $9$ discrete physical items into just $5$, maximizing finger speed and visual recognition.
+
+
+## Additional learning activities (draft)
+
+**Review status:** Independent human review is pending. These activities do not award certified mastery.
+
+### Prerequisite check
+
+There are four lower beads and one upper bead per rod. Legal engaged lower beads form a contiguous group touching the bar.
+
+### Representation
+
+Digits 0–4 use that many lower beads; digits 5–9 use the upper bead plus 0–4 lower beads. Thus 7 uses 5 + 2.
+
+### Complete a partly worked problem
+
+Complete the setting for 8: upper bead __; lower beads engaged __. For 4: upper __; lower __.
+
+Self-check: 8: upper engaged, 3 lower. 4: upper away, 4 lower.
+
+### Independent practice
+
+1. Describe settings for 0, 5, and 9.
+
+   Self-check: 0: all away; 5: upper only; 9: upper and all 4 lower.
+
+2. Can a legal rod use five lower beads to show 5?
+
+   Self-check: No. It has only four lower beads. Use the upper bead to show 5.
+
+### Explain your reasoning
+
+Explain how one upper/four lower beads provide exactly ten digit states without counting beads away from the bar.
+
+### Transfer to a new situation
+
+Read a physical instrument in which the upper bead is away and two lower beads touch the bar, then explain how keyboard controls can represent the same state.
+
+Self-check: The rod digit is 2. The equivalent logical state is upper=false, lower=2. This describes value; it does not assess a physical finger technique.
+
+### Retrieve after a delay
+
+Tomorrow set/read 6, 2, 9 in random order. After a week, describe the change from 9 to 4.
+
+The learner-facing presentation and these activities are stored in `lesson.json` beside this file.

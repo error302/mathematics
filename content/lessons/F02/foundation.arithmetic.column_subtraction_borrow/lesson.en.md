@@ -43,3 +43,48 @@ Since $25 + 27 = 52$, the answer is mathematically certain.
 
 ## 7. Reflection
 Borrowing is simply the inverse of carrying: where addition bundles $10$ units into $1$ ten, subtraction unbundles $1$ ten into $10$ units.
+
+
+## Additional learning activities (draft)
+
+**Review status:** Independent human review is pending. These activities do not award certified mastery.
+
+### Prerequisite check
+
+Decomposing one ten creates ten units while decreasing the tens count by one. The total must stay unchanged before subtraction.
+
+### Representation
+
+For 52 - 27, exchange one ten: 52 = 4 tens + 12 units. Remove 2 tens + 7 units; 2 tens + 5 units remain.
+
+### Complete a partly worked problem
+
+63 - 28: rewrite 63 as __ tens and __ units. The units difference is __ and the final result is __.
+
+Self-check: 5 tens and 13 units; units difference 5; tens difference 3; result 35.
+
+### Independent practice
+
+1. Compute 71 - 46, then check by addition.
+
+   Self-check: 71 = 6 tens + 11 units; result 25. Check: 46 + 25 = 71.
+
+2. Compute 302 - 178. Explain how to exchange across the zero.
+
+   Self-check: 302 = 2 hundreds + 10 tens + 2 units = 2 hundreds + 9 tens + 12 units. Subtract to get 124.
+
+### Explain your reasoning
+
+Why is subtracting the smaller digit from the larger digit separately in each column invalid? Use 52 - 27 as a counterexample.
+
+### Transfer to a new situation
+
+A budget is 205 and spending is 89. Estimate what remains, calculate exactly, and verify the result.
+
+Self-check: About 200 - 90 = 110. Exact: 116. Check 89 + 116 = 205.
+
+### Retrieve after a delay
+
+Tomorrow compute 84 - 39. A week later explain the regrouping in 400 - 167, including each zero.
+
+The learner-facing presentation and these activities are stored in `lesson.json` beside this file.

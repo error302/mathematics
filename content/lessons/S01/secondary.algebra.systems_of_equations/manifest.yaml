@@ -1,0 +1,31 @@
+schema_version: 1
+id: secondary.algebra.systems_of_equations.lesson
+version: 1.1.0
+locale: en
+status: draft
+course_id: S01
+unit_id: secondary.algebra.systems_of_equations
+outcomes:
+  - Solve 2x2 systems of linear equations by substitution and elimination.
+  - Interpret the solution of a 2x2 linear system geometrically as the unique intersection point of two lines in the plane.
+skill_ids:
+  - secondary.algebra.systems_substitution
+  - secondary.algebra.systems_elimination
+prerequisites:
+  required:
+    - secondary.algebra.linear_equations
+    - secondary.algebra.substitution
+  recommended:
+    - foundation.geometry.coordinate_distance
+exercise_refs:
+  - template_id: algebra.linear_system_solve
+    template_version: 1.1.0
+    difficulty_band: 1
+assessment_dimensions:
+  - conceptual
+  - procedural
+  - transfer
+content_file: lesson.en.md
+license_id: axiom-original-content
+source_refs: []
+review_record_ids: []

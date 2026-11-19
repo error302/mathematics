@@ -1,0 +1,27 @@
+schema_version: 1
+id: foundation.divisibility.gcd_lcm.lesson
+version: 1.1.0
+locale: en
+status: draft
+course_id: F03
+unit_id: foundation.divisibility.gcd_lcm
+outcomes:
+  - "Compute the Greatest Common Divisor (GCD) and Least Common Multiple (LCM) of two integers."
+  - "Understand and apply the product relationship: gcd(a, b) × lcm(a, b) = a × b."
+skill_ids:
+  - foundation.divisibility.gcd_lcm
+prerequisites:
+  required:
+    - foundation.divisibility.factors_primes
+  recommended: []
+exercise_refs:
+  - template_id: divisibility.gcd_lcm
+    template_version: 1.1.0
+    difficulty_band: 1
+assessment_dimensions:
+  - conceptual
+  - procedural
+content_file: lesson.en.md
+license_id: axiom-original-content
+source_refs: []
+review_record_ids: []

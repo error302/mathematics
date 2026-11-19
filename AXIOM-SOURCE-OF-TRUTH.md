@@ -1,8 +1,11 @@
 # AXIOM Mathematics Academy — Source of Truth
 
 **Document ID:** AXIOM-SOT-001  
-**Version:** 1.0.0  
+**Version:** 1.2.0
+
 **Decision date:** 9 October 2026, Africa/Nairobi  
+**Compatible owner amendment:** 10 October 2026, Africa/Nairobi
+
 **Status:** Authoritative project specification; implementation and learning effectiveness remain unverified.  
 **Audience:** Coding agents, mathematical content authors, reviewers, designers, operators, and the project owner.  
 **Canonical repository location when development begins:** `docs/AXIOM-SOURCE-OF-TRUTH.md`  
@@ -42,6 +45,7 @@
 30. [Risk register and decision review triggers](#30-risk-register-and-decision-review-triggers)
 31. [Agent handoff and definition of done](#31-agent-handoff-and-definition-of-done)
 32. [Reference register and provenance](#32-reference-register-and-provenance)
+33. [Challenge quests, mathematical visuals, and pathway certificates](#33-owner-amendment-challenge-quests-mathematical-visuals-and-pathway-certificates)
 
 ## 1. Authority, language, and change control
 
@@ -88,6 +92,16 @@ Launch defaults:
 - No subscription requirement for the learner merely to use the initial personal academy. A later commercial model is a separate owner decision.
 
 Define product metrics before piloting: delayed success on unseen tasks; transfer success; proof rubric performance; misconception repair; voluntary return to study; task accessibility; lost-attempt rate; false positive and false negative grading incidents. Measure retention at 7 and 30 days when feasible, while recording cohort, consent, item difficulty, and attrition. Never market improvement percentages from uncontrolled anecdotes.
+
+### 2.1 Owner vision amendment — 10 October 2026
+
+**Mathematics, the language of the universe.** AXIOM serves curious and ambitious minds who want to learn to think like mathematicians. The academy aims at mathematical fluency, insight, explanation and proof, with a complementary mathematical brain gym for purposeful practice and retrieval. The owner's aspiration to develop a “mathematician wizard” means confidence and deep capability; it is not a guarantee of universal mastery.
+
+The detailed direction and claims boundary is [PRODUCT-VISION.md](docs/PRODUCT-VISION.md). Brain-gym activity shortcuts may use available number practice, reasoning lessons and soroban controls immediately. Adaptive workout composition, trusted review scheduling and retained mastery remain subject to the existing evidence and release gates. Pure mathematics remains central; connections to the universe motivate learning without conflating a theorem with a physical model.
+
+Neuroplasticity is a research interest, not an implemented measurement or promised effect. AXIOM MUST NOT present XP, practice improvement or engagement as evidence of neural change, general intelligence gains, treatment or transfer to unrelated skills. Mathematical learning outcomes require the learner evidence already specified here; broader claims require a separately reviewed study. The product vision cites primary research that distinguishes performance on trained tasks from broad cognitive transfer.
+
+Document changelog: **1.1.0**, 10 October 2026 — compatible owner-approved identity/audience/brain-gym direction and claims boundary. Mathematical contracts, privacy, mastery, reward and release gates are unchanged.
 
 ## 3. Decisions, assumptions, and unresolved gates
 
@@ -1684,5 +1698,91 @@ Initial changelog:
 | Version | Date | Change |
 |---|---|---|
 | 1.0.0 | 2026-10-09 | Initial authoritative project specification, curriculum roadmap, mathematical trust contracts, architecture, implementation gates, and agent handoff |
+| 1.1.0 | 2026-10-10 | Owner identity, audience and mathematical brain-gym direction with honest scientific claims boundary |
+| 1.2.0 | 2026-10-10 | Follow-up quests, original arithmetic crossings, visual mathematics, and scoped credential design and issuance gates |
 
 **First authorized coding target:** Phase 0 followed by the Phase 1 vertical slice. **First public claim:** only the reviewed learning outcomes actually implemented and validated. **Long-term destination:** an expanding, rigorous mathematics academy that rewards demonstrated progress and prepares learners to study and investigate mathematics independently with appropriate expert support.
+
+
+## 33. Owner amendment: challenge quests, mathematical visuals, and pathway certificates
+
+Decision date: 10 October 2026, Africa/Nairobi. This compatible amendment implements the owner's request for follow-up challenges in analytical thinking, logic, comprehension and patterns; a progressive arithmetic puzzle series; properly represented geometry and graphs; and a designed mathematical achievement certificate. Core mathematical, privacy, mastery and reward gates remain binding.
+
+### 33.1 Prepare, try, explain, stretch
+
+After a lesson demonstration, offer an appropriate fresh application task. Preparation consists of a plain-language strategy, a worked example and explicit prerequisite guidance. The learner then attempts a new item, receives constructive feedback, records a justification, and may attempt another independent variant or a harder band. A learner clicking through a demonstration has not thereby proved understanding. Task selection must eventually use the mastery prerequisites in Section 16; the current local prototype offers learner-selected bands and an analytical follow-up from Lessons, not an adaptive placement assessment.
+
+Practice has three surfaces: Foundation practice, Puzzle quests and Visual lab. Quests develop mathematical behaviors, not personality traits or measured neural changes:
+
+| Behavior | Required activity | Evidence limit |
+|---|---|---|
+| Analytical thinking | Plan a multi-step calculation, then reverse/check it | Exact output alone does not assess quality of the plan |
+| Logic | Definitions, implications, converses, examples and counterexamples; then general arguments | A selected answer is not a reviewed proof |
+| Comprehension | Translate a story, distinguish per-item from whole-purchase quantities, retain units | Reviewed explanations and varied transfer tasks are needed for mastery |
+| Patterns | Apply a stated recurrence or index rule; justify it | Finite lists do not uniquely determine their continuation without an assumption |
+| Constraint reasoning | Reconcile crossing arithmetic equations and a number pool | Puzzle success is bounded task evidence, not general intelligence |
+| Visual reasoning | Connect an equation or geometric quantity to a correctly labeled representation | Reading a plot does not establish proof of a general theorem |
+
+Progression is untimed by default. A correct result offers a fresh challenge and, where available, the next band. Bands are not a credential and the learner can choose a lower band at any time. Praise checked success, constructive revision and observed effort. Avoid humiliation, automatic loss of access, compulsory streaks, speed-only ranking or claiming a learner is incapable. Explicit worked support remains assisted practice and receives encouragement; a fresh independent success may receive the existing Rust-ledger practice reward. Rechecks and the 100-XP daily cap must not suppress praise or duplicate awards.
+
+### 33.2 Original arithmetic-crossing contract
+
+AXIOM's puzzle design is original, inspired by the broad arithmetic-crossword genre. Do not copy a commercial game's branding, screenshots, sounds, level tables or authored puzzles. A primary concept reference is [Arithmo: Crossmath](https://www.arithmo.com/crossmath/), consulted 10 October 2026. Its description supports four-operation arithmetic crossword gameplay and order of operations; marketing claims about cognitive benefits are not adopted.
+
+The initial `puzzles.arithmetic.grid@1.1.0` template presents a 3×3 number grid, two operators per row/column, six target totals, a blank mask, and a finite number pool. Band 1 uses addition/subtraction with three blanks. Band 2 adds multiplication with three blanks. Band 3 has four blanks and guarantees all four operations, including division. The current pool is drawn without repetition from bounded positive values up to 18; totals are nonnegative integers up to 999. These are authored generator constraints, not claims about validated difficulty.
+
+Evaluation uses exact rational arithmetic and standard precedence: multiplication/division before addition/subtraction; equal-precedence operations left to right. A division must have a nonzero divisor. Reject candidates outside the policy, with fractional/negative/out-of-bound totals or more than one solution. Exhaustively enumerate at most 4! assignments of the displayed number pool to its blanks to verify uniqueness across all six equations. Bound candidate attempts at 4096 and return a generation failure on exhaustion; never silently switch to a JavaScript or ambiguous fallback.
+
+The submitted grid answer is a JSON integer array in increasing blank-cell order. It must consume the displayed number pool exactly once. Malformed or duplicate/missing pool entries are input failures; a valid pool assignment that fails a clue identifies the first failing row/column and its computed versus required total. Full solutions are only rendered after an explicit worked-help request. Offline practice is inspectable client data; it is not a protected exam or proof of independent behavior.
+
+The initial additional families are `reasoning.analysis`, `reasoning.logic`, `reasoning.comprehension`, `reasoning.pattern`, `visual.rectangle`, `visual.linear`, and `visual.quadratic`, all at template 1.1.0, bands 1–3, checker `academy-challenge-v1`, parameter policy `1`, and the existing frozen RNG version. These new IDs do not alter historical 1.0.0 or 1.1.0 artifacts. New challenge grading and coaching regenerate from the complete replay identity and reject modified artifacts, including modified reference answers. Rust owns arithmetic, generation, clue validation and exact plotted coordinates; the browser only renders and submits. Coaching version `challenge-coaching-v1` is separately recorded. Any future semantic change requires a new template/checker/policy version and retained replay support.
+
+Local challenge drafts use `axiom_challenge_draft_v1:<template>:<band>`, holding problem/replay, unfinished answer or blank choices, explanation text and assistance flag. On restore, regenerate the reference artifact, compare hashes and bounded draft shape, and render regenerated mathematics. Preserve unrelated notes, rewards and earlier drafts. Local draft records are learner-controlled and cannot authorize account mastery or a credential.
+
+### 33.3 Geometry and graph representation contract
+
+The first Visual lab slice provides rectangles (area/perimeter), affine functions `y = ax + b`, and quadratic functions `y = ax² + b`. These are draft practice representations; the full geometry, trigonometry, calculus and advanced curriculum is still governed by its course publication gates.
+
+Rectangles use one scale for both physical dimensions, labeled units, a right-angle marker and a unit-square grid. Area and perimeter are distinguished explicitly. Every future geometry diagram must declare whether it is to scale or schematic, label known dimensions/angle conventions, and disclose assumptions. Never infer a measurement or perpendicularity from appearance alone. Extend to triangles, circles, transformations, solids and proof constructions only with reviewed invariants and accessible alternatives.
+
+Graphs must show the equation, x/y axes, coordinate direction, labeled tick values, plotted domain/viewport and units where applicable. The initial polynomial curves are continuous within x ∈ [−3,3]; exact integer sample points and the quadratic Bézier control are computed by Rust. Rendering converts these values to SVG coordinates without redefining the mathematics. Viewports must include all samples and the origin; negative intercepts must not be clipped. Axes may use different scales when clearly disclosed. Provide speech descriptions and an exact point table independent of the SVG. Ask a predictive/read-off question, then check exact substitution, including negative inputs and the distinction between `(-x)²` and `-x²`.
+
+For future general graphing: represent domain restrictions, open/closed endpoints, holes, discontinuities, asymptotes, piecewise branches, polar/parametric conventions and uncertainty explicitly. Never connect points across a discontinuity, use visual coincidence as proof, or claim a finite sample verifies an identity. Geometry manipulations need keyboard-accessible controls and text equivalents. High-level diagrams cannot replace the formal mathematical statement.
+
+### 33.4 Certificate scope and eligibility
+
+The designed artifact is **AXIOM Certificate of Mathematical Achievement**. The advanced specimen subtitle is **Pure Mathematics Pathway — Graduate & Research Preparation**. It MUST display **SPECIMEN — NOT EARNED** until an actual certificate is issued by the trusted service. Downloading/printing a specimen does not earn a qualification. A private AXIOM certificate is not an accredited degree, professional license, guarantee of research originality or completion of all mathematics.
+
+Define separately versioned pathways:
+
+1. **Mathematical Foundations:** published number/arithmetic/fractions/proportion/algebra-readiness outcomes, explanations, unseen transfer, and delayed retrieval.
+2. **Proof & Undergraduate Core:** published logic/proof/analysis/algebra/geometry/topology outcomes; reviewed mathematical communication and proof portfolio; unseen synthesis tasks and retention.
+3. **Graduate & Research Preparation:** the required core plus a declared specialization and course set, reviewed advanced proof portfolio, reading seminar, capstone and oral defense. The published certificate names that specialization and scope; no universal “all heights” endpoint exists.
+
+Eligibility is fail-closed: all required outcomes and approved prerequisite versions satisfied; accepted independent assessments in every required dimension; delayed checks under an approved integrity policy; no unresolved critical misconception or integrity/content incident; actual authorized reviewers; and reviewed capstone/defense for the advanced pathway. Use at least two independent reviewers for advanced capstones or contested decisions, as in Section 15.5. Accessibility accommodations assess equivalent outcomes without imposing unnecessary timed or motor demands. Appeals/revisions are recorded. A local editable XP count, self-check, click-through, formal kernel success alone, or generated reviewer name is never sufficient.
+
+### 33.5 Planned credential records and APIs (not implemented by the specimen)
+
+The future trusted server maintains:
+
+```text
+PathwayDefinition: id, version, manifest_hash, specialization?, required_outcome_ids[],
+  assessment_policy_version, capstone_rubric_version?, publication_status
+EligibilityDecision: id, learner_id, pathway_id/version, outcome_evidence_ids[],
+  assessment_record_hash, reviewer_decision_ids[], integrity_policy_version,
+  evaluated_at_utc, status[blocked|pending_review|eligible], reasons[]
+IssuedCredential: id, opaque_verification_id, learner_id, eligibility_decision_id,
+  pathway_manifest_hash, scope/outcomes_snapshot, issuer_id, issued_at_utc,
+  signing_key_id, signed_payload_hash, status[issued|revoked|superseded],
+  supersedes_id?, revocation_reason_code?, updated_at_utc
+```
+
+Signed payloads bind the learner's approved display name, issuer, pathway/version, actual assessed outcomes, record hash, issue date and verification ID. Retain private learner answers/reviewer notes in access-controlled evidence; public verification exposes only the consented certificate identity/scope and current validity. Opaque high-entropy IDs, rate limiting and explicit consent prevent enumerable learner directories. Revocation remains visible with an appropriately limited reason; correcting a certificate creates a linked superseding record. Signing keys require rotation, access control and compromise response. A signature authenticates the issuer record, not accreditation or originality.
+
+Planned routes: authenticated `GET /v1/pathways/{id}/eligibility` returns evidence gaps; privileged `POST /v1/credentials` requires server-verified eligible decision and idempotency key; consented `GET /v1/credentials/verify/{opaque_id}` returns signed scope and current status; privileged `POST /v1/credentials/{id}/revoke` records a reason and audit event. Owner authorization for building the prototype is not authorization to fabricate, issue or publicly publish a real learner credential. Actual issuance needs the staffed, reviewed policy and verified backend gate described above.
+
+### 33.6 Acceptance and current limits
+
+Accept the local challenge slice only with native and actual browser-worker replay parity across every new family and band, a many-seed unique-grid test, correct precedence/exact-division checks, reference-tamper rejection, wrong-clue → hint → correction journeys, duplicate/cap-safe rewards, assisted success, saved draft restoration, working lesson follow-up, exact diagram/plot data, 320–1440-pixel layouts, keyboard controls, explicit certificate specimen/download, and warm-cache offline behavior. Preserve the prior abacus/foundation/reinforcement regression suite. Store evidence under `docs/evidence/challenges` and the current handoff.
+
+These checks establish local behavior, not instructional effectiveness, human content approval, official mastery, full university coverage, accredited certification, first-ever offline installation or physical-device accessibility. Subsequent work must obtain genuine mathematical/pedagogical review, add diverse topic-linked transfer tasks, implement trusted assessments/retention/account state, and only then enable credential eligibility/issuance. The certificate specimen contains no actual learner name, issue date, reviewer approval or verification claim.

@@ -118,4 +118,48 @@ mod tests {
         assert_eq!(sched.ladder_step, 0);
         assert_eq!(sched.next_due_epoch_days, 105); // 104 + 1
     }
+
+    #[test]
+    fn seven_day_retention_simulation_clock_controlled() {
+        // Clock-controlled simulation of 7-day and 14-day retention per Section 16.3 & 28
+        let start_day = 1000;
+        let mut sched = ReviewSchedule::new("foundation.powers.integer_exponents", start_day);
+        assert_eq!(sched.ladder_step, 0);
+        assert_eq!(sched.next_due_epoch_days, 1001); // 1000 + 1 day
+
+        // Before Day 1: cannot be reviewed early for retention credit
+        assert!(!sched.is_due(1000));
+
+        // Day 1: First retrieval due (Step 0: 1 day interval)
+        assert!(sched.is_due(1001));
+        sched.on_success(1001);
+        assert_eq!(sched.ladder_step, 1);
+        assert_eq!(sched.next_due_epoch_days, 1004); // 1001 + 3 days
+
+        // Days 2 and 3: Not due
+        assert!(!sched.is_due(1002));
+        assert!(!sched.is_due(1003));
+
+        // Day 4: Second retrieval due (Step 1: 3 day interval)
+        assert!(sched.is_due(1004));
+        sched.on_success(1004);
+        assert_eq!(sched.ladder_step, 2);
+        assert_eq!(sched.next_due_epoch_days, 1011); // 1004 + 7 days
+
+        // Days 5 to 10: Not due (7-day delay period)
+        for day in 1005..=1010 {
+            assert!(!sched.is_due(day), "Day {} should not be due during 7-day retention delay", day);
+        }
+
+        // Day 11: 7-day retention retrieval due!
+        assert!(sched.is_due(1011));
+        sched.on_success(1011);
+        assert_eq!(sched.ladder_step, 3);
+        assert_eq!(sched.next_due_epoch_days, 1025); // 1011 + 14 days
+
+        // If learner fails at Day 1025 (14-day check), schedule resets to step 0
+        sched.on_failure(1025);
+        assert_eq!(sched.ladder_step, 0);
+        assert_eq!(sched.next_due_epoch_days, 1026); // Resets to 1 day for immediate repair
+    }
 }

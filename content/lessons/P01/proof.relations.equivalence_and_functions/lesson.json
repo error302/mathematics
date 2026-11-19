@@ -1,0 +1,29 @@
+{
+  "id": "proof.relations.equivalence_and_functions",
+  "course_id": "P01",
+  "title": "Equivalence Relations, Partitions & Injective Functions",
+  "status": "draft",
+  "review_status": "independent_review_pending",
+  "version": "1.1.0",
+  "outcomes": [
+    "Identify canonical representatives r in {0, ..., m - 1} of modular congruence classes [a]_m for positive and negative integers.",
+    "Count exact injective (one-to-one) functions between finite sets using falling factorials n! / (n - k)!.",
+    "Relate equivalence relations R on S to partitions of S and compute |R| = sum |C_i|^2 across equivalence classes."
+  ],
+  "prerequisites": [
+    "proof.sets.operations_and_inclusion_exclusion",
+    "foundation.integers.number_line"
+  ],
+  "sections": {
+    "intuition": "An equivalence relation ~ is a relation that is reflexive (x ~ x), symmetric (x ~ y ⇒ y ~ x), and transitive (x ~ y ∧ y ~ z ⇒ x ~ z). Every equivalence relation on a set S partitions S into disjoint equivalence classes C₁, C₂, ..., C_m where all elements inside a class C_i are related to one another (forming a complete Cartesian block C_i × C_i of |C_i|² ordered pairs) and no elements in different classes are related.",
+    "formal_definition": "1. Equivalence Relation & Partition Duality: A relation R ⊆ S × S is an equivalence relation iff S is the disjoint union of equivalence classes C₁, ..., C_m with R = ⋃_{i=1}^m (C_i × C_i), so |R| = ∑_{i=1}^m |C_i|².\n2. Congruence Modulo m: a ≡ b (mod m) iff m | (a - b). Each class [a]_m has a unique canonical representative r ∈ {0, 1, ..., m - 1}.\n3. Injective Functions: f: A → B is injective if f(x₁) = f(x₂) ⇒ x₁ = x₂. For |A| = k ≤ |B| = n, there are n(n - 1)...(n - k + 1) = n! / (n - k)! injections.",
+    "worked_example": "1. Canonical representative of [-17]_6: Since -17 = (-3)(6) + 1, we have -17 ≡ 1 (mod 6), so r = 1 ∈ {0, 1, 2, 3, 4, 5}.\n2. Equivalence relation pairs: If R partitions S into classes of sizes 3, 4, and 2, then R = (C₁ × C₁) ∪ (C₂ × C₂) ∪ (C₃ × C₃) has |R| = 3² + 4² + 2² = 9 + 16 + 4 = 29 ordered pairs.",
+    "common_misconceptions": [
+      "Leaving a modular representative negative (e.g., reporting -5 instead of +1 for -17 mod 6).",
+      "Counting all functions n^k or unordered subsets C(n, k) instead of falling factorial n! / (n - k)! when counting injections.",
+      "Omitting reflexive pairs (x, x) or reverse pairs (y, x) when counting the ordered pairs in an equivalence relation."
+    ]
+  },
+  "template_id": "proof.relations_and_bijections",
+  "template_version": "1.1.0"
+}

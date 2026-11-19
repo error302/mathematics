@@ -1,0 +1,66 @@
+{
+  "id": "secondary.algebra2.polynomials_and_factoring",
+  "courseId": "S03",
+  "title": "Polynomials, Factoring, Vieta's Formulas, and the Remainder Theorem",
+  "subtitle": "Zero-product factoring, root-coefficient symmetries, and evaluating remainders P(r) without long division.",
+  "templateId": "algebra2.polynomial_factor_roots",
+  "challenge": "When you divide a cubic polynomial P(x) by (x - r), polynomial long division can take several lines of algebra. Why does the identity P(x) = (x - r)Q(x) + R guarantee that you can find the exact remainder R in one step simply by evaluating P(r)?",
+  "predictionPrompt": "Factor x^2 - 9x + 20 = 0 into (x - r_1)(x - r_2) = 0. What is the LARGER root?",
+  "predictionOptions": [
+    {
+      "label": "x = 4",
+      "value": "4"
+    },
+    {
+      "label": "x = 5",
+      "value": "5",
+      "isCorrect": true
+    },
+    {
+      "label": "x = -5",
+      "value": "-5"
+    },
+    {
+      "label": "x = 9",
+      "value": "9"
+    }
+  ],
+  "formalDefinition": "Over an integral domain (such as Q or R), the Zero-Product Property states that AB = 0 if and only if A = 0 or B = 0. Expanding A(x - r_1)(x - r_2) = Ax^2 - A(r_1 + r_2)x + A r_1 r_2 = Ax^2 + Bx + C yields Vieta's formulas: r_1 + r_2 = -B/A and r_1 r_2 = C/A. By Euclidean division of polynomials, for any polynomial P(x) and constant r, there exist unique Q(x) and constant remainder R such that P(x) = (x - r)Q(x) + R; substituting x = r proves the Remainder Theorem R = P(r).",
+  "workedExample": {
+    "steps": [
+      "Task: Find the remainder when P(x) = x^3 + 2x^2 - 5x + 4 is divided by (x - 3), and find the sum of the roots of 4x^2 - 15x + 2 = 0.",
+      "By the Remainder Theorem, dividing P(x) by (x - 3) leaves remainder R = P(3).",
+      "Evaluate P(3) = 3^3 + 2(3^2) - 5(3) + 4 = 27 + 18 - 15 + 4 = 34.",
+      "For 4x^2 - 15x + 2 = 0, A = 4 and B = -15. By Vieta's formula, the sum of the roots is r_1 + r_2 = -B/A = 15/4."
+    ],
+    "result": "Remainder P(3) = 34; sum of roots r_1 + r_2 = 15/4."
+  },
+  "misconception": {
+    "mistake": "Reporting the roots of (x - 4)(x - 5) = 0 as -4 and -5, or evaluating P(-r) instead of P(+r) when dividing by (x - r).",
+    "correction": "A linear factor (x - r) equals zero when x = +r, not -r. Similarly, in P(x) = (x - r)Q(x) + R, the factor (x - r) vanishes at x = +r, yielding R = P(+r)."
+  },
+  "reflection": "Factor Theorem is the special case of the Remainder Theorem where R = P(r) = 0: r is a root of P(x) if and only if (x - r) is an exact factor of P(x).",
+  "prerequisiteCheck": "Expand the product (x - 3)(x - 6) and identify the coefficient of x and the constant term.",
+  "representation": "Connect the x-intercepts r_1 and r_2 of y = (x - r_1)(x - r_2) to its expanded coefficients: their average (r_1 + r_2)/2 is the axis of symmetry, and their product r_1 r_2 is the y-intercept.",
+  "faded": {
+    "prompt": "Find the remainder when P(x) = x^3 + 3x^2 - 4x + 2 is divided by (x - 2): Evaluate P(__) = 2^3 + 3(2^2) - 4(2) + 2 = 8 + 12 - 8 + 2 = __.",
+    "solution": "2, then 14."
+  },
+  "independent": [
+    {
+      "prompt": "Factor x^2 - 11x + 28 = 0 and state both roots.",
+      "solution": "(x - 4)(x - 7) = 0 => x = 4 and x = 7 (larger root is 7)."
+    },
+    {
+      "prompt": "Find the exact sum and product of the roots of 3x^2 - 14x + 8 = 0 without solving for the individual roots.",
+      "solution": "Sum r_1 + r_2 = 14/3; product r_1 * r_2 = 8/3."
+    }
+  ],
+  "explanation": "Why does the Zero-Product Property work ONLY when the right-hand side of a factored equation equals 0 (why doesn't (x - 2)(x - 3) = 6 imply x - 2 = 6 or x - 3 = 6)?",
+  "transfer": {
+    "prompt": "If r_1 and r_2 are the roots of x^2 - 7x + 9 = 0, compute the exact value of r_1^2 + r_2^2 without using the quadratic formula.",
+    "solution": "By Vieta's formulas, r_1 + r_2 = 7 and r_1 r_2 = 9. Since r_1^2 + r_2^2 = (r_1 + r_2)^2 - 2 r_1 r_2, we get 7^2 - 2(9) = 49 - 18 = 31."
+  },
+  "retrieval": "State Vieta's formulas for the sum and product of the roots of Ax^2 + Bx + C = 0, and state the Polynomial Remainder Theorem.",
+  "reviewNote": "Draft secondary lesson. Exact calculations verified by Rust engine."
+}

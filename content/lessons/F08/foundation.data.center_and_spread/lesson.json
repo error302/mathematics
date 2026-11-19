@@ -1,0 +1,66 @@
+{
+  "id": "foundation.data.center_and_spread",
+  "courseId": "F08",
+  "title": "Center, Spread, and the Balance Point of Data",
+  "subtitle": "Arithmetic mean as a zero-sum balance fulcrum, ordered median, and outlier robustness.",
+  "templateId": "data.mean_median_calc",
+  "challenge": "Five engineers have annual project counts of 8, 10, 12, 14, and 16. Their mean is 12 and their median is 12. If the fifth engineer completes an extraordinary 66 projects instead of 16, the mean jumps to 22 while the median remains 12. Why does the mean shift dramatically when a single extreme value changes, whereas the median does not move at all?",
+  "predictionPrompt": "A dataset of 5 measurements has an arithmetic mean of 15. What is the exact sum of all 5 measurements?",
+  "predictionOptions": [
+    {
+      "label": "20",
+      "value": "20"
+    },
+    {
+      "label": "75",
+      "value": "75",
+      "isCorrect": true
+    },
+    {
+      "label": "3",
+      "value": "3"
+    },
+    {
+      "label": "It cannot be determined without knowing each individual measurement",
+      "value": "unknown"
+    }
+  ],
+  "formalDefinition": "For a dataset of n observations x_1, x_2, ..., x_n, the arithmetic mean is bar(x) = (x_1 + x_2 + ... + x_n) / n. Equivalently, bar(x) is the unique balance point where the sum of signed deviations sum_{i=1}^n (x_i - bar(x)) = 0. The median is the middle value after sorting the observations in non-decreasing order x_(1) <= x_(2) <= ... <= x_(n): for odd n, it is x_((n+1)/2); for even n, it is the average of the two central values.",
+  "workedExample": {
+    "steps": [
+      "Suppose four sensor readings are 18, 22, 19, and 25, and we need a 5th reading x_5 so that the mean of all 5 readings is 21.",
+      "Use the total-sum property of the mean: for n = 5 readings to have mean 21, their total sum must be 5 * 21 = 105.",
+      "Add the four known readings: 18 + 22 + 19 + 25 = 84.",
+      "Subtract the known sum from the required total: x_5 = 105 - 84 = 21."
+    ],
+    "result": "Required 5th reading = 21."
+  },
+  "misconception": {
+    "mistake": "Selecting the middle number of a list as the median without first sorting the numbers in ascending order.",
+    "correction": "The median is a positional property of the ordered distribution, not of the arbitrary order in which measurements were recorded. Always sort from least to greatest before identifying the middle position."
+  },
+  "reflection": "The mean uses every value's exact numerical magnitude (making it sensitive to extreme outliers), whereas the median depends only on the rank order of the middle element.",
+  "prerequisiteCheck": "If 6 identical containers hold a total of 42 liters, how much does each container hold when leveled equally?",
+  "representation": "Place unit weights on a number line at each data value. The arithmetic mean is the exact fulcrum position where left-hand torque equals right-hand torque.",
+  "faded": {
+    "prompt": "Find the median of the unsorted list 19, 7, 24, 11, 15: First sort in ascending order: 7, 11, __, 19, 24. The middle (3rd) value is __.",
+    "solution": "15."
+  },
+  "independent": [
+    {
+      "prompt": "Calculate the arithmetic mean of the dataset: 12, 15, 18, 21, 24.",
+      "solution": "Sum = 12 + 15 + 18 + 21 + 24 = 90. Mean = 90 / 5 = 18."
+    },
+    {
+      "prompt": "Four test scores are 78, 84, 80, and 86. What score on the 5th test yields an exact mean of 83?",
+      "solution": "Required total = 5 * 83 = 415. Known sum = 78 + 84 + 80 + 86 = 328. Fifth score = 415 - 328 = 87."
+    }
+  ],
+  "explanation": "Why must the sum of signed deviations (x_i - mean) across any dataset always equal zero?",
+  "transfer": {
+    "prompt": "The mean mass of 4 packages is 12 kg. When a 5th package is added, the new mean mass of all 5 packages becomes 14 kg. What is the mass of the 5th package?",
+    "solution": "Initial total mass = 4 * 12 = 48 kg. New total mass = 5 * 14 = 70 kg. Mass of 5th package = 70 - 48 = 22 kg."
+  },
+  "retrieval": "Define both the arithmetic mean and the median, and state when the median is a more representative summary of center than the mean.",
+  "reviewNote": "Draft foundation lesson. Exact calculations verified by Rust engine."
+}

@@ -1,0 +1,36 @@
+schema_version: 1
+id: "secondary.calculus.integrals_and_ftc.lesson"
+version: "1.1.0"
+locale: "en"
+status: "draft"
+course_id: "S07"
+unit_id: "secondary.calculus.integrals_and_ftc"
+outcomes:
+  - "Evaluate definite integrals of linear functions using antiderivatives and the Fundamental Theorem of Calculus."
+  - "Compute exact rational definite integrals of quadratic polynomials over Q using the reverse power rule int x^2 dx = x^3 / 3."
+  - "Apply the Net Change Theorem s(t) = s(0) + int_0^t v(tau) dtau to recover exact position from velocity and initial value."
+skill_ids:
+  - "secondary.calculus.integrals_and_ftc"
+prerequisites:
+  required:
+    - "secondary.calculus.derivatives_and_tangents"
+  recommended:
+    - "foundation.geometry.perimeter_and_area"
+exercise_refs:
+  - template_id: "calculus.definite_integral_ftc"
+    template_version: "1.1.0"
+    difficulty_band: 1
+  - template_id: "calculus.definite_integral_ftc"
+    template_version: "1.1.0"
+    difficulty_band: 2
+  - template_id: "calculus.definite_integral_ftc"
+    template_version: "1.1.0"
+    difficulty_band: 3
+assessment_dimensions:
+  - "conceptual"
+  - "procedural"
+  - "transfer"
+content_file: "lesson.en.md"
+license_id: "axiom-original-content"
+source_refs: []
+review_record_ids: []

@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "checks": [
+    "F07 Lesson 1 (Perimeter & Area) loads cleanly.",
+    "Perimeter vs Area visual chips switch active shape and recalculate boundary vs interior conservation.",
+    "Triangle dissection chip demonstrates right triangle half-rectangle area formula.",
+    "F07 Lesson 2 (Angles & Triangles) loads cleanly.",
+    "Angles visual chips switch to parallel transversal alternate interior angle demonstration.",
+    "F07 Lesson 3 (Coordinate Plane) loads cleanly.",
+    "Coordinate lattice visual demonstrates Pythagorean triples and Euclidean distance.",
+    "Practice template geometry.perimeter_and_area generates valid problems with Rust worked solutions.",
+    "Practice template geometry.angles_triangles generates valid problems with exact angle-sum worked solutions.",
+    "Practice template geometry.coordinate_distance generates valid distance problems with exact worked solutions."
+  ],
+  "errors": []
+}

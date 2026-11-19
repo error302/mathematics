@@ -1,0 +1,31 @@
+schema_version: 1
+id: secondary.functions.mappings_and_evaluation.lesson
+version: 1.1.0
+locale: en
+status: draft
+course_id: S02
+unit_id: secondary.functions.mappings_and_evaluation
+outcomes:
+  - Interpret a function f: D -> C as a well-defined mapping assigning each domain input to a unique codomain output.
+  - Evaluate piecewise-defined functions and compute exact average rates of change (secant slopes) over intervals.
+skill_ids:
+  - secondary.functions.domain_and_preimage
+  - secondary.functions.piecewise_and_rate_of_change
+prerequisites:
+  required:
+    - secondary.algebra.substitution
+    - secondary.algebra.linear_equations
+  recommended:
+    - foundation.geometry.coordinate_distance
+exercise_refs:
+  - template_id: functions.evaluate_and_range
+    template_version: 1.1.0
+    difficulty_band: 1
+assessment_dimensions:
+  - conceptual
+  - procedural
+  - transfer
+content_file: lesson.en.md
+license_id: axiom-original-content
+source_refs: []
+review_record_ids: []

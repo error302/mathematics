@@ -1,0 +1,12 @@
+{
+  "brand_files_unchanged": {
+    "apps\\web\\public\\apple-touch-icon.png": true,
+    "apps\\web\\public\\icon.png": true,
+    "apps\\web\\public\\icon.svg": true,
+    "apps\\web\\public\\logo.png": true
+  },
+  "source_of_truth_unchanged": {
+    "AXIOM-SOURCE-OF-TRUTH.md": true,
+    "docs\\AXIOM-SOURCE-OF-TRUTH.md": true
+  }
+}

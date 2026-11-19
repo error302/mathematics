@@ -1,0 +1,73 @@
+{
+  "date": "2026-10-10 Africa/Nairobi",
+  "native_workspace_tests": {
+    "passed": true,
+    "count": 64,
+    "math_unit_tests": 45,
+    "math_regressions": 7,
+    "api": 3,
+    "content": 2,
+    "learning": 6,
+    "storage": 1
+  },
+  "wasm_build": {
+    "passed": true,
+    "profile": "dev, actual Rust WASM"
+  },
+  "web_build": {
+    "passed": true,
+    "raw_js_kb": 574.98,
+    "gzip_js_kb": 173.61,
+    "raw_wasm_kb": 2160.77,
+    "gzip_wasm_kb": 466.23,
+    "warning": "JS chunk exceeds 500 kB; not release performance proof"
+  },
+  "browser_suites": {
+    "challenges": {
+      "passed": true,
+      "count": 9,
+      "evidence": "docs/evidence/challenges/browser-evidence.json"
+    },
+    "foundation": {
+      "passed": true,
+      "count": 12,
+      "evidence": "docs/evidence/browser/browser-evidence.json"
+    },
+    "abacus": {
+      "passed": true,
+      "count": 10,
+      "evidence": "docs/evidence/abacus-tutor/browser-evidence.json"
+    },
+    "encouragement": {
+      "passed": true,
+      "count": 9,
+      "evidence": "docs/evidence/positive-feedback/browser-evidence.json"
+    },
+    "ui": {
+      "passed": true,
+      "count": 10,
+      "evidence": "docs/evidence/ui-polish/ui-evidence.json"
+    },
+    "offline": {
+      "passed": true,
+      "count": 5,
+      "evidence": "docs/evidence/offline-evidence.json"
+    }
+  },
+  "native_browser_new_family_comparisons": 24,
+  "unique_grid_seed_cases": 96,
+  "graph_viewport_seed_cases": 768,
+  "branding_preserved": {
+    "apps\\web\\public\\apple-touch-icon.png": true,
+    "apps\\web\\public\\icon.png": true,
+    "apps\\web\\public\\icon.svg": true,
+    "apps\\web\\public\\logo.png": true
+  },
+  "canonical_sha256": "5154d68580861be41d4ce20a843422bd51582bb9dbd88ace89407a91409cb216",
+  "limits": [
+    "All pilot and new authored content is draft, with no human pedagogical approval",
+    "Installed Chrome; no complete assistive-technology or physical-device audit",
+    "Warm-cache offline shell; not signed content packs or account sync",
+    "No official mastery, credential eligibility, issuance, signing or public verification service"
+  ]
+}

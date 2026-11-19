@@ -1,0 +1,59 @@
+{
+  "id": "abacus.orientation.bead_setting",
+  "courseId": "A01",
+  "title": "Single-Rod Bead Manipulation (0–9)",
+  "subtitle": "Learn how to set beads, with notes on using a physical soroban.",
+  "templateId": "abacus.target.setting",
+  "challenge": "Which fingers should you use to set the number 6 on a single rod in a single swift motion?",
+  "predictionPrompt": "How do you set 6 in standard Japanese Soroban fingering?",
+  "predictionOptions": [
+    {
+      "label": "Push lower bead then upper bead with index finger",
+      "value": "index"
+    },
+    {
+      "label": "Pinch thumb and index finger together toward the beam",
+      "value": "pinch",
+      "isCorrect": true
+    }
+  ],
+  "formalDefinition": "Standard fingering: thumb pushes lower beads up (+1 to +4); index finger pulls lower beads down (-1 to -4); index finger moves upper bead down (+5) and up (-5). Digits 6-9 use a simultaneous pinch.",
+  "workedExample": {
+    "steps": [
+      "Start from cleared neutral rod.",
+      "Simultaneously bring 1 upper bead down and 1 lower bead up with a pinch.",
+      "Read: 5 + 1 = 6."
+    ],
+    "result": "Single efficient tactile movement."
+  },
+  "misconception": {
+    "mistake": "Using the index finger to push lower beads up.",
+    "correction": "The thumb has greater tactile strength and ergonomic speed for upward pushes."
+  },
+  "reflection": "Consistent fingering creates muscle memory, which later enables rapid mental abacus (Anzan) calculation.",
+  "prerequisiteCheck": "There are four lower beads and one upper bead per rod. Legal engaged lower beads form a contiguous group touching the bar.",
+  "representation": "Digits 0–4 use that many lower beads; digits 5–9 use the upper bead plus 0–4 lower beads. Thus 7 uses 5 + 2.",
+  "faded": {
+    "prompt": "Complete the setting for 8: upper bead __; lower beads engaged __. For 4: upper __; lower __.",
+    "solution": "8: upper engaged, 3 lower. 4: upper away, 4 lower."
+  },
+  "independent": [
+    {
+      "prompt": "Describe settings for 0, 5, and 9.",
+      "solution": "0: all away; 5: upper only; 9: upper and all 4 lower."
+    },
+    {
+      "prompt": "Can a legal rod use five lower beads to show 5?",
+      "solution": "No. It has only four lower beads. Use the upper bead to show 5."
+    }
+  ],
+  "explanation": "Explain how one upper/four lower beads provide exactly ten digit states without counting beads away from the bar.",
+  "transfer": {
+    "prompt": "Read a physical instrument in which the upper bead is away and two lower beads touch the bar, then explain how keyboard controls can represent the same state.",
+    "solution": "The rod digit is 2. The equivalent logical state is upper=false, lower=2. This describes value; it does not assess a physical finger technique."
+  },
+  "retrieval": "Tomorrow set/read 6, 2, 9 in random order. After a week, describe the change from 9 to 4.",
+  "contentStatus": "draft",
+  "reviewNote": "Expanded prototype lesson. Independent mathematical, pedagogical, and accessibility review is pending.",
+  "version": "1.1.0"
+}

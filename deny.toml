@@ -1,0 +1,43 @@
+# cargo-deny policy for AXIOM (Phase 2 reproducible foundations, ADR-0007).
+# Enforced in CI: security advisories, yanked crates, license inventory, source policy.
+# The allow list matches the audited 15 October 2026 lockfile inventory (122 packages,
+# all permissive); extend it deliberately, never silently.
+
+[graph]
+all-features = false
+no-default-features = false
+
+[advisories]
+version = 2
+yanked = "deny"
+ignore = [
+  # RUSTSEC-2024-0449: unsafe-libyaml (via serde_yaml 0.9) is unmaintained; no safe upgrade exists.
+  # It is used only by the offline CLI/content YAML reader, never by learner-facing runtime paths.
+  # Follow-up (handoff 2026-10-15): migrate axiom-content/axiom-cli to a maintained safe-Rust YAML
+  # parser (e.g. saphyr/serde-saphyr), then remove this ignore.
+  { id = "RUSTSEC-2024-0449", reason = "offline CLI YAML reader; migration tracked in handoff" },
+]
+
+[licenses]
+version = 2
+# Our own workspace crates are private (publish = false); cargo-deny skips them via `private`.
+private = { ignore = true }
+allow = [
+  "MIT",
+  "Apache-2.0",
+  "Apache-2.0 WITH LLVM-exception",
+  "BSD-3-Clause",
+  "BSL-1.0",
+  "Unicode-3.0",
+  "Unlicense",
+]
+
+[bans]
+multiple-versions = "warn"
+wildcards = "deny"
+highlight = "simplest-path"
+deny = []
+
+[sources]
+unknown-git = "deny"
+allow-registry = ["https://github.com/rust-lang/crates.io-index"]

@@ -1,0 +1,66 @@
+{
+  "id": "foundation.geometry.angles_and_triangles",
+  "courseId": "F07",
+  "title": "Angles, Parallel Lines, and Triangle Invariants",
+  "subtitle": "Angle measure as rotation; deductive proof that triangle interior angles sum to 180°.",
+  "templateId": "geometry.angles_triangles",
+  "challenge": "Draw any triangle on a sheet of paper. Tear off the three corner angles and place their vertices together touching at a single point without overlapping. Why do the three corners always form a perfect straight line, regardless of whether the triangle was acute, obtuse, scalene, or right?",
+  "predictionPrompt": "In a triangle, angle A measures 65° and angle B measures 45°. What is the exact measure of angle C?",
+  "predictionOptions": [
+    {
+      "label": "70°",
+      "value": "70",
+      "isCorrect": true
+    },
+    {
+      "label": "80°",
+      "value": "80"
+    },
+    {
+      "label": "110°",
+      "value": "110"
+    },
+    {
+      "label": "90°",
+      "value": "90"
+    }
+  ],
+  "formalDefinition": "An angle is a geometric measure of circular rotation between two rays sharing a common origin (vertex). A full rotation is 360° (2π radians); a straight angle is 180° (π radians); a right angle is 90° (π/2 radians). The Triangle Angle Sum Theorem states that for any triangle in the Euclidean plane with interior angles α, β, γ: α + β + γ = 180°. This follows directly by constructing a line through one vertex parallel to the opposite side and invoking alternate interior angles.",
+  "workedExample": {
+    "steps": [
+      "Identify the two known interior angles: α = 50° and β = 65°.",
+      "Sum the two known angles: 50° + 65° = 115°.",
+      "Apply the Triangle Angle Sum Theorem: α + β + γ = 180°.",
+      "Subtract from 180° to find the third angle: γ = 180° − 115° = 65°."
+    ],
+    "result": "The third angle measures 65° (and the triangle is isosceles since two angles are equal)."
+  },
+  "misconception": {
+    "mistake": "Assuming that a larger triangle with longer side lengths has interior angles that sum to more than 180°.",
+    "correction": "Angle measure is dimensionless angular rotation, not linear length. Scaling the sides of a triangle changes its perimeter and area, but preserves all interior angles identically. In Euclidean geometry, every triangle, from a microscopic grain to a galaxy cluster, has interior angles that sum to exactly 180°."
+  },
+  "reflection": "Euclid's parallel postulate is the cornerstone of the 180° theorem. On a sphere (spherical geometry), the angles of a triangle sum to more than 180°; on a hyperbolic saddle, they sum to less than 180°. In flat space, parallel lines preserve angles across transversals.",
+  "prerequisiteCheck": "Explain what a straight angle is and why two angles forming a linear pair must sum to 180°.",
+  "representation": "Draw triangle ABC. Through vertex A, draw a line L parallel to base BC. The alternate interior angles match angles B and C. Along line L, the three angles sit side by side to form a flat 180° straight angle.",
+  "faded": {
+    "prompt": "An isosceles triangle has a vertex angle of 40°. Its two base angles are equal: 2β = 180° − 40° = 140°. Therefore each base angle β = 140° ÷ 2 = __°.",
+    "solution": "70."
+  },
+  "independent": [
+    {
+      "prompt": "A right triangle has one acute angle measuring 38°. What is the measure of the other acute angle?",
+      "solution": "In a right triangle, acute angles are complementary: 90° − 38° = 52°."
+    },
+    {
+      "prompt": "Two angles are supplementary and form a straight line. If one angle measures 124°, find the measure of the other angle.",
+      "solution": "180° − 124° = 56°."
+    }
+  ],
+  "explanation": "Why does the exterior angle of a triangle equal the sum of the two opposite remote interior angles?",
+  "transfer": {
+    "prompt": "A surveyor measures a triangle between three landmarks. The first angle is 42° and the second is twice the first. Is this triangle acute, right, or obtuse?",
+    "solution": "First angle = 42°, second angle = 84°. Third angle = 180° − (42° + 84°) = 54°. Since all three angles (42°, 84°, 54°) are less than 90°, the triangle is strictly acute."
+  },
+  "retrieval": "Why must the two acute angles of any right triangle always sum to 90°?",
+  "reviewNote": "Draft foundation lesson. Exact calculations verified by Rust engine."
+}

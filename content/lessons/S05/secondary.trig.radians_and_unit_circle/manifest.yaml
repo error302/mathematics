@@ -1,0 +1,31 @@
+schema_version: 1
+id: secondary.trig.radians_and_unit_circle.lesson
+version: 1.1.0
+locale: en
+status: draft
+course_id: S05
+unit_id: secondary.trig.radians_and_unit_circle
+outcomes:
+  - Convert between degrees and exact rational multiples of pi radians using the unit-circle arc-length definition pi = 180 degrees.
+  - Determine signed cosine and sine values across all four quadrants of the unit circle x^2 + y^2 = 1 and compute exact periods T = 2*pi/B of sinusoidal waves.
+skill_ids:
+  - secondary.trig.radians_and_quadrant_signs
+  - secondary.trig.sinusoid_period_and_wave
+prerequisites:
+  required:
+    - secondary.geometry.circle_locus_equation
+    - secondary.functions.vertex_and_transformations
+  recommended:
+    - foundation.ratios.multiplicative_scaling
+exercise_refs:
+  - template_id: trig.radians_unit_circle
+    template_version: 1.1.0
+    difficulty_band: 1
+assessment_dimensions:
+  - conceptual
+  - procedural
+  - transfer
+content_file: lesson.en.md
+license_id: axiom-original-content
+source_refs: []
+review_record_ids: []

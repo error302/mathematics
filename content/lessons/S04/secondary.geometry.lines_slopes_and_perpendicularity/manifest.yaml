@@ -1,0 +1,31 @@
+schema_version: 1
+id: secondary.geometry.lines_slopes_and_perpendicularity.lesson
+version: 1.1.0
+locale: en
+status: draft
+course_id: S04
+unit_id: secondary.geometry.lines_slopes_and_perpendicularity
+outcomes:
+  - Compute exact slopes m = (y_2 - y_1)/(x_2 - x_1) over Q and determine equations of parallel and perpendicular lines using negative-reciprocal slopes.
+  - Apply the internal section formula x_P = (n x_1 + m x_2)/(m + n) to partition directed line segments in a given ratio m : n.
+skill_ids:
+  - secondary.geometry.slope_and_perpendicularity
+  - secondary.geometry.section_formula
+prerequisites:
+  required:
+    - foundation.geometry.coordinate_distance
+    - secondary.algebra.linear_equations
+  recommended:
+    - secondary.functions.domain_and_preimage
+exercise_refs:
+  - template_id: sec_geom.slope_and_lines
+    template_version: 1.1.0
+    difficulty_band: 1
+assessment_dimensions:
+  - conceptual
+  - procedural
+  - transfer
+content_file: lesson.en.md
+license_id: axiom-original-content
+source_refs: []
+review_record_ids: []

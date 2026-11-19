@@ -1,0 +1,26 @@
+{
+  "passed": true,
+  "evidence": [
+    "Loaded shell, worker, WASM and assets cached; tested API/auth/private response paths excluded.",
+    "Fresh offline reload can generate a new exercise and grade the answer through Rust WASM.",
+    "Exact worked help and encouragement remain available without a connection.",
+    "Guided abacus demonstration and fresh hidden mental-arithmetic generation/grading also work offline.",
+    "Fresh arithmetic-grid generation and grading, quadratic visuals, and the public certificate specimen work in the warm-cache offline shell."
+  ],
+  "cachedPaths": [
+    "/",
+    "/manifest.webmanifest",
+    "/icon.svg",
+    "/logo.png",
+    "/axiom-certificate-specimen.html",
+    "/index.html",
+    "/assets/index-DC-wgc5v.js",
+    "/assets/index-C70jHvvf.css",
+    "/assets/axiom_wasm_bg-CdmSA-_W.wasm",
+    "/assets/math.worker-DKIVendI.js",
+    "/assets/KaTeX_Main-Regular-B22Nviop.woff2"
+  ],
+  "limits": [
+    "Warm-cache local shell only; not signed packs, account sync, first-ever offline installation, or physical-device validation."
+  ]
+}

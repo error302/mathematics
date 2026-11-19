@@ -1,0 +1,27 @@
+schema_version: 1
+id: foundation.integers.number_line.lesson
+version: 1.1.0
+locale: en
+status: draft
+course_id: F03
+unit_id: foundation.integers.number_line
+outcomes:
+  - "Locate positive, zero, and negative integers on the signed number line."
+  - "Compare and order integers using the ordering relation and distance from zero."
+skill_ids:
+  - foundation.integers.order
+prerequisites:
+  required:
+    - foundation.place_value.decimal_representation
+  recommended: []
+exercise_refs:
+  - template_id: integers.order
+    template_version: 1.1.0
+    difficulty_band: 1
+assessment_dimensions:
+  - conceptual
+  - procedural
+content_file: lesson.en.md
+license_id: axiom-original-content
+source_refs: []
+review_record_ids: []

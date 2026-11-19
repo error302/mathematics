@@ -1,0 +1,62 @@
+{
+  "id": "foundation.arithmetic.column_addition_carry",
+  "courseId": "F02",
+  "title": "Column Addition with Carry Regrouping",
+  "subtitle": "Add one column at a time, and regroup whenever you make ten.",
+  "templateId": "arithmetic.column.addition",
+  "challenge": "Add 47 + 38. The units sum to 15. How is this recorded in columnar notation?",
+  "predictionPrompt": "What is carried to the tens column in 47 + 38?",
+  "predictionOptions": [
+    {
+      "label": "Carry 5",
+      "value": "5"
+    },
+    {
+      "label": "Carry 1",
+      "value": "1",
+      "isCorrect": true
+    },
+    {
+      "label": "Nothing carried",
+      "value": "0"
+    }
+  ],
+  "formalDefinition": "Column addition works right-to-left. When the sum in column k exceeds 9, the quotient floor(sum/10) is added to column k+1 as a carry.",
+  "workedExample": {
+    "steps": [
+      "Units column: 7 + 8 = 15. Write 5, carry 1 ten.",
+      "Tens column: 1 (carried) + 4 + 3 = 8."
+    ],
+    "result": "Total = 85."
+  },
+  "misconception": {
+    "mistake": "Writing 15 in the units column (resulting in 715).",
+    "correction": "Each column holds exactly one digit. The 1 in 15 represents 1 ten and belongs in the tens column."
+  },
+  "reflection": "Carrying is simply the algebraic regrouping of 10 smaller units into 1 unit of ten.",
+  "prerequisiteCheck": "Align tens with tens and units with units. Ten units can be exchanged for one ten; that ten is carried, not one unit.",
+  "representation": "47 + 38 gives 7 tens and 15 units. Exchange 10 of the units for one more ten: 8 tens and 5 units = 85.",
+  "faded": {
+    "prompt": "For 58 + 27, units sum to __; write __ in units and carry __ ten. Tens then sum to __.",
+    "solution": "Units sum to 15; write 5 and carry 1 ten. Tens sum to 1 + 5 + 2 = 8, so the total is 85."
+  },
+  "independent": [
+    {
+      "prompt": "Compute 67 + 28 and explain the carried digit.",
+      "solution": "7 + 8 = 15 units; 6 + 2 + 1 = 9 tens. Total 95."
+    },
+    {
+      "prompt": "Compute 186 + 257, tracking both columns that carry.",
+      "solution": "Units 6 + 7 = 13: write 3, carry 1. Tens 8 + 5 + 1 = 14: write 4, carry 1. Hundreds 1 + 2 + 1 = 4. Total 443."
+    }
+  ],
+  "explanation": "Describe a learner error that would produce 75 instead of 85 for 47 + 38. Explain exactly which value was lost.",
+  "transfer": {
+    "prompt": "You have 36 cm and 48 cm of rope. Estimate first, then compute the total and check whether it could exceed a metre.",
+    "solution": "About 40 + 50 = 90 cm; exact total 84 cm, so it is below 100 cm."
+  },
+  "retrieval": "Tomorrow compute 79 + 16 without the example. After a week, explain the two carries in 295 + 178.",
+  "contentStatus": "draft",
+  "reviewNote": "Expanded prototype lesson. Independent mathematical, pedagogical, and accessibility review is pending.",
+  "version": "1.1.0"
+}

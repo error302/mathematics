@@ -1,0 +1,31 @@
+schema_version: 1
+id: foundation.counting.sample_spaces.lesson
+version: 1.1.0
+locale: en
+status: draft
+course_id: F08
+unit_id: foundation.counting.sample_spaces
+outcomes:
+  - Apply the fundamental multiplication principle to multi-stage independent choices.
+  - Distinguish ordered permutations P(n, k) from unordered combinations C(n, k) by dividing out k! internal rearrangements.
+skill_ids:
+  - foundation.counting.multiplication_principle
+  - foundation.counting.permutations_combinations
+prerequisites:
+  required:
+    - foundation.arithmetic.multiplication
+    - foundation.arithmetic.division
+  recommended:
+    - foundation.data.mean
+exercise_refs:
+  - template_id: counting.permutations_combinations
+    template_version: 1.1.0
+    difficulty_band: 1
+assessment_dimensions:
+  - conceptual
+  - procedural
+  - transfer
+content_file: lesson.en.md
+license_id: axiom-original-content
+source_refs: []
+review_record_ids: []

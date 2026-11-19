@@ -1,0 +1,59 @@
+{
+  "id": "foundation.arithmetic.multiplication_array",
+  "courseId": "F02",
+  "title": "Multiplication: Arrays and Equal Groups",
+  "subtitle": "See multiplication as equal groups, a grid of rows and columns, and repeated addition.",
+  "templateId": "arithmetic.whole.multiplication",
+  "challenge": "If you arrange 24 tiles in 4 rows of 6, or in 6 rows of 4, why do both arrangements contain the exact same number of tiles?",
+  "predictionPrompt": "Does rotating a 3 × 5 array into a 5 × 3 array change the total count of items?",
+  "predictionOptions": [
+    {
+      "label": "The total changes because the number of rows changed",
+      "value": "changes"
+    },
+    {
+      "label": "The total stays the same (3 × 5 = 5 × 3 = 15)",
+      "value": "same",
+      "isCorrect": true
+    }
+  ],
+  "formalDefinition": "The product a × b of two whole numbers represents a groups of b units (repeated addition). It is commutative (a × b = b × a), associative ((a × b) × c = a × (b × c)), and distributes over addition: a × (b + c) = (a × b) + (a × c).",
+  "workedExample": {
+    "steps": [
+      "To calculate 7 × 6, decompose 6 into 5 + 1: 7 × (5 + 1).",
+      "Apply the distributive property: (7 × 5) + (7 × 1).",
+      "Calculate partial products: 35 + 7 = 42."
+    ],
+    "result": "7 × 6 = 42."
+  },
+  "misconception": {
+    "mistake": "Thinking multiplication always produces a strictly larger number.",
+    "correction": "Multiplying by 1 preserves the value (a × 1 = a), and multiplying by 0 gives 0 (a × 0 = 0). Later with fractions, multiplying by a value between 0 and 1 scales the quantity down."
+  },
+  "reflection": "A rectangular array gives multiplication a geometric shape: rows and columns can be decomposed by place value, making large products manageable.",
+  "prerequisiteCheck": "Count equal groups and add whole numbers. Notice that adding 4 + 4 + 4 is three groups of four.",
+  "representation": "Draw 3 rows of 4 dots. Count by rows: 4 + 4 + 4 = 12. Turn the page to view 4 columns of 3: 3 + 3 + 3 + 3 = 12. Both views represent the same 12 dots.",
+  "faded": {
+    "prompt": "Use the distributive property: 6 × 8 = 6 × (5 + 3) = (6 × __) + (6 × __) = 30 + __ = __.",
+    "solution": "6 × (5 + 3) = (6 × 5) + (6 × 3) = 30 + 18 = 48."
+  },
+  "independent": [
+    {
+      "prompt": "Calculate 8 × 7 by breaking 7 into 5 + 2.",
+      "solution": "8 × (5 + 2) = (8 × 5) + (8 × 2) = 40 + 16 = 56."
+    },
+    {
+      "prompt": "Explain why an array of 5 rows and 9 columns has the same total as an array of 9 rows and 5 columns.",
+      "solution": "Rotating the grid swaps rows and columns without adding or removing any items, illustrating that multiplication is commutative: 5 × 9 = 9 × 5 = 45."
+    }
+  ],
+  "explanation": "Explain how the distributive property allows you to multiply a multi-digit number like 14 by 3 using place value.",
+  "transfer": {
+    "prompt": "A classroom has 6 rows of desks with 5 desks in each row. If 2 new rows of 5 desks are added, what is the new total number of desks?",
+    "solution": "(6 + 2) × 5 = 8 × 5 = 40 desks (or 6 × 5 + 2 × 5 = 30 + 10 = 40 desks)."
+  },
+  "retrieval": "Tomorrow write the multiplication facts for 6 × 7 and 8 × 9 using decomposition. Next week explain why a × (b + c) = a × b + a × c with a drawn grid.",
+  "contentStatus": "draft",
+  "reviewNote": "Expanded prototype lesson. Independent mathematical, pedagogical, and accessibility review is pending.",
+  "version": "1.1.0"
+}

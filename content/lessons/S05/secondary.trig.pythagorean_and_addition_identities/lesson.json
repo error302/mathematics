@@ -1,0 +1,66 @@
+{
+  "id": "secondary.trig.pythagorean_and_addition_identities",
+  "courseId": "S05",
+  "title": "Pythagorean, Angle-Addition, and Double-Angle Identities",
+  "subtitle": "Quotient ratios, non-linearity of sine and cosine, double-angle formulas, and exact angle-sum expansions over Q.",
+  "templateId": "trig.identities_double_angle",
+  "challenge": "If sin(30 degrees) = 1/2, why doesn't sin(60 degrees) equal 1/2 + 1/2 = 1? Why does doubling an angle multiply its sine by 2*cos(theta) instead of simply doubling sin(theta)?",
+  "predictionPrompt": "Given an acute angle theta in (0, pi/2) with sin(theta) = 3/5 and cos(theta) = 4/5, what is the exact value of sin(2*theta)?",
+  "predictionOptions": [
+    {
+      "label": "24/25",
+      "value": "24/25",
+      "isCorrect": true
+    },
+    {
+      "label": "6/5",
+      "value": "6/5"
+    },
+    {
+      "label": "12/25",
+      "value": "12/25"
+    },
+    {
+      "label": "7/25",
+      "value": "7/25"
+    }
+  ],
+  "formalDefinition": "For all angles where the denominators are non-zero, tan(theta) = sin(theta)/cos(theta) and 1 + tan^2(theta) = sec^2(theta). Taking the dot product of unit vectors u = <cos(alpha), sin(alpha)> and v = <cos(beta), -sin(beta)> yields the angle-addition law cos(alpha + beta) = cos(alpha)cos(beta) - sin(alpha)sin(beta), and replacing beta with pi/2 - beta yields sin(alpha + beta) = sin(alpha)cos(beta) + cos(alpha)sin(beta). Setting alpha = beta = theta produces the double-angle identities: sin(2*theta) = 2 sin(theta)cos(theta) and cos(2*theta) = cos^2(theta) - sin^2(theta) = 1 - 2 sin^2(theta) = 2 cos^2(theta) - 1.",
+  "workedExample": {
+    "steps": [
+      "Task: Given acute angles alpha with (sin alpha, cos alpha) = (3/5, 4/5) and beta with (sin beta, cos beta) = (5/13, 12/13), find tan(alpha), sin(2*alpha), and cos(alpha + beta).",
+      "By the quotient identity, tan(alpha) = sin(alpha) / cos(alpha) = (3/5) / (4/5) = 3/4.",
+      "By the double-angle identity, sin(2*alpha) = 2 sin(alpha)cos(alpha) = 2 * (3/5) * (4/5) = 24/25.",
+      "By the cosine angle-sum identity, cos(alpha + beta) = cos(alpha)cos(beta) - sin(alpha)sin(beta) = (4/5)(12/13) - (3/5)(5/13) = 48/65 - 15/65 = 33/65."
+    ],
+    "result": "tan(alpha) = 3/4; sin(2*alpha) = 24/25; cos(alpha + beta) = 33/65."
+  },
+  "misconception": {
+    "mistake": "Treating sin or cos as linear operators (writing sin(2*theta) = 2*sin(theta) or cos(alpha + beta) = cos(alpha) + cos(beta)), or using a plus sign in cos(alpha + beta).",
+    "correction": "Notice that if sin(theta) = 3/5, the linear guess 2*sin(theta) = 6/5 > 1 is impossible on the unit circle! Instead, sin(2*theta) = 2 sin(theta)cos(theta) = 24/25 <= 1. And increasing the angle in Quadrant I decreases cosine, which explains the minus sign in cos(alpha + beta) = cos(alpha)cos(beta) - sin(alpha)sin(beta)."
+  },
+  "reflection": "Every double-angle and half-angle identity in trigonometry flows from the single addition law for cos(alpha + beta) and the Pythagorean identity cos^2(theta) + sin^2(theta) = 1.",
+  "prerequisiteCheck": "If cos(theta) = 5/13 and theta is in Quadrant I, compute sin(theta) using sin^2(theta) + cos^2(theta) = 1.",
+  "representation": "Compare the area of an isosceles triangle with vertex angle 2*theta and unit legs (Area = 1/2 sin(2*theta)) to the two congruent right triangles formed by its altitude (Area = sin(theta)cos(theta)) to see geometrically why sin(2*theta) = 2 sin(theta)cos(theta).",
+  "faded": {
+    "prompt": "Given sin(theta) = 5/13 and cos(theta) = 12/13, compute sin(2*theta): 2 * (5/13) * (12/13) = __ / 169.",
+    "solution": "120."
+  },
+  "independent": [
+    {
+      "prompt": "For an acute angle theta with cos(theta) = 8/17, find sin(theta) and the exact value of tan(theta).",
+      "solution": "sin(theta) = 15/17, so tan(theta) = (15/17) / (8/17) = 15/8."
+    },
+    {
+      "prompt": "Given acute angles alpha with (sin alpha, cos alpha) = (3/5, 4/5) and beta with (sin beta, cos beta) = (12/13, 5/13), compute the exact value of cos(alpha + beta).",
+      "solution": "cos(alpha + beta) = (4/5)(5/13) - (3/5)(12/13) = 20/65 - 36/65 = -16/65."
+    }
+  ],
+  "explanation": "In the last independent problem, cos(alpha) > 0 and cos(beta) > 0, yet cos(alpha + beta) = -16/65 < 0. What does that negative sign tell you about the angle alpha + beta?",
+  "transfer": {
+    "prompt": "Using cos(2*theta) = cos^2(theta) - sin^2(theta) with sin(theta) = 3/5 and cos(theta) = 4/5, compute cos(2*theta) and verify that sin^2(2*theta) + cos^2(2*theta) = 1.",
+    "solution": "cos(2*theta) = (4/5)^2 - (3/5)^2 = 16/25 - 9/25 = 7/25. Since sin(2*theta) = 24/25, we check (24/25)^2 + (7/25)^2 = (576 + 49)/625 = 625/625 = 1."
+  },
+  "retrieval": "State the formulas for tan(theta), sin(alpha + beta), cos(alpha + beta), sin(2*theta), and the three forms of cos(2*theta).",
+  "reviewNote": "Draft secondary lesson. Exact calculations verified by Rust engine."
+}

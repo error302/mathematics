@@ -1,0 +1,37 @@
+schema_version: 1
+id: "secondary.calculus.derivatives_and_tangents.lesson"
+version: "1.1.0"
+locale: "en"
+status: "draft"
+course_id: "S07"
+unit_id: "secondary.calculus.derivatives_and_tangents"
+outcomes:
+  - "Differentiate polynomials exactly using the power rule and linearity, and evaluate f'(x_0) at a given point."
+  - "Construct the tangent line y = f(x_0) + f'(x_0)(x - x_0) to a curve and determine its exact y-intercept B."
+  - "Find exact rational critical points x where a quadratic curve has a horizontal tangent line f'(x) = 0."
+skill_ids:
+  - "secondary.calculus.derivatives_and_tangents"
+prerequisites:
+  required:
+    - "secondary.calculus.limits_and_continuity"
+    - "secondary.geometry.lines_slopes_and_perpendicularity"
+  recommended:
+    - "secondary.functions.transformations_and_models"
+exercise_refs:
+  - template_id: "calculus.derivatives_tangent"
+    template_version: "1.1.0"
+    difficulty_band: 1
+  - template_id: "calculus.derivatives_tangent"
+    template_version: "1.1.0"
+    difficulty_band: 2
+  - template_id: "calculus.derivatives_tangent"
+    template_version: "1.1.0"
+    difficulty_band: 3
+assessment_dimensions:
+  - "conceptual"
+  - "procedural"
+  - "transfer"
+content_file: "lesson.en.md"
+license_id: "axiom-original-content"
+source_refs: []
+review_record_ids: []

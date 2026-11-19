@@ -6,6 +6,7 @@
 
 use crate::number::{bit_size, Q};
 use num_bigint::BigInt;
+use num_integer::Integer;
 use num_traits::{One, Signed, ToPrimitive, Zero};
 use serde::{Deserialize, Serialize};
 
@@ -474,7 +475,7 @@ pub fn evaluate(ast: &Ast, budget: &MathBudget) -> Result<Q, EvalFailure> {
             if !e.denom().is_one() {
                 return Err(EvalFailure {
                     code: "non_integer_exponent".into(),
-                    message: "Only whole-number exponents are accepted in this activity.".into(),
+                    message: "Only integer exponents are supported in this activity. Fractional powers need another checker.".into(),
                     budget: false,
                 });
             }
@@ -486,15 +487,24 @@ pub fn evaluate(ast: &Ast, budget: &MathBudget) -> Result<Q, EvalFailure> {
                 });
             }
             let mag = e.numer().abs();
-            let est = (bit_size(&b).max(1) as u128) * mag.to_u128().unwrap_or(u128::MAX);
-            if est > budget.max_integer_bits as u128 && !b.numer().abs().is_one() || !b.denom().is_one() && est > budget.max_integer_bits as u128 {
+            // These bounded results can be decided exactly without clipping a large exponent.
+            if b.is_zero() { return Ok(Q::zero()); }
+            if b.abs().is_one() {
+                return Ok(if b.is_negative() && e.numer().is_odd() { -Q::one() } else { Q::one() });
+            }
+            let est = (bit_size(&b).max(1) as u128).saturating_mul(mag.to_u128().unwrap_or(u128::MAX));
+            if est > budget.max_integer_bits as u128 {
                 return Err(EvalFailure {
                     code: "integer_too_large".into(),
                     message: "This power is too large for the current checker.".into(),
                     budget: true,
                 });
             }
-            let k = mag.to_u32().unwrap_or(u32::MAX);
+            let k = mag.to_u32().ok_or_else(|| EvalFailure {
+                code: "integer_too_large".into(),
+                message: "This power exceeds the current computation budget.".into(),
+                budget: true,
+            })?;
             let n = num_traits::pow::pow(b.numer().clone(), k as usize);
             let d = num_traits::pow::pow(b.denom().clone(), k as usize);
             let p = Q::new(n, d);

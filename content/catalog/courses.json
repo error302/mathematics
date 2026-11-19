@@ -1,138 +1,1164 @@
 [
   {
     "id": "F00",
-    "title": "Learning to Learn Mathematics",
+    "title": "Learning to learn mathematics",
     "stage": "foundation",
+    "scope": "Learning to learn mathematics: notation, equality, reading a problem, estimation, diagrams, checking an answer, uncertainty",
     "prerequisites": [],
-    "outcomes": ["Explain an answer and identify whether a check actually supports it"],
-    "status": "published"
+    "prerequisite_summary": "None",
+    "outcomes": [
+      "Explain an answer and identify whether a check actually supports it"
+    ],
+    "status": "draft",
+    "lesson_count": 3,
+    "review_status": "independent_review_pending"
   },
   {
     "id": "F01",
-    "title": "Number and Place Value",
+    "title": "Number and place value",
     "stage": "foundation",
+    "scope": "Number and place value: counting, zero, ordering, decimal notation, number line, decomposition",
     "prerequisites": [],
-    "outcomes": ["Represent and compare numbers in multiple forms"],
-    "status": "published"
+    "prerequisite_summary": "None",
+    "outcomes": [
+      "Represent and compare numbers in multiple forms"
+    ],
+    "status": "draft",
+    "lesson_count": 2,
+    "review_status": "independent_review_pending"
   },
   {
     "id": "F02",
-    "title": "Whole-Number Arithmetic",
+    "title": "Whole-number arithmetic",
     "stage": "foundation",
-    "prerequisites": ["F01"],
-    "outcomes": ["Solve unfamiliar multi-step arithmetic and explain regrouping"],
-    "status": "published"
+    "scope": "Whole-number arithmetic: meanings of four operations, properties, algorithms, inverse operations, estimation",
+    "prerequisites": [],
+    "prerequisite_summary": "F01",
+    "outcomes": [
+      "Solve unfamiliar multi-step arithmetic and explain regrouping"
+    ],
+    "status": "draft",
+    "lesson_count": 6,
+    "review_status": "independent_review_pending"
   },
   {
     "id": "F03",
-    "title": "Integers and Divisibility",
+    "title": "Integers and divisibility",
     "stage": "foundation",
-    "prerequisites": ["F02"],
-    "outcomes": ["Use gcd/lcm appropriately and justify elementary divisibility"],
-    "status": "published"
+    "scope": "Integers and divisibility: negative numbers, order, factors, multiples, primes, gcd/lcm, Euclidean algorithm",
+    "prerequisites": [],
+    "prerequisite_summary": "F02",
+    "outcomes": [
+      "Use gcd/lcm appropriately and justify elementary divisibility"
+    ],
+    "status": "draft",
+    "lesson_count": 3,
+    "review_status": "independent_review_pending"
   },
   {
     "id": "F04",
-    "title": "Fractions and Rational Numbers",
+    "title": "Fractions",
     "stage": "foundation",
-    "prerequisites": ["F02", "F03"],
-    "outcomes": ["Explain why common denominators work and transfer across representations"],
-    "status": "published"
+    "scope": "Fractions: equal parts, number-line interpretation, equivalence, comparison, operations, mixed numbers",
+    "prerequisites": [],
+    "prerequisite_summary": "F02; relevant F03 skills",
+    "outcomes": [
+      "Explain why common denominators work and transfer across representations"
+    ],
+    "status": "draft",
+    "lesson_count": 3,
+    "review_status": "independent_review_pending"
   },
   {
     "id": "F05",
-    "title": "Decimals, Ratios, and Proportions",
+    "title": "Decimals, percentages, ratios, rates, proportions, scaling",
     "stage": "foundation",
-    "prerequisites": ["F04"],
-    "outcomes": ["Distinguish additive from multiplicative comparison and solve ratio contexts"],
-    "status": "published"
+    "scope": "Decimals, percentages, ratios, rates, proportions, scaling",
+    "prerequisites": [],
+    "prerequisite_summary": "F04",
+    "outcomes": [
+      "Distinguish additive from multiplicative comparison and solve new ratio contexts"
+    ],
+    "status": "draft",
+    "lesson_count": 3,
+    "review_status": "independent_review_pending"
   },
   {
     "id": "F06",
-    "title": "Powers and Roots",
+    "title": "Powers and roots",
     "stage": "foundation",
-    "prerequisites": ["F03", "F04", "F05"],
-    "outcomes": ["Apply exponent laws with correct restrictions and reject invalid cancellations"],
-    "status": "published"
+    "scope": "Powers and roots: integer exponents, scientific notation, roots, rational exponents with domains",
+    "prerequisites": [],
+    "prerequisite_summary": "F03–F05",
+    "outcomes": [
+      "Apply exponent laws with correct restrictions and reject invalid cancellations"
+    ],
+    "status": "draft",
+    "lesson_count": 3,
+    "review_status": "independent_review_pending"
   },
   {
     "id": "F07",
-    "title": "Elementary Geometry and Measurement",
+    "title": "Elementary geometry and measurement",
     "stage": "foundation",
-    "prerequisites": ["F02", "F05"],
-    "outcomes": ["Construct a geometric argument, state assumptions, and explain scale factors"],
-    "status": "published"
+    "scope": "Elementary geometry and measurement: length/area/volume, angles, triangles, congruence, similarity, coordinates",
+    "prerequisites": [],
+    "prerequisite_summary": "F02; F05 for similarity",
+    "outcomes": [
+      "Construct a geometric argument, state assumptions, and explain scale factors"
+    ],
+    "status": "draft",
+    "lesson_count": 3,
+    "review_status": "independent_review_pending"
   },
   {
     "id": "F08",
-    "title": "Data, Counting, and Chance",
+    "title": "Data, counting, and chance",
     "stage": "foundation",
-    "prerequisites": ["F04", "F05"],
-    "outcomes": ["Explain a misleading graph and enumerate a small sample space"],
-    "status": "published"
+    "scope": "Data, counting, and chance: representations, mean/median, sample spaces, simple probability, independence intuition",
+    "prerequisites": [],
+    "prerequisite_summary": "F04–F05",
+    "outcomes": [
+      "Explain a misleading graph and enumerate a small sample space"
+    ],
+    "status": "draft",
+    "lesson_count": 3,
+    "review_status": "independent_review_pending"
   },
   {
     "id": "S01",
     "title": "Algebra I",
     "stage": "secondary",
-    "prerequisites": ["F03", "F04", "F05", "F06"],
-    "outcomes": ["Solve and check equations, including exceptional and extraneous cases"],
-    "status": "planned"
+    "scope": "Algebra I: expressions, substitution, distributivity, equations/inequalities, systems, absolute value",
+    "prerequisites": [],
+    "prerequisite_summary": "F03–F06",
+    "outcomes": [
+      "Solve and check equations, including exceptional and extraneous cases"
+    ],
+    "status": "draft",
+    "lesson_count": 3,
+    "review_status": "independent_review_pending"
+  },
+  {
+    "id": "S02",
+    "title": "Functions",
+    "stage": "secondary",
+    "scope": "Functions: domain/codomain/range, composition, inverse conditions, graphs, piecewise functions, transformations",
+    "prerequisites": [],
+    "prerequisite_summary": "S01",
+    "outcomes": [
+      "Interpret functions as mappings and compare formula with domain"
+    ],
+    "status": "draft",
+    "lesson_count": 3,
+    "review_status": "independent_review_pending"
+  },
+  {
+    "id": "S03",
+    "title": "Algebra II",
+    "stage": "secondary",
+    "scope": "Algebra II: polynomials, factoring, rational functions, quadratics, complex numbers, exponential/logarithmic functions",
+    "prerequisites": [],
+    "prerequisite_summary": "S01–S02; F06",
+    "outcomes": [
+      "Solve equations with domain tracking and use complex arithmetic"
+    ],
+    "status": "draft",
+    "lesson_count": 3,
+    "review_status": "independent_review_pending"
+  },
+  {
+    "id": "S04",
+    "title": "Euclidean and coordinate geometry",
+    "stage": "secondary",
+    "scope": "Euclidean and coordinate geometry: axioms, constructions, circles, vectors in the plane, loci, elementary proofs",
+    "prerequisites": [],
+    "prerequisite_summary": "F07; S01",
+    "outcomes": [
+      "Write a short geometric proof and identify a missing hypothesis"
+    ],
+    "status": "draft",
+    "lesson_count": 3,
+    "review_status": "independent_review_pending"
+  },
+  {
+    "id": "S05",
+    "title": "Trigonometry",
+    "stage": "secondary",
+    "scope": "Trigonometry: unit circle, radians, identities, inverse functions, equations, triangle applications",
+    "prerequisites": [],
+    "prerequisite_summary": "S02–S04",
+    "outcomes": [
+      "Derive an identity and state branch/range restrictions"
+    ],
+    "status": "draft",
+    "lesson_count": 3,
+    "review_status": "independent_review_pending"
+  },
+  {
+    "id": "S06",
+    "title": "Sequences and discrete reasoning",
+    "stage": "secondary",
+    "scope": "Sequences and discrete reasoning: arithmetic/geometric sequences, sums, recursion, binomial theorem, counting",
+    "prerequisites": [],
+    "prerequisite_summary": "S01; F08",
+    "outcomes": [
+      "Compare recursive and explicit descriptions; avoid double counting"
+    ],
+    "status": "draft",
+    "lesson_count": 3,
+    "review_status": "independent_review_pending"
+  },
+  {
+    "id": "S07",
+    "title": "Introductory calculus",
+    "stage": "secondary",
+    "scope": "Introductory calculus: limits conceptually, derivative, integral, fundamental theorem, applications",
+    "prerequisites": [],
+    "prerequisite_summary": "S02–S05",
+    "outcomes": [
+      "Connect rates, areas, and functions; distinguish numerical evidence from proof"
+    ],
+    "status": "draft",
+    "lesson_count": 3,
+    "review_status": "independent_review_pending"
   },
   {
     "id": "P01",
-    "title": "Sets, Logic, and Mathematical Language",
+    "title": "Sets, logic, and mathematical language",
     "stage": "proof_bridge",
-    "prerequisites": ["S01"],
-    "outcomes": ["Negate quantified statements and explain necessary/sufficient conditions"],
-    "status": "planned"
+    "scope": "Sets, logic, and mathematical language: connectives, implication, quantifiers, relations, functions, equivalence",
+    "prerequisites": [],
+    "prerequisite_summary": "S01–S02; can be taken alongside S03",
+    "outcomes": [
+      "Negate quantified statements and explain necessary/sufficient conditions"
+    ],
+    "status": "planned",
+    "lesson_count": 0,
+    "review_status": "not_authored"
   },
   {
     "id": "P02",
-    "title": "Proof Methods",
+    "title": "Proof methods",
     "stage": "proof_bridge",
-    "prerequisites": ["P01", "F03"],
-    "outcomes": ["Produce complete proofs and diagnose invalid proof steps"],
-    "status": "planned"
+    "scope": "Proof methods: direct proof, contrapositive, contradiction, induction, cases, existence/uniqueness, counterexample",
+    "prerequisites": [],
+    "prerequisite_summary": "P01; F03",
+    "outcomes": [
+      "Produce complete proofs and diagnose invalid proof steps"
+    ],
+    "status": "planned",
+    "lesson_count": 0,
+    "review_status": "not_authored"
+  },
+  {
+    "id": "P03",
+    "title": "Mathematical writing",
+    "stage": "proof_bridge",
+    "scope": "Mathematical writing: definitions, theorem statements, lemma use, citations, proof structure, revision",
+    "prerequisites": [],
+    "prerequisite_summary": "P02",
+    "outcomes": [
+      "Submit a revised proof portfolio with explicit hypotheses and reviewer feedback"
+    ],
+    "status": "planned",
+    "lesson_count": 0,
+    "review_status": "not_authored"
   },
   {
     "id": "U01",
-    "title": "Computational Linear Algebra",
+    "title": "Computational linear algebra",
     "stage": "undergraduate",
-    "prerequisites": ["S01"],
-    "outcomes": ["Solve a system and explain rank, nullity, and geometry"],
-    "status": "planned"
+    "scope": "Computational linear algebra: systems, elimination, matrices, determinants, eigenvalues, geometric transformations",
+    "prerequisites": [],
+    "prerequisite_summary": "S01–S03",
+    "outcomes": [
+      "Solve a system and explain rank, nullity, and geometry"
+    ],
+    "status": "planned",
+    "lesson_count": 0,
+    "review_status": "not_authored"
   },
   {
     "id": "U02",
-    "title": "Proof-Based Linear Algebra",
+    "title": "Proof-based linear algebra",
     "stage": "undergraduate",
-    "prerequisites": ["U01", "P02"],
-    "outcomes": ["Prove rank-nullity and distinguish real symmetric from arbitrary matrices"],
-    "status": "planned"
+    "scope": "Proof-based linear algebra: fields, vector spaces, bases, dimension, linear maps, duality, inner products, spectral theorem in stated settings",
+    "prerequisites": [],
+    "prerequisite_summary": "U01, P02",
+    "outcomes": [
+      "Prove rank-nullity and distinguish real symmetric from arbitrary matrices"
+    ],
+    "status": "planned",
+    "lesson_count": 0,
+    "review_status": "not_authored"
   },
   {
     "id": "U03",
-    "title": "Real Analysis I",
+    "title": "Real analysis I",
     "stage": "undergraduate",
-    "prerequisites": ["P02"],
-    "outcomes": ["Construct epsilon arguments and prove a theorem using completeness"],
-    "status": "planned"
+    "scope": "Real analysis I: ordered completeness, sequences, limits, continuity, compactness on the real line, differentiation, Riemann integration",
+    "prerequisites": [],
+    "prerequisite_summary": "S07, P02",
+    "outcomes": [
+      "Construct epsilon arguments and prove a theorem using completeness"
+    ],
+    "status": "planned",
+    "lesson_count": 0,
+    "review_status": "not_authored"
+  },
+  {
+    "id": "U04",
+    "title": "Real analysis II",
+    "stage": "undergraduate",
+    "scope": "Real analysis II: series of functions, uniform convergence, interchange conditions, metric spaces, multivariable rigor",
+    "prerequisites": [],
+    "prerequisite_summary": "U03; U02 where used",
+    "outcomes": [
+      "Give a counterexample to an invalid interchange of limit and integral"
+    ],
+    "status": "planned",
+    "lesson_count": 0,
+    "review_status": "not_authored"
+  },
+  {
+    "id": "U05",
+    "title": "Multivariable calculus and forms bridge",
+    "stage": "undergraduate",
+    "scope": "Multivariable calculus and forms bridge: partial derivatives, inverse/implicit function intuition, integration, vector calculus, introductory differential forms",
+    "prerequisites": [],
+    "prerequisite_summary": "S07, U01",
+    "outcomes": [
+      "Relate a local computation to a carefully stated integral theorem"
+    ],
+    "status": "planned",
+    "lesson_count": 0,
+    "review_status": "not_authored"
+  },
+  {
+    "id": "U06",
+    "title": "Abstract algebra I",
+    "stage": "undergraduate",
+    "scope": "Abstract algebra I: groups, subgroups, homomorphisms, quotients, group actions, Lagrange, isomorphism theorems",
+    "prerequisites": [],
+    "prerequisite_summary": "P02; U02 recommended",
+    "outcomes": [
+      "Build a quotient and prove it is well-defined"
+    ],
+    "status": "planned",
+    "lesson_count": 0,
+    "review_status": "not_authored"
+  },
+  {
+    "id": "U07",
+    "title": "Abstract algebra II",
+    "stage": "undergraduate",
+    "scope": "Abstract algebra II: rings, ideals, polynomial rings, domains, fields, extensions, introductory Galois theory",
+    "prerequisites": [],
+    "prerequisite_summary": "U06; U02",
+    "outcomes": [
+      "Analyze an extension and distinguish reducibility from solvability"
+    ],
+    "status": "planned",
+    "lesson_count": 0,
+    "review_status": "not_authored"
+  },
+  {
+    "id": "U08",
+    "title": "Point-set topology",
+    "stage": "undergraduate",
+    "scope": "Point-set topology: topological spaces, bases, continuity, product/quotient topology, separation, compactness, connectedness",
+    "prerequisites": [],
+    "prerequisite_summary": "P02; U03 metric skills",
+    "outcomes": [
+      "Prove a compactness result and produce a non-metric example"
+    ],
+    "status": "planned",
+    "lesson_count": 0,
+    "review_status": "not_authored"
+  },
+  {
+    "id": "U09",
+    "title": "Complex analysis",
+    "stage": "undergraduate",
+    "scope": "Complex analysis: holomorphic functions, Cauchy theory, power/Laurent series, residues, conformal maps",
+    "prerequisites": [],
+    "prerequisite_summary": "U03; complex S03; selected U05",
+    "outcomes": [
+      "Prove a basic holomorphic theorem and justify a contour computation"
+    ],
+    "status": "planned",
+    "lesson_count": 0,
+    "review_status": "not_authored"
+  },
+  {
+    "id": "U10",
+    "title": "Elementary number theory",
+    "stage": "undergraduate",
+    "scope": "Elementary number theory: congruences, CRT, arithmetic functions, Diophantine equations, reciprocity introduction",
+    "prerequisites": [],
+    "prerequisite_summary": "F03, P02; U06 helpful",
+    "outcomes": [
+      "Solve a new congruence problem and explain all solutions"
+    ],
+    "status": "planned",
+    "lesson_count": 0,
+    "review_status": "not_authored"
+  },
+  {
+    "id": "U11",
+    "title": "Combinatorics and graph theory",
+    "stage": "undergraduate",
+    "scope": "Combinatorics and graph theory: enumeration, recurrences, generating functions, graphs/trees, extremal and probabilistic introductions",
+    "prerequisites": [],
+    "prerequisite_summary": "S06, P02; F08 probability",
+    "outcomes": [
+      "Prove a counting identity by two methods and analyze a graph invariant"
+    ],
+    "status": "planned",
+    "lesson_count": 0,
+    "review_status": "not_authored"
+  },
+  {
+    "id": "U12",
+    "title": "Probability foundations",
+    "stage": "undergraduate",
+    "scope": "Probability foundations: random variables, expectation, distributions, conditional probability, convergence intuition",
+    "prerequisites": [],
+    "prerequisite_summary": "S07, F08; P02",
+    "outcomes": [
+      "Explain conditioning and distinguish independence from disjointness"
+    ],
+    "status": "planned",
+    "lesson_count": 0,
+    "review_status": "not_authored"
+  },
+  {
+    "id": "U13",
+    "title": "Differential equations and dynamical systems bridge",
+    "stage": "undergraduate",
+    "scope": "Differential equations and dynamical systems bridge: existence/uniqueness intuition, linear systems, phase portraits, stability",
+    "prerequisites": [],
+    "prerequisite_summary": "S07, U01; U03 for rigorous units",
+    "outcomes": [
+      "Explain what a numerical trajectory can and cannot establish"
+    ],
+    "status": "planned",
+    "lesson_count": 0,
+    "review_status": "not_authored"
+  },
+  {
+    "id": "U14",
+    "title": "Mathematical logic and foundations I",
+    "stage": "undergraduate",
+    "scope": "Mathematical logic and foundations I: formal languages, propositional/first-order logic, soundness/completeness introductions, sets, cardinality",
+    "prerequisites": [],
+    "prerequisite_summary": "P02",
+    "outcomes": [
+      "Distinguish semantic truth from formal derivability"
+    ],
+    "status": "planned",
+    "lesson_count": 0,
+    "review_status": "not_authored"
+  },
+  {
+    "id": "U15",
+    "title": "Measure and integration",
+    "stage": "undergraduate",
+    "scope": "Measure and integration: sigma-algebras, measures, measurable functions, Lebesgue integration, convergence theorems, product measures",
+    "prerequisites": [],
+    "prerequisite_summary": "U04, U08 core",
+    "outcomes": [
+      "Apply dominated/monotone convergence with every hypothesis checked"
+    ],
+    "status": "planned",
+    "lesson_count": 0,
+    "review_status": "not_authored"
+  },
+  {
+    "id": "U16",
+    "title": "Algebraic topology I",
+    "stage": "undergraduate",
+    "scope": "Algebraic topology I: homotopy, fundamental group, van Kampen, covering spaces, homology introduction",
+    "prerequisites": [],
+    "prerequisite_summary": "U06, U08",
+    "outcomes": [
+      "Compute an invariant and justify its construction"
+    ],
+    "status": "planned",
+    "lesson_count": 0,
+    "review_status": "not_authored"
+  },
+  {
+    "id": "U17",
+    "title": "Differential geometry I",
+    "stage": "undergraduate",
+    "scope": "Differential geometry I: smooth manifolds, tangent/cotangent spaces, maps, forms, integration, Stokes",
+    "prerequisites": [],
+    "prerequisite_summary": "U02, U04–U05, U08",
+    "outcomes": [
+      "Translate coordinate calculations into an invariant statement"
+    ],
+    "status": "planned",
+    "lesson_count": 0,
+    "review_status": "not_authored"
+  },
+  {
+    "id": "U18",
+    "title": "Functional analysis introduction",
+    "stage": "undergraduate",
+    "scope": "Functional analysis introduction: normed/Banach/Hilbert spaces, bounded maps, Hahn–Banach, compact operators",
+    "prerequisites": [],
+    "prerequisite_summary": "U02, U04, U15 relevant skills",
+    "outcomes": [
+      "Prove continuity of an operator and analyze completeness"
+    ],
+    "status": "planned",
+    "lesson_count": 0,
+    "review_status": "not_authored"
+  },
+  {
+    "id": "U19",
+    "title": "Commutative algebra introduction",
+    "stage": "undergraduate",
+    "scope": "Commutative algebra introduction: modules, localization, Noetherian rings, prime ideals, tensor products",
+    "prerequisites": [],
+    "prerequisite_summary": "U07, U02",
+    "outcomes": [
+      "Construct a localization or tensor product and use its universal property"
+    ],
+    "status": "planned",
+    "lesson_count": 0,
+    "review_status": "not_authored"
+  },
+  {
+    "id": "U20",
+    "title": "Representation theory introduction",
+    "stage": "undergraduate",
+    "scope": "Representation theory introduction: group representations, invariant subspaces, characters of finite groups",
+    "prerequisites": [],
+    "prerequisite_summary": "U02, U06",
+    "outcomes": [
+      "Decompose a small representation with appropriate hypotheses"
+    ],
+    "status": "planned",
+    "lesson_count": 0,
+    "review_status": "not_authored"
+  },
+  {
+    "id": "U21",
+    "title": "Algebraic number theory introduction",
+    "stage": "undergraduate",
+    "scope": "Algebraic number theory introduction: number fields, integers, ideals, ramification introduction",
+    "prerequisites": [],
+    "prerequisite_summary": "U07, U10; U19 where used",
+    "outcomes": [
+      "Explain why elements and ideals have different factorization behavior"
+    ],
+    "status": "planned",
+    "lesson_count": 0,
+    "review_status": "not_authored"
+  },
+  {
+    "id": "U22",
+    "title": "Set theory and computability",
+    "stage": "undergraduate",
+    "scope": "Set theory and computability: ordinal/cardinal arithmetic, choice, computability, undecidability, incompleteness introduction",
+    "prerequisites": [],
+    "prerequisite_summary": "U14",
+    "outcomes": [
+      "State an undecidability result precisely without overgeneralizing it"
+    ],
+    "status": "planned",
+    "lesson_count": 0,
+    "review_status": "not_authored"
+  },
+  {
+    "id": "U23",
+    "title": "Geometry enrichment",
+    "stage": "undergraduate",
+    "scope": "Geometry enrichment: projective, affine, non-Euclidean and discrete geometry; axiomatic comparison",
+    "prerequisites": [],
+    "prerequisite_summary": "S04, U02, P02; U08 for advanced units",
+    "outcomes": [
+      "Compare which conclusions depend on which geometric axioms"
+    ],
+    "status": "planned",
+    "lesson_count": 0,
+    "review_status": "not_authored"
+  },
+  {
+    "id": "U24",
+    "title": "Undergraduate synthesis seminar",
+    "stage": "undergraduate",
+    "scope": "Undergraduate synthesis seminar: theorem exposition, cross-field problems, formalization, oral explanation",
+    "prerequisites": [],
+    "prerequisite_summary": "U02–U09 selected core; P03",
+    "outcomes": [
+      "Defend a proof portfolio and solve an unfamiliar multi-subject problem"
+    ],
+    "status": "planned",
+    "lesson_count": 0,
+    "review_status": "not_authored"
+  },
+  {
+    "id": "G01",
+    "title": "Measure theory and real analysis",
+    "stage": "graduate",
+    "scope": "Measure theory and real analysis: measure construction, signed measures, Radon–Nikodym, differentiation, Lp spaces",
+    "prerequisites": [],
+    "prerequisite_summary": "U15, U04",
+    "outcomes": [
+      "Prove a convergence or representation result and analyze failed hypotheses"
+    ],
+    "status": "planned",
+    "lesson_count": 0,
+    "review_status": "not_authored"
+  },
+  {
+    "id": "G02",
+    "title": "Functional analysis",
+    "stage": "graduate",
+    "scope": "Functional analysis: weak topologies, duality, uniform boundedness, open mapping, spectral/operator theory",
+    "prerequisites": [],
+    "prerequisite_summary": "U18, G01 as needed",
+    "outcomes": [
+      "Construct operator examples and present a substantial theorem proof"
+    ],
+    "status": "planned",
+    "lesson_count": 0,
+    "review_status": "not_authored"
+  },
+  {
+    "id": "G03",
+    "title": "Complex analysis and Riemann surfaces",
+    "stage": "graduate",
+    "scope": "Complex analysis and Riemann surfaces: analytic continuation, normal families, meromorphic functions, surfaces",
+    "prerequisites": [],
+    "prerequisite_summary": "U09, U08, U17 introductory skills",
+    "outcomes": [
+      "Explain local/global distinctions through a proof and example"
+    ],
+    "status": "planned",
+    "lesson_count": 0,
+    "review_status": "not_authored"
+  },
+  {
+    "id": "G04",
+    "title": "Fourier and harmonic analysis",
+    "stage": "graduate",
+    "scope": "Fourier and harmonic analysis: Fourier transforms, distributions, Lp estimates, introductory singular integrals",
+    "prerequisites": [],
+    "prerequisite_summary": "G01–G02; U09 where needed",
+    "outcomes": [
+      "Establish a bound and specify the function space and convergence mode"
+    ],
+    "status": "planned",
+    "lesson_count": 0,
+    "review_status": "not_authored"
+  },
+  {
+    "id": "G05",
+    "title": "PDE foundations",
+    "stage": "graduate",
+    "scope": "PDE foundations: distributions, Sobolev spaces, weak solutions, elliptic/parabolic/hyperbolic examples",
+    "prerequisites": [],
+    "prerequisite_summary": "G01–G02, U13, selected G04",
+    "outcomes": [
+      "Distinguish weak/classical solutions and justify an energy argument"
+    ],
+    "status": "planned",
+    "lesson_count": 0,
+    "review_status": "not_authored"
+  },
+  {
+    "id": "G06",
+    "title": "Graduate algebra",
+    "stage": "graduate",
+    "scope": "Graduate algebra: modules, structure theorems, field/Galois theory, multilinear algebra, categories",
+    "prerequisites": [],
+    "prerequisite_summary": "U07, U19, U02",
+    "outcomes": [
+      "Prove a structural result through a universal property"
+    ],
+    "status": "planned",
+    "lesson_count": 0,
+    "review_status": "not_authored"
+  },
+  {
+    "id": "G07",
+    "title": "Commutative algebra",
+    "stage": "graduate",
+    "scope": "Commutative algebra: localization, dimension, integral dependence, primary decomposition, homological tools",
+    "prerequisites": [],
+    "prerequisite_summary": "U19, G06 relevant units",
+    "outcomes": [
+      "Relate a local algebraic property to a geometric example"
+    ],
+    "status": "planned",
+    "lesson_count": 0,
+    "review_status": "not_authored"
+  },
+  {
+    "id": "G08",
+    "title": "Homological algebra",
+    "stage": "graduate",
+    "scope": "Homological algebra: complexes, exactness, derived functors, Ext/Tor, spectral sequences introduction",
+    "prerequisites": [],
+    "prerequisite_summary": "G06–G07; category foundations",
+    "outcomes": [
+      "Compute a derived functor and justify the resolution used"
+    ],
+    "status": "planned",
+    "lesson_count": 0,
+    "review_status": "not_authored"
+  },
+  {
+    "id": "G09",
+    "title": "Algebraic geometry",
+    "stage": "graduate",
+    "scope": "Algebraic geometry: affine/projective varieties, schemes, sheaves, morphisms, divisors, cohomology introduction",
+    "prerequisites": [],
+    "prerequisite_summary": "G07; G08 for cohomology units",
+    "outcomes": [
+      "Work through an explicit scheme example and an abstract argument"
+    ],
+    "status": "planned",
+    "lesson_count": 0,
+    "review_status": "not_authored"
+  },
+  {
+    "id": "G10",
+    "title": "Algebraic topology",
+    "stage": "graduate",
+    "scope": "Algebraic topology: homology/cohomology, exact sequences, CW complexes, fibrations, spectral sequences",
+    "prerequisites": [],
+    "prerequisite_summary": "U16, G06; G08 relevant units",
+    "outcomes": [
+      "Compute an invariant with a complete chain-level justification"
+    ],
+    "status": "planned",
+    "lesson_count": 0,
+    "review_status": "not_authored"
+  },
+  {
+    "id": "G11",
+    "title": "Differential topology",
+    "stage": "graduate",
+    "scope": "Differential topology: transversality, degree, Morse theory, bundles, cobordism introduction",
+    "prerequisites": [],
+    "prerequisite_summary": "U17, U16 relevant skills",
+    "outcomes": [
+      "Explain a genericity argument with precise smoothness assumptions"
+    ],
+    "status": "planned",
+    "lesson_count": 0,
+    "review_status": "not_authored"
+  },
+  {
+    "id": "G12",
+    "title": "Riemannian geometry",
+    "stage": "graduate",
+    "scope": "Riemannian geometry: connections, curvature, geodesics, comparison and global theorems",
+    "prerequisites": [],
+    "prerequisite_summary": "U17, G11 relevant units",
+    "outcomes": [
+      "Derive a coordinate formula and present its invariant interpretation"
+    ],
+    "status": "planned",
+    "lesson_count": 0,
+    "review_status": "not_authored"
+  },
+  {
+    "id": "G13",
+    "title": "Lie groups and representation theory",
+    "stage": "graduate",
+    "scope": "Lie groups and representation theory: Lie algebras, exponential map, compact groups, highest-weight introduction",
+    "prerequisites": [],
+    "prerequisite_summary": "U20, U17, G06",
+    "outcomes": [
+      "Connect algebraic representation data to geometric group structure"
+    ],
+    "status": "planned",
+    "lesson_count": 0,
+    "review_status": "not_authored"
+  },
+  {
+    "id": "G14",
+    "title": "Algebraic number theory",
+    "stage": "graduate",
+    "scope": "Algebraic number theory: local/global fields, valuations, ideals, units, class groups, local extensions",
+    "prerequisites": [],
+    "prerequisite_summary": "U21, G07",
+    "outcomes": [
+      "Analyze arithmetic using local and global methods"
+    ],
+    "status": "planned",
+    "lesson_count": 0,
+    "review_status": "not_authored"
+  },
+  {
+    "id": "G15",
+    "title": "Analytic number theory",
+    "stage": "graduate",
+    "scope": "Analytic number theory: Dirichlet series, zeta/L-functions, prime distribution, sieve/introduction to modular forms",
+    "prerequisites": [],
+    "prerequisite_summary": "U10, U09, G04 selected units",
+    "outcomes": [
+      "Derive an estimate and identify analytic-continuation assumptions"
+    ],
+    "status": "planned",
+    "lesson_count": 0,
+    "review_status": "not_authored"
+  },
+  {
+    "id": "G16",
+    "title": "Arithmetic geometry introduction",
+    "stage": "graduate",
+    "scope": "Arithmetic geometry introduction: elliptic curves, arithmetic of schemes, modular connections",
+    "prerequisites": [],
+    "prerequisite_summary": "G09, G14; G15 selected units",
+    "outcomes": [
+      "Reproduce a standard curve computation and explain its limitations"
+    ],
+    "status": "planned",
+    "lesson_count": 0,
+    "review_status": "not_authored"
+  },
+  {
+    "id": "G17",
+    "title": "Extremal/probabilistic combinatorics",
+    "stage": "graduate",
+    "scope": "Extremal/probabilistic combinatorics: graph bounds, random constructions, concentration, additive methods",
+    "prerequisites": [],
+    "prerequisite_summary": "U11, U12; G18 for measure-based units",
+    "outcomes": [
+      "Present a rigorous existence argument and a sharpness example"
+    ],
+    "status": "planned",
+    "lesson_count": 0,
+    "review_status": "not_authored"
+  },
+  {
+    "id": "G18",
+    "title": "Measure-theoretic probability",
+    "stage": "graduate",
+    "scope": "Measure-theoretic probability: conditional expectation, martingales, convergence, stochastic processes introduction",
+    "prerequisites": [],
+    "prerequisite_summary": "G01, U12",
+    "outcomes": [
+      "Prove a probabilistic result with the correct sigma-algebras"
+    ],
+    "status": "planned",
+    "lesson_count": 0,
+    "review_status": "not_authored"
+  },
+  {
+    "id": "G19",
+    "title": "Mathematical logic",
+    "stage": "graduate",
+    "scope": "Mathematical logic: model theory, proof theory, computability, set theory as separate selectable strands",
+    "prerequisites": [],
+    "prerequisite_summary": "U14, U22",
+    "outcomes": [
+      "State and prove a selected metatheorem under its formal assumptions"
+    ],
+    "status": "planned",
+    "lesson_count": 0,
+    "review_status": "not_authored"
+  },
+  {
+    "id": "G20",
+    "title": "Category theory",
+    "stage": "graduate",
+    "scope": "Category theory: functors, natural transformations, limits, adjunctions, Yoneda; advanced categorical methods",
+    "prerequisites": [],
+    "prerequisite_summary": "G06 or U08/U16 with proof maturity",
+    "outcomes": [
+      "Use an adjunction or universal property in a concrete subject"
+    ],
+    "status": "planned",
+    "lesson_count": 0,
+    "review_status": "not_authored"
+  },
+  {
+    "id": "G21",
+    "title": "Dynamical systems and ergodic theory",
+    "stage": "graduate",
+    "scope": "Dynamical systems and ergodic theory: invariant measures, ergodic theorems, symbolic dynamics",
+    "prerequisites": [],
+    "prerequisite_summary": "U13, G01, U08",
+    "outcomes": [
+      "Distinguish topological, measurable, and numerical claims"
+    ],
+    "status": "planned",
+    "lesson_count": 0,
+    "review_status": "not_authored"
+  },
+  {
+    "id": "G22",
+    "title": "Graduate topics seminars",
+    "stage": "graduate",
+    "scope": "Graduate topics seminars",
+    "prerequisites": [],
+    "prerequisite_summary": "Published prerequisite skills for each topic",
+    "outcomes": [
+      "Read, reproduce, critique, and present a specialist paper or chapter"
+    ],
+    "status": "planned",
+    "lesson_count": 0,
+    "review_status": "not_authored"
+  },
+  {
+    "id": "R01",
+    "title": "Literature search and source evaluation",
+    "stage": "research",
+    "scope": "Literature search and source evaluation",
+    "prerequisites": [],
+    "prerequisite_summary": "Selected advanced pathway and expert-supervised research scope.",
+    "outcomes": [
+      "Annotated bibliography distinguishing textbooks, published papers, preprints, surveys, and corrections"
+    ],
+    "status": "planned",
+    "lesson_count": 0,
+    "review_status": "not_authored"
+  },
+  {
+    "id": "R02",
+    "title": "Reading a mathematical paper",
+    "stage": "research",
+    "scope": "Reading a mathematical paper",
+    "prerequisites": [],
+    "prerequisite_summary": "Selected advanced pathway and expert-supervised research scope.",
+    "outcomes": [
+      "Dependency map of definitions/lemmas; reconstructed proof of a central step; list of gaps in understanding"
+    ],
+    "status": "planned",
+    "lesson_count": 0,
+    "review_status": "not_authored"
+  },
+  {
+    "id": "R03",
+    "title": "Reproduction and formalization",
+    "stage": "research",
+    "scope": "Reproduction and formalization",
+    "prerequisites": [],
+    "prerequisite_summary": "Selected advanced pathway and expert-supervised research scope.",
+    "outcomes": [
+      "Checked reproduction of a known result or computation; environment and assumptions recorded"
+    ],
+    "status": "planned",
+    "lesson_count": 0,
+    "review_status": "not_authored"
+  },
+  {
+    "id": "R04",
+    "title": "Problem formation",
+    "stage": "research",
+    "scope": "Problem formation",
+    "prerequisites": [],
+    "prerequisite_summary": "Selected advanced pathway and expert-supervised research scope.",
+    "outcomes": [
+      "Precise bounded question, examples/nonexamples, relationship to known results, and a mentor-reviewed scope"
+    ],
+    "status": "planned",
+    "lesson_count": 0,
+    "review_status": "not_authored"
+  },
+  {
+    "id": "R05",
+    "title": "Experimental mathematics",
+    "stage": "research",
+    "scope": "Experimental mathematics",
+    "prerequisites": [],
+    "prerequisite_summary": "Selected advanced pathway and expert-supervised research scope.",
+    "outcomes": [
+      "Reproducible computational notebook; explicit separation of observations, conjectures, and proofs"
+    ],
+    "status": "planned",
+    "lesson_count": 0,
+    "review_status": "not_authored"
+  },
+  {
+    "id": "R06",
+    "title": "Seminar and writing",
+    "stage": "research",
+    "scope": "Seminar and writing",
+    "prerequisites": [],
+    "prerequisite_summary": "Selected advanced pathway and expert-supervised research scope.",
+    "outcomes": [
+      "Expository article, oral presentation, questions addressed, revised proof portfolio"
+    ],
+    "status": "planned",
+    "lesson_count": 0,
+    "review_status": "not_authored"
+  },
+  {
+    "id": "R07",
+    "title": "Supervised exploratory project",
+    "stage": "research",
+    "scope": "Supervised exploratory project",
+    "prerequisites": [],
+    "prerequisite_summary": "Selected advanced pathway and expert-supervised research scope.",
+    "outcomes": [
+      "Research log, failed approaches, partial results, uncertainty, and supervisor feedback"
+    ],
+    "status": "planned",
+    "lesson_count": 0,
+    "review_status": "not_authored"
   },
   {
     "id": "A01",
-    "title": "Soroban Abacus: Orientation & Place Value",
+    "title": "Orientation, reset, posture, place value",
     "stage": "abacus",
+    "scope": "Orientation, reset, posture, place value",
     "prerequisites": [],
-    "outcomes": ["Set and read digits and multi-digit values on the soroban abacus"],
-    "status": "published"
+    "prerequisite_summary": "Numeracy plus preceding abacus units; see unit-specific prerequisites.",
+    "outcomes": [
+      "Set/read 0–9, then multi-digit values; explain engaged beads; physical-device conventions reviewed by an instructor"
+    ],
+    "status": "draft",
+    "lesson_count": 2,
+    "review_status": "independent_review_pending"
   },
   {
     "id": "A02",
-    "title": "Direct Addition & Subtraction",
+    "title": "Direct addition and subtraction",
     "stage": "abacus",
-    "prerequisites": ["A01"],
-    "outcomes": ["Perform direct bead additions and subtractions without complement regrouping"],
-    "status": "published"
+    "scope": "Direct addition and subtraction",
+    "prerequisites": [],
+    "prerequisite_summary": "Numeracy plus preceding abacus units; see unit-specific prerequisites.",
+    "outcomes": [
+      "Operate where available beads suffice; identify digit changes and inverse operations"
+    ],
+    "status": "draft",
+    "lesson_count": 2,
+    "review_status": "independent_review_pending"
+  },
+  {
+    "id": "A03",
+    "title": "Five-complements",
+    "stage": "abacus",
+    "scope": "Five-complements",
+    "prerequisites": [],
+    "prerequisite_summary": "Numeracy plus preceding abacus units; see unit-specific prerequisites.",
+    "outcomes": [
+      "Use pairs summing to five; explain an addition/subtraction that requires changing upper/lower engagement"
+    ],
+    "status": "planned",
+    "lesson_count": 0,
+    "review_status": "not_authored"
+  },
+  {
+    "id": "A04",
+    "title": "Ten-complements and carry/borrow",
+    "stage": "abacus",
+    "scope": "Ten-complements and carry/borrow",
+    "prerequisites": [],
+    "prerequisite_summary": "Numeracy plus preceding abacus units; see unit-specific prerequisites.",
+    "outcomes": [
+      "Use pairs summing to ten; carry and borrow across rods; explain the numerical invariant"
+    ],
+    "status": "planned",
+    "lesson_count": 0,
+    "review_status": "not_authored"
+  },
+  {
+    "id": "A05",
+    "title": "Combined complements and multi-digit arithmetic",
+    "stage": "abacus",
+    "scope": "Combined complements and multi-digit arithmetic",
+    "prerequisites": [],
+    "prerequisite_summary": "Numeracy plus preceding abacus units; see unit-specific prerequisites.",
+    "outcomes": [
+      "Mixed five/ten complements, cascading carries, zeros, multi-step sequences"
+    ],
+    "status": "planned",
+    "lesson_count": 0,
+    "review_status": "not_authored"
+  },
+  {
+    "id": "A06",
+    "title": "Multiplication",
+    "stage": "abacus",
+    "scope": "Multiplication",
+    "prerequisites": [],
+    "prerequisite_summary": "Numeracy plus preceding abacus units; see unit-specific prerequisites.",
+    "outcomes": [
+      "Single-digit then multi-digit procedures, operand/result layout, place-value tracking"
+    ],
+    "status": "planned",
+    "lesson_count": 0,
+    "review_status": "not_authored"
+  },
+  {
+    "id": "A07",
+    "title": "Division",
+    "stage": "abacus",
+    "scope": "Division",
+    "prerequisites": [],
+    "prerequisite_summary": "Numeracy plus preceding abacus units; see unit-specific prerequisites.",
+    "outcomes": [
+      "Quotient placement, remainder interpretation, single then multi-digit divisors, checking by multiplication"
+    ],
+    "status": "planned",
+    "lesson_count": 0,
+    "review_status": "not_authored"
+  },
+  {
+    "id": "A08",
+    "title": "Decimals and percentages",
+    "stage": "abacus",
+    "scope": "Decimals and percentages",
+    "prerequisites": [],
+    "prerequisite_summary": "Numeracy plus preceding abacus units; see unit-specific prerequisites.",
+    "outcomes": [
+      "Fixed radix positions, exact finite decimal operations, proportional reasoning"
+    ],
+    "status": "planned",
+    "lesson_count": 0,
+    "review_status": "not_authored"
+  },
+  {
+    "id": "A09",
+    "title": "Mental abacus/anzan introduction",
+    "stage": "abacus",
+    "scope": "Mental abacus/anzan introduction",
+    "prerequisites": [],
+    "prerequisite_summary": "Numeracy plus preceding abacus units; see unit-specific prerequisites.",
+    "outcomes": [
+      "Visualize short bead states after physical/virtual competence; fade visual support gradually"
+    ],
+    "status": "planned",
+    "lesson_count": 0,
+    "review_status": "not_authored"
+  },
+  {
+    "id": "A10",
+    "title": "Fluency and mixed practice",
+    "stage": "abacus",
+    "scope": "Fluency and mixed practice",
+    "prerequisites": [],
+    "prerequisite_summary": "Numeracy plus preceding abacus units; see unit-specific prerequisites.",
+    "outcomes": [
+      "Accuracy-first challenges, optional timing, delayed recall, error recovery"
+    ],
+    "status": "planned",
+    "lesson_count": 0,
+    "review_status": "not_authored"
+  },
+  {
+    "id": "A11",
+    "title": "Optional advanced techniques",
+    "stage": "abacus",
+    "scope": "Optional advanced techniques",
+    "prerequisites": [],
+    "prerequisite_summary": "Numeracy plus preceding abacus units; see unit-specific prerequisites.",
+    "outcomes": [
+      "Roots or specialized methods only with instructor-authored procedures and prerequisites"
+    ],
+    "status": "planned",
+    "lesson_count": 0,
+    "review_status": "not_authored"
   }
 ]

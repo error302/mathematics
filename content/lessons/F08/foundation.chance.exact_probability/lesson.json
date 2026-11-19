@@ -1,0 +1,66 @@
+{
+  "id": "foundation.chance.exact_probability",
+  "courseId": "F08",
+  "title": "Exact Probability, Complements, and Compound Draws",
+  "subtitle": "Rational probability over Q, complementary events 1 - P(E), and sampling without replacement.",
+  "templateId": "probability.simple_exact",
+  "challenge": "A pouch holds 4 gold coins and 6 silver coins (10 coins in total). On the first random draw, the probability of drawing gold is 4/10 = 2/5. If you keep that gold coin outside the pouch and draw a second coin, why is the probability of drawing gold on the second step 3/9 = 1/3 instead of 2/5?",
+  "predictionPrompt": "A bag contains 3 red marbles and 5 blue marbles. What is the exact probability of drawing a red marble in a single random draw?",
+  "predictionOptions": [
+    {
+      "label": "3/5",
+      "value": "3/5"
+    },
+    {
+      "label": "3/8",
+      "value": "3/8",
+      "isCorrect": true
+    },
+    {
+      "label": "5/8",
+      "value": "5/8"
+    },
+    {
+      "label": "1/3",
+      "value": "1/3"
+    }
+  ],
+  "formalDefinition": "In a finite sample space Omega of equally likely outcomes, the exact probability of an event E subset Omega is P(E) = |E| / |Omega| in Q, satisfying 0 <= P(E) <= 1. The complementary event E^c = Omega \\ E has probability P(E^c) = 1 - P(E). For two sequential events A and B without replacement, the compound probability is P(A and B) = P(A) * P(B | A), where P(B | A) is evaluated in the reduced sample space after A occurs.",
+  "workedExample": {
+    "steps": [
+      "Task: A box contains 5 defective sensors and 15 working sensors. Two sensors are selected at random without replacement. Find the exact probability that both are defective.",
+      "Find the total initial sample space size: 5 + 15 = 20 sensors. Probability the 1st sensor is defective: P(D_1) = 5/20 = 1/4.",
+      "Update the sample space after removing 1 defective sensor: 4 defective sensors remain out of 19 total sensors. Thus P(D_2 | D_1) = 4/19.",
+      "Multiply the two stage probabilities and simplify over Q: (1/4) * (4/19) = 1/19."
+    ],
+    "result": "P(both defective) = 1/19."
+  },
+  "misconception": {
+    "mistake": "Writing the ratio of favorable to unfavorable outcomes (odds 3/5) instead of favorable to total outcomes (probability 3/8), or failing to reduce the denominator on a second draw without replacement.",
+    "correction": "The denominator of a probability must include ALL outcomes in the sample space (favorable + unfavorable). When drawing without replacement, both the remaining favorable count and the total remaining count decrease by 1."
+  },
+  "reflection": "Exact rational fractions preserve probability axioms without rounding drift: P(E) + P(not E) = 1 holds identically over Q.",
+  "prerequisiteCheck": "Simplify the fraction 12/30 to lowest terms by dividing numerator and denominator by their greatest common divisor.",
+  "representation": "Partition a unit bar of length 1 into |Omega| equal segments: |E| shaded segments represent P(E), and the remaining |Omega| - |E| unshaded segments represent P(not E) = 1 - P(E).",
+  "faded": {
+    "prompt": "An event E occurs in 5 out of 18 equally likely outcomes. The probability that E does NOT occur is 1 - 5/18 = __/18.",
+    "solution": "13."
+  },
+  "independent": [
+    {
+      "prompt": "A jar contains 4 green, 5 yellow, and 3 purple tokens. What is the exact probability of drawing a green token?",
+      "solution": "Total = 4 + 5 + 3 = 12. P(green) = 4/12 = 1/3."
+    },
+    {
+      "prompt": "A deck has 4 aces and 4 silver cards (8 cards total). Two cards are drawn without replacement. What is the exact probability both are aces?",
+      "solution": "P(both aces) = (4/8) * (3/7) = (1/2) * (3/7) = 3/14."
+    }
+  ],
+  "explanation": "Why is it impossible for the probability of any event to be greater than 1 or less than 0?",
+  "transfer": {
+    "prompt": "The probability that a component fails during a stress test is 3/25. What is the exact probability that the component survives the test?",
+    "solution": "P(survives) = 1 - 3/25 = 22/25."
+  },
+  "retrieval": "State the formula for classical probability in an equally likely sample space, the complement rule, and the multiplication rule for draws without replacement.",
+  "reviewNote": "Draft foundation lesson. Exact calculations verified by Rust engine."
+}

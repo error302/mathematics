@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "checks": [
+    "All eight new families at three bands replay identically in native Rust and the actual browser worker, with matching grades.",
+    "A complete wrong grid identifies a failing clue, offers a hint, praises a corrected retry, and avoids duplicate XP.",
+    "A solved challenge offers the next band; the hard grid has four blanks and all four operations.",
+    "Unfinished answers and explanations survive reload; explicit worked help marks a supported success without independent XP.",
+    "Analytical, logical, comprehension, and pattern challenges are usable through real answer controls.",
+    "Scaled rectangles and continuous linear/quadratic plots have dimensions, axes, and exact accessible point tables; negative-input questions are checked.",
+    "New views fit 320–1440 px; grid choices remain 44-pixel keyboard-operable targets.",
+    "Progress includes a downloadable specimen with explicit assessment gates; no earned credential can be issued from local XP.",
+    "The lesson follow-up button opens a prepared analytical challenge."
+  ],
+  "errors": []
+}

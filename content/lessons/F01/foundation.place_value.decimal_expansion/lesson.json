@@ -1,0 +1,63 @@
+{
+  "id": "foundation.place_value.decimal_expansion",
+  "courseId": "F01",
+  "title": "Place value: what each digit means",
+  "subtitle": "See how a digit changes value when it moves from ones to tens or hundreds.",
+  "templateId": "place_value.decompose",
+  "challenge": "Why does the numeral 74 represent a vastly different quantity than 47, using the exact same two symbols?",
+  "predictionPrompt": "In the number 843, what does the digit 4 represent?",
+  "predictionOptions": [
+    {
+      "label": "4 units (4)",
+      "value": "4"
+    },
+    {
+      "label": "4 tens (40)",
+      "value": "40",
+      "isCorrect": true
+    },
+    {
+      "label": "4 hundreds (400)",
+      "value": "400"
+    }
+  ],
+  "formalDefinition": "In a nonnegative whole number, each digit contributes its value times its place weight: units, tens, hundreds, and so on. A zero keeps an empty place visible.",
+  "workedExample": {
+    "steps": [
+      "Take 843: digit 3 is in units (3 * 10^0 = 3).",
+      "Digit 4 is in tens (4 * 10^1 = 40).",
+      "Digit 8 is in hundreds (8 * 10^2 = 800)."
+    ],
+    "result": "800 + 40 + 3 = 843."
+  },
+  "misconception": {
+    "mistake": "Confusing face value with place value.",
+    "correction": "The symbol 4 always has face value 4, but its contribution to the number depends entirely on its column position."
+  },
+  "reflection": "Positional notation is one of humanity's greatest mathematical inventions, allowing 10 symbols to represent the infinite.",
+  "prerequisiteCheck": "Read the digits 0–9 and distinguish a written symbol from a quantity. The same digit can contribute different amounts in different positions.",
+  "representation": "For 843, use 8 hundred blocks, 4 ten rods, and 3 single units. This makes 800 + 40 + 3. The digit 4 contributes 40, not 4.",
+  "faded": {
+    "prompt": "Complete: 507 = __ hundreds + __ tens + __ units = __ + __ + __.",
+    "solution": "5 hundreds + 0 tens + 7 units = 500 + 0 + 7. The zero reserves the tens position."
+  },
+  "independent": [
+    {
+      "prompt": "In 462, state both the digit and its value in the tens column.",
+      "solution": "The digit is 6; its value is 60."
+    },
+    {
+      "prompt": "Explain why 305 and 35 represent different numbers.",
+      "solution": "305 = 300 + 5; 35 = 30 + 5. The zero preserves the empty tens position in 305."
+    }
+  ],
+  "explanation": "Explain to someone why 74 and 47 differ although they use the same symbols. Name the position and contribution of each digit.",
+  "transfer": {
+    "prompt": "A store has 3 boxes of 100 beads, 12 bundles of 10, and 4 single beads. Write the total as a standard numeral.",
+    "solution": "300 + 120 + 4 = 424. Twelve tens regroup into one hundred and two tens."
+  },
+  "retrieval": "Tomorrow decompose 608 without notes. A week later, give two different regrouped descriptions of 352.",
+  "contentStatus": "draft",
+  "reviewNote": "Expanded prototype lesson. Independent mathematical, pedagogical, and accessibility review is pending.",
+  "version": "1.1.0"
+}

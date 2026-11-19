@@ -1,0 +1,66 @@
+{
+  "id": "secondary.geometry.lines_slopes_and_perpendicularity",
+  "courseId": "S04",
+  "title": "Analytic Lines, Negative-Reciprocal Perpendicularity, and the Section Formula",
+  "subtitle": "Exact rational slopes, 90-degree rotation of slope triangles, and weighted division of directed segments.",
+  "templateId": "sec_geom.slope_and_lines",
+  "challenge": "Rotating a right triangle with horizontal run dx and vertical rise dy by 90 degrees swaps its legs and reverses one direction: (dx, dy) becomes (-dy, dx). How does this single geometric rotation immediately prove that perpendicular non-vertical lines satisfy m_1 * m_2 = -1?",
+  "predictionPrompt": "Line L is perpendicular to y = (3/4)x + 2 and passes through the point (6, 5). What is the exact y-intercept b of line L?",
+  "predictionOptions": [
+    {
+      "label": "b = 13",
+      "value": "13",
+      "isCorrect": true
+    },
+    {
+      "label": "b = -3",
+      "value": "-3"
+    },
+    {
+      "label": "b = 1/2",
+      "value": "1/2"
+    },
+    {
+      "label": "b = 9",
+      "value": "9"
+    }
+  ],
+  "formalDefinition": "Through any two distinct points A(x_1, y_1) and B(x_2, y_2) with x_1 != x_2, the slope is the invariant ratio m = (y_2 - y_1)/(x_2 - x_1). Two non-vertical lines with slopes m_1, m_2 are parallel iff m_1 = m_2 and perpendicular iff m_1 m_2 = -1 (so m_perp = -1/m_1). Moreover, the unique point P dividing the directed segment AB internally in the ratio AP : PB = m : n has coordinates P = ((n x_1 + m x_2)/(m + n), (n y_1 + m y_2)/(m + n)).",
+  "workedExample": {
+    "steps": [
+      "Task: Find the equation and y-intercept of the line perpendicular to y = (3/4)x + 2 through (6, 5), and find the x-coordinate of P dividing A(-2, 1) to B(8, 6) in the ratio 2 : 3.",
+      "The given line has slope m_1 = 3/4, so the perpendicular slope is the negative reciprocal m_perp = -4/3.",
+      "Using y - y_0 = m_perp(x - x_0) at (6, 5): b = y_0 - m_perp * x_0 = 5 - (-4/3)(6) = 5 + 8 = 13.",
+      "For P dividing A(-2, 1) to B(8, 6) in ratio m : n = 2 : 3, apply the section formula: x_P = (3(-2) + 2(8)) / (2 + 3) = (-6 + 16)/5 = 10/5 = 2."
+    ],
+    "result": "Perpendicular y-intercept b = 13; section point coordinate x_P = 2."
+  },
+  "misconception": {
+    "mistake": "Taking the reciprocal without negating (+q/p instead of -q/p) for perpendicular slope, or failing to cross-weight the endpoints (computing m*x_1 + n*x_2 instead of n*x_1 + m*x_2) in the section formula.",
+    "correction": "A positive-sloped line rises to the right, so any line perpendicular to it must fall to the right (negative slope): m_perp = -q/p. In the section formula, when m is small (P is close to A), x_1 must receive the larger weight n."
+  },
+  "reflection": "Notice that the familiar midpoint formula M = ((x_1 + x_2)/2, (y_1 + y_2)/2) is simply the special case m : n = 1 : 1 of the internal section formula.",
+  "prerequisiteCheck": "Compute the rise y_2 - y_1 and run x_2 - x_1 from A(-3, 4) to B(2, -6).",
+  "representation": "Draw the slope right triangle (dx, dy) on a line and rotate that triangle 90 degrees counterclockwise to (-dy, dx) to see why rise/run becomes -run/rise.",
+  "faded": {
+    "prompt": "Find the x-coordinate of P dividing A(1, 3) to B(11, 8) in the ratio 3 : 2: x_P = (2(1) + 3(11)) / (3 + 2) = (2 + __) / 5 = __.",
+    "solution": "33, then 7."
+  },
+  "independent": [
+    {
+      "prompt": "Find the exact slope of the line passing through (-4, 7) and (2, -2).",
+      "solution": "m = (-2 - 7) / (2 - (-4)) = -9/6 = -3/2."
+    },
+    {
+      "prompt": "Find the exact y-intercept b of the line perpendicular to y = (2/5)x - 1 that passes through (4, 3).",
+      "solution": "m_perp = -5/2, so b = 3 - (-5/2)(4) = 3 + 10 = 13."
+    }
+  ],
+  "explanation": "Why do the weights n and m swap positions in the numerator n x_1 + m x_2 of the section formula when AP : PB = m : n?",
+  "transfer": {
+    "prompt": "Prove using the section formula that the centroid G of a triangle with vertices A(x_1, y_1), B(x_2, y_2), C(x_3, y_3)—located 2/3 of the way from A to the midpoint M of BC (ratio AG : GM = 2 : 1)—has x-coordinate (x_1 + x_2 + x_3)/3.",
+    "solution": "The midpoint M of BC has x_M = (x_2 + x_3)/2. Dividing AM in ratio m : n = 2 : 1 gives x_G = (1 * x_1 + 2 * ((x_2 + x_3)/2)) / (2 + 1) = (x_1 + x_2 + x_3)/3."
+  },
+  "retrieval": "State the slope formula, the algebraic condition for two non-vertical lines to be perpendicular, and the internal section formula for ratio m : n.",
+  "reviewNote": "Draft secondary lesson. Exact calculations verified by Rust engine."
+}

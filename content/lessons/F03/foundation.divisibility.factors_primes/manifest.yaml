@@ -1,0 +1,28 @@
+schema_version: 1
+id: foundation.divisibility.factors_primes.lesson
+version: 1.1.0
+locale: en
+status: draft
+course_id: F03
+unit_id: foundation.divisibility.factors_primes
+outcomes:
+  - "Identify all factor pairs and proper divisors of a positive integer."
+  - "Distinguish prime numbers from composite numbers and understand the Fundamental Theorem of Arithmetic."
+skill_ids:
+  - foundation.divisibility.factors
+prerequisites:
+  required:
+    - foundation.arithmetic.multiplication_array
+    - foundation.arithmetic.division_partition
+  recommended: []
+exercise_refs:
+  - template_id: divisibility.factors.find
+    template_version: 1.1.0
+    difficulty_band: 1
+assessment_dimensions:
+  - conceptual
+  - procedural
+content_file: lesson.en.md
+license_id: axiom-original-content
+source_refs: []
+review_record_ids: []

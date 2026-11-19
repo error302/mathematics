@@ -1,0 +1,609 @@
+/* Gamer Progress, Strengths & Weaknesses, and Trophy Cabinet */
+
+.axiom-gamer-profile {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+/* Rank & Level Card */
+.axiom-rank-card {
+  background: radial-gradient(circle at 10% 20%, rgba(45, 212, 191, 0.12) 0%, rgba(14, 25, 39, 0.95) 100%);
+  border: 1px solid rgba(45, 212, 191, 0.3);
+  border-radius: 14px;
+  padding: 1.5rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  position: relative;
+  overflow: hidden;
+}
+
+.axiom-rank-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(245, 208, 130, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.axiom-rank-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.axiom-rank-identity {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.axiom-rank-badge-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(245, 208, 130, 0.2), rgba(45, 212, 191, 0.2));
+  border: 1px solid rgba(245, 208, 130, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  box-shadow: 0 0 16px rgba(245, 208, 130, 0.2);
+  flex-shrink: 0;
+}
+
+.axiom-rank-title-group h3 {
+  margin: 0;
+  font-size: 1.25rem;
+  color: #f8fafc;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.axiom-rank-level-tag {
+  font-size: 0.76rem;
+  font-weight: 700;
+  padding: 0.15rem 0.55rem;
+  border-radius: 12px;
+  background: rgba(245, 208, 130, 0.15);
+  border: 1px solid rgba(245, 208, 130, 0.4);
+  color: #f5d082;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.axiom-rank-subtitle {
+  margin: 0.25rem 0 0;
+  font-size: 0.85rem;
+  color: #94a3b8;
+}
+
+.axiom-rank-stats-pills {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.axiom-stat-pill {
+  background: rgba(14, 27, 43, 0.8);
+  border: 1px solid rgba(45, 212, 191, 0.2);
+  padding: 0.4rem 0.75rem;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  min-width: 75px;
+}
+
+.axiom-stat-pill-label {
+  font-size: 0.68rem;
+  color: #8da4be;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.axiom-stat-pill-val {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #f0fdfa;
+}
+
+/* XP Bar */
+.axiom-level-progress-bar {
+  margin-top: 0.75rem;
+}
+
+.axiom-level-progress-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  color: #8da4be;
+  margin-bottom: 0.35rem;
+}
+
+.axiom-level-progress-labels strong {
+  color: #f5d082;
+}
+
+.axiom-xp-track {
+  width: 100%;
+  height: 10px;
+  background: rgba(14, 27, 43, 0.9);
+  border-radius: 5px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.axiom-xp-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #2dd4bf 0%, #f5d082 100%);
+  border-radius: 5px;
+  transition: width 0.4s ease;
+  box-shadow: 0 0 10px rgba(45, 212, 191, 0.4);
+}
+
+/* Strengths & Weaknesses Section */
+.axiom-analysis-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+
+@media (max-width: 840px) {
+  .axiom-analysis-section {
+    grid-template-columns: 1fr;
+  }
+}
+
+.axiom-card-strength,
+.axiom-card-growth {
+  padding: 1.25rem;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.axiom-card-strength {
+  background: radial-gradient(circle at top left, rgba(16, 185, 129, 0.1) 0%, rgba(14, 25, 39, 0.95) 100%);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.axiom-card-growth {
+  background: radial-gradient(circle at top left, rgba(245, 158, 11, 0.1) 0%, rgba(14, 25, 39, 0.95) 100%);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.axiom-analysis-header {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.axiom-analysis-header h4 {
+  margin: 0;
+  font-size: 1.05rem;
+  color: #f8fafc;
+}
+
+.axiom-analysis-header p {
+  margin: 0.2rem 0 0;
+  font-size: 0.8rem;
+  color: #8da4be;
+}
+
+.axiom-analysis-icon-strength {
+  color: #34d399;
+}
+
+.axiom-analysis-icon-growth {
+  color: #f59e0b;
+}
+
+.axiom-analysis-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.axiom-analysis-item {
+  background: rgba(14, 27, 43, 0.7);
+  border-radius: 8px;
+  padding: 0.85rem;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.axiom-analysis-item-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.axiom-analysis-name {
+  font-weight: 600;
+  font-size: 0.92rem;
+  color: #f1f5f9;
+}
+
+.axiom-analysis-badge {
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 0.15rem 0.5rem;
+  border-radius: 12px;
+}
+
+.axiom-analysis-badge.strength {
+  background: rgba(16, 185, 129, 0.2);
+  border: 1px solid rgba(16, 185, 129, 0.4);
+  color: #6ee7b7;
+}
+
+.axiom-analysis-badge.growth {
+  background: rgba(245, 158, 11, 0.2);
+  border: 1px solid rgba(245, 158, 11, 0.4);
+  color: #fcd34d;
+}
+
+.axiom-analysis-desc {
+  font-size: 0.8rem;
+  color: #94a3b8;
+  margin: 0;
+  line-height: 1.35;
+}
+
+.axiom-analysis-action {
+  align-self: flex-start;
+  margin-top: 0.3rem;
+  font-size: 0.78rem;
+  color: #f5d082;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.axiom-analysis-action:hover {
+  color: #fce7b2;
+}
+
+/* Domain Skill Power Bars */
+.axiom-skill-branches-card {
+  background: rgba(14, 25, 39, 0.95);
+  border: 1px solid rgba(45, 212, 191, 0.22);
+  border-radius: 12px;
+  padding: 1.35rem;
+  margin-top: 1.25rem;
+}
+
+.axiom-skill-branches-card h4 {
+  margin: 0 0 0.35rem;
+  font-size: 1.05rem;
+  color: #f8fafc;
+}
+
+.axiom-skill-branches-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.axiom-skill-branch-item {
+  background: rgba(10, 19, 31, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  padding: 0.85rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.axiom-skill-branch-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.84rem;
+  color: #e2e8f0;
+}
+
+.axiom-skill-branch-pct {
+  font-weight: 700;
+  color: #2dd4bf;
+  font-size: 0.82rem;
+}
+
+.axiom-skill-track {
+  width: 100%;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.axiom-skill-fill {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.35s ease;
+}
+
+.axiom-skill-fill.high {
+  background: linear-gradient(90deg, #10b981, #34d399);
+}
+
+.axiom-skill-fill.medium {
+  background: linear-gradient(90deg, #3b82f6, #2dd4bf);
+}
+
+.axiom-skill-fill.low {
+  background: linear-gradient(90deg, #f59e0b, #fbbf24);
+}
+
+/* Trophy Showcase Cabinet */
+.axiom-trophy-cabinet {
+  background: radial-gradient(circle at top right, rgba(167, 139, 250, 0.12) 0%, rgba(14, 25, 39, 0.98) 100%);
+  border: 1px solid rgba(167, 139, 250, 0.3);
+  border-radius: 14px;
+  padding: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.axiom-trophy-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.axiom-trophy-header-info h3 {
+  margin: 0;
+  font-size: 1.25rem;
+  color: #f8fafc;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.axiom-trophy-header-info p {
+  margin: 0.25rem 0 0;
+  font-size: 0.84rem;
+  color: #8da4be;
+}
+
+.axiom-trophy-filters {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+
+.axiom-trophy-filter-btn {
+  background: rgba(14, 27, 43, 0.85);
+  border: 1px solid rgba(167, 139, 250, 0.25);
+  color: #c4b5fd;
+  padding: 0.3rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.78rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.axiom-trophy-filter-btn.active,
+.axiom-trophy-filter-btn:hover {
+  background: rgba(167, 139, 250, 0.22);
+  border-color: #a78bfa;
+  color: #ffffff;
+}
+
+/* Trophy Grid */
+.axiom-trophy-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.axiom-trophy-card {
+  background: rgba(10, 19, 31, 0.85);
+  border-radius: 10px;
+  padding: 1.15rem;
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.axiom-trophy-card.unlocked {
+  border-color: rgba(245, 208, 130, 0.45);
+  background: radial-gradient(circle at 10% 20%, rgba(245, 208, 130, 0.1) 0%, rgba(10, 19, 31, 0.95) 100%);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.4), 0 0 14px rgba(245, 208, 130, 0.15);
+}
+
+.axiom-trophy-card.unlocked:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5), 0 0 20px rgba(245, 208, 130, 0.25);
+}
+
+.axiom-trophy-card.locked {
+  opacity: 0.75;
+}
+
+.axiom-trophy-icon-box {
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.axiom-trophy-card.unlocked .axiom-trophy-icon-box {
+  background: linear-gradient(135deg, rgba(245, 208, 130, 0.25), rgba(45, 212, 191, 0.25));
+  border: 1px solid rgba(245, 208, 130, 0.5);
+  box-shadow: 0 0 12px rgba(245, 208, 130, 0.3);
+}
+
+.axiom-trophy-card.locked .axiom-trophy-icon-box {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  filter: grayscale(0.8);
+}
+
+.axiom-trophy-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.axiom-trophy-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.25rem;
+  gap: 0.5rem;
+}
+
+.axiom-trophy-title {
+  margin: 0;
+  font-size: 0.96rem;
+  font-weight: 600;
+  color: #f8fafc;
+}
+
+.axiom-trophy-tier-badge {
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 0.12rem 0.45rem;
+  border-radius: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.axiom-trophy-tier-badge.bronze {
+  background: rgba(249, 115, 22, 0.2);
+  border: 1px solid rgba(249, 115, 22, 0.4);
+  color: #fed7aa;
+}
+
+.axiom-trophy-tier-badge.silver {
+  background: rgba(148, 163, 184, 0.2);
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  color: #e2e8f0;
+}
+
+.axiom-trophy-tier-badge.gold {
+  background: rgba(245, 208, 130, 0.25);
+  border: 1px solid rgba(245, 208, 130, 0.5);
+  color: #f5d082;
+}
+
+.axiom-trophy-tier-badge.diamond {
+  background: rgba(56, 189, 248, 0.25);
+  border: 1px solid rgba(56, 189, 248, 0.5);
+  color: #bae6fd;
+}
+
+.axiom-trophy-desc {
+  margin: 0;
+  font-size: 0.8rem;
+  color: #94a3b8;
+  line-height: 1.35;
+}
+
+.axiom-trophy-progress-wrap {
+  margin-top: 0.55rem;
+}
+
+.axiom-trophy-progress-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.72rem;
+  color: #8da4be;
+  margin-bottom: 0.2rem;
+}
+
+.axiom-trophy-unlocked-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  margin-top: 0.55rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #34d399;
+}
+
+/* Trophy unlocked celebration toast/banner */
+.axiom-trophy-alert-banner {
+  background: linear-gradient(135deg, rgba(245, 208, 130, 0.15), rgba(45, 212, 191, 0.15));
+  border: 1px solid rgba(245, 208, 130, 0.4);
+  border-radius: 10px;
+  padding: 0.85rem 1.15rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+  animation: bannerGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes bannerGlow {
+  from { box-shadow: 0 0 10px rgba(245, 208, 130, 0.15); }
+  to { box-shadow: 0 0 20px rgba(245, 208, 130, 0.35); }
+}
+
+.axiom-trophy-alert-content {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.axiom-trophy-alert-text strong {
+  display: block;
+  font-size: 0.95rem;
+  color: #f5d082;
+}
+
+.axiom-trophy-alert-text span {
+  font-size: 0.82rem;
+  color: #cbd5e1;
+}
+
+@media (max-width: 600px) {
+  .axiom-rank-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .axiom-trophy-grid {
+    grid-template-columns: 1fr;
+  }
+  .axiom-trophy-filters {
+    width: 100%;
+  }
+  .axiom-trophy-filter-btn {
+    flex: 1;
+    text-align: center;
+  }
+}

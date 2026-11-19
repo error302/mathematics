@@ -1,0 +1,31 @@
+schema_version: 1
+id: secondary.algebra2.polynomials_and_factoring.lesson
+version: 1.1.0
+locale: en
+status: draft
+course_id: S03
+unit_id: secondary.algebra2.polynomials_and_factoring
+outcomes:
+  - Factor quadratic polynomials into linear factors (x - r_1)(x - r_2) and connect roots to coefficients via Vieta's formulas.
+  - Apply the Polynomial Remainder Theorem to evaluate remainders R = P(r) upon division by (x - r).
+skill_ids:
+  - secondary.algebra2.factoring_and_vieta
+  - secondary.algebra2.remainder_theorem
+prerequisites:
+  required:
+    - secondary.algebra.distributive_simplification
+    - secondary.functions.domain_and_preimage
+  recommended:
+    - secondary.algebra.linear_equations
+exercise_refs:
+  - template_id: algebra2.polynomial_factor_roots
+    template_version: 1.1.0
+    difficulty_band: 1
+assessment_dimensions:
+  - conceptual
+  - procedural
+  - transfer
+content_file: lesson.en.md
+license_id: axiom-original-content
+source_refs: []
+review_record_ids: []

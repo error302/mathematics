@@ -1,0 +1,59 @@
+{
+  "id": "foundation.arithmetic.addition_disjoint",
+  "courseId": "F02",
+  "title": "Addition: Union of Disjoint Sets",
+  "subtitle": "Combine two separate groups and find how many there are altogether.",
+  "templateId": "arithmetic.whole.addition",
+  "challenge": "Box A has 5 red beads, Box B has 3 green beads. How many beads are in the combined collection?",
+  "predictionPrompt": "Does changing the order of addition change the final sum? (5 + 3 vs 3 + 5)",
+  "predictionOptions": [
+    {
+      "label": "Order matters",
+      "value": "diff"
+    },
+    {
+      "label": "Order does not matter (commutative)",
+      "value": "same",
+      "isCorrect": true
+    }
+  ],
+  "formalDefinition": "For disjoint finite sets A and B (A cap B = emptyset), |A cup B| = |A| + |B|. Addition is commutative (a+b = b+a) and associative ((a+b)+c = a+(b+c)).",
+  "workedExample": {
+    "steps": [
+      "To calculate 7 + 8, decompose 8 into 3 + 5 to make a ten.",
+      "7 + (3 + 5) = (7 + 3) + 5 by associativity.",
+      "10 + 5 = 15."
+    ],
+    "result": "7 + 8 = 15."
+  },
+  "misconception": {
+    "mistake": "Adding non-disjoint sets without subtracting the overlap.",
+    "correction": "If collections share common elements, naive addition double-counts the intersection."
+  },
+  "reflection": "Making a ten using associativity simplifies all mental and written addition.",
+  "prerequisiteCheck": "Count a collection once. Two boxes of separate objects do not overlap; two lists can refer to the same objects.",
+  "representation": "Make a row of 7 counters and another row of 8. Move 3 counters from the second row to complete a row of ten; 5 remain. Total: 10 + 5 = 15.",
+  "faded": {
+    "prompt": "Use make-a-ten: 8 + 7 = 8 + (__ + __) = 10 + __ = __.",
+    "solution": "Split 7 into 2 + 5: 8 + (2 + 5) = 10 + 5 = 15."
+  },
+  "independent": [
+    {
+      "prompt": "Compute 9 + 6 using a regrouped expression.",
+      "solution": "9 + (1 + 5) = 10 + 5 = 15."
+    },
+    {
+      "prompt": "Explain why 4 + 3 + 6 can be grouped as (4 + 6) + 3.",
+      "solution": "Addition of these whole numbers is commutative and associative, so the sum is 10 + 3 = 13."
+    }
+  ],
+  "explanation": "State the difference between changing the order of addends and changing how they are grouped. Illustrate each with numbers.",
+  "transfer": {
+    "prompt": "A club has 5 chess players and 4 football players; 2 play both. How many distinct people are in these lists?",
+    "solution": "5 + 4 - 2 = 7. Adding the lists without removing the shared people double-counts them."
+  },
+  "retrieval": "Tomorrow solve 8 + 6 by making ten. A week later create an example where adding two list sizes overcounts people.",
+  "contentStatus": "draft",
+  "reviewNote": "Expanded prototype lesson. Independent mathematical, pedagogical, and accessibility review is pending.",
+  "version": "1.1.0"
+}

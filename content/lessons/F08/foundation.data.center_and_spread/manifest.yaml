@@ -1,0 +1,31 @@
+schema_version: 1
+id: foundation.data.center_and_spread.lesson
+version: 1.1.0
+locale: en
+status: draft
+course_id: F08
+unit_id: foundation.data.center_and_spread
+outcomes:
+  - Interpret the arithmetic mean as the center-of-mass balance point where signed deviations sum to zero.
+  - Determine the median by sorting datasets in ascending order and compare mean vs median sensitivity to outliers.
+skill_ids:
+  - foundation.data.mean
+  - foundation.data.median
+prerequisites:
+  required:
+    - foundation.arithmetic.addition
+    - foundation.arithmetic.division
+  recommended:
+    - foundation.fractions.compare
+exercise_refs:
+  - template_id: data.mean_median_calc
+    template_version: 1.1.0
+    difficulty_band: 1
+assessment_dimensions:
+  - conceptual
+  - procedural
+  - transfer
+content_file: lesson.en.md
+license_id: axiom-original-content
+source_refs: []
+review_record_ids: []

@@ -13,4 +13,4 @@ serde_yaml = "0.9"
 sha2 = { workspace = true }
 hex = { workspace = true }
 thiserror = { workspace = true }
-axiom-math = { path = "../axiom-math" }
+axiom-math.workspace = true

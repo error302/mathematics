@@ -1,8 +1,8 @@
 schema_version: 1
 id: foundation.fractions.unit_fractions.lesson
-version: 1.0.0
+version: 1.1.0
 locale: en
-status: published
+status: draft
 course_id: F04
 unit_id: foundation.fractions.unit_fractions
 outcomes:
@@ -17,7 +17,7 @@ prerequisites:
     - foundation.numberline.partition
 exercise_refs:
   - template_id: fractions.unit.identify
-    template_version: 1.0.0
+    template_version: 1.1.0
     difficulty_band: 1
 assessment_dimensions:
   - conceptual
@@ -25,7 +25,4 @@ assessment_dimensions:
 content_file: lesson.en.md
 license_id: axiom-original-content
 source_refs: []
-review_record_ids:
-  - review-math-001
-  - review-pedagogy-001
-  - review-a11y-001
+review_record_ids: []

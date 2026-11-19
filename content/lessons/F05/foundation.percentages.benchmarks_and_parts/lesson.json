@@ -1,0 +1,66 @@
+{
+  "id": "foundation.percentages.benchmarks_and_parts",
+  "courseId": "F05",
+  "title": "Percentages: parts per hundred and benchmark calculations",
+  "subtitle": "Use 10%, 25%, and 50% benchmarks to reason flexibly about hundredths.",
+  "templateId": "percentages.benchmark_calc",
+  "challenge": "An energy storage cell rated at 240 watt-hours is currently at 75% capacity. How many watt-hours remain in the cell?",
+  "predictionPrompt": "What is 75% of 240 watt-hours?",
+  "predictionOptions": [
+    {
+      "label": "120 watt-hours",
+      "value": "120"
+    },
+    {
+      "label": "160 watt-hours",
+      "value": "160"
+    },
+    {
+      "label": "180 watt-hours",
+      "value": "180",
+      "isCorrect": true
+    },
+    {
+      "label": "200 watt-hours",
+      "value": "200"
+    }
+  ],
+  "formalDefinition": "The symbol % means 'per hundred' (Latin per centum): p% is the rational number p/100 = p × 0.01. To find p% of a quantity Q, calculate (p/100) × Q.",
+  "workedExample": {
+    "steps": [
+      "Recognize that 75% = 75/100 = 3/4.",
+      "Calculate 1/4 of 240 by dividing: 240 ÷ 4 = 60.",
+      "Multiply by 3 to find 3/4: 3 × 60 = 180 (or decompose as 50% of 240 = 120, plus 25% of 240 = 60; 120 + 60 = 180)."
+    ],
+    "result": "75% of 240 watt-hours is exactly 180 watt-hours."
+  },
+  "misconception": {
+    "mistake": "Adding percentages directly to raw quantities, such as calculating 'a price of $80 with 25% tax is $80 + 25 = $105'.",
+    "correction": "A percentage is an operator specifying a fraction of a base amount, not an absolute quantity with units. 25% of $80 is (25/100) × 80 = $20, so the total is $80 + $20 = $100."
+  },
+  "reflection": "Benchmark percentages provide powerful mental anchors: 50% = 1/2, 25% = 1/4, 10% = 1/10, 1% = 1/100. Any percentage like 35% can be composed as 25% + 10% or 3 × 10% + 5%.",
+  "prerequisiteCheck": "Explain why 50% is identical to the fraction 1/2 and the decimal 0.5.",
+  "representation": "A percent bar partitioned into 4 quarters of 25% each. For a total bar length of 240, each quarter represents 60. Three shaded quarters total 60 + 60 + 60 = 180.",
+  "faded": {
+    "prompt": "Find 15% of 80: 10% of 80 is __, and 5% is half of 10% which is __. Therefore, 15% of 80 = __ + __ = __.",
+    "solution": "10% of 80 = 8; 5% of 80 = 4; 8 + 4 = 12."
+  },
+  "independent": [
+    {
+      "prompt": "Calculate 25% of 160.",
+      "solution": "25% = 1/4; 160 ÷ 4 = 40."
+    },
+    {
+      "prompt": "If 20% of an unknown number is 14, what is the whole number?",
+      "solution": "Since 20% is 1/5 of the whole, the whole number is 14 × 5 = 70."
+    }
+  ],
+  "explanation": "Why does a 10% increase followed by a 10% decrease on a value x not return to the original value x?",
+  "transfer": {
+    "prompt": "A coat costs $120. During a sale, it is discounted by 25%. A customer with a coupon receives an additional 10% off the discounted price. What is the final price?",
+    "solution": "Discount of 25% on $120 is $30, leaving $90. Additional 10% off $90 is $9, leaving a final price of $81 (not $120 - 35% = $78)."
+  },
+  "retrieval": "In three days, compute 35% of 60 using benchmark decomposition without writing long division.",
+  "contentStatus": "draft",
+  "reviewStatus": "independent_review_pending"
+}

@@ -1,0 +1,66 @@
+{
+  "id": "secondary.algebra.expressions_and_substitution",
+  "courseId": "S01",
+  "title": "Algebraic Expressions, Substitution, and Equivalence",
+  "subtitle": "Variables as universal placeholders, negative substitution discipline, and distributive simplification.",
+  "templateId": "algebra.expression_eval",
+  "challenge": "When x = -3, why does the expression x^2 evaluate to +9, whereas -x^2 evaluates to -9? What structural role does the variable x play as a grouped placeholder when we substitute a negative number?",
+  "predictionPrompt": "Evaluate 2x^2 + 3x - 1 when x = -2.",
+  "predictionOptions": [
+    {
+      "label": "-15",
+      "value": "-15"
+    },
+    {
+      "label": "1",
+      "value": "1",
+      "isCorrect": true
+    },
+    {
+      "label": "13",
+      "value": "13"
+    },
+    {
+      "label": "-7",
+      "value": "-7"
+    }
+  ],
+  "formalDefinition": "An algebraic expression over a ring R is a finite composition of variables and constants under addition, subtraction, and multiplication. Substitution is the evaluation homomorphism phi_a: R[x] -> R that replaces every occurrence of x by the grouped value (a). Two algebraic expressions E_1(x) and E_2(x) are algebraically equivalent if and only if they simplify to the same canonical polynomial and therefore produce identical values for every input x.",
+  "workedExample": {
+    "steps": [
+      "Task: Expand and simplify 4(2x + 3) - 3(x - 5), then evaluate the result at x = 2.",
+      "Distribute 4 across the first parenthesis: 4(2x + 3) = 8x + 12.",
+      "Distribute -3 across BOTH terms of the second parenthesis: -3(x - 5) = -3x + 15 (since -3 * -5 = +15).",
+      "Combine like terms: (8x - 3x) + (12 + 15) = 5x + 27. Evaluate at x = 2: 5(2) + 27 = 37."
+    ],
+    "result": "5x + 27 = 37 at x = 2."
+  },
+  "misconception": {
+    "mistake": "Substituting x = -3 into x^2 without parentheses to get -9 instead of (-3)^2 = +9, or failing to flip the sign of the second term when distributing a negative multiplier across -d(ex - f).",
+    "correction": "A variable x represents an entire grouped quantity: substituting x = -3 into x^2 means (-3)^2 = (-3)(-3) = +9. When expanding -d(ex - f), multiply -d by -f to obtain +df."
+  },
+  "reflection": "Simplifying an expression before substituting reduces arithmetic work and exposes the underlying linear or quadratic structure.",
+  "prerequisiteCheck": "Compute (-4) * (-4) and explain why the product of two negative integers is positive.",
+  "representation": "Represent algebraic terms as signed area tiles: x^2 squares, x bars, and unit tiles. Combining like terms groups tiles of identical dimension.",
+  "faded": {
+    "prompt": "Evaluate 3(x - y) + 2xy when x = 4 and y = -2: First compute x - y = 4 - (-2) = __. Then 3(6) + 2(4)(-2) = 18 - 16 = __.",
+    "solution": "6, then 2."
+  },
+  "independent": [
+    {
+      "prompt": "Evaluate 3x^2 + 4x - 5 when x = -3.",
+      "solution": "3(-3)^2 + 4(-3) - 5 = 3(9) - 12 - 5 = 27 - 17 = 10."
+    },
+    {
+      "prompt": "Simplify 5(2x + 1) - 2(3x - 4) and evaluate at x = 3.",
+      "solution": "10x + 5 - 6x + 8 = 4x + 13. At x = 3: 4(3) + 13 = 25."
+    }
+  ],
+  "explanation": "Why can we add 3x and 5x to get 8x, but we cannot combine 3x and 5x^2 into a single monomial term?",
+  "transfer": {
+    "prompt": "Show that (x + 3)^2 - (x - 3)^2 simplifies to 12x for every real number x, and use this identity to compute 103^2 - 97^2 mentally.",
+    "solution": "(x^2 + 6x + 9) - (x^2 - 6x + 9) = 12x. Setting x = 100 gives 103^2 - 97^2 = 12 * 100 = 1200."
+  },
+  "retrieval": "State the distributive law for a(b + c) and -d(e - f), and explain why parentheses are mandatory when substituting negative values.",
+  "reviewNote": "Draft secondary lesson. Exact calculations verified by Rust engine."
+}

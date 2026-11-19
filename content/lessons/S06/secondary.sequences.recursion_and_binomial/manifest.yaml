@@ -1,0 +1,37 @@
+schema_version: 1
+id: "secondary.sequences.recursion_and_binomial.lesson"
+version: "1.1.0"
+locale: "en"
+status: "draft"
+course_id: "S06"
+unit_id: "secondary.sequences.recursion_and_binomial"
+outcomes:
+  - "Evaluate linear recursive sequences a_n = c * a_(n-1) + d iteratively from an initial condition a_1."
+  - "Apply the Binomial Theorem to extract exact coefficients of x^(n-k) in expansions of (x + c)^n."
+  - "Compute general binomial coefficients [x^(n-k)] in (ax + b)^n = C(n, k) * a^(n-k) * b^k."
+skill_ids:
+  - "secondary.sequences.recursion_and_binomial"
+prerequisites:
+  required:
+    - "secondary.sequences.arithmetic_and_series"
+    - "foundation.counting.permutations_and_combinations"
+  recommended:
+    - "secondary.sequences.geometric_and_infinite_series"
+exercise_refs:
+  - template_id: "sequences.recursion_binomial"
+    template_version: "1.1.0"
+    difficulty_band: 1
+  - template_id: "sequences.recursion_binomial"
+    template_version: "1.1.0"
+    difficulty_band: 2
+  - template_id: "sequences.recursion_binomial"
+    template_version: "1.1.0"
+    difficulty_band: 3
+assessment_dimensions:
+  - "conceptual"
+  - "procedural"
+  - "transfer"
+content_file: "lesson.en.md"
+license_id: "axiom-original-content"
+source_refs: []
+review_record_ids: []

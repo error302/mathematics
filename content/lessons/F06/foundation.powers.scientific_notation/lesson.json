@@ -1,0 +1,64 @@
+{
+  "id": "foundation.powers.scientific_notation",
+  "courseId": "F06",
+  "title": "Scientific Notation and Powers of Ten",
+  "subtitle": "Representing macroscopic and microscopic quantities with standard scale.",
+  "templateId": "powers.scientific_notation",
+  "challenge": "The distance to the Andromeda Galaxy is roughly 24,000,000,000,000,000,000 km, while the radius of a proton is roughly 0.00000000000000084 m. How does scientific notation make these numbers readable and calculable without losing precision?",
+  "predictionPrompt": "Which expression represents 45,000 in standard scientific notation?",
+  "predictionOptions": [
+    {
+      "label": "45 * 10^3",
+      "value": "45_10_3"
+    },
+    {
+      "label": "4.5 * 10^4",
+      "value": "4_5_10_4",
+      "isCorrect": true
+    },
+    {
+      "label": "0.45 * 10^5",
+      "value": "0_45_10_5"
+    },
+    {
+      "label": "4.5 * 10^3",
+      "value": "4_5_10_3"
+    }
+  ],
+  "formalDefinition": "Standard scientific notation expresses a real number as m * 10^k, where m is the significand (or mantissa) satisfying 1 <= |m| < 10, and k is an integer exponent representing the order of magnitude.",
+  "workedExample": {
+    "steps": [
+      "Identify the number to convert: 45,000.",
+      "Place the decimal point immediately after the first non-zero digit to get a significand between 1 and 10: 4.5.",
+      "Count how many places the decimal point moved: from after the last zero to between 4 and 5 is 4 places to the left.",
+      "Since 45,000 > 1, the exponent is positive: 45,000 = 4.5 * 10^4."
+    ],
+    "result": "45,000 = 4.5 * 10^4 in standard scientific notation."
+  },
+  "misconception": {
+    "mistake": "Accepting 45 * 10^3 as standard scientific notation.",
+    "correction": "While 45 * 10^3 is numerically equal to 45,000, standard scientific notation strictly requires 1 <= |m| < 10. The single leading non-zero digit must precede the decimal point: 4.5 * 10^4."
+  },
+  "reflection": "Scientific notation isolates the significant digits (precision) in the significand m, and the overall scale (magnitude) in the power of ten 10^k. Multiplying or dividing scales simply adds or subtracts exponents.",
+  "prerequisiteCheck": "Explain why multiplying a decimal by 10 shifts the decimal point one place to the right.",
+  "representation": "Imagine zooming on a logarithmic ruler: every increment in exponent k represents a 10x magnification or demagnification of scale.",
+  "faded": {
+    "prompt": "Write 0.0072 in standard scientific notation: Move decimal point 3 places right to 7.2; since the original number is less than 1, the exponent is -3: 7.2 * 10^__.",
+    "solution": "7.2 * 10^(-3)."
+  },
+  "independent": [
+    {
+      "prompt": "Evaluate (2 * 10^3) * (3 * 10^5).",
+      "solution": "(2 * 3) * 10^(3 + 5) = 6 * 10^8."
+    },
+    {
+      "prompt": "Evaluate (4 * 10^6) * (5 * 10^2) in standard scientific notation.",
+      "solution": "(4 * 5) * 10^(6 + 2) = 20 * 10^8 = 2.0 * 10^9."
+    }
+  ],
+  "explanation": "Why does multiplying (a * 10^p) by (b * 10^q) allow grouping the numbers as (a * b) * 10^(p+q)?",
+  "transfer": {
+    "prompt": "Light travels at approximately 3.0 * 10^8 meters per second. How far does light travel in 2.0 * 10^3 seconds?",
+    "solution": "Distance = (3.0 * 10^8 m/s) * (2.0 * 10^3 s) = 6.0 * 10^11 meters."
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "id": "secondary.geometry.circles_and_theorems",
+  "courseId": "S04",
+  "title": "Circle Theorems, Completing the Square, and Power of a Point",
+  "subtitle": "Inscribed vs. central angles, algebraic circle loci (x - h)^2 + (y - k)^2 = R^2, and intersecting chord products.",
+  "templateId": "sec_geom.circle_equations_theorems",
+  "challenge": "If two chords AB and CD intersect at P inside a circle, why is the product of their segment lengths always invariant (PA * PB = PC * PD), even though the sums PA + PB and PC + PD can be completely different?",
+  "predictionPrompt": "Complete the square on the circle equation x^2 + y^2 - 6x - 8y + 9 = 0 to write it as (x - h)^2 + (y - k)^2 = R^2. What is the exact squared radius R^2?",
+  "predictionOptions": [
+    {
+      "label": "R^2 = 16",
+      "value": "16",
+      "isCorrect": true
+    },
+    {
+      "label": "R^2 = -9",
+      "value": "-9"
+    },
+    {
+      "label": "R^2 = 25",
+      "value": "25"
+    },
+    {
+      "label": "R^2 = 91",
+      "value": "91"
+    }
+  ],
+  "formalDefinition": "A circle with center (h, k) and radius R > 0 is the locus of points (x, y) satisfying (x - h)^2 + (y - k)^2 = R^2. By the Inscribed Angle Theorem, an inscribed angle angle ACB subtending arc AB equals half the central angle angle AOB subtending the same arc. Consequently, two chords AB and CD intersecting at P form similar triangles triangle PAC ~ triangle PDB (since angle ACD = angle ABD and angle CAB = angle CDB), proving the Intersecting Chords (Power of a Point) Theorem: PA * PB = PC * PD.",
+  "workedExample": {
+    "steps": [
+      "Task: Find R^2 for x^2 + y^2 - 6x - 8y + 9 = 0, and find segment PD when chords AB and CD intersect at P with PA = 4, PB = 9, and PC = 6.",
+      "Group and complete the square: (x^2 - 6x + 9) + (y^2 - 8y + 16) = -9 + 9 + 16.",
+      "Thus (x - 3)^2 + (y - 4)^2 = 16, giving center (3, 4) and squared radius R^2 = 16 (so R = 4).",
+      "For the intersecting chords at P: PA * PB = PC * PD => 4 * 9 = 6 * PD => 36 = 6 * PD => PD = 6."
+    ],
+    "result": "Squared radius R^2 = 16; chord segment PD = 6."
+  },
+  "misconception": {
+    "mistake": "Moving the constant F to the right side of x^2 + y^2 + Dx + Ey + F = 0 without adding (D/2)^2 + (E/2)^2 to balance the completed squares, or adding chord segments PA + PB = PC + PD instead of multiplying PA * PB = PC * PD.",
+    "correction": "Rewriting x^2 - 2hx as (x - h)^2 adds h^2 to the left side, so you must also add h^2 + k^2 to the right side: R^2 = h^2 + k^2 - F. And chord segments obey a multiplicative proportion from similar triangles, not an additive one."
+  },
+  "reflection": "Thales's Theorem—that any angle inscribed in a semicircle is a right angle (90 degrees)—is the special case of the Inscribed Angle Theorem where the central angle is a straight diameter of 180 degrees.",
+  "prerequisiteCheck": "If triangle OAC is isosceles with OA = OC (both radii of a circle) and base angle angle OCA = 35 degrees, what is the exterior angle at O?",
+  "representation": "Inspect the circle locus both synthetically (central angle 2*theta vs. inscribed angle theta, and similar triangles inside intersecting chords) and analytically via horizontal/vertical shifts (x - h)^2 + (y - k)^2 = R^2.",
+  "faded": {
+    "prompt": "Complete the square on x^2 + y^2 - 4x - 10y + 4 = 0: Add (-4/2)^2 = 4 and (-10/2)^2 = __ to both sides, giving R^2 = -4 + 4 + __ = 25.",
+    "solution": "25, then 25."
+  },
+  "independent": [
+    {
+      "prompt": "Central angle angle AOB on a circle measures 116 degrees. Find the exact measure of an inscribed angle angle ACB subtending the same minor arc AB.",
+      "solution": "angle ACB = 116 / 2 = 58 degrees."
+    },
+    {
+      "prompt": "Chords AB and CD intersect at P inside a circle with PA = 5, PB = 7, and PC = 4. Find the exact rational length of PD.",
+      "solution": "PA * PB = PC * PD => 5 * 7 = 4 * PD => PD = 35/4."
+    }
+  ],
+  "explanation": "Why are triangles PAC and PDB similar when two chords AB and CD intersect at P inside a circle?",
+  "transfer": {
+    "prompt": "Prove that opposite angles A and C of a cyclic quadrilateral ABCD (a quadrilateral inscribed in a circle) always sum to 180 degrees.",
+    "solution": "Inscribed angle A subtends arc BCD (central angle theta_1) and inscribed angle C subtends the complementary arc BAD (central angle theta_2). Since the two arcs form the full circle, theta_1 + theta_2 = 360 degrees, so angle A + angle C = (theta_1 + theta_2)/2 = 180 degrees."
+  },
+  "retrieval": "State the Inscribed Angle Theorem, the standard equation of a circle with center (h, k) and radius R, and the Intersecting Chords Theorem.",
+  "reviewNote": "Draft secondary lesson. Exact calculations verified by Rust engine."
+}

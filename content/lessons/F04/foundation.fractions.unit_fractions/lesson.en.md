@@ -41,3 +41,48 @@ $$\frac{1}{2} > \frac{1}{3} > \frac{1}{4} > \frac{1}{10} > \frac{1}{100}$$
 Every proper fraction $\frac{m}{n}$ is simply the sum of $m$ copies of the unit fraction $\frac{1}{n}$:
 $$\frac{m}{n} = \underbrace{\frac{1}{n} + \frac{1}{n} + \dots + \frac{1}{n}}_{m \text{ times}}$$
 Unit fractions are the fundamental atoms of rational numbers.
+
+
+## Additional learning activities (draft)
+
+**Review status:** Independent human review is pending. These activities do not award certified mastery.
+
+### Prerequisite check
+
+A whole must be identified and the parts must be equal. Can four unequal ribbon pieces each be called one fourth?
+
+### Representation
+
+Mark 0 and 1 on a strip. Put equally spaced marks at 1/5, 2/5, 3/5, and 4/5. One step has length 1/5; the endpoint is 5/5 = 1.
+
+### Complete a partly worked problem
+
+A metre is divided into 6 equal pieces. One piece is __ of a metre. Four pieces are __ of a metre.
+
+Self-check: One piece is 1/6 metre; four pieces are 4/6 = 2/3 metre.
+
+### Independent practice
+
+1. Which is larger: 1/7 or 1/4, using the same whole?
+
+   Self-check: 1/4 is larger because the whole is divided into fewer equal pieces.
+
+2. How many copies of 1/8 make one whole?
+
+   Self-check: 8 copies; 8 × 1/8 = 1.
+
+### Explain your reasoning
+
+Explain why denominators must be positive here, why 1/0 is undefined, and why equal-sized parts matter. You do not need a calculus argument about limits.
+
+### Transfer to a new situation
+
+A 2-metre ribbon is divided into 8 equal pieces. What fraction of the ribbon is one piece, and what length is it?
+
+Self-check: One piece is 1/8 of the ribbon but 2/8 = 1/4 metre long. Fraction of the whole and measured length are different quantities.
+
+### Retrieve after a delay
+
+Tomorrow sketch a number line and locate 1/3. After a week, explain why 1/9 < 1/6 without a calculator.
+
+The learner-facing presentation and these activities are stored in `lesson.json` beside this file.

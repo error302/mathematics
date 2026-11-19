@@ -1,0 +1,65 @@
+{
+  "id": "foundation.learning.equality_balance",
+  "courseId": "F00",
+  "title": "The meaning of equality: balance and equivalence",
+  "subtitle": "Discover why the equals sign is a two-sided balance, not a button on a calculator.",
+  "templateId": "learning.equality_balance",
+  "challenge": "Why do many students incorrectly write 8 + 4 = [ ] + 5 as 12 instead of 7?",
+  "predictionPrompt": "In the equation 14 + x = 20 + 8, what value of x maintains balance?",
+  "predictionOptions": [
+    {
+      "label": "x = 14",
+      "value": "14",
+      "isCorrect": true
+    },
+    {
+      "label": "x = 28",
+      "value": "28"
+    },
+    {
+      "label": "x = 42",
+      "value": "42"
+    }
+  ],
+  "formalDefinition": "The equals sign (=) denotes an equivalence relation that is reflexive, symmetric, and transitive. An equation asserts that the mathematical object on the left has the exact same value as the object on the right.",
+  "workedExample": {
+    "steps": [
+      "Evaluate the right pan: 20 + 8 = 28.",
+      "Recognize that the left pan must also equal 28: 14 + x = 28.",
+      "Subtract 14 from both pans to preserve balance: (14 + x) - 14 = 28 - 14.",
+      "Conclude: x = 14.",
+      "Check: 14 + 14 = 28 and 20 + 8 = 28. Both pans are in equilibrium."
+    ],
+    "result": "x = 14."
+  },
+  "misconception": {
+    "mistake": "Treating = as an operational 'announcement of the answer' (like pressing = on a pocket calculator).",
+    "correction": "The equals sign is a relational balance. Whatever transformation you make to one side, you must make identically to the other side."
+  },
+  "reflection": "Viewing equations as balances is the foundation for all subsequent algebra, geometry, and analysis.",
+  "prerequisiteCheck": "Basic addition and the concept of balance scales.",
+  "representation": "A two-pan scale with 14 + x on the left pan and weights 20 + 8 on the right pan. Removing 14 from both pans leaves x on the left and 14 on the right.",
+  "faded": {
+    "prompt": "Fill in the blank to keep the scale balanced: 9 + 6 = __ + 5.",
+    "solution": "Left side is 9 + 6 = 15. The right side must also equal 15: 10 + 5 = 15, so the blank is 10."
+  },
+  "independent": [
+    {
+      "prompt": "Solve for x: 3 * x = 18 + 6.",
+      "solution": "Right side is 24. 3 * x = 24. Divide both sides by 3: x = 8."
+    },
+    {
+      "prompt": "Is the statement 7 + 5 = 12 + 0 valid? Explain.",
+      "solution": "Yes, because both sides evaluate to the exact same integer: 12 = 12."
+    }
+  ],
+  "explanation": "Explain why subtracting the same quantity from both sides of an equation never changes the truth value of the equality.",
+  "transfer": {
+    "prompt": "Two identical mystery boxes plus a 5 kg weight balance one mystery box plus a 14 kg weight. What is the mass of one mystery box?",
+    "solution": "Let m be the box mass: 2m + 5 = m + 14. Subtract m from both sides: m + 5 = 14. Subtract 5: m = 9 kg."
+  },
+  "retrieval": "In three days, explain to a friend why the equation 8 + 4 = 12 + 5 is mathematically false.",
+  "contentStatus": "draft",
+  "reviewNote": "Pilot draft lesson for Course F00. Independent mathematical review pending.",
+  "version": "1.1.0"
+}

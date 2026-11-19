@@ -1,0 +1,29 @@
+{
+  "id": "secondary.sequences.recursion_and_binomial",
+  "course_id": "S06",
+  "title": "Recurrence Relations & The Binomial Theorem",
+  "status": "draft",
+  "review_status": "independent_review_pending",
+  "version": "1.1.0",
+  "outcomes": [
+    "Evaluate linear recursive sequences a_n = c * a_(n-1) + d iteratively from an initial condition a_1.",
+    "Apply the Binomial Theorem to extract exact coefficients of x^(n-k) in expansions of (x + c)^n.",
+    "Compute general binomial coefficients [x^(n-k)] in (ax + b)^n = C(n, k) * a^(n-k) * b^k."
+  ],
+  "prerequisites": [
+    "secondary.sequences.arithmetic_and_series",
+    "foundation.counting.permutations_and_combinations"
+  ],
+  "sections": {
+    "intuition": "A recurrence relation defines each term of a sequence as a function of earlier terms, starting from an explicit base case such as a₁. Even Pascal's triangle of binomial coefficients C(n, k) is governed by the recurrence C(n, k) = C(n-1, k-1) + C(n-1, k). When expanding (ax + b)^n = (ax + b)(ax + b)...(ax + b), each term is formed by choosing b from k of the n factors and ax from the remaining (n - k) factors. Since there are C(n, k) ways to choose which k factors supply b, the x^(n-k) term is C(n, k) · (ax)^(n-k) · b^k.",
+    "formal_definition": "1. First-Order Linear Recurrence: Given base case a₁ and recurrence a_n = c·a_{n-1} + d for n ≥ 2, terms are generated sequentially: a₂ = c·a₁ + d, a₃ = c·a₂ + d, and so on.\n2. Binomial Theorem: For any non-negative integer n,\n(ax + b)^n = ∑_{k=0}^n C(n, k) (ax)^(n-k) b^k = ∑_{k=0}^n [n! / (k!(n-k)!)] a^(n-k) b^k x^(n-k).",
+    "worked_example": "Find the coefficient of x² in the expansion of (2x + 3)⁴.\n1. Here n = 4 and the power of x is n - k = 2, so k = 2.\n2. Compute the binomial number from Pascal's triangle: C(4, 2) = (4 × 3)/(2 × 1) = 6.\n3. Raise both coefficients to their respective powers: (2x)² = 4x² and 3² = 9.\n4. Multiply all three factors: 6 × 4 × 9 = 216, so the x² term is 216x².",
+    "common_misconceptions": [
+      "Stopping one step early when iterating a recurrence relation (reporting a₃ instead of a₄).",
+      "Reporting only the combinatorial number C(n, k) without multiplying by the constant power c^k.",
+      "Forgetting to raise the coefficient a of (ax) to the power (n - k) when expanding (ax + b)^n."
+    ]
+  },
+  "template_id": "sequences.recursion_binomial",
+  "template_version": "1.1.0"
+}

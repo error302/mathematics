@@ -1,0 +1,64 @@
+{
+  "id": "foundation.roots.perfect_squares_and_roots",
+  "courseId": "F06",
+  "title": "Square Roots, Radicals, and Exact Values",
+  "subtitle": "Inverse of squaring, rational radicals, and the non-distributive nature of roots.",
+  "challenge": "A square garden has an area of exactly 49/64 square meters. What is the exact side length of the garden, and why can we compute it without decimal approximation?",
+  "predictionPrompt": "What is the principal square root of 49/64?",
+  "predictionOptions": [
+    {
+      "label": "7/8",
+      "value": "7_8",
+      "isCorrect": true
+    },
+    {
+      "label": "7/64",
+      "value": "7_64"
+    },
+    {
+      "label": "49/8",
+      "value": "49_8"
+    },
+    {
+      "label": "24.5/32",
+      "value": "24_5_32"
+    }
+  ],
+  "formalDefinition": "For a non-negative real number x >= 0, the principal square root sqrt(x) is the unique non-negative number y >= 0 such that y^2 = x. For fractions, sqrt(a/b) = sqrt(a) / sqrt(b) when a, b >= 0.",
+  "workedExample": {
+    "steps": [
+      "Identify the fraction under the radical: sqrt(49/64).",
+      "Apply the quotient property of radicals: sqrt(a/b) = sqrt(a) / sqrt(b) = sqrt(49) / sqrt(64).",
+      "Find the non-negative integer whose square is 49: 7^2 = 49, so sqrt(49) = 7.",
+      "Find the non-negative integer whose square is 64: 8^2 = 64, so sqrt(64) = 8.",
+      "Combine into the simplified rational root: 7/8."
+    ],
+    "result": "sqrt(49/64) = 7/8."
+  },
+  "misconception": {
+    "mistake": "Distributing the square root over addition: believing sqrt(9 + 16) = sqrt(9) + sqrt(16) = 3 + 4 = 7.",
+    "correction": "Radicals do not distribute over addition! First evaluate 9 + 16 = 25, then take the square root: sqrt(25) = 5. Note that 5 is strictly less than 3 + 4 = 7 by the triangle inequality."
+  },
+  "reflection": "The square root operation is the inverse of squaring, but restricted to non-negative outputs. While sqrt(a * b) = sqrt(a) * sqrt(b), square roots NEVER distribute across addition: sqrt(a + b) != sqrt(a) + sqrt(b) unless a or b is zero.",
+  "prerequisiteCheck": "What number multiplied by itself gives 81? Why is (-9)^2 also 81, yet sqrt(81) is defined only as 9?",
+  "representation": "A geometric square of side length s has area s^2. Finding the square root of an area corresponds geometrically to finding the side length of that square.",
+  "faded": {
+    "prompt": "Evaluate sqrt(25/36): sqrt(25)/sqrt(36) = __ / 6.",
+    "solution": "5/6."
+  },
+  "independent": [
+    {
+      "prompt": "Evaluate sqrt(144).",
+      "solution": "12."
+    },
+    {
+      "prompt": "Evaluate sqrt(9) + sqrt(16).",
+      "solution": "3 + 4 = 7."
+    }
+  ],
+  "explanation": "Why does the equation x^2 = 25 have two solutions (x = 5 and x = -5), but the radical expression sqrt(25) has only one value (5)?",
+  "transfer": {
+    "prompt": "By the Pythagorean theorem, the hypotenuse c of a right triangle with legs a=6 and b=8 satisfies c^2 = 6^2 + 8^2 = 36 + 64 = 100. Find c.",
+    "solution": "c = sqrt(100) = 10."
+  }
+}

@@ -43,3 +43,48 @@ Whenever you need to compare fractions $\frac{a}{b}$ and $\frac{c}{d}$:
 1. Find a common denominator $D = \text{lcm}(b, d)$.
 2. Convert both fractions: $\frac{a \cdot (D/b)}{D}$ and $\frac{c \cdot (D/d)}{D}$.
 3. Compare the resulting numerators.
+
+
+## Additional learning activities (draft)
+
+**Review status:** Independent human review is pending. These activities do not award certified mastery.
+
+### Prerequisite check
+
+A fraction compares equal-sized parts of the same whole. Explain why 1/2 and 2/4 mark the same point before comparing fractions.
+
+### Representation
+
+Draw two equal-length strips. Split the first into 4 equal parts and shade 3; split the second into 8 and shade 5. Splitting each fourth in half produces 6 shaded eighths without changing the first strip.
+
+### Complete a partly worked problem
+
+Complete: 2/3 = __/12 and 3/4 = __/12. Which is larger?
+
+Self-check: 2/3 = 8/12 and 3/4 = 9/12, so 2/3 < 3/4. Every piece now has the same size.
+
+### Independent practice
+
+1. Compare 5/6 and 7/9; include a reason.
+
+   Self-check: 5/6 = 15/18 and 7/9 = 14/18, so 5/6 > 7/9.
+
+2. Compare 4/6 and 2/3. What case did the first worked example not include?
+
+   Self-check: They are equal: 4/6 simplifies to 2/3. Comparison must include equality, not just less/greater.
+
+### Explain your reasoning
+
+Explain why multiplying both numerator and denominator by the same positive integer preserves the fraction. Your explanation should refer to subdividing parts or multiplying by 1.
+
+### Transfer to a new situation
+
+Bottle A contains 3/4 of a 1-litre bottle. Bottle B contains 5/8 of a 2-litre bottle. Which holds more liquid? Why does the original comparison no longer decide?
+
+Self-check: A contains 3/4 litre; B contains 10/8 = 5/4 litres. B holds more. Fraction comparisons describe equal wholes only when the whole units match.
+
+### Retrieve after a delay
+
+Tomorrow, without reopening the example, compare 7/12 and 3/5. A week later, compare 5/8 and 2/3 and explain why your method is valid.
+
+The learner-facing presentation and these activities are stored in `lesson.json` beside this file.

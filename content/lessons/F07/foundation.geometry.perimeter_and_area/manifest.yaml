@@ -1,0 +1,31 @@
+schema_version: 1
+id: foundation.geometry.perimeter_and_area.lesson
+version: 1.1.0
+locale: en
+status: draft
+course_id: F07
+unit_id: foundation.geometry.perimeter_and_area
+outcomes:
+  - Distinguish one-dimensional boundary length (perimeter) from two-dimensional region covering (area).
+  - Calculate exact perimeters and areas for rectangles and triangles without unit confusion.
+skill_ids:
+  - foundation.geometry.perimeter
+  - foundation.geometry.area
+prerequisites:
+  required:
+    - foundation.arithmetic.multiplication
+    - foundation.arithmetic.addition
+  recommended:
+    - foundation.fractions.compare
+exercise_refs:
+  - template_id: geometry.perimeter_and_area
+    template_version: 1.1.0
+    difficulty_band: 1
+assessment_dimensions:
+  - conceptual
+  - procedural
+  - transfer
+content_file: lesson.en.md
+license_id: axiom-original-content
+source_refs: []
+review_record_ids: []

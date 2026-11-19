@@ -1,0 +1,31 @@
+schema_version: 1
+id: foundation.percentages.benchmarks_and_parts.lesson
+version: 1.1.0
+locale: en
+status: draft
+course_id: F05
+unit_id: foundation.percentages.benchmarks_and_parts
+outcomes:
+  - Define percent as parts per hundred (p% = p/100).
+  - Calculate benchmark percentages (10%, 25%, 50%, 75%) and their combinations.
+skill_ids:
+  - foundation.percentages.definition
+  - foundation.percentages.benchmark_calc
+prerequisites:
+  required:
+    - foundation.decimals.place_value_fractions
+    - foundation.fractions.compare
+  recommended:
+    - foundation.arithmetic.whole.multiplication
+exercise_refs:
+  - template_id: percentages.benchmark_calc
+    template_version: 1.1.0
+    difficulty_band: 1
+assessment_dimensions:
+  - conceptual
+  - procedural
+  - transfer
+content_file: lesson.en.md
+license_id: axiom-original-content
+source_refs: []
+review_record_ids: []

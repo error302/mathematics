@@ -1,0 +1,31 @@
+schema_version: 1
+id: foundation.powers.scientific_notation.lesson
+version: 1.1.0
+locale: en
+status: draft
+course_id: F06
+unit_id: foundation.powers.scientific_notation
+outcomes:
+  - Express numbers in standard scientific notation m * 10^k where 1 <= |m| < 10.
+  - Multiply and divide numbers in scientific notation by combining significands and adding exponents.
+skill_ids:
+  - foundation.powers.scientific_notation
+  - foundation.powers.powers_of_ten
+prerequisites:
+  required:
+    - foundation.powers.integer_exponents
+    - foundation.decimals.place_value_fractions
+  recommended:
+    - foundation.arithmetic.multiplication
+exercise_refs:
+  - template_id: powers.scientific_notation
+    template_version: 1.1.0
+    difficulty_band: 1
+assessment_dimensions:
+  - conceptual
+  - procedural
+  - transfer
+content_file: lesson.en.md
+license_id: axiom-original-content
+source_refs: []
+review_record_ids: []

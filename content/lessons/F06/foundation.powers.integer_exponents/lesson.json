@@ -1,0 +1,64 @@
+{
+  "id": "foundation.powers.integer_exponents",
+  "courseId": "F06",
+  "title": "Integer Exponents and Powers",
+  "subtitle": "Repeated multiplication, zero power, and reciprocal negative powers.",
+  "templateId": "powers.integer_eval",
+  "challenge": "A digital computer uses memory blocks that double at each address line: 2, 4, 8, 16... If address line 0 corresponds to 2^0, how many bytes does 2^0 represent, and why is 2^(-3) not negative?",
+  "predictionPrompt": "What is the exact mathematical value of 5^(-2)?",
+  "predictionOptions": [
+    {
+      "label": "-25",
+      "value": "-25"
+    },
+    {
+      "label": "-10",
+      "value": "-10"
+    },
+    {
+      "label": "1/25",
+      "value": "1_25",
+      "isCorrect": true
+    },
+    {
+      "label": "1/10",
+      "value": "1_10"
+    }
+  ],
+  "formalDefinition": "For any non-zero base b and positive integer n, b^n = b * b * ... * b (n factors). The zero exponent is defined as b^0 = 1, ensuring b^n / b = b^(n-1) holds consistently. A negative exponent denotes the multiplicative inverse: b^(-n) = 1 / b^n.",
+  "workedExample": {
+    "steps": [
+      "Identify the base and exponent: in 3^(-2), base b = 3 and exponent e = -2.",
+      "Apply the negative exponent law: b^(-n) = 1 / b^n, giving 3^(-2) = 1 / 3^2.",
+      "Evaluate the positive power in the denominator: 3^2 = 3 * 3 = 9.",
+      "Form the final rational fraction: 1/9."
+    ],
+    "result": "3^(-2) = 1/9."
+  },
+  "misconception": {
+    "mistake": "Believing that a negative exponent makes the whole expression negative, like 4^(-2) = -16 or -8.",
+    "correction": "The negative sign in an exponent acts on the operation (inverting multiplication into division), not on the magnitude of the number. 4^(-2) = 1 / 4^2 = 1/16, which is strictly positive."
+  },
+  "reflection": "Exponents track repeated operations: positive exponents count repeated multiplications, zero counts zero multiplications (yielding the multiplicative identity 1), and negative exponents count repeated divisions (multiplications by the reciprocal).",
+  "prerequisiteCheck": "Explain what 2^3 means and why dividing 2^3 by 2 gives 2^2.",
+  "representation": "Consider a sequence dividing by b at each step: ... 8 (2^3), 4 (2^2), 2 (2^1), 1 (2^0), 1/2 (2^-1), 1/4 (2^-2), 1/8 (2^-3). Every decrement of the exponent divides by 2.",
+  "faded": {
+    "prompt": "Evaluate 2^(-4): Apply the reciprocal rule 2^(-4) = 1 / 2^4 = 1 / __.",
+    "solution": "1/16."
+  },
+  "independent": [
+    {
+      "prompt": "Evaluate 7^0.",
+      "solution": "1."
+    },
+    {
+      "prompt": "Simplify (3^4 * 3^3) / 3^5 using exponent addition and subtraction.",
+      "solution": "3^(4 + 3 - 5) = 3^2 = 9."
+    }
+  ],
+  "explanation": "Why must 0^0 remain indeterminate rather than assigned 1 or 0?",
+  "transfer": {
+    "prompt": "A radioactive isotope halves its mass every day: m(t) = m_0 * 2^(-t). If the initial mass is 64 grams, what is the mass after 5 days?",
+    "solution": "m(5) = 64 * 2^(-5) = 64 * (1/32) = 2 grams."
+  }
+}

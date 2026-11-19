@@ -1,0 +1,31 @@
+schema_version: 1
+id: secondary.geometry.circles_and_theorems.lesson
+version: 1.1.0
+locale: en
+status: draft
+course_id: S04
+unit_id: secondary.geometry.circles_and_theorems
+outcomes:
+  - Apply the Inscribed Angle Theorem (angle ACB = 1/2 angle AOB) and Thales's Theorem to prove angle relationships in circles.
+  - Complete the square on x^2 + y^2 + Dx + Ey + F = 0 to find the center and squared radius R^2, and apply the Power of a Point (Intersecting Chords) Theorem.
+skill_ids:
+  - secondary.geometry.inscribed_angles_and_chords
+  - secondary.geometry.circle_locus_equation
+prerequisites:
+  required:
+    - secondary.geometry.slope_and_perpendicularity
+    - secondary.algebra2.completing_the_square
+  recommended:
+    - foundation.geometry.angles_triangles
+exercise_refs:
+  - template_id: sec_geom.circle_equations_theorems
+    template_version: 1.1.0
+    difficulty_band: 1
+assessment_dimensions:
+  - conceptual
+  - procedural
+  - transfer
+content_file: lesson.en.md
+license_id: axiom-original-content
+source_refs: []
+review_record_ids: []

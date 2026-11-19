@@ -1,0 +1,85 @@
+.tutor-academy { max-width: 1040px; }
+.tutor-heading h2 { font-family: var(--font-serif); font-size: clamp(1.9rem,3vw,2.7rem); line-height: 1.2; font-weight: 400; margin: .5rem 0 1rem; }
+.tutor-heading > p { color: var(--text-secondary); max-width: 65ch; }
+.tutor-view-switch { display: flex; gap: .6rem; margin: 1.5rem 0; }
+.tutor-path { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: .6rem; padding: 1rem 0 1.8rem; }
+.tutor-path button { display: flex; align-items: center; gap: .7rem; padding: .75rem; min-height: 52px; background: var(--bg-surface); color: var(--text-secondary); border: 1px solid var(--border-color); border-radius: 5px; cursor: pointer; font-size: .85rem; text-align: left; }
+.tutor-path button.current { border-color: var(--accent-gold); color: var(--accent-gold); }
+.tutor-path button span { border: 1px solid var(--border-color); border-radius: 50%; min-width: 1.65rem; height: 1.65rem; display: grid; place-items: center; }
+.tutor-lesson { border-top: 1px solid var(--border-color); padding-top: 1.8rem; }
+.tutor-lesson > h3 { font-family: var(--font-serif); font-size: 1.9rem; font-weight: 400; margin: .4rem 0 .8rem; scroll-margin-top: 1.5rem; }
+.tutor-lesson > p { max-width: 75ch; color: var(--text-secondary); }
+.tutor-stage-count { font-size: .8rem; color: var(--text-muted); }
+.tutor-phase-switch { display: flex; flex-wrap: wrap; gap: .65rem; margin: 1.5rem 0; }
+.tutor-phase-switch button[aria-pressed=true] { color: var(--accent-gold); border-color: var(--accent-gold); }
+.tutor-demonstration { display: grid; grid-template-columns: minmax(0, .85fr) minmax(0,1fr); gap: 2rem; background: var(--bg-surface); border-radius: 8px; padding: 1.5rem; }
+.tutor-example-equation { font-family: var(--font-serif); font-size: 1.45rem; margin-bottom: .9rem; text-align: center; }
+.tutor-board { display: flex; justify-content: center; gap: .8rem; padding: 1rem 1rem .5rem; background: #10202a; border: 1px solid #486171; border-radius: 7px; max-width: 420px; margin: auto; }
+.tutor-board.one-rod { max-width: 220px; }
+.tutor-rod { border: 0; min-width: 0; width: 50%; max-width: 175px; text-align: center; }
+.tutor-board.one-rod .tutor-rod { width: 100%; }
+.tutor-rod legend { color: var(--text-primary); font-size: .95rem; margin: auto; padding-bottom: .4rem; }
+.tutor-place-weight { font-size: .7rem; color: var(--text-secondary); margin-bottom: .6rem; }
+.tutor-upper-deck { height: 76px; position: relative; }
+.tutor-lower-deck { height: 178px; position: relative; }
+.tutor-wire { width: 3px; background: #7995a1; position: absolute; height: 100%; left: calc(50% - 1.5px); top: 0; }
+.tutor-middle-bar { height: 6px; background: #7890a5; border-top: 2px solid #c2d0d7; }
+.tutor-rod.highlighted .tutor-middle-bar { background: var(--accent-gold); border-color: #f3d79f; }
+.tutor-bead { position: absolute; left: calc(50% - 34px); width: 68px; height: 26px; border-radius: 13px / 7px; display: grid; place-items: center; font-size: .78rem; font-weight: 700; border: 1px solid #92a6b1; background: #314955; color: #edf1f5; z-index: 1; }
+button.tutor-bead { cursor: pointer; }
+.tutor-bead.counted { background: var(--accent-gold); color: #0d1521; border-color: #f3d79f; }
+.tutor-bead.upper { top: 0; transform: translateY(4px); }
+.tutor-bead.upper.counted { transform: translateY(50px); }
+.tutor-bead.lower { top: 0; }
+.tutor-bead { transition: transform 240ms ease, background-color 180ms ease; }
+.tutor-count-description { font-size: .74rem; color: var(--text-secondary); padding-top: .5rem; }
+.tutor-rod-selector { display: block; color: var(--text-secondary); font-size: .75rem; margin-top: .8rem; }
+.tutor-rod-selector select { display: block; width: 100%; margin: .35rem 0; font-size: .85rem; }
+.tutor-bar-legend { font-size: .8rem; text-align: center; margin: .9rem auto .5rem; color: var(--text-secondary); max-width: 42ch; }
+.tutor-visible-value { text-align: center; font-variant-numeric: tabular-nums; color: var(--text-secondary); }
+.tutor-visible-value strong { color: var(--accent-gold); font-size: 1.4rem; margin-left: .5rem; }
+.tutor-coach { align-self: center; }
+.tutor-move-caption { font-size: 1.2rem; margin: .8rem 0; line-height: 1.75; }
+.tutor-coach-note { font-size: .87rem; color: var(--text-secondary); margin-bottom: 1.25rem; }
+.tutor-move-buttons { display: flex; gap: .65rem; flex-wrap: wrap; margin: 1rem 0; }
+.tutor-move-buttons .axiom-btn { font-size: .9rem; }
+.tutor-practice { background: var(--bg-surface); padding: 1.5rem; border-radius: 8px; }
+.tutor-practice-prompt { font-size: 1.2rem; font-weight: 500; line-height: 1.75; margin-bottom: 1.2rem; }
+.tutor-answer-form { max-width: 600px; margin: 1.2rem auto 0; }
+.tutor-answer-form > p { color: var(--text-secondary); font-size: .9rem; }
+.tutor-answer-form label { display: block; font-size: .95rem; }
+.tutor-answer-form input { margin-top: .5rem; text-align: left; }
+.tutor-fading-controls { margin-bottom: 1.2rem; }
+.tutor-fading-controls > p { color: var(--text-secondary); font-size: .9rem; margin-bottom: .5rem; }
+.tutor-fading-controls button[aria-pressed=true] { border-color: var(--accent-gold); color: var(--accent-gold); }
+.tutor-hidden-beads { border: 1px dashed #7890a5; padding: 2.5rem 1.5rem; text-align: center; border-radius: 7px; max-width: 600px; margin: auto; }
+.tutor-hidden-beads svg { color: var(--accent-gold); }
+.tutor-hidden-beads h4 { margin: .7rem 0; }
+.tutor-hidden-beads p { color: var(--text-secondary); max-width: 48ch; margin: auto; }
+.tutor-result { border-left: 3px solid var(--accent-gold); padding: 1rem 1.25rem; background: var(--bg-elevated); margin-top: 1.3rem; }
+.tutor-result.correct { border-color: var(--accent-success); }
+.tutor-result.incorrect { border-color: var(--accent-error); }
+.tutor-result p { margin-top: .6rem; font-size: .9rem; }
+.tutor-hint-actions { display: flex; flex-wrap: wrap; gap: .7rem 1.5rem; margin-top: 1rem; }
+.tutor-hint-actions button { font-size: .85rem; }
+.tutor-worked-help { border-top: 1px solid var(--border-color); padding-top: 1rem; margin-top: .75rem; }
+.tutor-worked-help ol { padding-left: 1.3rem; margin: .75rem 0; }
+.tutor-worked-help li { margin: .7rem 0; color: var(--text-secondary); }
+.tutor-worked-help strong { color: var(--text-primary); font-weight: 500; }
+.tutor-worked-help > p { font-size: .9rem; }
+.tutor-readiness { margin-top: 1.5rem; font-size: .9rem; }
+.tutor-readiness summary { cursor: pointer; min-height: 44px; padding: .65rem 0; color: var(--accent-gold); }
+.tutor-readiness p { color: var(--text-secondary); max-width: 75ch; margin: .7rem 0; }
+/* Correct legacy lower-bead geometry: the first counted bead meets the bar. */
+.axiom-lower-deck { height: 240px; }
+.axiom-lower-bead:nth-child(2) { top: 110px; bottom: auto; }
+.axiom-lower-bead:nth-child(3) { top: 140px; bottom: auto; }
+.axiom-lower-bead:nth-child(4) { top: 170px; bottom: auto; }
+.axiom-lower-bead:nth-child(5) { top: 200px; bottom: auto; }
+.axiom-lower-bead.engaged:nth-child(2) { top: 0; bottom: auto; }
+.axiom-lower-bead.engaged:nth-child(3) { top: 30px; bottom: auto; }
+.axiom-lower-bead.engaged:nth-child(4) { top: 60px; bottom: auto; }
+.axiom-lower-bead.engaged:nth-child(5) { top: 90px; bottom: auto; }
+.axiom-upper-bead.engaged { top: 62px; }
+@media(max-width:700px) { .tutor-path { grid-template-columns: repeat(2,minmax(0,1fr)); }.tutor-demonstration { grid-template-columns: minmax(0,1fr); gap: 1.25rem; }.tutor-demonstration,.tutor-practice { padding: 1.1rem; }.tutor-path button { padding: .6rem; font-size: .8rem; }.tutor-move-caption { font-size: 1.05rem; }.tutor-view-switch { flex-wrap: wrap; } }
+@media(prefers-reduced-motion:reduce) { .tutor-bead { transition: none; } }

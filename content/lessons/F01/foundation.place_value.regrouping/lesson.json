@@ -1,0 +1,63 @@
+{
+  "id": "foundation.place_value.regrouping",
+  "courseId": "F01",
+  "title": "Base-10 Regrouping & Trading",
+  "subtitle": "Trade ten ones for one ten, or break one ten into ten ones.",
+  "templateId": "place_value.decompose",
+  "challenge": "You have 14 single unit blocks. How do you express this using standard base-10 rods and units?",
+  "predictionPrompt": "Does regrouping 10 units into 1 ten change the total quantity?",
+  "predictionOptions": [
+    {
+      "label": "Yes, 1 ten is greater than 10 units",
+      "value": "greater"
+    },
+    {
+      "label": "No, 1 ten is exactly equal to 10 units",
+      "value": "equal",
+      "isCorrect": true
+    },
+    {
+      "label": "Yes, it becomes smaller",
+      "value": "smaller"
+    }
+  ],
+  "formalDefinition": "The base-10 invariant: 10 * 10^k = 1 * 10^(k+1). Regrouping preserves exact numerical equality while maintaining the canonical rule that no column contains more than 9 units.",
+  "workedExample": {
+    "steps": [
+      "14 units = 10 units + 4 units.",
+      "Trade 10 units for 1 ten rod: 1 ten + 4 units.",
+      "Write in positional columns: tens = 1, units = 4."
+    ],
+    "result": "Total = 14."
+  },
+  "misconception": {
+    "mistake": "Writing 14 in a single column.",
+    "correction": "Base-10 positional columns can hold only digits 0 through 9. Ten units must roll into the next column."
+  },
+  "reflection": "Regrouping is reversible: bundling 10 units into 1 ten is carrying; unbundling 1 ten into 10 units is borrowing.",
+  "prerequisiteCheck": "One ten is exactly ten units. Regrouping changes the description but preserves the number.",
+  "representation": "Build 14 from fourteen units, then exchange ten units for one ten rod. Both collections have the same total: 1 ten + 4 units.",
+  "faded": {
+    "prompt": "27 units = __ tens + __ units. 3 tens + 16 units = __ tens + __ units.",
+    "solution": "27 units = 2 tens + 7 units; 3 tens + 16 units = 4 tens + 6 units."
+  },
+  "independent": [
+    {
+      "prompt": "Give 53 as tens/units, then exchange a ten into units.",
+      "solution": "5 tens + 3 units = 4 tens + 13 units."
+    },
+    {
+      "prompt": "Is 2 hundreds + 13 tens + 4 units equal to 234? Explain.",
+      "solution": "No; it is 200 + 130 + 4 = 334."
+    }
+  ],
+  "explanation": "Why does carrying one ten not add an extra ten to the original quantity? Explain the exchange rather than reciting the algorithm.",
+  "transfer": {
+    "prompt": "You must remove 8 single beads from 32 stored as 3 bundles of ten and 2 singles. Show the exchange first.",
+    "solution": "32 = 2 tens + 12 singles. Remove 8 singles to leave 2 tens + 4 singles = 24."
+  },
+  "retrieval": "Tomorrow express 41 as 3 tens and some units. A week later explain both bundling and unbundling using 106.",
+  "contentStatus": "draft",
+  "reviewNote": "Expanded prototype lesson. Independent mathematical, pedagogical, and accessibility review is pending.",
+  "version": "1.1.0"
+}

@@ -1,0 +1,27 @@
+schema_version: 1
+id: foundation.fractions.equivalent.lesson
+version: 1.1.0
+locale: en
+status: draft
+course_id: F04
+unit_id: foundation.fractions.equivalent
+outcomes:
+  - "Model fraction equivalence by scaling both numerator and denominator by the same non-zero integer factor."
+  - "Demonstrate that equivalent fractions represent the exact same point on the rational number line."
+skill_ids:
+  - foundation.fractions.equivalence
+prerequisites:
+  required:
+    - foundation.fractions.unit_fractions
+  recommended: []
+exercise_refs:
+  - template_id: fractions.equivalent.find
+    template_version: 1.1.0
+    difficulty_band: 1
+assessment_dimensions:
+  - conceptual
+  - procedural
+content_file: lesson.en.md
+license_id: axiom-original-content
+source_refs: []
+review_record_ids: []

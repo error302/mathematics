@@ -1,0 +1,29 @@
+{
+  "id": "secondary.calculus.limits_and_continuity",
+  "course_id": "S07",
+  "title": "Limits, Removable Discontinuities & Continuity",
+  "status": "draft",
+  "review_status": "independent_review_pending",
+  "version": "1.1.0",
+  "outcomes": [
+    "Evaluate limits of rational functions with removable discontinuities by factoring and canceling (x - r) for x != r.",
+    "Determine exact horizontal asymptotes and limits at infinity of equal-degree rational functions over Q.",
+    "Solve for the exact rational parameter k that makes a piecewise or rational function continuous at a point x = a."
+  ],
+  "prerequisites": [
+    "secondary.functions.domains_and_evaluation",
+    "secondary.algebra2.polynomials_and_factoring"
+  ],
+  "sections": {
+    "intuition": "The limit lim_{x→a} f(x) asks what value f(x) approaches as x gets arbitrarily close to a, without ever requiring x to equal a. When direct substitution produces the indeterminate form 0/0 in a rational expression like (x - r)(x - s)/(x - r), the factor (x - r) is non-zero for every x ≠ r and can be canceled cleanly, revealing the exact height (r - s) of the hole on the graph. A function is continuous at x = a when the hole is filled—that is, when f(a) equals lim_{x→a} f(x).",
+    "formal_definition": "1. Removable Discontinuity Limit: If P(r) = Q(r) = 0 and P(x) = (x - r)P₁(x), Q(x) = (x - r)Q₁(x) with Q₁(r) ≠ 0, then lim_{x→r} P(x)/Q(x) = lim_{x→r} P₁(x)/Q₁(x) = P₁(r)/Q₁(r).\n2. Limit at Infinity (Equal Degree): For a, d ≠ 0,\nlim_{x→∞} (ax² + bx + c)/(dx² + ex + f) = lim_{x→∞} (a + b/x + c/x²)/(d + e/x + f/x²) = a/d ∈ ℚ.\n3. Continuity at x = a: f is continuous at a if and only if f(a) is defined, lim_{x→a} f(x) exists, and lim_{x→a} f(x) = f(a).",
+    "worked_example": "Evaluate lim_{x→5} (x² - 3x - 10)/(x - 5).\n1. Direct substitution at x = 5 gives (25 - 15 - 10)/(5 - 5) = 0/0 (indeterminate).\n2. Factor the quadratic numerator: x² - 3x - 10 = (x - 5)(x + 2).\n3. Since x → 5 means x ≠ 5, cancel (x - 5): (x - 5)(x + 2)/(x - 5) = x + 2.\n4. Take the limit by substituting x = 5 into the continuous polynomial x + 2: 5 + 2 = 7.",
+    "common_misconceptions": [
+      "Concluding that a 0/0 indeterminate form equals 0 or 1 without factoring and canceling the common root factor.",
+      "Using the ratio of constant terms c/f instead of the ratio of leading coefficients a/d when taking a limit as x → ∞.",
+      "Setting f(a) = 0 instead of f(a) = lim_{x→a} f(x) when solving for a continuity parameter."
+    ]
+  },
+  "template_id": "calculus.limits_rational",
+  "template_version": "1.1.0"
+}

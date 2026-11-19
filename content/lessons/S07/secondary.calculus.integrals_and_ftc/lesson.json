@@ -1,0 +1,29 @@
+{
+  "id": "secondary.calculus.integrals_and_ftc",
+  "course_id": "S07",
+  "title": "Definite Integrals & The Fundamental Theorem of Calculus",
+  "status": "draft",
+  "review_status": "independent_review_pending",
+  "version": "1.1.0",
+  "outcomes": [
+    "Evaluate definite integrals of linear functions using antiderivatives and the Fundamental Theorem of Calculus.",
+    "Compute exact rational definite integrals of quadratic polynomials over Q using the reverse power rule int x^2 dx = x^3 / 3.",
+    "Apply the Net Change Theorem s(t) = s(0) + int_0^t v(tau) dtau to recover exact position from velocity and initial value."
+  ],
+  "prerequisites": [
+    "secondary.calculus.derivatives_and_tangents",
+    "foundation.geometry.perimeter_and_area"
+  ],
+  "sections": {
+    "intuition": "How does signed area under a rate-of-change curve y = f(x) connect to derivatives? If A(x) = ∫₀^x f(t) dt tracks the accumulated area up to x, advancing x by a tiny width Δx adds a thin strip of area approximately f(x)·Δx, so A'(x) = f(x). Therefore, accumulation and differentiation are inverse operations! To compute the exact definite integral ∫_a^b f(x) dx, we find any antiderivative F(x) satisfying F'(x) = f(x) and evaluate the net change F(b) - F(a).",
+    "formal_definition": "1. Reverse Power Rule for Antiderivatives: For integer n ≥ 0, an antiderivative of x^n is x^(n+1)/(n + 1) because d/dx[x^(n+1)/(n + 1)] = x^n.\n2. Fundamental Theorem of Calculus (Evaluation Theorem): If f is continuous on [a, b] and F'(x) = f(x), then\n∫_a^b f(x) dx = [F(x)]_a^b = F(b) - F(a).\n3. Net Change Theorem: Given velocity v(t) = s'(t) and initial position s(0),\ns(t) = s(0) + ∫₀^t v(τ) dτ.",
+    "worked_example": "Evaluate ∫₀² (4x² + 3) dx over ℚ.\n1. Find an antiderivative using the reverse power rule: F(x) = (4/3)x³ + 3x.\n2. Evaluate at the upper limit x = 2: F(2) = (4/3)(2³) + 3(2) = 32/3 + 6 = 32/3 + 18/3 = 50/3.\n3. Evaluate at the lower limit x = 0: F(0) = 0.\n4. Subtract: F(2) - F(0) = 50/3.",
+    "common_misconceptions": [
+      "Forgetting to divide by the new exponent (n + 1) when antidifferentiating x^n (e.g., antidifferentiating ax² as ax³ instead of (a/3)x³).",
+      "Treating a constant term c as c instead of c·x in the antiderivative.",
+      "Reporting only the net displacement ∫₀^t v(τ) dτ without adding the initial value s(0)."
+    ]
+  },
+  "template_id": "calculus.definite_integral_ftc",
+  "template_version": "1.1.0"
+}

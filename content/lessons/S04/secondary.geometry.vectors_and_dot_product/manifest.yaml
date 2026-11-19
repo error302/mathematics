@@ -1,0 +1,31 @@
+schema_version: 1
+id: secondary.geometry.vectors_and_dot_product.lesson
+version: 1.1.0
+locale: en
+status: draft
+course_id: S04
+unit_id: secondary.geometry.vectors_and_dot_product
+outcomes:
+  - Compute the scalar dot product u . v = u_1 v_1 + u_2 v_2 of planar vectors and determine exact parameters for orthogonality (u . v = 0).
+  - Compute the exact scalar projection comp_v(u) = (u . v) / ||v|| of a vector u onto a vector v.
+skill_ids:
+  - secondary.geometry.planar_vectors_and_orthogonality
+  - secondary.geometry.scalar_projection
+prerequisites:
+  required:
+    - secondary.geometry.slope_and_perpendicularity
+    - foundation.geometry.coordinate_distance
+  recommended:
+    - secondary.geometry.inscribed_angles_and_chords
+exercise_refs:
+  - template_id: sec_geom.planar_vectors_dot
+    template_version: 1.1.0
+    difficulty_band: 1
+assessment_dimensions:
+  - conceptual
+  - procedural
+  - transfer
+content_file: lesson.en.md
+license_id: axiom-original-content
+source_refs: []
+review_record_ids: []

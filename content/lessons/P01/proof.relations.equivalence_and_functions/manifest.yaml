@@ -1,0 +1,37 @@
+schema_version: 1
+id: "proof.relations.equivalence_and_functions.lesson"
+version: "1.1.0"
+locale: "en"
+status: "draft"
+course_id: "P01"
+unit_id: "proof.relations.equivalence_and_functions"
+outcomes:
+  - "Identify canonical representatives r in {0, ..., m - 1} of modular congruence classes [a]_m for positive and negative integers."
+  - "Count exact injective (one-to-one) functions between finite sets using falling factorials n! / (n - k)!."
+  - "Relate equivalence relations R on S to partitions of S and compute |R| = sum |C_i|^2 across equivalence classes."
+skill_ids:
+  - "proof.relations.equivalence_and_functions"
+prerequisites:
+  required:
+    - "proof.sets.operations_and_inclusion_exclusion"
+    - "foundation.integers.number_line"
+  recommended:
+    - "secondary.functions.domains_and_evaluation"
+exercise_refs:
+  - template_id: "proof.relations_and_bijections"
+    template_version: "1.1.0"
+    difficulty_band: 1
+  - template_id: "proof.relations_and_bijections"
+    template_version: "1.1.0"
+    difficulty_band: 2
+  - template_id: "proof.relations_and_bijections"
+    template_version: "1.1.0"
+    difficulty_band: 3
+assessment_dimensions:
+  - "conceptual"
+  - "procedural"
+  - "transfer"
+content_file: "lesson.en.md"
+license_id: "axiom-original-content"
+source_refs: []
+review_record_ids: []

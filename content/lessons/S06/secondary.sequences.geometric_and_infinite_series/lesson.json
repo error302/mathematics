@@ -1,0 +1,29 @@
+{
+  "id": "secondary.sequences.geometric_and_infinite_series",
+  "course_id": "S06",
+  "title": "Geometric Sequences & Convergent Infinite Series",
+  "status": "draft",
+  "review_status": "independent_review_pending",
+  "version": "1.1.0",
+  "outcomes": [
+    "Compute the exact n-th term of a geometric progression using g_n = g_1 * r^(n - 1).",
+    "Evaluate finite geometric series sums exactly using S_n = a(r^n - 1) / (r - 1).",
+    "Calculate the exact rational sum S_inf = a / (1 - r) of a convergent infinite geometric series when |r| < 1."
+  ],
+  "prerequisites": [
+    "secondary.sequences.arithmetic_and_series",
+    "secondary.algebra2.exponentials_and_logarithms"
+  ],
+  "sections": {
+    "intuition": "Where an arithmetic sequence adds a fixed step d, a geometric sequence multiplies by a fixed non-zero ratio r at each step: a, ar, ar², ar³, ... Multiplying the finite sum S_n = a + ar + ... + ar^(n-1) by r shifts every power up by one, so subtracting S_n from r·S_n cancels all middle terms and leaves (r - 1)S_n = a(r^n - 1). When |r| < 1, the high power r^n shrinks toward 0 as n grows without bound, causing the partial sums to converge to the exact rational limit S_∞ = a / (1 - r).",
+    "formal_definition": "A sequence (g_n)_{n≥1} is geometric with first term a = g₁ and common ratio r ≠ 0 if g_{n+1} = r·g_n for all n ≥ 1. Its explicit formula is g_n = a·r^(n-1). For r ≠ 1, the n-th partial sum is S_n = ∑_{k=1}^n a·r^(k-1) = a(r^n - 1)/(r - 1) = a(1 - r^n)/(1 - r). If |r| < 1, the infinite series converges to S_∞ = lim_{n→∞} S_n = a / (1 - r).",
+    "worked_example": "Find the sum S₄ of the first 4 terms of the geometric series with a = 3 and r = 2, and find the infinite sum S_∞ when a = 6 and r = 1/3.\n1. Finite sum (a = 3, r = 2, n = 4): S₄ = 3(2⁴ - 1)/(2 - 1) = 3(16 - 1)/1 = 45.\n2. Infinite sum (a = 6, r = 1/3): Since |1/3| < 1, 1 - r = 2/3, so S_∞ = 6 / (2/3) = 6 × 3/2 = 9.",
+    "common_misconceptions": [
+      "Using exponent n instead of (n - 1) in the n-th term formula g_n = a·r^(n-1).",
+      "Multiplying a by r before raising to the power (n - 1), computing (a·r)^(n-1) instead of a·(r^(n-1)).",
+      "Forgetting to divide by (r - 1) in the finite sum formula S_n = a(r^n - 1) / (r - 1), or dividing by (1 + r) instead of (1 - r) for positive r in S_∞."
+    ]
+  },
+  "template_id": "sequences.geometric_and_infinite",
+  "template_version": "1.1.0"
+}

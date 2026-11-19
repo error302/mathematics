@@ -1,0 +1,65 @@
+{
+  "id": "foundation.learning.problem_reading",
+  "courseId": "F00",
+  "title": "Reading a mathematical problem",
+  "subtitle": "Learn how to parse words into quantities, define unknowns, and avoid misleading keyword traps.",
+  "templateId": "learning.problem_reading",
+  "challenge": "Why does searching for keywords like 'more' or 'times' often lead to incorrect mathematical equations?",
+  "predictionPrompt": "A container holds 35 litres and has a total capacity of 80 litres. How many litres x must be added to fill it?",
+  "predictionOptions": [
+    {
+      "label": "x = 80 - 35 = 45 litres",
+      "value": "45",
+      "isCorrect": true
+    },
+    {
+      "label": "x = 80 + 35 = 115 litres",
+      "value": "115"
+    },
+    {
+      "label": "x = 80 / 35 = 2.28 litres",
+      "value": "2.28"
+    }
+  ],
+  "formalDefinition": "Problem reading is the disciplined extraction of known constants, unknown quantities, and operational relationships from natural language into a precise mathematical model.",
+  "workedExample": {
+    "steps": [
+      "Identify the total capacity: C = 80 litres.",
+      "Identify the current amount: A = 35 litres.",
+      "Define the unknown: let x be the volume of water still needed.",
+      "Set up the relationship: current amount + added amount = total capacity, so 35 + x = 80.",
+      "Isolate the unknown: x = 80 - 35 = 45."
+    ],
+    "result": "x = 45 litres."
+  },
+  "misconception": {
+    "mistake": "Mechanical keyword translation (e.g. assuming 'added' always means you add the two given numbers together: 80 + 35 = 115).",
+    "correction": "Always establish the underlying structure first: what is the whole, what are the parts, and which part is unknown?"
+  },
+  "reflection": "Mathematicians do not rush into computation. They first map out the relationships between quantities.",
+  "prerequisiteCheck": "Basic reading literacy and understanding that symbols represent measurable quantities.",
+  "representation": "Imagine a 80-litre vessel partially shaded up to 35. The unshaded volume is x, satisfying 35 + x = 80.",
+  "faded": {
+    "prompt": "A library had 120 books. After loaning out b books, 45 books remained. Write the equation relating 120, b, and 45.",
+    "solution": "120 - b = 45 (or 45 + b = 120), so b = 120 - 45 = 75 books."
+  },
+  "independent": [
+    {
+      "prompt": "Maya has 14 stamps. Liam has 3 times as many stamps as Maya. How many stamps does Liam have?",
+      "solution": "Let L be Liam's stamps. L = 3 * 14 = 42 stamps."
+    },
+    {
+      "prompt": "If Liam gave 10 stamps back to Maya, how many would each have?",
+      "solution": "Maya: 14 + 10 = 24; Liam: 42 - 10 = 32."
+    }
+  ],
+  "explanation": "Explain why identifying what the unknown variable represents is the essential first step before writing any symbols.",
+  "transfer": {
+    "prompt": "A rope 90 metres long is cut into two pieces such that one piece is 20 metres longer than the other. Find the length of the shorter piece.",
+    "solution": "Let s be the shorter piece. The longer is s + 20. Then s + (s + 20) = 90, so 2s + 20 = 90, 2s = 70, s = 35 metres."
+  },
+  "retrieval": "Tomorrow, describe the difference between a known constant and an unknown variable in your own words without notes.",
+  "contentStatus": "draft",
+  "reviewNote": "Pilot draft lesson for Course F00. Independent mathematical and accessibility review pending.",
+  "version": "1.1.0"
+}

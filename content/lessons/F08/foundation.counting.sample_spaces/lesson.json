@@ -1,0 +1,66 @@
+{
+  "id": "foundation.counting.sample_spaces",
+  "courseId": "F08",
+  "title": "Sample Spaces, Permutations, and Combinations",
+  "subtitle": "Decision trees, the multiplication principle, ordered podium arrangements, and unordered committees.",
+  "templateId": "counting.permutations_combinations",
+  "challenge": "Suppose 6 runners compete in a race. Awarding Gold, Silver, and Bronze medals produces 6 * 5 * 4 = 120 different podiums. Yet selecting a 3-person relay squad with equal roles from those same 6 runners produces only 20 squads. Why are there 6 times fewer unordered squads than ordered podiums?",
+  "predictionPrompt": "A lock code consists of 1 letter from {A, B, C, D} followed by 1 digit from {1, 2, 3}. How many distinct 2-character lock codes exist?",
+  "predictionOptions": [
+    {
+      "label": "7 (4 + 3)",
+      "value": "7"
+    },
+    {
+      "label": "12 (4 * 3)",
+      "value": "12",
+      "isCorrect": true
+    },
+    {
+      "label": "16 (4 * 4)",
+      "value": "16"
+    },
+    {
+      "label": "9 (3 * 3)",
+      "value": "9"
+    }
+  ],
+  "formalDefinition": "Fundamental Multiplication Principle: If stage 1 has n_1 outcomes and for each outcome stage 2 has n_2 outcomes, the composite experiment has n_1 * n_2 outcomes. An ordered k-permutation from n distinct items without replacement has P(n, k) = n(n - 1)...(n - k + 1) = n! / (n - k)! outcomes. An unordered k-combination (subset of size k) collapses all k! orderings of the same k items into 1 subset: C(n, k) = P(n, k) / k! = n! / (k!(n - k)!).",
+  "workedExample": {
+    "steps": [
+      "Task: Count how many unordered 3-person committees can be chosen from 7 eligible candidates.",
+      "First count the ordered selections of 3 people: 7 choices for the 1st slot, 6 for the 2nd, and 5 for the 3rd: P(7, 3) = 7 * 6 * 5 = 210.",
+      "Recognize that any specific trio {A, B, C} was counted 3! = 3 * 2 * 1 = 6 times across those 210 ordered lists.",
+      "Divide by 3! = 6 to remove duplicate orderings: C(7, 3) = 210 / 6 = 35."
+    ],
+    "result": "35 distinct committees."
+  },
+  "misconception": {
+    "mistake": "Adding stage possibilities instead of multiplying them, or forgetting to divide by k! when order does not matter.",
+    "correction": "Each branch of the first choice spawns a full copy of the second choice's branches, so sequential independent stages multiply. When selecting an unordered subset of size k, divide the ordered permutation count by k! so each subset is counted once."
+  },
+  "reflection": "Division by k! is the exact mathematical bridge between ordered sequences (permutations) and unordered sets (combinations).",
+  "prerequisiteCheck": "If a tree has 4 main branches and each main branch splits into 5 twigs, how many twigs are there in total?",
+  "representation": "Draw a branching decision tree: 4 branches at level 1, each splitting into 3 branches at level 2, yielding 4 * 3 = 12 leaves.",
+  "faded": {
+    "prompt": "How many ordered 2-person leadership pairs (President, Vice-President) can be chosen from 8 members? There are 8 choices for President and __ choices for Vice-President, giving 8 * __ = 56 pairs.",
+    "solution": "7."
+  },
+  "independent": [
+    {
+      "prompt": "A meal includes 1 of 4 soups, 1 of 5 entrees, and 1 of 3 desserts. How many distinct meals can be ordered?",
+      "solution": "4 * 5 * 3 = 60 distinct meals."
+    },
+    {
+      "prompt": "How many unordered 2-person partner teams can be formed from 9 students?",
+      "solution": "C(9, 2) = (9 * 8) / 2! = 72 / 2 = 36 teams."
+    }
+  ],
+  "explanation": "Why does C(n, k) always equal C(n, n - k)? Explain in terms of choosing which items to include versus which items to leave behind.",
+  "transfer": {
+    "prompt": "In a league of 8 chess players, every player plays exactly one match against every other player. How many total matches are played?",
+    "solution": "Each match corresponds to an unordered pair of 2 players chosen from 8: C(8, 2) = (8 * 7) / 2 = 28 matches."
+  },
+  "retrieval": "State the formula for P(n, k) and explain why C(n, k) = P(n, k) / k!.",
+  "reviewNote": "Draft foundation lesson. Exact calculations verified by Rust engine."
+}

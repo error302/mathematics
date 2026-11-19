@@ -35,3 +35,48 @@ $$800 + 40 + 3 = 843$$
 
 ## 7. Key Takeaway
 Positional notation allows a finite set of $10$ symbols $\{0, \dots, 9\}$ to represent arbitrarily large integers through power-of-ten scaling.
+
+
+## Additional learning activities (draft)
+
+**Review status:** Independent human review is pending. These activities do not award certified mastery.
+
+### Prerequisite check
+
+Read the digits 0–9 and distinguish a written symbol from a quantity. The same digit can contribute different amounts in different positions.
+
+### Representation
+
+For 843, use 8 hundred blocks, 4 ten rods, and 3 single units. This makes 800 + 40 + 3. The digit 4 contributes 40, not 4.
+
+### Complete a partly worked problem
+
+Complete: 507 = __ hundreds + __ tens + __ units = __ + __ + __.
+
+Self-check: 5 hundreds + 0 tens + 7 units = 500 + 0 + 7. The zero reserves the tens position.
+
+### Independent practice
+
+1. In 462, state both the digit and its value in the tens column.
+
+   Self-check: The digit is 6; its value is 60.
+
+2. Explain why 305 and 35 represent different numbers.
+
+   Self-check: 305 = 300 + 5; 35 = 30 + 5. The zero preserves the empty tens position in 305.
+
+### Explain your reasoning
+
+Explain to someone why 74 and 47 differ although they use the same symbols. Name the position and contribution of each digit.
+
+### Transfer to a new situation
+
+A store has 3 boxes of 100 beads, 12 bundles of 10, and 4 single beads. Write the total as a standard numeral.
+
+Self-check: 300 + 120 + 4 = 424. Twelve tens regroup into one hundred and two tens.
+
+### Retrieve after a delay
+
+Tomorrow decompose 608 without notes. A week later, give two different regrouped descriptions of 352.
+
+The learner-facing presentation and these activities are stored in `lesson.json` beside this file.

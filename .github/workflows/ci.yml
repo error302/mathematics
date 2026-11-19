@@ -1,0 +1,65 @@
+name: CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+permissions:
+  contents: read
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  rust:
+    name: Rust build and tests (locked)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Show pinned toolchain (rust-toolchain.toml)
+        run: rustup show
+      - name: Build workspace (locked)
+        run: cargo build --workspace --locked --verbose
+      - name: Test workspace (locked)
+        run: cargo test --workspace --locked --verbose
+
+  dependencies:
+    name: Dependency policy (advisories, bans, licenses, sources)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: EmbarkStudios/cargo-deny-action@v2
+        with:
+          arguments: advisories bans licenses sources
+
+  wasm:
+    name: WASM web package (release)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: jetli/wasm-pack-action@v0.4.0
+      - name: Build release WASM package
+        run: wasm-pack build crates/axiom-wasm --target web --release --out-dir ../../packages/axiom-wasm-web
+      - name: Report package contents and size
+        run: ls -la packages/axiom-wasm-web && du -sk packages/axiom-wasm-web
+      - uses: actions/upload-artifact@v4
+        with:
+          name: axiom-wasm-web
+          path: packages/axiom-wasm-web
+
+  web:
+    name: Web build (frozen lockfile)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: pnpm
+      - name: Install dependencies (frozen lockfile)
+        run: pnpm install --frozen-lockfile
+      - name: Type-check and build web app
+        run: pnpm --filter web build

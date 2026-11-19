@@ -1,0 +1,27 @@
+schema_version: 1
+id: foundation.arithmetic.division_partition.lesson
+version: 1.1.0
+locale: en
+status: draft
+course_id: F02
+unit_id: foundation.arithmetic.division_partition
+outcomes:
+  - "Model division mathematically as partition into equal subsets and as the inverse operation of multiplication."
+  - "Verify exact integer quotients by multiplication and justify why division by zero is undefined."
+skill_ids:
+  - foundation.arithmetic.division
+prerequisites:
+  required:
+    - foundation.arithmetic.multiplication_array
+  recommended: []
+exercise_refs:
+  - template_id: arithmetic.whole.division
+    template_version: 1.1.0
+    difficulty_band: 1
+assessment_dimensions:
+  - conceptual
+  - procedural
+content_file: lesson.en.md
+license_id: axiom-original-content
+source_refs: []
+review_record_ids: []

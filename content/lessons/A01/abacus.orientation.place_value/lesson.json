@@ -1,0 +1,59 @@
+{
+  "id": "abacus.orientation.place_value",
+  "courseId": "A01",
+  "title": "Soroban 1:4 Orientation & Reckoning Beam",
+  "subtitle": "Explore the rods and learn which beads count toward a number.",
+  "templateId": "abacus.read.state",
+  "challenge": "How does a Soroban represent numbers using a single upper bead and four lower beads?",
+  "predictionPrompt": "When are beads counted toward the active value on a Soroban?",
+  "predictionOptions": [
+    {
+      "label": "When pushed toward the outer frame",
+      "value": "frame"
+    },
+    {
+      "label": "When moved toward the reckoning beam",
+      "value": "beam",
+      "isCorrect": true
+    }
+  ],
+  "formalDefinition": "A Soroban rod has 1 upper bead (value 5) and 4 lower beads (value 1 each). Beads are active strictly when moved toward the central reckoning beam.",
+  "workedExample": {
+    "steps": [
+      "Neutral state: all upper beads pushed UP; all lower beads pulled DOWN (reads 0).",
+      "To set 7: move upper bead DOWN (5) and two lower beads UP (2).",
+      "5 + 2 = 7."
+    ],
+    "result": "Rods represent powers of ten from right to left."
+  },
+  "misconception": {
+    "mistake": "Counting beads pushed against the outer wooden frame.",
+    "correction": "Only beads touching or shifted toward the central reckoning beam are active."
+  },
+  "reflection": "The 1:4 Soroban bi-quinary system minimizes finger travel and provides instant tactile feedback.",
+  "prerequisiteCheck": "Read base-ten place values. A rod value is multiplied by its position; the units marker matters.",
+  "representation": "For 15, the tens rod has one lower bead at the bar, and the units rod has the upper bead at the bar. Contributions: 1 × 10 + 5 × 1.",
+  "faded": {
+    "prompt": "Tens rod: upper away, 2 lower engaged. Units: upper engaged, 3 lower engaged. What number is represented?",
+    "solution": "Tens digit 2 gives 20; units digit 5 + 3 = 8; total 28."
+  },
+  "independent": [
+    {
+      "prompt": "Describe the rods for 64.",
+      "solution": "Tens: upper engaged and 1 lower engaged (digit 6). Units: upper away and 4 lower engaged (digit 4)."
+    },
+    {
+      "prompt": "Does the upper bead contribute 5 or 50 on the tens rod?",
+      "solution": "50. Its digit contribution 5 is multiplied by the tens place weight 10."
+    }
+  ],
+  "explanation": "Explain why a bead away from the bar contributes zero, even though it remains physically on the instrument.",
+  "transfer": {
+    "prompt": "Move the units marker so the rightmost rod is tenths. Read left rod digit 1 and right rod digit 5 on a two-rod instrument.",
+    "solution": "The left rod is now units and the right rod tenths: 1 + 5/10 = 1.5, not 15."
+  },
+  "retrieval": "Tomorrow describe how to set 37. A week later compare a rod digit with its place-weighted contribution.",
+  "contentStatus": "draft",
+  "reviewNote": "Expanded prototype lesson. Independent mathematical, pedagogical, and accessibility review is pending.",
+  "version": "1.1.0"
+}

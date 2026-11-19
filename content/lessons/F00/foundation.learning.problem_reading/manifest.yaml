@@ -1,0 +1,26 @@
+schema_version: 1
+id: foundation.learning.problem_reading.lesson
+version: 1.1.0
+locale: en
+status: draft
+course_id: F00
+unit_id: foundation.learning.problem_reading
+outcomes:
+  - "Deconstruct word problems into given quantities and identified unknown variables."
+  - "Formulate mathematical equations from contextual problem statements without falling into keyword matching traps."
+skill_ids:
+  - foundation.learning.reading
+prerequisites:
+  required: []
+  recommended: []
+exercise_refs:
+  - template_id: learning.problem_reading
+    template_version: 1.1.0
+    difficulty_band: 1
+assessment_dimensions:
+  - conceptual
+  - reasoning
+content_file: lesson.en.md
+license_id: axiom-original-content
+source_refs: []
+review_record_ids: []

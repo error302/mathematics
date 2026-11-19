@@ -1,0 +1,31 @@
+schema_version: 1
+id: secondary.trig.triangle_laws_and_inverse.lesson
+version: 1.1.0
+locale: en
+status: draft
+course_id: S05
+unit_id: secondary.trig.triangle_laws_and_inverse
+outcomes:
+  - State the restricted principal domains and ranges of arcsin, arccos, and arctan and evaluate composite expressions such as arcsin(sin(theta)).
+  - Apply the Law of Sines (a / sin A = b / sin B) and Law of Cosines (c^2 = a^2 + b^2 - 2ab cos C) to solve general triangles over Q.
+skill_ids:
+  - secondary.trig.inverse_trig_branches
+  - secondary.trig.laws_of_sines_and_cosines
+prerequisites:
+  required:
+    - secondary.trig.addition_and_double_angle
+    - secondary.functions.composition_and_inverse
+  recommended:
+    - secondary.geometry.planar_vectors_and_orthogonality
+exercise_refs:
+  - template_id: trig.law_of_sines_cosines
+    template_version: 1.1.0
+    difficulty_band: 1
+assessment_dimensions:
+  - conceptual
+  - procedural
+  - transfer
+content_file: lesson.en.md
+license_id: axiom-original-content
+source_refs: []
+review_record_ids: []

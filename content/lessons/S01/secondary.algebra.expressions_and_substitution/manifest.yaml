@@ -1,0 +1,31 @@
+schema_version: 1
+id: secondary.algebra.expressions_and_substitution.lesson
+version: 1.1.0
+locale: en
+status: draft
+course_id: S01
+unit_id: secondary.algebra.expressions_and_substitution
+outcomes:
+  - Evaluate algebraic expressions with negative inputs using explicit parenthetical substitution and exponent precedence.
+  - Expand distributive products a(bx + c) - d(ex - f) and combine like terms before evaluating.
+skill_ids:
+  - secondary.algebra.substitution
+  - secondary.algebra.distributive_simplification
+prerequisites:
+  required:
+    - foundation.integers.order
+    - foundation.powers.integer_exponents
+  recommended:
+    - foundation.arithmetic.multiplication
+exercise_refs:
+  - template_id: algebra.expression_eval
+    template_version: 1.1.0
+    difficulty_band: 1
+assessment_dimensions:
+  - conceptual
+  - procedural
+  - transfer
+content_file: lesson.en.md
+license_id: axiom-original-content
+source_refs: []
+review_record_ids: []

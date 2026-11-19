@@ -229,3 +229,76 @@ pub struct RewardLedgerResponse {
     pub daily_practice_xp: i32,
     pub entries: Vec<RewardEntry>,
 }
+
+// -------------------------------------------------------------
+// Notebook & Document Revisions (Section 21.2 & 22.2)
+// -------------------------------------------------------------
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct NotebookDocument {
+    pub id: Uuid,
+    pub user_id: Uuid,
+    pub title: String,
+    pub created_at: DateTime<Utc>,
+    pub updated_at: DateTime<Utc>,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct NotebookRevision {
+    pub id: Uuid,
+    pub document_id: Uuid,
+    pub user_id: Uuid,
+    pub parent_revision_id: Option<Uuid>,
+    pub content: String,
+    pub content_hash: String,
+    pub is_conflict: bool,
+    pub created_at: DateTime<Utc>,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct CreateNotebookRequest {
+    pub id: Option<Uuid>,
+    pub title: String,
+    pub initial_content: Option<String>,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct CreateRevisionRequest {
+    pub revision_id: Option<Uuid>,
+    pub parent_revision_id: Option<Uuid>,
+    pub content: String,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct SyncChangesResponse {
+    pub user_id: Uuid,
+    pub cursor: String,
+    pub events: Vec<LearningEvent>,
+    pub mastery: Vec<MasteryProjection>,
+    pub reviews: Vec<ReviewSchedule>,
+    pub reward_ledger: RewardLedgerResponse,
+    pub notebooks: Vec<NotebookDocument>,
+    pub notebook_revisions: Vec<NotebookRevision>,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct ExportDataResponse {
+    pub user_id: Uuid,
+    pub exported_at: DateTime<Utc>,
+    pub user: User,
+    pub instances: Vec<ExerciseInstance>,
+    pub attempts: Vec<Attempt>,
+    pub grade_results: Vec<GradeResult>,
+    pub reward_ledger: RewardLedgerResponse,
+    pub notebooks: Vec<NotebookDocument>,
+    pub notebook_revisions: Vec<NotebookRevision>,
+    pub mastery_projections: Vec<MasteryProjection>,
+    pub review_schedules: Vec<ReviewSchedule>,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct DeletionRequestResponse {
+    pub user_id: Uuid,
+    pub status: String,
+    pub requested_at: DateTime<Utc>,
+}

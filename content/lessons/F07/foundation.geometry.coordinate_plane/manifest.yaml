@@ -1,0 +1,31 @@
+schema_version: 1
+id: foundation.geometry.coordinate_plane.lesson
+version: 1.1.0
+locale: en
+status: draft
+course_id: F07
+unit_id: foundation.geometry.coordinate_plane
+outcomes:
+  - Locate points, displacements, and orthogonal directions on the 2D Cartesian plane.
+  - Calculate rectilinear displacement and Euclidean distance using the Pythagorean distance formula.
+skill_ids:
+  - foundation.geometry.coordinates
+  - foundation.geometry.euclidean_distance
+prerequisites:
+  required:
+    - foundation.integers.order
+    - foundation.powers.integer_exponents
+  recommended:
+    - foundation.geometry.perimeter
+exercise_refs:
+  - template_id: geometry.coordinate_distance
+    template_version: 1.1.0
+    difficulty_band: 1
+assessment_dimensions:
+  - conceptual
+  - procedural
+  - transfer
+content_file: lesson.en.md
+license_id: axiom-original-content
+source_refs: []
+review_record_ids: []

@@ -31,11 +31,11 @@ uuid = { version = "1.10", features = ["v4", "serde"] }
 chrono = { version = "0.4", features = ["serde"] }
 tokio = { version = "1", features = ["full"] }
 wasm-bindgen = { version = "0.2" }
-axiom-types = { path = "crates/axiom-types" }
-axiom-math = { path = "crates/axiom-math" }
-axiom-learning = { path = "crates/axiom-learning" }
-axiom-content = { path = "crates/axiom-content" }
-axiom-storage = { path = "crates/axiom-storage" }
+axiom-types = { version = "0.1.0", path = "crates/axiom-types" }
+axiom-math = { version = "0.1.0", path = "crates/axiom-math" }
+axiom-learning = { version = "0.1.0", path = "crates/axiom-learning" }
+axiom-content = { version = "0.1.0", path = "crates/axiom-content" }
+axiom-storage = { version = "0.1.0", path = "crates/axiom-storage" }
 
 [profile.release]
 opt-level = "s"

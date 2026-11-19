@@ -1,0 +1,66 @@
+{
+  "id": "secondary.functions.composition_and_inverses",
+  "courseId": "S02",
+  "title": "Function Composition and Invertibility",
+  "subtitle": "Chaining mappings (f o g)(x) = f(g(x)), non-commutativity, and exact inverse functions f^-1 over Q.",
+  "templateId": "functions.composition_inverse",
+  "challenge": "If you put on your socks and then put on your shoes, the inverse process at the end of the day is taking off your shoes FIRST and taking off your socks SECOND. How does this everyday 'socks-and-shoes' principle explain why the inverse of f(x) = 3x + 5 subtracts 5 first and divides by 3 second: f^-1(y) = (y - 5)/3?",
+  "predictionPrompt": "Let f(x) = 2x + 3 and g(x) = x^2. What is the value of (f o g)(4) = f(g(4))?",
+  "predictionOptions": [
+    {
+      "label": "121",
+      "value": "121"
+    },
+    {
+      "label": "35",
+      "value": "35",
+      "isCorrect": true
+    },
+    {
+      "label": "176",
+      "value": "176"
+    },
+    {
+      "label": "19",
+      "value": "19"
+    }
+  ],
+  "formalDefinition": "Given functions g: A -> B and f: B -> C, the composite function f o g: A -> C is defined by (f o g)(x) = f(g(x)) for all x in A. Function composition is associative but generally non-commutative (f o g != g o f). A function f: A -> B is invertible if and only if it is a bijection (both injective/one-to-one and surjective/onto); its unique inverse f^-1: B -> A satisfies f^-1(f(x)) = x for all x in A and f(f^-1(y)) = y for all y in B.",
+  "workedExample": {
+    "steps": [
+      "Task: Let f(x) = 4x + 7. Find the exact rational value of f^-1(18).",
+      "By definition of the inverse mapping, x = f^-1(18) is the unique solution to f(x) = 18.",
+      "Set up the linear equation: 4x + 7 = 18.",
+      "Subtract 7 from both sides to get 4x = 11, then divide by 4: x = 11/4. Check: f(11/4) = 4(11/4) + 7 = 11 + 7 = 18."
+    ],
+    "result": "f^-1(18) = 11/4."
+  },
+  "misconception": {
+    "mistake": "Evaluating (f o g)(x) from left to right as g(f(x)), or confusing the inverse function notation f^-1(x) with the algebraic reciprocal 1 / f(x).",
+    "correction": "In (f o g)(x) = f(g(x)), g is closest to x and acts first; its output g(x) then becomes the input to f. The superscript -1 on a function name denotes compositional inversion (undoing the mapping), not exponentiation of a number."
+  },
+  "reflection": "Composing a bijection f with its inverse f^-1 in either order produces the identity mapping id(x) = x.",
+  "prerequisiteCheck": "If g(3) = 10 and f(10) = 25, what is f(g(3))?",
+  "representation": "Chain two mapping diagrams A --g--> B --f--> C: composition f o g jumps directly from A to C, while the inverse f^-1 reverses every arrow from B back to A.",
+  "faded": {
+    "prompt": "Let f(x) = 3x - 2 and g(x) = x^2 + 1. To compute f(g(2)), first find the inner value g(2) = 2^2 + 1 = __. Then substitute into f: f(5) = 3(5) - 2 = __.",
+    "solution": "5, then 13."
+  },
+  "independent": [
+    {
+      "prompt": "Let f(x) = 2x - 1 and g(x) = x^2 + 4. Compute both f(g(3)) and g(f(3)) to verify that f o g != g o f.",
+      "solution": "g(3) = 13 => f(g(3)) = 2(13) - 1 = 25. Conversely, f(3) = 5 => g(f(3)) = 5^2 + 4 = 29."
+    },
+    {
+      "prompt": "For f(x) = 5x + 3, find the exact value of f^-1(16).",
+      "solution": "Solve 5x + 3 = 16 => 5x = 13 => f^-1(16) = 13/5."
+    }
+  ],
+  "explanation": "Why is the function h(x) = x^2 defined on all real numbers R not invertible without restricting its domain to x >= 0?",
+  "transfer": {
+    "prompt": "If f(x) = 2x + 1 and g(x) = 3x - 4, find an explicit formula for (f o g)(x) and use it to solve (f o g)(x) = 17.",
+    "solution": "(f o g)(x) = 2(3x - 4) + 1 = 6x - 7. Setting 6x - 7 = 17 gives 6x = 24 => x = 4."
+  },
+  "retrieval": "State the definition of (f o g)(x), the condition for f to have an inverse f^-1, and the two cancellation identities linking f and f^-1.",
+  "reviewNote": "Draft secondary lesson. Exact calculations verified by Rust engine."
+}

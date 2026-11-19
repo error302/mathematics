@@ -1,0 +1,64 @@
+{
+  "id": "foundation.divisibility.factors_primes",
+  "courseId": "F03",
+  "title": "Divisibility, Factors, and Prime Numbers",
+  "subtitle": "Discover factor pairs, proper divisors, and the prime building blocks of all integers.",
+  "templateId": "divisibility.factors.find",
+  "challenge": "Why can 12 objects be arranged into rectangles in several different ways (1×12, 2×6, 3×4), while 13 objects can only be formed into a single line (1×13)?",
+  "predictionPrompt": "Is 1 considered a prime number?",
+  "predictionOptions": [
+    {
+      "label": "Yes, because it is only divisible by 1 and itself",
+      "value": "is_prime"
+    },
+    {
+      "label": "No, by definition a prime number must have exactly two distinct positive divisors",
+      "value": "not_prime",
+      "isCorrect": true
+    }
+  ],
+  "formalDefinition": "An integer d divides an integer n (written d | n) if there exists an integer k such that n = d × k. A positive integer p > 1 is prime if its only positive divisors are 1 and p. An integer n > 1 that is not prime is composite. Every integer n > 1 can be factored uniquely into a product of prime numbers (Fundamental Theorem of Arithmetic).",
+  "workedExample": {
+    "steps": [
+      "To find all factors of 36, test integers starting from 1 up to √36 = 6.",
+      "1 × 36 = 36 -> pair (1, 36)",
+      "2 × 18 = 36 -> pair (2, 18)",
+      "3 × 12 = 36 -> pair (3, 12)",
+      "4 × 9 = 36 -> pair (4, 9)",
+      "5 does not divide 36 (remainder 1)",
+      "6 × 6 = 36 -> pair (6, 6)",
+      "The distinct factors of 36 are {1, 2, 3, 4, 6, 9, 12, 18, 36}. The greatest proper divisor is 18."
+    ],
+    "result": "Factors of 36 are {1, 2, 3, 4, 6, 9, 12, 18, 36}; its greatest proper divisor is 18."
+  },
+  "misconception": {
+    "mistake": "Believing that all odd numbers are prime, or that 2 is not prime because it is even.",
+    "correction": "2 is the only even prime number (its only divisors are 1 and 2). Many odd numbers (like 9, 15, 21, 25, 27) are composite because they have additional factors."
+  },
+  "reflection": "Prime numbers are the 'atoms' of multiplication: every integer is synthesized from a unique recipe of prime factors.",
+  "prerequisiteCheck": "Perform whole-number division and verify whether a division leaves a zero remainder.",
+  "representation": "Take 12 unit squares and build rectangles: 1×12, 2×6, 3×4. Then try with 7 unit squares: only 1×7 is possible, showing that 7 is prime.",
+  "faded": {
+    "prompt": "Find the factors of 20: 1 × __ = 20, 2 × __ = 20, 4 × __ = 20. The factors are {1, 2, 4, 5, 10, 20}. The greatest proper divisor is __.",
+    "solution": "1 × 20 = 20, 2 × 10 = 20, 4 × 5 = 20. The factors are {1, 2, 4, 5, 10, 20}. The greatest proper divisor is 10."
+  },
+  "independent": [
+    {
+      "prompt": "List all factors of 28 and state its greatest proper divisor.",
+      "solution": "Factors: 1, 2, 4, 7, 14, 28. The greatest proper divisor is 14."
+    },
+    {
+      "prompt": "Decompose 60 into its unique prime factorization.",
+      "solution": "60 = 2 × 30 = 2 × 2 × 15 = 2^2 × 3 × 5."
+    }
+  ],
+  "explanation": "Explain why if a number n has no prime divisors less than or equal to √n, it is guaranteed to be prime.",
+  "transfer": {
+    "prompt": "A baker has 48 muffins and wants to pack them into identical gift boxes with no muffins left over. If each box must contain more than 1 muffin and fewer than 48 muffins, what box sizes are possible?",
+    "solution": "Any proper divisor of 48 greater than 1: 2, 3, 4, 6, 8, 12, 16, 24 muffins per box."
+  },
+  "retrieval": "Tomorrow list the prime numbers between 1 and 30. Next week explain how prime factorization simplifies fraction reduction.",
+  "contentStatus": "draft",
+  "reviewNote": "Expanded prototype lesson. Independent mathematical, pedagogical, and accessibility review is pending.",
+  "version": "1.1.0"
+}

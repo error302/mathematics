@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "checks": [
+    "A wrong arithmetic answer gets encouragement and a relevant hint without dumping the solution.",
+    "A successful retry gets recovery praise; repeated checks keep encouragement without duplicate rewards.",
+    "Editing clears stale success; syntax help does not falsely label mathematical understanding wrong.",
+    "Show me how reveals exact Rust column steps and a worked arithmetic visual.",
+    "A correct supported attempt is still praised, with its assistance honestly acknowledged.",
+    "Fraction worked help provides exact common-denominator steps and matching strips.",
+    "Hidden abacus mistakes get a hint; only an explicit worked reveal shows the answer beads.",
+    "Wrong lesson predictions get concrete guidance; a corrected prediction gets encouraging recovery feedback.",
+    "Correct answers still receive praise when the daily XP cap prevents extra points."
+  ],
+  "errors": []
+}

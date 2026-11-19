@@ -1,0 +1,29 @@
+{
+  "id": "proof.sets.operations_and_inclusion_exclusion",
+  "course_id": "P01",
+  "title": "Set Operations, Power Sets & Principle of Inclusion-Exclusion",
+  "status": "draft",
+  "review_status": "independent_review_pending",
+  "version": "1.1.0",
+  "outcomes": [
+    "Apply the two-set Principle of Inclusion-Exclusion |A U B| = |A| + |B| - |A n B| to avoid double-counting overlaps.",
+    "Compute the exact cardinality 2^n of a finite power set P(A) and count proper or non-empty proper subsets 2^n - 2.",
+    "Generalize Inclusion-Exclusion to three finite sets by adding back the triple intersection |A n B n C|."
+  ],
+  "prerequisites": [
+    "foundation.counting.permutations_and_combinations",
+    "secondary.sequences.recursion_and_binomial"
+  ],
+  "sections": {
+    "intuition": "Sets are the foundational vocabulary of modern mathematics. When we form a subset S ⊆ A of an n-element set A, each of the n elements independently has 2 choices (either in S or not in S), so the power set P(A) has exactly 2^n subsets—including the empty set ∅ and the full set A itself. When counting the union A ∪ B of two overlapping sets, simply adding |A| + |B| counts every element in the intersection A ∩ B twice; subtracting |A ∩ B| once ensures every element is counted with multiplicity 1.",
+    "formal_definition": "1. Power Set & Proper Subsets: For a finite set A with |A| = n, the power set P(A) = {S : S ⊆ A} has cardinality |P(A)| = 2^n. A has 2^n - 1 proper subsets (S ⊂ A, S ≠ A) and 2^n - 2 non-empty proper subsets (S ≠ ∅ and S ≠ A).\n2. Two-Set Inclusion-Exclusion: |A ∪ B| = |A| + |B| - |A ∩ B|.\n3. Three-Set Inclusion-Exclusion: |A ∪ B ∪ C| = (|A| + |B| + |C|) - (|A ∩ B| + |A ∩ C| + |B ∩ C|) + |A ∩ B ∩ C|.",
+    "worked_example": "Suppose |A| = 15, |B| = 14, |C| = 13, |A ∩ B| = 6, |A ∩ C| = 5, |B ∩ C| = 4, and |A ∩ B ∩ C| = 2. Find |A ∪ B ∪ C|.\n1. Sum the singletons: 15 + 14 + 13 = 42.\n2. Subtract the pairwise overlaps: 42 - (6 + 5 + 4) = 42 - 15 = 27.\n3. Notice an element in A ∩ B ∩ C was added 3 times in Step 1 and subtracted 3 times in Step 2 (net count 0); add |A ∩ B ∩ C| = 2 back: 27 + 2 = 29.",
+    "common_misconceptions": [
+      "Adding |A| + |B| without subtracting |A ∩ B| when A and B are not disjoint.",
+      "Forgetting that the empty set ∅ is a subset of every set A (so excluding both ∅ and A leaves 2^n - 2 subsets).",
+      "Subtracting |A ∩ B ∩ C| instead of adding it back in the three-set Inclusion-Exclusion formula."
+    ]
+  },
+  "template_id": "proof.sets_and_cardinality",
+  "template_version": "1.1.0"
+}

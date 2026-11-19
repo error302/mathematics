@@ -1,0 +1,31 @@
+schema_version: 1
+id: foundation.geometry.angles_and_triangles.lesson
+version: 1.1.0
+locale: en
+status: draft
+course_id: F07
+unit_id: foundation.geometry.angles_and_triangles
+outcomes:
+  - Understand angle measure as circular rotation and partition of the full turn.
+  - Apply the Triangle Angle Sum Theorem (180°) and deduce angle relationships via parallel transversals.
+skill_ids:
+  - foundation.geometry.angles
+  - foundation.geometry.triangle_sum
+prerequisites:
+  required:
+    - foundation.arithmetic.addition
+    - foundation.arithmetic.subtraction
+  recommended:
+    - foundation.geometry.perimeter
+exercise_refs:
+  - template_id: geometry.angles_triangles
+    template_version: 1.1.0
+    difficulty_band: 1
+assessment_dimensions:
+  - conceptual
+  - procedural
+  - transfer
+content_file: lesson.en.md
+license_id: axiom-original-content
+source_refs: []
+review_record_ids: []

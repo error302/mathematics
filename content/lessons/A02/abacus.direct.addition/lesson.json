@@ -1,0 +1,59 @@
+{
+  "id": "abacus.direct.addition",
+  "courseId": "A02",
+  "title": "Direct Addition on the Soroban",
+  "subtitle": "Add by moving available beads toward the middle bar.",
+  "templateId": "abacus.target.setting",
+  "challenge": "You have 2 lower beads active. You want to add 2. Can you do this directly?",
+  "predictionPrompt": "Are there enough lower beads to compute 2 + 2 directly?",
+  "predictionOptions": [
+    {
+      "label": "Yes, 2 inactive lower beads remain",
+      "value": "yes",
+      "isCorrect": true
+    },
+    {
+      "label": "No, we must use the upper bead",
+      "value": "no"
+    }
+  ],
+  "formalDefinition": "Direct addition applies when L lower beads are active and k are to be added, with L + k <= 4. Push k beads up directly with the thumb.",
+  "workedExample": {
+    "steps": [
+      "Set 2 lower beads up.",
+      "Push 2 more lower beads up.",
+      "All 4 lower beads now touch the beam."
+    ],
+    "result": "2 + 2 = 4."
+  },
+  "misconception": {
+    "mistake": "Trying to add 2 directly when 3 lower beads are already active (3 + 2).",
+    "correction": "Only 1 lower bead is available. Adding 2 requires the 5-complement formula (+2 = +5 - 3)."
+  },
+  "reflection": "Direct addition is the foundational reflex of all abacus arithmetic.",
+  "prerequisiteCheck": "First read the rod correctly. Direct addition requires the needed inactive beads to be available; it cannot invent a fifth lower bead.",
+  "representation": "2 + 1: engage one more lower bead, making 3. 2 + 5: engage the upper bead, keeping the two lower beads, making 7.",
+  "faded": {
+    "prompt": "Start at 1 and add 2 directly. Before: lower=1; after: lower=__; upper remains __.",
+    "solution": "After: lower=3; upper remains away from the bar."
+  },
+  "independent": [
+    {
+      "prompt": "Start at 6 and add 2 directly. Describe the before/after states.",
+      "solution": "6: upper engaged, lower=1. Add 2 lower beads to get upper engaged, lower=3, value 8."
+    },
+    {
+      "prompt": "Can 3 + 2 be done by pushing two more lower beads?",
+      "solution": "No; only one unused lower bead remains. Use a five-complement procedure later: +2 = +5 - 3."
+    }
+  ],
+  "explanation": "Explain why the final value alone cannot establish that a learner used a direct-addition bead procedure.",
+  "transfer": {
+    "prompt": "Set 21 and add 13 with direct digit operations. Explain why there is no carry or complement.",
+    "solution": "On tens, 2 + 1 = 3 lower beads. On units, 1 + 3 = 4 lower beads. Result 34; both changes use available lower beads."
+  },
+  "retrieval": "Tomorrow decide whether 1 + 3, 4 + 1, and 5 + 2 are direct. After a week, explain the bead availability in each case.",
+  "contentStatus": "draft",
+  "reviewNote": "Expanded prototype lesson. Independent mathematical, pedagogical, and accessibility review is pending.",
+  "version": "1.1.0"
+}

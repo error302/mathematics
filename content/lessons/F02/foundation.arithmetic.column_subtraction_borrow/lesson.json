@@ -1,0 +1,64 @@
+{
+  "id": "foundation.arithmetic.column_subtraction_borrow",
+  "courseId": "F02",
+  "title": "Column Subtraction with Decomposition",
+  "subtitle": "Break a ten into ten ones when you need more ones to subtract.",
+  "templateId": "arithmetic.column.subtraction",
+  "challenge": "Compute 52 - 27. The units column asks 2 - 7. How do we proceed?",
+  "predictionPrompt": "When we borrow 1 ten from 52, what does the units digit 2 become?",
+  "predictionOptions": [
+    {
+      "label": "It becomes 3",
+      "value": "3"
+    },
+    {
+      "label": "It becomes 12",
+      "value": "12",
+      "isCorrect": true
+    },
+    {
+      "label": "It becomes 7",
+      "value": "7"
+    }
+  ],
+  "formalDefinition": "When the minuend digit is smaller than the subtrahend digit, decompose 1 unit of the adjacent higher column (10^1) into 10 units of the current column (10^0).",
+  "workedExample": {
+    "steps": [
+      "Borrow 1 ten from 5 (leaves 4 tens).",
+      "Add 10 to 2 units to make 12 units.",
+      "Units: 12 - 7 = 5.",
+      "Tens: 4 - 2 = 2."
+    ],
+    "result": "52 - 27 = 25."
+  },
+  "misconception": {
+    "mistake": "Subtracting the smaller from the larger digit blindly: 7 - 2 = 5, writing 35.",
+    "correction": "Subtraction is directional: we must remove 27 from 52, not recombine arbitrary differences."
+  },
+  "reflection": "Decomposition and borrowing are exact mirror images of bundling and carrying.",
+  "prerequisiteCheck": "Decomposing one ten creates ten units while decreasing the tens count by one. The total must stay unchanged before subtraction.",
+  "representation": "For 52 - 27, exchange one ten: 52 = 4 tens + 12 units. Remove 2 tens + 7 units; 2 tens + 5 units remain.",
+  "faded": {
+    "prompt": "63 - 28: rewrite 63 as __ tens and __ units. The units difference is __ and the final result is __.",
+    "solution": "5 tens and 13 units; units difference 5; tens difference 3; result 35."
+  },
+  "independent": [
+    {
+      "prompt": "Compute 71 - 46, then check by addition.",
+      "solution": "71 = 6 tens + 11 units; result 25. Check: 46 + 25 = 71."
+    },
+    {
+      "prompt": "Compute 302 - 178. Explain how to exchange across the zero.",
+      "solution": "302 = 2 hundreds + 10 tens + 2 units = 2 hundreds + 9 tens + 12 units. Subtract to get 124."
+    }
+  ],
+  "explanation": "Why is subtracting the smaller digit from the larger digit separately in each column invalid? Use 52 - 27 as a counterexample.",
+  "transfer": {
+    "prompt": "A budget is 205 and spending is 89. Estimate what remains, calculate exactly, and verify the result.",
+    "solution": "About 200 - 90 = 110. Exact: 116. Check 89 + 116 = 205."
+  },
+  "retrieval": "Tomorrow compute 84 - 39. A week later explain the regrouping in 400 - 167, including each zero.",
+  "contentStatus": "draft",
+  "reviewNote": "Expanded prototype lesson. Independent mathematical, pedagogical, and accessibility review is pending.",
+  "version": "1.1.0"
+}

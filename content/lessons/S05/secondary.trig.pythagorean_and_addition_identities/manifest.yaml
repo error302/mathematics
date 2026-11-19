@@ -1,0 +1,31 @@
+schema_version: 1
+id: secondary.trig.pythagorean_and_addition_identities.lesson
+version: 1.1.0
+locale: en
+status: draft
+course_id: S05
+unit_id: secondary.trig.pythagorean_and_addition_identities
+outcomes:
+  - Derive and apply the Pythagorean and quotient identities (tan theta = sin theta / cos theta) over exact rational triangles.
+  - Apply the angle-sum and double-angle identities for sine and cosine (sin(2*theta) = 2 sin(theta)cos(theta), cos(alpha + beta) = cos(alpha)cos(beta) - sin(alpha)sin(beta)).
+skill_ids:
+  - secondary.trig.pythagorean_and_quotient_identities
+  - secondary.trig.addition_and_double_angle
+prerequisites:
+  required:
+    - secondary.trig.radians_and_quadrant_signs
+    - secondary.geometry.planar_vectors_and_orthogonality
+  recommended:
+    - secondary.algebra2.completing_the_square
+exercise_refs:
+  - template_id: trig.identities_double_angle
+    template_version: 1.1.0
+    difficulty_band: 1
+assessment_dimensions:
+  - conceptual
+  - procedural
+  - transfer
+content_file: lesson.en.md
+license_id: axiom-original-content
+source_refs: []
+review_record_ids: []

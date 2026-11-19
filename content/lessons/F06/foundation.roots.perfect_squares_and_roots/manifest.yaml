@@ -1,0 +1,31 @@
+schema_version: 1
+id: foundation.roots.perfect_squares_and_roots.lesson
+version: 1.1.0
+locale: en
+status: draft
+course_id: F06
+unit_id: foundation.roots.perfect_squares_and_roots
+outcomes:
+  - Understand the principal square root as the inverse of squaring for non-negative numbers.
+  - Evaluate exact rational square roots and understand why sqrt does not distribute over addition.
+skill_ids:
+  - foundation.roots.perfect_squares
+  - foundation.roots.rational_roots
+prerequisites:
+  required:
+    - foundation.powers.integer_exponents
+    - foundation.fractions.compare
+  recommended:
+    - foundation.arithmetic.multiplication
+exercise_refs:
+  - template_id: roots.radical_eval
+    template_version: 1.1.0
+    difficulty_band: 1
+assessment_dimensions:
+  - conceptual
+  - procedural
+  - transfer
+content_file: lesson.en.md
+license_id: axiom-original-content
+source_refs: []
+review_record_ids: []

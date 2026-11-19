@@ -41,3 +41,48 @@ Therefore: $43 - 28 = 15$.
 
 ## 7. Reflection
 By recognizing subtraction as the search for a missing addend ($b + ? = a$), mental calculations become dramatically faster and less prone to borrowing errors.
+
+
+## Additional learning activities (draft)
+
+**Review status:** Independent human review is pending. These activities do not award certified mastery.
+
+### Prerequisite check
+
+Relate taking away to a missing addend. For whole-number take-away tasks, the result stays nonnegative when the starting amount is at least the amount removed.
+
+### Representation
+
+For 13 - 8, find what must be added to 8 to reach 13: 2 reaches 10, then 3 reaches 13, so the difference is 5.
+
+### Complete a partly worked problem
+
+Complete: 16 - 9 = __ because 9 + __ = 16.
+
+Self-check: Both blanks are 7. The addition checks the subtraction.
+
+### Independent practice
+
+1. Compute 25 - 17 by counting up.
+
+   Self-check: 17 to 20 is 3; 20 to 25 is 5; total difference 8.
+
+2. Is 9 - 4 the same as 4 - 9? Discuss the whole-number and integer settings.
+
+   Self-check: 9 - 4 = 5. In integers, 4 - 9 = -5; it is not a nonnegative whole-number take-away result.
+
+### Explain your reasoning
+
+Explain why subtraction is not commutative. Use both a number-line description and an example.
+
+### Transfer to a new situation
+
+A balance is 41 after receiving 18. What was it before? Check by reversing the operation.
+
+Self-check: 41 - 18 = 23; 23 + 18 = 41. The word receiving does not imply that the unknown must be found by addition.
+
+### Retrieve after a delay
+
+Tomorrow check 32 - 19 using addition. A week later write a missing-addend equation for 54 - 27.
+
+The learner-facing presentation and these activities are stored in `lesson.json` beside this file.

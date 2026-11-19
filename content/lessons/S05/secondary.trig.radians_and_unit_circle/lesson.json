@@ -1,0 +1,66 @@
+{
+  "id": "secondary.trig.radians_and_unit_circle",
+  "courseId": "S05",
+  "title": "Radians, the Unit Circle, Quadrant Signs, and Periodic Waves",
+  "subtitle": "Arc length on the unit circle x^2 + y^2 = 1, quadrant parity of (cos theta, sin theta), and fundamental period T = 2*pi/B.",
+  "templateId": "trig.radians_unit_circle",
+  "challenge": "Degrees divide a circle into 360 arbitrary human units, whereas radians measure the actual arc length cut off on a circle of radius 1. Why does defining cos(theta) and sin(theta) as the coordinates (x, y) on the unit circle x^2 + y^2 = 1 allow trigonometry to extend to negative and arbitrarily large angles?",
+  "predictionPrompt": "An angle theta lies in Quadrant II (pi/2 < theta < pi) with sin(theta) = 5/13. What is the exact rational value of cos(theta)?",
+  "predictionOptions": [
+    {
+      "label": "-12/13",
+      "value": "-12/13",
+      "isCorrect": true
+    },
+    {
+      "label": "12/13",
+      "value": "12/13"
+    },
+    {
+      "label": "-8/13",
+      "value": "-8/13"
+    },
+    {
+      "label": "-5/12",
+      "value": "-5/12"
+    }
+  ],
+  "formalDefinition": "On a circle of radius R, the radian measure of a central angle subtending arc length s is theta = s / R; a semicircle of arc length pi*R corresponds to pi radians = 180 degrees. For any real angle theta, the terminal ray intersects the unit circle x^2 + y^2 = 1 at P(cos(theta), sin(theta)). Consequently, cos^2(theta) + sin^2(theta) = 1 for all theta in R, with signs governed by the quadrant of P, and a sinusoidal function f(t) = A cos(B t) + D has amplitude |A|, midline y = D, and fundamental period T = 2*pi / |B|.",
+  "workedExample": {
+    "steps": [
+      "Task: Convert 135 degrees to k*pi radians, find cos(theta) when theta is in Quadrant II with sin(theta) = 5/13, and find the fundamental period T of f(t) = 4 cos(5*pi*t) + 2.",
+      "Divide by 180 degrees: 135 / 180 = (3 * 45) / (4 * 45) = 3/4, so 135 degrees = (3/4)pi radians (k = 3/4).",
+      "From cos^2(theta) + (5/13)^2 = 1, we get cos^2(theta) = 1 - 25/169 = 144/169. In Quadrant II, x = cos(theta) < 0, so cos(theta) = -12/13.",
+      "For f(t) = 4 cos(5*pi*t) + 2, one full cycle of 2*pi radians requires 5*pi*T = 2*pi => T = 2*pi / (5*pi) = 2/5."
+    ],
+    "result": "k = 3/4; cos(theta) = -12/13; period T = 2/5."
+  },
+  "misconception": {
+    "mistake": "Dividing degrees by 360 instead of 180 when converting to k*pi radians, or forgetting that cos(theta) is negative in Quadrants II and III.",
+    "correction": "A full 360-degree turn equals 2*pi radians, so 1*pi radian equals 180 degrees (k = deg / 180). On the unit circle, cos(theta) is the horizontal coordinate x, which is negative to the left of the y-axis (Quadrants II and III)."
+  },
+  "reflection": "Because (cos(theta), sin(theta)) is a point on the unit circle x^2 + y^2 = 1, neither |cos(theta)| nor |sin(theta)| can ever exceed 1 for any real angle theta.",
+  "prerequisiteCheck": "Reduce the fraction 150 / 180 to lowest terms.",
+  "representation": "Trace a point P(cos(theta), sin(theta)) counterclockwise around the unit circle x^2 + y^2 = 1 from theta = 0 to theta = 2*pi and observe how its horizontal coordinate x and vertical coordinate y change sign across the four quadrants.",
+  "faded": {
+    "prompt": "Find cos(theta) in Quadrant II when sin(theta) = 3/5: cos^2(theta) = 1 - (3/5)^2 = 1 - 9/25 = __/25. Taking the negative square root in Quadrant II gives cos(theta) = __.",
+    "solution": "16, then -4/5."
+  },
+  "independent": [
+    {
+      "prompt": "Convert 240 degrees into radians in the form k*pi and state the exact rational fraction k.",
+      "solution": "k = 240 / 180 = 4/3."
+    },
+    {
+      "prompt": "Find the exact fundamental period T of the wave f(t) = 6 cos(7*pi*t) - 1.",
+      "solution": "T = 2*pi / (7*pi) = 2/7."
+    }
+  ],
+  "explanation": "Why is radian measure considered dimensionless (a pure ratio of lengths), and why does T = 2*pi / B depend only on the horizontal frequency B and not on the amplitude A or midline D?",
+  "transfer": {
+    "prompt": "A wheel of radius R = 15 cm rotates through an angle of 120 degrees. Find the exact arc length s (in cm, as a multiple of pi) traveled by a point on its rim.",
+    "solution": "Convert 120 degrees to radians: theta = (120/180)*pi = (2/3)*pi. Then arc length s = R*theta = 15 * (2/3)*pi = 10*pi cm."
+  },
+  "retrieval": "State the conversion formula from degrees to radians, the unit-circle definition of (cos(theta), sin(theta)), the signs of cosine and sine in each quadrant, and the period formula for A cos(B t) + D.",
+  "reviewNote": "Draft secondary lesson. Exact calculations verified by Rust engine."
+}

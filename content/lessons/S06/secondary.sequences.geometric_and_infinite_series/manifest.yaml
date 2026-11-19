@@ -1,0 +1,36 @@
+schema_version: 1
+id: "secondary.sequences.geometric_and_infinite_series.lesson"
+version: "1.1.0"
+locale: "en"
+status: "draft"
+course_id: "S06"
+unit_id: "secondary.sequences.geometric_and_infinite_series"
+outcomes:
+  - "Compute the exact n-th term of a geometric progression using g_n = g_1 * r^(n - 1)."
+  - "Evaluate finite geometric series sums exactly using S_n = a(r^n - 1) / (r - 1)."
+  - "Calculate the exact rational sum S_inf = a / (1 - r) of a convergent infinite geometric series when |r| < 1."
+skill_ids:
+  - "secondary.sequences.geometric_and_infinite_series"
+prerequisites:
+  required:
+    - "secondary.sequences.arithmetic_and_series"
+  recommended:
+    - "secondary.algebra2.exponentials_and_logarithms"
+exercise_refs:
+  - template_id: "sequences.geometric_and_infinite"
+    template_version: "1.1.0"
+    difficulty_band: 1
+  - template_id: "sequences.geometric_and_infinite"
+    template_version: "1.1.0"
+    difficulty_band: 2
+  - template_id: "sequences.geometric_and_infinite"
+    template_version: "1.1.0"
+    difficulty_band: 3
+assessment_dimensions:
+  - "conceptual"
+  - "procedural"
+  - "transfer"
+content_file: "lesson.en.md"
+license_id: "axiom-original-content"
+source_refs: []
+review_record_ids: []

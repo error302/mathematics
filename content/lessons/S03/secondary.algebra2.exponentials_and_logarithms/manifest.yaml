@@ -1,0 +1,31 @@
+schema_version: 1
+id: secondary.algebra2.exponentials_and_logarithms.lesson
+version: 1.1.0
+locale: en
+status: draft
+course_id: S03
+unit_id: secondary.algebra2.exponentials_and_logarithms
+outcomes:
+  - Evaluate exact logarithms log_b(y) as the inverse of base-b exponentiation for integer and reciprocal powers.
+  - Apply logarithm product and quotient laws and solve exponential equations by rewriting powers in a common base over Q.
+skill_ids:
+  - secondary.algebra2.logarithm_laws
+  - secondary.algebra2.common_base_exponentials
+prerequisites:
+  required:
+    - secondary.functions.composition_and_inverse
+    - secondary.algebra2.discriminant_and_roots
+  recommended:
+    - foundation.ratios.multiplicative_scaling
+exercise_refs:
+  - template_id: algebra2.exp_log_eval
+    template_version: 1.1.0
+    difficulty_band: 1
+assessment_dimensions:
+  - conceptual
+  - procedural
+  - transfer
+content_file: lesson.en.md
+license_id: axiom-original-content
+source_refs: []
+review_record_ids: []

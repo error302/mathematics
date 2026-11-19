@@ -1,0 +1,31 @@
+schema_version: 1
+id: foundation.decimals.place_value_fractions.lesson
+version: 1.1.0
+locale: en
+status: draft
+course_id: F05
+unit_id: foundation.decimals.place_value_fractions
+outcomes:
+  - Convert between finite decimals and fractions with power-of-ten denominators.
+  - Explain why 0.3 means 3 tenths (3/10) and 0.03 means 3 hundredths (3/100).
+skill_ids:
+  - foundation.decimals.place_value
+  - foundation.decimals.fraction_conversion
+prerequisites:
+  required:
+    - foundation.fractions.compare
+    - foundation.place_value.decimal_expansion
+  recommended:
+    - foundation.fractions.equivalent
+exercise_refs:
+  - template_id: decimals.fraction_convert
+    template_version: 1.1.0
+    difficulty_band: 1
+assessment_dimensions:
+  - conceptual
+  - procedural
+  - transfer
+content_file: lesson.en.md
+license_id: axiom-original-content
+source_refs: []
+review_record_ids: []

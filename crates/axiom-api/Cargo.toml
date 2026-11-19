@@ -3,13 +3,14 @@ name = "axiom-api"
 version.workspace = true
 edition.workspace = true
 license.workspace = true
+publish.workspace = true
 
 [dependencies]
-axiom-types = { path = "../axiom-types" }
+axiom-types.workspace = true
 axiom-math.workspace = true
 axiom-learning.workspace = true
 axiom-content.workspace = true
-axiom-storage = { path = "../axiom-storage" }
+axiom-storage.workspace = true
 serde.workspace = true
 serde_json.workspace = true
 uuid.workspace = true
